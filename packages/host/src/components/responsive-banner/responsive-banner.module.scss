@@ -1,0 +1,22 @@
+@use "../../../../assets/styles/mixin" as mi;
+
+.banner {
+  width: 100%;
+  height: auto;
+
+  &--mobile {
+    display: block;
+
+    @include mi.responsive("small") {
+      display: none;
+    }
+  }
+
+  &--tablet-and-desktop {
+    display: none;
+
+    @include mi.responsive("small") {
+      display: block;
+    }
+  }
+}

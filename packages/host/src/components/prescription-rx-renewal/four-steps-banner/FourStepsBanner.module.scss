@@ -1,0 +1,82 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+.fourStepsContainer {
+  background-color: $banner;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  .bannerHeading {
+    color: $secondary-color;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    @include fontFSWH($primary-font, 28px, 400, 24px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 24px, 400, 20px);
+    }
+  }
+  .bannerImage {
+    border: none;
+    max-width: 80%;
+    height: auto;
+  }
+  .mainCarousalContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .mainCarousal {
+      width: 100%;
+      min-height: 225px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .carousalInner {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      .mobileBannerImage {
+        max-width: 200px;
+        border: none;
+        width: 40%;
+        height: auto;
+        animation: blurEffect 1s;
+      }
+      .act {
+        display: block;
+      }
+      .nonAct {
+        display: none;
+      }
+      @keyframes blurEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .dotContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: auto;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+  }
+
+  .active {
+    background-color: $tertiary-color;
+  }
+}

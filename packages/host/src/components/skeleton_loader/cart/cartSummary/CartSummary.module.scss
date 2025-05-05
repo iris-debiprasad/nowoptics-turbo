@@ -1,0 +1,26 @@
+@import "../../../../../../assets/styles/variables";
+@import "../../../../../../assets/styles/mixin";
+
+.skeletonSummaryContainer {
+  background-color: $white;
+  padding: 10px 16px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 5px;
+  border: 1px solid $grey;
+
+  .orderPriceContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 12px 0;
+  }
+
+  .actionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 20px;
+  }
+}

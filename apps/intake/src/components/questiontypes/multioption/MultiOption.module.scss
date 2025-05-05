@@ -1,0 +1,160 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/fonts";
+@import "../../../../../assets/styles/mixin";
+
+.horizontalLine {
+  width: calc(100% - 16px);
+  height: 1px;
+  background-color: $primary-light-color;
+  margin: 8px auto 0 auto;
+}
+
+.modalHeader {
+  @include flex(center, flex-start, row);
+
+  &>span {
+    margin-right: 12px;
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+    color: $primary-font-color;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 16px);
+    }
+  }
+}
+
+.multiOptionFooter {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+  justify-content: flex-start;
+  padding: 12px;
+
+  &>p {
+    margin: 0 0 0 10px !important;
+    border: none;
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+    color: $primary-font-color;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 16px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.multiOptions {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  padding: 0 12px;
+  margin-top: 8px;
+}
+
+.multiOptionItem {
+  display: flex;
+  justify-content: flex-start;
+  margin: 8px 0;
+
+  input {
+    width: 100%;
+  }
+
+  &>div:nth-child(1),
+  &>div:nth-child(2) {
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    &>p {
+      @include fontFSWH($primary-font, 16px, 400, 19px);
+      color: $primary-font-color;
+      margin-left: 10px;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 16px);
+      }
+    }
+  }
+
+  &>div {
+    flex: 1;
+  }
+
+  &>div:nth-child(2) {
+    justify-content: flex-end;
+
+    &>* {
+      margin: 0 8px;
+    }
+  }
+
+  &>div:nth-child(3) {
+    max-width: 150px !important;
+    width: 100%;
+  }
+
+  &>div:nth-child(1) {
+    width: 100%;
+
+    &>input {
+      border: none;
+      word-wrap: break-word;
+      word-break: break-all;
+      margin-left: 10px;
+      @include fontFSWH($primary-font, 16px, 400, 19px);
+      color: $primary-font-color;
+
+      &>input::placeholder {
+        color: $secondary-font-color;
+      }
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 16px);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.deleteIcon {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.addIcon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.checkboxIcon {
+  border: 1px solid $secondary-font-color;
+  border-radius: 2px;
+  height: 16px;
+  width: 16px;
+}
+
+.radioIcon {
+  border: 1px solid $secondary-font-color;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}
+
+.errorInput {
+  border-bottom: 1px solid $red !important;
+  margin-right: 5px;
+}
+
+.disabledIcon {
+  cursor: not-allowed !important;
+}

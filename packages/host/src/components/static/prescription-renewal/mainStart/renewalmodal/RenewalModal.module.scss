@@ -1,0 +1,65 @@
+@import "../../../../../../../assets/styles/mixin";
+@import "../../../../../../../assets/styles/fonts";
+@import "../../../../../../../assets/styles/variables";
+
+html body {
+  .modalContainer {
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-direction: column;
+
+    & > .modalHeader > .modalTitle {
+      margin: 0;
+      @include fontFSWH($primary-font, 21px, 600, 24px);
+      color: $black;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 600, 20px);
+      }
+    }
+  }
+
+  .modalHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 24px;
+
+    & > button > img {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .modalInner {
+    width: 100%;
+    p {
+      @include fontFSWH($primary-font, 18px, 400, 20px);
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .modalBtns {
+      width: 100%;
+      @include flex(center, center, row);
+      margin-top: 36px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .renewBtn {
+      @include primary_button;
+      margin-left: 10px;
+    }
+
+    .shopNowBtn {
+      @include tertiary_button;
+    }
+  }
+}

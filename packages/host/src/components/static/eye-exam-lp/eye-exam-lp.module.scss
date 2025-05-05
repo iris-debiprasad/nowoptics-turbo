@@ -1,0 +1,50 @@
+@use "../../../../../assets/styles/variables" as vars;
+@use "../../../../../assets/styles/mixin" as mi;
+
+.banner {
+  width: 100%;
+  height: auto;
+
+  &--mobile {
+    display: block;
+
+    @include mi.responsive("small") {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include mi.responsive("small") {
+      display: block;
+    }
+  }
+}
+
+.container {
+  @include mi.article-container;
+
+  & > h3 {
+    font-size: clamp(18px, 3.5vw, 28px);
+  }
+
+  & > p:last-of-type {
+    margin-bottom: 3rem;
+  }
+
+  & > ul {
+    padding-left: 1.1rem;
+  }
+
+  .schedule-exam-link {
+    @include mi.primary_button;
+
+    display: flex;
+    margin: 2rem auto;
+
+    border-radius: 0;
+    padding-inline: 3rem;
+    text-transform: capitalize;
+  }
+}

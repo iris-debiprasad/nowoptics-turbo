@@ -1,0 +1,60 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.chooseToRenewWrapper {
+  width: 100%;
+  margin-bottom: auto !important;
+  .chooseToRenewHeader {
+    @include flex(center, center, column);
+    margin-bottom: 16px;
+    .title {
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 28px, 500, 35px);
+    }
+    .description {
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 16px, 400, 35px);
+    }
+  }
+  .container {
+    @include iris_container;
+    margin: 0px auto;
+
+    .content {
+      padding: 2rem;
+      max-width: 991px;
+      margin: 0 auto;
+      @include iris_container_rx_renewal;
+      min-height: 350px;
+      @media (max-width: $extra-large) {
+        padding: 1rem;
+      }
+
+      .backBtn {
+        color: $secondary-dark-color;
+        float: left;
+        text-decoration: underline;
+        display: flex;
+        align-items: center;
+        @include fontFSWH($primary-font, 18px, 400, 35px);
+        @media (max-width: $extra-large) {
+          @include fontFSWH($secondary-font, 16px, 400, 35px);
+        }
+      }
+    }
+
+    .buttonWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .primaryButton {
+        @include primary_button;
+        border: 1px solid $secondary-dark-color;
+        padding: 7px 12px;
+        color: $white;
+        text-transform: initial;
+        width: 80%;
+      }
+    }
+  }
+}

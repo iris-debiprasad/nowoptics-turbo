@@ -1,0 +1,62 @@
+@use "../../../../../../assets/styles/mixin" as mi;
+@use "../../../../../../assets/styles/fonts" as fo;
+@use "../../../../../../assets/styles/variables" as vars;
+
+/* ====== SHARED STYLES ====== */
+
+.bookEyeExamTitle {
+  @include mi.fontFSWH(vars.$secondary-font, 28px, 400, 38px);
+  color: vars.$primary-font-color;
+  margin-bottom: 0;
+
+  @media (max-width: vars.$extra-large) {
+    @include mi.fontFSWH(vars.$secondary-font, 22px, 400, 30px);
+  }
+
+  @media (max-width: vars.$small) {
+    @include mi.fontFSWH(vars.$secondary-font, 16px, 400, 38px);
+    text-align: center;
+  }
+
+  @include mi.responsive("small") {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ===== COMPONENTS STYLES ===== */
+
+.leftSideBEEWrapper {
+  width: 100%;
+  border: 1px solid vars.$primary-light-color;
+  padding: 30px;
+  background-color: vars.$white;
+  border-radius: 10px;
+  margin-right: 20px;
+
+  .bookEyeExamNextBtnWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .actionWrapper {
+      display: flex;
+      flex-direction: column;
+
+      .nextBtnWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .bookEyeExamNextBtn {
+          @include mi.primary_button;
+        }
+      }
+
+      .actionText {
+        margin-top: 20px;
+        @include mi.fontFSWH(vars.$primary-font, 12px, 400, 16px);
+      }
+    }
+  }
+}

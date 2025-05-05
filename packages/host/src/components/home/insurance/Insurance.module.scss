@@ -1,0 +1,79 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.insuranceMainBox {
+  & .insuranceMainContainer {
+    @include iris_container;
+    padding: 30px;
+    @include displayFlex;
+    justify-content: center;
+    @include flexWrap;
+  }
+}
+
+.insuranceBox1 {
+  a {
+    text-decoration: none;
+  }
+  & .insuraceHead {
+    text-align: center;
+    margin-top: auto;
+    color: $secondary-color;
+    @include fontFSWH($secondary-font, 36px, 600, 46px);
+    letter-spacing: 0 !important;
+  }
+
+  & .insuranceSubHead {
+    @include fontFSWH($primary-font, 16px, 300, 20px);
+    letter-spacing: 0 !important;
+    color: $primary-font-color;
+    text-align: center;
+    margin-bottom: 16px;
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+  & .insuranceThumbImg {
+    @include displayFlex;
+    @include flexWrap;
+    justify-content: center;
+    .image {
+      display: block;
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+    .mobileImage {
+      display: none;
+      width: 100%;
+      height: auto;
+      @media (max-width: 1200px) {
+        display: block;
+      }
+    }
+  }
+  & .insuraceFoot {
+    @include fontFSWH($secondary-font, 20px, 600, 24px);
+    letter-spacing: 0 !important;
+    color: $secondary-color;
+    text-align: center;
+    margin-bottom: auto;
+    margin-top: auto;
+    padding-top: 16px;
+    @media (max-width: 768px) {
+      padding-top: 40px;
+    }
+  }
+
+  & .insuranceSubFoot {
+    @include fontFSWH($primary-font, 20px, 500, 24px);
+    letter-spacing: 0 !important;
+    color: $secondary-color;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    @media (max-width: 768px) {
+      margin-top: 28px;
+    }
+  }
+}

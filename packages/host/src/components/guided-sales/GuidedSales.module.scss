@@ -1,0 +1,33 @@
+@import "../../../../assets/styles/mixin";
+@import "../../../../assets/styles/variables";
+
+.GuidedSales_Button {
+  right: 0;
+  bottom: 113px;
+  z-index: 1;
+  position: fixed;
+  z-index: 2000;
+
+  @include responsive("large") {
+    bottom: 90px;
+  }
+
+  .startButtonContainer {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+
+    .startButton {
+      @include tertiary_button;
+      text-transform: none;
+      margin-left: auto;
+      @include fontFSWH($primary-font, 12px, 400, 15px);
+      width: 200px;
+      padding: 6px;
+
+      @media (max-width: $extra-large) {
+        padding: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.checkoutConfirmationSkeleton {
+  margin-bottom: 50px;
+  .container {
+    width: 100%;
+    max-width: 1150px;
+    padding: 20px;
+    margin: 10px auto;
+
+    .topDetails {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      @media (max-width: $medium) {
+        gap: 10px;
+      }
+
+      @media (max-width: $small) {
+        flex-direction: column-reverse;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+
+        .detailsImage {
+          @media (max-width: $medium) {
+            display: none;
+          }
+        }
+
+        .detailsImageMobile {
+          display: none;
+          @media (max-width: $medium) {
+            display: block;
+          }
+          @media (max-width: $small) {
+            display: none;
+          }
+        }
+      }
+
+      .detailsMiddle {
+        width: 100%;
+      }
+    }
+  }
+}

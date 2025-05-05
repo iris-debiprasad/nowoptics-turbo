@@ -1,0 +1,54 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.centeredContainer {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  background-repeat: no-repeat;
+  background-color: $bg-sky-blue;
+  @include flex(center, center, column);
+
+  .contentText {
+    width: 50%;
+
+    .headerText {
+      
+      line-height: 30px !important;
+      margin-bottom: 20px;
+      @include fontFSWH($primary-font, 28px, 400, 24px);
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 24px, 400, 20px);
+      }
+    }
+
+    .descriptionText {
+      line-height: 25px !important;
+      @include fontFSWH($primary-font, 24px, 300, 22px);
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 18px, 300, 18px);
+      }
+    }
+
+    @media (max-width: $small) {
+      width: 100%;
+      padding: 20px;
+
+      .contentText {
+        width: 100%;
+      }
+    }
+  }
+
+  .textContainer {
+    text-align: left;
+    color: $secondary-dark-color;
+
+    @media (min-width: $small) {
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      transform: translate(-55%, -40%);
+    }
+  }
+}

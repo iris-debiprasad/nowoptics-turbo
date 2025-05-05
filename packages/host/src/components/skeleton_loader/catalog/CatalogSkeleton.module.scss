@@ -1,0 +1,68 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.catalogSkeleton {
+  padding-bottom: 50px;
+
+  .container {
+    @include iris_container;
+    margin: 0 auto;
+    padding: 0px 30px;
+
+    @media (max-width: $extra-large) {
+      padding: 0px 20px;
+    }
+    .snackbar_filter {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      .snackbar {
+        margin: 0px 20px;
+      }
+    }
+
+    .title {
+      margin: 30px 0px 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      .filters {
+        margin-right: 20px;
+      }
+    }
+
+    .itemCount {
+      margin: 10px 0px 20px 20px;
+    }
+
+    .productsGrid {
+      padding: 0px 20px;
+      @media screen and (max-width: $small) {
+        padding: 0px 0px;
+      }
+
+      .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .colorsContainer {
+          display: flex;
+          gap: 10px;
+          margin: 18px;
+        }
+
+        .price {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  .loadMore {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+

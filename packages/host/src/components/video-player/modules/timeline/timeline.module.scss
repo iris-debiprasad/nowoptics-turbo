@@ -1,0 +1,70 @@
+@use "../../../../../../assets/styles/variables" as vars;
+
+.container {
+  position: relative;
+
+  .element {
+    min-height: 4px;
+    background-color: vars.$secondary-font-color;
+    border-radius: 5px;
+  }
+}
+
+.progressbar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  min-height: 4px;
+  border-radius: 5px;
+
+  &:is(:hover, :focus) {
+    min-height: 12px;
+
+    // Shadow
+    &::after {
+      min-height: 12px;
+    }
+  }
+
+  &::before,
+  &::after {
+    min-height: 4px;
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    border-radius: 5px;
+  }
+
+  // Track
+  &::before {
+    width: calc(var(--video-actual-progress) * 1%);
+    z-index: 1;
+    background-color: vars.$white;
+  }
+
+  // Shadow
+  &::after {
+    width: calc(var(--video-shadow-progress) * 1%);
+    z-index: 2;
+    background-color: vars.$primary-color;
+  }
+}
+
+.time-preview {
+  position: absolute;
+  top: -50px;
+  left: calc(var(--video-shadow-progress) * 1%);
+  transform: translateX(-50%);
+
+  background-color: #222;
+  border-radius: 5px;
+  color: vars.$primary-color;
+  padding: 0.5rem;
+  pointer-events: none;
+  user-select: none;
+}

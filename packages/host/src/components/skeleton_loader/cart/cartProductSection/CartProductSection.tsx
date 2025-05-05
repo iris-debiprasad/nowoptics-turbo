@@ -1,0 +1,422 @@
+import { Skeleton } from "@mui/material";
+
+import styles from "./CartProductSection.module.scss";
+
+const CartProductSectionSkeleton = (props: {
+  showSummarySection?: boolean;
+}) => {
+  const { showSummarySection = true } = props;
+
+  return (
+    <div className={styles.skeletonContainer}>
+      <div className={styles.skeletonTopContainerWrapper}>
+        <div className={styles.skeletonTopContainer}>
+        <Skeleton
+          className={styles.circularSkelton}
+          key={`avtar`}
+          variant="circular"
+          width={120}
+          height={120}
+        />
+        <div className={styles.skeletonDetailsContainer}>
+          <div className={styles.skeletonDetails}>
+            <div className={styles.skeletonTitleContainer}>
+              <Skeleton
+                key={`title_1`}
+                animation="wave"
+                height={20}
+                width="40%"
+              />
+              <Skeleton
+                key={`title_2`}
+                animation="wave"
+                height={20}
+                width="30%"
+              />
+              <Skeleton
+                key={`title_3`}
+                animation="wave"
+                height={20}
+                width="60%"
+              />
+            </div>
+            <Skeleton
+              key={`price`}
+              animation="wave"
+              height={20}
+              width={"12%"}
+            />
+          </div>
+          
+        </div>
+        </div>
+        <div className={styles.skeletonOrderTable}>
+            <div className={styles.skeletonOrderTableTitle}>
+              <div></div>
+              <Skeleton
+                key={`order_table_title_1`}
+                animation="wave"
+                height={20}
+                width="80%"
+              />
+              <Skeleton
+                key={`order_table_title_2`}
+                animation="wave"
+                height={20}
+                width="80%"
+              />
+              <Skeleton
+                key={`order_table_title_3`}
+                animation="wave"
+                height={20}
+                width="80%"
+              />
+            </div>
+            <div className={styles.skeletonOrderTableDetails}>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_1`}
+                  animation="wave"
+                  height={20}
+                  width="70%"
+                />
+                <Skeleton
+                  key={`order_table_details_2`}
+                  animation="wave"
+                  height={20}
+                  width="40%"
+                />
+                <Skeleton
+                  key={`order_table_details_3`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+                <Skeleton
+                  key={`order_table_details_4`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_5`}
+                  animation="wave"
+                  height={20}
+                  width="50%"
+                />
+                <Skeleton
+                  key={`order_table_details_6`}
+                  animation="wave"
+                  height={20}
+                  width="60%"
+                />
+                <Skeleton
+                  key={`order_table_details_7`}
+                  animation="wave"
+                  height={20}
+                  width="20%"
+                />
+                <Skeleton
+                  key={`order_table_details_8`}
+                  animation="wave"
+                  height={20}
+                  width="55%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_9`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+                <Skeleton
+                  key={`order_table_details_10`}
+                  animation="wave"
+                  height={20}
+                  width="35%"
+                />
+                <Skeleton
+                  key={`order_table_details_11`}
+                  animation="wave"
+                  height={20}
+                  width="15%"
+                />
+                <Skeleton
+                  key={`order_table_details_12`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_13`}
+                  animation="wave"
+                  height={20}
+                  width="80%"
+                />
+                <Skeleton
+                  key={`order_table_details_14`}
+                  animation="wave"
+                  height={20}
+                  width="50%"
+                />
+                <Skeleton
+                  key={`order_table_details_15`}
+                  animation="wave"
+                  height={20}
+                  width="20%"
+                />
+                <Skeleton
+                  key={`order_table_details_16`}
+                  animation="wave"
+                  height={20}
+                  width="40%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_17`}
+                  animation="wave"
+                  height={20}
+                  width="40%"
+                />
+                <Skeleton
+                  key={`order_table_details_18`}
+                  animation="wave"
+                  height={20}
+                  width="40%"
+                />
+                <Skeleton
+                  key={`order_table_details_19`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+                <Skeleton
+                  key={`order_table_details_20`}
+                  animation="wave"
+                  height={20}
+                  width="35%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_21`}
+                  animation="wave"
+                  height={20}
+                  width="50%"
+                />
+                <Skeleton
+                  key={`order_table_details_22`}
+                  animation="wave"
+                  height={20}
+                  width="40%"
+                />
+                <Skeleton
+                  key={`order_table_details_23`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+                <Skeleton
+                  key={`order_table_details_24`}
+                  animation="wave"
+                  height={20}
+                  width="35%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_25`}
+                  animation="wave"
+                  height={20}
+                  width="80%"
+                />
+                <Skeleton
+                  key={`order_table_details_26`}
+                  animation="wave"
+                  height={20}
+                  width="60%"
+                />
+                <Skeleton
+                  key={`order_table_details_27`}
+                  animation="wave"
+                  height={20}
+                  width="20%"
+                />
+                <Skeleton
+                  key={`order_table_details_28`}
+                  animation="wave"
+                  height={20}
+                  width="40%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_29`}
+                  animation="wave"
+                  height={20}
+                  width="80%"
+                />
+                <Skeleton
+                  key={`order_table_details_30`}
+                  animation="wave"
+                  height={20}
+                  width="60%"
+                />
+                <Skeleton
+                  key={`order_table_details_31`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+                <Skeleton
+                  key={`order_table_details_32`}
+                  animation="wave"
+                  height={20}
+                  width="45%"
+                />
+              </div>
+              <div className={styles.skeletonOrderTableBottomRow}>
+                <Skeleton
+                  className={styles.skeletonTableRowTitle}
+                  key={`order_table_details_33`}
+                  animation="wave"
+                  height={20}
+                  width="30%"
+                />
+                <Skeleton
+                  key={`order_table_details_34`}
+                  animation="wave"
+                  height={20}
+                  width="60%"
+                />
+                <Skeleton
+                  key={`order_table_details_35`}
+                  animation="wave"
+                  height={20}
+                  width="60%"
+                />
+                <Skeleton
+                  key={`order_table_details_36`}
+                  animation="wave"
+                  height={20}
+                  width="60%"
+                />
+              </div>
+            </div>
+          </div>
+
+      </div>
+      {showSummarySection && (
+        <>
+          <hr />
+          <div className={styles.skeletonSummaryContainer}>
+            <div className={styles.skeletonPrescription}>
+              <Skeleton
+                className={styles.circularSkelton}
+                key={`prescription_avtar`}
+                variant="circular"
+                width={18}
+                height={18}
+              />
+              <Skeleton
+                key={`prescription_add_view`}
+                animation="wave"
+                height={20}
+                width="30%"
+              />
+              <Skeleton
+                key={`measurement`}
+                animation="wave"
+                height={20}
+                width="10%"
+              />
+            </div>
+            <Skeleton
+              key={`prescription_details`}
+              animation="wave"
+              height={20}
+              width="40%"
+            />
+            <div className={styles.skeletonTotalPrice}>
+              <Skeleton
+                key={`order_total_label`}
+                animation="wave"
+                height={20}
+                width="10%"
+              />
+              <Skeleton
+                key={`order_total_value`}
+                animation="wave"
+                height={20}
+                width="10%"
+              />
+            </div>
+            <div className={styles.skeletonActionButtons}>
+              <div className={styles.skeletonActionButton}>
+                <Skeleton
+                  className={styles.circularSkelton}
+                  key={`avtar_duplicate_item`}
+                  variant="circular"
+                  width={18}
+                  height={18}
+                />
+                <Skeleton
+                  key={`order_duplicate_item`}
+                  animation="wave"
+                  height={20}
+                  width={100}
+                />
+              </div>
+              <div className={styles.skeletonActionButton}>
+                <Skeleton
+                  className={styles.circularSkelton}
+                  key={`avtar_edit`}
+                  variant="circular"
+                  width={18}
+                  height={18}
+                />
+                <Skeleton
+                  key={`order_edit`}
+                  animation="wave"
+                  height={20}
+                  width={50}
+                />
+              </div>
+              <div className={styles.skeletonActionButton}>
+                <Skeleton
+                  className={styles.circularSkelton}
+                  key={`avtar_remove`}
+                  variant="circular"
+                  width={18}
+                  height={18}
+                />
+                <Skeleton
+                  key={`order_remove`}
+                  animation="wave"
+                  height={20}
+                  width={70}
+                />
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default CartProductSectionSkeleton;

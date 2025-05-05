@@ -1,0 +1,52 @@
+@use "../../../../../../assets/styles/variables" as vars;
+
+$font-color: #636363;
+
+.toggle {
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $font-color;
+  transition: all 0.2s ease;
+
+  svg {
+    width: 19px;
+    height: 19px;
+    fill: $font-color;
+    transition: all 0.2s ease;
+  }
+
+  &.visible {
+    gap: 0;
+
+    svg {
+      rotate: 90deg;
+    }
+  }
+}
+
+.submenu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 0.2s ease-out;
+
+  &_content {
+    overflow: hidden;
+    display: grid;
+    gap: 1rem;
+  }
+
+  &.visible {
+    padding: 1rem;
+    padding-bottom: 0;
+    grid-template-rows: 1fr;
+  }
+}
+

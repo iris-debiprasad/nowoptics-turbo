@@ -1,0 +1,133 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.bookEyeExamSkeleton {
+  margin-bottom: 50px;
+  .container {
+    @include iris_container;
+    padding-top: 20px;
+
+    .title {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+
+      .bar {
+        @media (max-width: $medium) {
+          display: none;
+        }
+      }
+
+      .barMobile {
+        display: none;
+        @media (max-width: $medium) {
+          display: block;
+        }
+      }
+    }
+
+    .details {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      margin-top: 80px;
+
+      @media (max-width: $medium) {
+        flex-direction: column;
+      }
+
+      .detailsLeft {
+        width: 66.67%;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        @media (max-width: $medium) {
+          width: 100%;
+        }
+
+        .subDetails {
+          margin-top: 30px;
+          display: flex;
+          gap: 20px;
+        }
+
+        .calendar {
+          margin-top: 70px;
+
+          .dobField {
+            margin-top: 20px;
+          }
+
+          .calendarLabel {
+            margin-top: 50px;
+          }
+
+          .calendarDetails {
+            margin-top: 20px;
+            display: flex;
+            @media (max-width: $medium) {
+              flex-direction: column;
+              gap: 20px;
+            }
+            .left {
+              width: 100%;
+              @media (max-width: $medium) {
+                display: flex;
+                justify-content: center;
+              }
+            }
+            .right {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              @media (max-width: $medium) {
+                margin-top: 50px;
+              }
+
+              .timebar {
+                @media (max-width: $medium) {
+                  display: none;
+                }
+              }
+
+              .timebarMobile {
+                display: none;
+                @media (max-width: $medium) {
+                  display: block;
+                }
+              }
+            }
+          }
+          .button {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      .detailsRight {
+        @media (max-width: $medium) {
+          width: 100%;
+          margin-top: 50px;
+          padding: 0px 30px;
+        }
+        .subDetails {
+          margin-top: 30px;
+        }
+      }
+    }
+
+    .disclaimer {
+      margin-top: 20px;
+      margin-left: 30px;
+    }
+  }
+}

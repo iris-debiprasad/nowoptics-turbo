@@ -1,0 +1,39 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.stockupMainBox {
+  @include iris_container;
+  background-color: $bg-color;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  & .stockupContainer {
+    @include displayFlex;
+    justify-content: center;
+    @include flexWrap;
+    & .stockupImageSlider {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+.stockupTextbox {
+  margin-top: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  & .stockupHeading {
+    @include fontFSWH($secondary-font, 36px, 600, 46px);
+    color: $primary-font-color;
+    @media (max-width: 768px) {
+      @include fontFSWH($secondary-font, 20px, 600, 24px);
+    }
+  }
+  & .stockupSubHeading {
+    @include fontFSWH($primary-font, 16px, 300, 20px);
+    color: $primary-font-color;
+    margin-bottom: 35px;
+    @media (max-width: 768px) {
+      margin-top: 10px;
+    }
+  }
+}

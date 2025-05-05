@@ -1,0 +1,42 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.footerContainer {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  justify-content: center;
+  width: 100%;
+  background-color: $secondary-color;
+  position: relative;
+  height: 65px;
+  @media (max-width: $medium) {
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content;
+  }
+  .image {
+    position: absolute;
+    top: 6px;
+    left: 15px;
+    @media (max-width: $medium) {
+      position: relative;
+    }
+  }
+  .footerCenterText {
+    color: $white;
+    @include fontFSWH($primary-font, 14px, 400, 18px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 12px, 400, 16px);
+    }
+    & .aLink {
+      text-decoration: underline;
+      color: $white;
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+    }
+  }
+}

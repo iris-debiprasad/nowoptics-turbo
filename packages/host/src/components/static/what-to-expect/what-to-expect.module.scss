@@ -1,0 +1,39 @@
+@use "../../../../../assets/styles/mixin" as mi;
+.container {
+    @include mi.article-container;
+    display: grid;
+    grid-template-columns: 1;
+    >h2 {
+        font-size: 28px;
+    }
+    .wteSection {
+        display: grid;
+        img {
+            justify-self: center;
+            @include mi.responsive("medium") {
+                justify-self: flex-start;
+            }
+        }
+        @include mi.responsive("medium") {
+            grid-template-columns: 30% 65%;
+        }
+        gap: 5%;
+        margin: 25px 0;
+        >div {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+    .ActivateAccountSection {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        .aaBtn {
+            @include mi.primary_button;
+        }
+    }
+}

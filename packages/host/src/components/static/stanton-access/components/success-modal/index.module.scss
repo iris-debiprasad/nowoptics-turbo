@@ -1,0 +1,37 @@
+@use "../../../../../../../assets/styles/mixin" as mi;
+@use "../../../../../../../assets/styles/variables" as vars;
+
+.modal_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: vars.$white;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+
+  &>p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .group {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .cta {
+      @include mi.primary_button;
+      display: flex;
+      gap: 0.5rem;
+
+      svg {
+        display: block;
+        margin-top: 0.1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+
+.ftmb {
+  @include responsive("medium") {
+    display: none;
+  }
+
+  .ftmb_container {
+    background: $white;
+    padding: 4rem 25px;
+
+    .ftmb_item {
+      font-family: $primary-font;
+      color: $footer-gray;
+      margin-bottom: 20px;
+
+      &:nth-last-child(4) {
+        margin-bottom: 10px;
+      }
+
+      .ftmb_item_title {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+        transform: rotate(0deg);
+      }
+
+      .ftmb_item_title_open {
+        >svg {
+          transform: rotate(90deg);
+          transition: 0.3s;
+        }
+      }
+
+      >a {
+        margin-bottom: 30px;
+      }
+
+      .ftmb_sitem_container,
+      .ftmb_sitem_container_bo {
+        font-size: 12px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: 1s;
+
+        a {
+          margin-bottom: 15px;
+          color: $footer-secondary-gray;
+        }
+      }
+
+      .ftmb_sitem_container_bo {
+        a {
+          &:first-child {
+            grid-column: 1 / 3;
+          }
+        }
+      }
+
+      .ftmb_sitem_container_open {
+        max-height: 400px;
+      }
+    }
+
+    .ftmb_divisor {
+      width: 100%;
+      height: 1.5px;
+      background: $footer-gray;
+      margin: 35px 0 20px 0;
+    }
+  }
+}

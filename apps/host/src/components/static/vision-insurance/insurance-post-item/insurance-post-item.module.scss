@@ -1,0 +1,29 @@
+@use "../../../../../../assets/styles/variables" as vars;
+@use "../../../../../../assets/styles/mixin" as mi;
+
+.article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1.5rem;
+
+  color: vars.$primary-font-color;
+
+  &__img {
+    position: relative;
+    height: max-content;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+
+    @include mi.responsive("large") {
+      font-size: 22px;
+    }
+  }
+
+  &__content {
+    @include mi.responsive("large") {
+      font-size: 18px;
+    }
+  }
+}

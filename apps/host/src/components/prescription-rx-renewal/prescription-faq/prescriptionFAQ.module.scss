@@ -1,0 +1,43 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+
+.itemContainer{
+  padding-bottom: 10px;
+  .accordianContainer{
+    background-color: $bg-color;
+    border-bottom: 1px solid $secondary-font-color;
+  }
+  .questionText{
+      @include fontFSWH($primary-font, 24px, 600, 28px);
+       color: $primary-font-color;
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 600, 20px);
+      }
+  }
+  .answerText{
+    @include fontFSWH($primary-font, 18px, 300, 22px);
+     color: $primary-font-color;
+    @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 300, 20px);
+    }
+  }
+}
+
+.FAQSection {
+  padding: 40px;
+  @media (max-width: $small) {
+    padding: 20px;
+  }
+}
+
+.prescriptionFAQContainer {
+  padding: 20px;
+  background-color: $bg-color;
+  .prescriptionFAQContainerHeader{
+     @include fontFSWH($primary-font, 36px, 600, 24px);
+     text-align: center;
+     color: $secondary-dark-color;
+     @include marginTBLR(15px, 15px,0, 0);
+  }
+}

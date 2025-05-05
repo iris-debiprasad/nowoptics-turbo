@@ -1,0 +1,26 @@
+@import "../../../../../assets/styles/_mixin.scss";
+
+.authOuterWrapper {
+  background-color: var(--quaternary-bg-color);
+  .authContainer {
+    @include iris_container;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+.signUpWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $medium) {
+    flex-direction: column;
+  }
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

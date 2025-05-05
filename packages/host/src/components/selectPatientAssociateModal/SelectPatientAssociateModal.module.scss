@@ -1,0 +1,50 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixin";
+
+.selectPatientModalContainer {
+  background-color: $white;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+  outline: none;
+  max-width: 680px;
+  width: 95%;
+  padding: 30px;
+
+  @media (max-width: $extra-large) {
+    padding: 20px;
+    max-width: 570px;
+  }
+
+  @media (max-width: $small) {
+    padding: 50px 20px 20px;
+    min-width: auto;
+  }
+
+  .crossIcon {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .heading {
+    text-align: center;
+
+    @include fontFSWH($secondary-font, 24px, 400, 28px);
+    color: $tertiary-font-color;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($secondary-font, 20px, 400, 24px);
+    }
+  }
+
+  .inputContainer {
+    width: 100%;
+    margin: 30px 0;
+
+    @media (max-width: $extra-large) {
+      margin: 24px 0;
+    }
+  }
+}

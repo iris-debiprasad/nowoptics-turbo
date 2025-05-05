@@ -1,0 +1,31 @@
+@import "../../../../../../assets/styles/_variables.scss";
+@import "../../../../../../assets/styles/_mixin.scss";
+
+.shipToPatient {
+  box-sizing: border-box;
+  background-color: $white;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid $grey;
+  margin-bottom: 30px;
+
+  .addressFormFields {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    column-gap: 20px;
+    row-gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  .billingShippingAddress {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+  }
+
+  .circularSkelton {
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,66 @@
+@import "../../../../assets/styles/_mixin.scss";
+@import "../../../../assets/styles/fonts";
+@import "../../../../assets/styles/variables";
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  width: 90%;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 10px;
+
+  .modalHeader {
+    display: flex;
+
+    .autoLogoutModalTitle {
+      width: auto;
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 18px, 400, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+
+
+    .crossBtn {
+      margin-left: auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .modalInner {
+    display: flex;
+    flex-direction: column;
+   .autoLogoutModalSubTitle {
+      text-align: center;
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    .modalAction {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      .logout {
+        @include secondary_button;
+        margin: 0;
+      }
+
+      .continueButton {
+        margin-left: 10px;
+        @include primary_button;
+      }
+    }
+  }
+}

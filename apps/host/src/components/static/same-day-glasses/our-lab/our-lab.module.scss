@@ -1,0 +1,63 @@
+@use "../../../../../../assets/styles/variables" as vars;
+@use "../../../../../../assets/styles/mixin" as mi;
+
+.lab {
+  display: grid;
+  gap: 1rem;
+  column-gap: 2rem;
+  margin-top: 2.5rem;
+
+  color: vars.$primary-font-color;
+
+  .content {
+    &__title {
+      font-family: vars.$secondary-font;
+      font-size: clamp(24px, 3vw, 32px);
+
+      &--mobile {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      &--desktop {
+        display: none;
+      }
+    }
+
+    &__description {
+      margin-block: 0.3rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    &__cta {
+      margin-top: 2rem;
+      margin-inline: auto;
+    }
+  }
+
+  @include mi.media-query(768px) {
+    grid-template-columns: 1fr 1fr;
+
+    .content {
+      &__title {
+        &--mobile {
+          display: none;
+        }
+
+        &--desktop {
+          display: block;
+        }
+      }
+
+      &__description {
+        margin-top: 0.5rem;
+        text-align: left;
+      }
+
+      &__cta {
+        margin-inline: unset;
+      }
+    }
+  }
+}

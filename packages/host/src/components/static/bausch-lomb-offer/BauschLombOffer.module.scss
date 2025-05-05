@@ -1,0 +1,60 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+    
+.imageContainer {
+    position: relative;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 90%;
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}
+
+.OfferContainer {
+    @include iris_container;
+
+    p {
+        margin: 1.5rem 0;
+    }
+
+    .contentContainer {
+        padding: 3rem 0;
+        text-align: center;
+
+
+        max-width: 1032px;
+        margin: auto;
+
+        h2 {
+            @include fontFSWH($secondary-font, 2rem, 600, 1.3);
+        }
+
+        p {
+            margin: 1.5rem 0;
+        }
+
+    }
+
+    .disclaimer {
+        margin-bottom: 4rem;
+        text-align: left;
+        font-size: 11px;
+    }
+
+    .appointmentBtn {
+        @include primary_button;
+    }
+}

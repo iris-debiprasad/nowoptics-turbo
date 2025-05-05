@@ -1,0 +1,42 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixin";
+
+.uploadContainer {
+  border: 2px dashed $secondary-font-color;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 50px;
+  text-align: center;
+
+  .descriptionOne {
+    @include fontFSWH($primary-font, 16px, 400, 24px);
+    color: $tertiary-font-color;
+    margin-bottom: 5px;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($secondary-font, 13px, 400, 18px);
+    }
+  }
+  .descriptionTwo {
+    @include fontFSWH($primary-font, 14px, 400, 24px);
+    color: $primary-font-color;
+    margin-top: 5px;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($secondary-font, 12px, 400, 16px);
+    }
+  }
+  .errorHelperText {
+    color: $red;
+    margin-top: 10px;
+  }
+  .btnColor {
+    @include primary_button;
+    max-width: fit-content;
+    width: fit-content;
+    margin: 15px 0px 6px 0px;
+  }
+}

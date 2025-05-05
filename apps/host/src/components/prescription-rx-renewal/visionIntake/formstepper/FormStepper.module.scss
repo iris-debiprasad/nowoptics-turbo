@@ -1,0 +1,28 @@
+@import "../../../../../../assets/styles/_variables.scss";
+@import "../../../../../../assets/styles/_mixin.scss";
+
+.stepContainer {
+  padding: 0;
+  .stepperDot {
+    width: 25px;
+    height: 25px;
+    line-height: 22px;
+    display: inline-block;
+    border-radius: 30px;
+    border: 1px solid $secondary-dark-color;
+    color: $secondary-dark-color;
+  }
+}
+
+.stepperRoot {
+  & span {
+    border-color: $secondary-dark-color;
+    border-width: 3px;
+  }
+  width: 80%;
+  margin: 0 auto;
+}
+
+.completedStep {
+  background-color: $secondary-dark-color;
+}

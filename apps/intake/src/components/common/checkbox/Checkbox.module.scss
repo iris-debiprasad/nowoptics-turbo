@@ -1,0 +1,26 @@
+@import "../../../../../assets/styles/variables";
+
+.checkboxContainer {
+
+    display: flex;
+    align-items: center;
+
+    & > input {
+        display: none;
+    }
+
+    & > label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 14px;
+        width: 14px;
+        border-radius: 2px;
+        border: 1px solid $secondary-font-color;
+        cursor: pointer;
+    }
+
+    .checkBoxLabel {
+        margin-left: 5px;
+    }
+}

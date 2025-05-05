@@ -1,0 +1,49 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/fonts";
+@import "../../../../../assets/styles/mixin";
+
+html body {
+  .autocompleteInput {
+    & > div {
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    & fieldset {
+      border-radius: 10px;
+      border: 1px solid $secondary-font-color;
+    }
+
+    background-color: $white;
+    font-family: $primary-font;
+
+    & > input::placeholder {
+      color: $secondary-font-color;
+    }
+
+    color: $secondary-font-color;
+
+    & > div {
+      padding-top: 2px !important;
+      padding-bottom: 2px !important;
+    }
+  }
+
+  .autocompletePopper {
+    @include fontFSWH($primary-font, 14px, 400, 17px);
+  }
+
+  .chipRoot {
+    border: 1px solid $secondary-font-color !important;
+    border-radius: 5px !important;
+    @include fontFSWH($primary-font, 15px, 400, 19px);
+    color: $primary-font-color !important;
+    background-color: $white !important;
+    margin-right: 5px !important;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+}

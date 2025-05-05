@@ -1,0 +1,46 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.wrapper {
+  margin-bottom: 50px;
+  .container {
+    @include iris_container;
+    padding-top: 20px;
+
+    .innerContainer {
+      display: flex;
+      gap: 30px;
+      margin-top: 125px;
+
+      @media (max-width: $extra-large) {
+        margin-top: 110px;
+      }
+      @media (max-width: $medium) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .right {
+        width: 100%;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: calc(1640px - 330px);
+      }
+    }
+  }
+
+  .desktopView {
+    display: block;
+    @media (max-width: $medium) {
+      display: none;
+    }
+  }
+
+  .tabletView {
+    display: none;
+    @media (max-width: $medium) {
+      display: block;
+    }
+  }
+}

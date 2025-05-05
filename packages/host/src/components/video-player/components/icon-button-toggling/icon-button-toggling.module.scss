@@ -1,0 +1,55 @@
+@use "../../../../../../assets/styles/variables" as vars;
+
+$_button-height: 33px;
+
+$icon-coloring-type: (
+  "fill": fill,
+  "stroke": stroke,
+);
+
+.toggler {
+  max-height: $_button-height;
+  overflow: hidden;
+
+  &.toggled {
+    .toggler__wrapper {
+      transform: translateY(-50%);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    outline-color: transparent;
+    height: $_button-height;
+
+    @each $type, $prop in $icon-coloring-type {
+      &.#{$type} {
+        &:is(:hover, :focus) {
+          & > svg path {
+            #{$prop}: vars.$primary-color;
+          }
+        }
+
+        & > svg path {
+          #{$prop}: vars.$white;
+        }
+      }
+    }
+
+    & > svg {
+      width: 24px;
+      height: 24px;
+
+      path {
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+.boxContainer {
+  @include iris_container;
+  margin: 0 auto;
+  @media (max-width: $medium) {
+    width: 84%;
+  }
+  .textContainer {
+    text-align: center;
+    margin-top: 10px;
+    .primaryHeading {
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 28px, 500, 36px);
+    }
+  }
+  .container {
+    max-width: 940px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    padding: 2rem 1.25rem;
+    border-radius: 10px;
+    background: linear-gradient(180deg, $bg-header, $white 100%, $white 0);
+    box-shadow: 0 2px 11px 4px $shadow-color;
+    @media (max-width: $small) {
+      padding: 2rem;
+    }
+    .tableHeaderForMobile {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: $medium) {
+        border-bottom: 1px solid $primary-font-color;
+      }
+      .renewBtnInMobile {
+        width: 20%;
+      }
+    }
+    .renewBtnInMobile {
+      @include primary_button;
+      margin-bottom: 10px;
+      @media (max-width: $medium) {
+        display: block;
+      }
+      display: none;
+    }
+    .tableShow {
+      @media (max-width: $medium) {
+        display: none;
+      }
+      display: block;
+    }
+    .normalShow {
+      @media (max-width: $medium) {
+        display: block;
+      }
+      display: none;
+      .gap {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      .dataContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+    }
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+    }
+    .tableBottomContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .viewBtn {
+      @include secondary_button;
+      text-transform: none;
+      height: 36px;
+      font-size: 14px;
+      padding-inline: 20px;
+      border-radius: 8px !important;
+      @include marginTBLR(0, 0, 0, 20px);
+      @media (max-width: $medium) {
+        width: 100%;
+        @include marginTBLR(0, 10px, 0, 0);
+      }
+    }
+    .renewBtn {
+      @include primary_button;
+      text-transform: none;
+      height: 36px;
+      padding-inline: 20px;
+      font-size: 14px;
+      border-radius: 8px !important;
+      width: 90%;
+      @include marginTBLR(0, 0, 0, 20px);
+      @media (max-width: $medium) {
+        width: 100%;
+        @include marginTBLR(0, 10px, 0, 0);
+      }
+    }
+
+    .viewBtn {
+      width: 100%;
+      min-width: 85px;
+    }
+    .prescriptionBtn {
+      margin-top: 10px;
+      padding: 0 10px;
+      padding-top: 8px;
+      padding-bottom: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      color: $secondary-dark-color;
+      border: 1px solid $secondary-dark-color;
+      border-radius: 0;
+    }
+    .tableHeading {
+      color: $primary-font-color;
+      padding-left: 14px;
+      margin-bottom: 5px;
+      @include fontFSWH($primary-font, 24px, 500, 26px);
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 22px, 500, 24px);
+      }
+      @media (max-width: $medium) {
+        padding-left: 0px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  .secondaryHeading {
+    color: $primary-font-color;
+    margin-top: 5px;
+    text-align: center;
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+  }
+  .tableHeader {
+    color: $primary-font-color;
+    border-bottom: 1px solid black;
+    @include fontFSWH($primary-font, 15px, 400, 18px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 16px);
+    }
+  }
+  .dataHeading {
+    color: $primary-font-color;
+    margin-top: 5px;
+    text-align: left;
+    @include fontFSWH($primary-font, 17px, 500, 20px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 15px, 500, 18px);
+    }
+  }
+  .tableData {
+    color: $primary-font-color;
+    @include fontFSWH($primary-font, 17px, 300, 20px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 15px, 300, 18px);
+    }
+  }
+}
+.textAlign {
+  text-align: left;
+}

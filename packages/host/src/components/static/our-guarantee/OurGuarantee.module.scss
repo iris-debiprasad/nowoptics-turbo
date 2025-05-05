@@ -1,0 +1,58 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.aboutUsContainer {
+  .banner-title {
+    width: clamp(10ch, 50vw, 20ch);
+
+    &.mel {
+      color: $white;
+      font-family: $primary-font;
+      text-transform: uppercase;
+    }
+  }
+
+  .externalLink {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+
+  .gridContainer {
+    @include iris_container;
+
+    p {
+      margin: 2.5rem 0;
+    }
+
+    .contentContainer {
+      padding: 3rem 0;
+
+      .content {
+        max-width: 1032px;
+        margin: auto;
+
+        h2 {
+          @include fontFSWH($secondary-font, 2rem, 600, 1.3);
+        }
+
+        p {
+          margin: 1.5rem 0;
+        }
+      }
+    }
+  }
+
+  .appointmentBtn {
+    @include primary_button;
+  }
+
+  .disclaimer {
+    margin-bottom: 4rem;
+    text-align: left;
+    font-size: 11px;
+  }
+
+  .buttonContainer {
+    text-align: center;
+  }
+}

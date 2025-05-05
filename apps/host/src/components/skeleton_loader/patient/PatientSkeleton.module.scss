@@ -1,0 +1,82 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.patientSkeleton {
+  margin-bottom: 50px;
+  .container {
+    @include iris_container;
+    padding-top: 20px;
+
+    .patientTabs {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 20px;
+
+      @media (max-width: $medium) {
+        margin-top: 10px;
+      }
+    }
+
+    .patientInfoContainer {
+      width: 100%;
+      display: flex;
+      gap: 30px;
+      position: relative;
+
+      .profilePic {
+        position: absolute;
+        top: 10px;
+        transform: translate(80px, 0);
+      }
+
+      .patientLeft {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 10%;
+      }
+
+      .patientRight {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 10%;
+
+        .info {
+          display: flex;
+          gap: 30px;
+
+          .infoLeft {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .infoRight {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+          }
+        }
+
+        .patientMembership {
+          display: flex;
+          gap: 30px;
+
+          .patientMembershipRight {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}

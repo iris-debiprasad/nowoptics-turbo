@@ -1,0 +1,38 @@
+@use "../../../../../assets/styles/mixin" as mi;
+
+.mobile {
+  padding-bottom: 3rem;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+  }
+
+  @include mi.responsive("large") {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @include mi.responsive("large") {
+    display: block;
+
+    margin-block: 1rem 4rem;
+
+    .grid {
+      @include mi.iris_container;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      // Styling each section
+      &>div>section {
+        max-width: 500px;
+        margin-inline: auto;
+      }
+    }
+  }
+}

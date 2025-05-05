@@ -1,0 +1,13 @@
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+.mainBox {
+  padding: 60px 0px;
+  & .heading {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0em;
+    text-align: left;
+    @include fontFSWH($secondary-font, 28px, 400, 38px);
+  }
+}

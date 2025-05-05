@@ -1,0 +1,103 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.cartSkeleton {
+  margin-bottom: 50px;
+
+  .container {
+    @include iris_container;
+    padding-top: 20px;
+
+    .title {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      @media (max-width: $medium) {
+        margin-top: 10px;
+      }
+    }
+
+    .user {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .details {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      margin-top: 20px;
+
+      @media (max-width: $medium) {
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      .detailsLeft {
+        display: flex;
+        flex-direction: column;
+        width: 66.67%;
+        justify-content: space-between;
+
+        @media (max-width: $medium) {
+          width: 100%;
+        }
+      }
+
+      .detailsRight {
+        width: 33.33%;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media (max-width: $medium) {
+          width: 100%;
+          padding: 0;
+        }
+
+        .rightContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 100%;
+
+          .rightContainerTop {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .accordionTitle {
+      @media (max-width: $medium) {
+        margin: 10px 0;
+      }
+    }
+
+    .accordion {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+
+      @media (max-width: $medium) {
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+    margin: 18px 0 18px;
+  }
+}

@@ -1,0 +1,634 @@
+@import "../../../../../assets/styles/_mixin.scss";
+@import "../../../../../assets/styles/fonts";
+@import "../../../../../assets/styles/variables";
+
+.bookEyeExamWrapper {
+  .firstStepWrapper {
+    @include iris_container;
+  }
+}
+
+.rightSideBEEWrapper {
+  width: 100%;
+  border: 1px solid $primary-light-color;
+  padding: 34px 30px;
+  background-color: $white;
+  border-radius: 10px;
+
+  .examOverView {
+    color: $primary-font-color;
+    @include fontFSWH($secondary-font, 28px, 400, 38px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($secondary-font, 22px, 400, 30px);
+    }
+  }
+
+  .cancelAppointment {
+    margin-top: 26px;
+    color: $red;
+    cursor: pointer;
+    @include fontFSWH($primary-font, 20px, 400, 24px);
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+    }
+  }
+
+  .storeName {
+    margin-top: 26px;
+    color: $primary-font-color;
+    @include fontFSWH($primary-font, 20px, 400, 24px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+    }
+  }
+
+  .physiciansLocation {
+    margin-top: 10px;
+    color: $primary-font-color;
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+
+  .physiciansLocationChangeBtn,
+  .physiciansAddress {
+    margin-top: 15px;
+    color: $primary-font-color;
+    text-transform: none;
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+
+  .bookEyeExamSelection {
+    color: $primary-font-color;
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+
+  .bookEyeExamDetails {
+    color: $primary-font-color;
+    @include fontFSWH($primary-font, 14px, 400, 18px);
+    cursor: pointer;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 12px, 400, 16px);
+    }
+  }
+}
+
+.leftSideBEEUserWrapper {
+  width: 100%;
+  border: 1px solid $primary-light-color;
+  padding: 34px 45px;
+  background-color: $white;
+  border-radius: 10px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media (max-width: $small) {
+    padding: 30px;
+  }
+
+  .leftSideBEEUserTitle {
+    color: $primary-font-color;
+    @include fontFSWH($secondary-font, 24px, 400, 32px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 20px, 400, 28px);
+    }
+
+    @media (max-width: $small) {
+      @include fontFSWH($secondary-font, 16px, 400, 20px);
+      text-align: center;
+    }
+  }
+
+  .leftSideBEEUserSubTitle {
+    color: $primary-font-color;
+    @include fontFSWH($primary-font, 20px, 400, 24px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+    }
+
+    @media (max-width: $small) {
+      @include fontFSWH($secondary-font, 14px, 400, 18px);
+    }
+  }
+
+  .formGroup {
+    width: 450px;
+
+    .textInput {
+      margin: auto;
+
+      input {
+        height: 30px;
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+        padding: 10px 15px;
+
+        @media (max-width: $extra-large) {
+          @include fontFSWH($primary-font, 13px, 400, 17px);
+          height: 24px;
+        }
+
+        @media (max-width: $small) {
+          @include fontFSWH($primary-font, 16px, 400, 20px);
+        }
+      }
+
+      p {
+        margin: 5px 0 0 0px;
+      }
+    }
+
+    .selectInput {
+      border: 1px solid $grey;
+      box-sizing: border-box;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+        height: 44px;
+      }
+
+      @media (max-width: $small) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+
+    .disabled {
+      background-color: $primary-light-color;
+    }
+
+    .textInputDatePicker {
+      border-radius: 5px;
+      margin: auto;
+
+      input {
+        height: 30px;
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+        padding: 10px 15px;
+
+        @media (max-width: $extra-large) {
+          @include fontFSWH($primary-font, 13px, 400, 17px);
+          height: 24px;
+        }
+
+        @media (max-width: $small) {
+          @include fontFSWH($primary-font, 16px, 400, 20px);
+        }
+      }
+    }
+
+    .error {
+      @include fontFSWH($primary-font, 14px, 400, 16px);
+      color: $red;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 11px, 400, 13px);
+      }
+    }
+
+    .leftSideBEEUserContinueBtn {
+      @include primary_button;
+      width: 100%;
+      padding: 15px !important;
+    }
+
+    @media (max-width: $small) {
+      width: 100%;
+    }
+  }
+
+  .leftSideBEEUserActionWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+
+    .leftSideBEEUserBackBtn {
+      @include tertiary_button;
+    }
+
+    .leftSideBEEUserNewBtn {
+      @include primary_button;
+    }
+
+    .submitButton {
+      @include primary_button;
+    }
+  }
+}
+
+.dobErrorMsg {
+  color: $red;
+  @include fontFSWH($primary-font, 12px, 400, 18px);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  width: 95%;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 10px;
+
+  .modalInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .bookEyeExamModalTitle {
+      width: auto;
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 20px, 400, 24px);
+      text-align: center;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+
+    .appointmentBookedConfirmationTitle {
+      text-align: center;
+      width: auto;
+      color: $primary-font-color;
+      padding-bottom: 15px;
+      @include fontFSWH($primary-font, 20px, 500, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 500, 20px);
+      }
+    }
+
+    .appointmentBookedLink {
+      width: fit-content;
+      margin-left: auto;
+    }
+
+    .bookEyeExamModalSubTitle {
+      text-align: center;
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    .bookEyeExamModalActionWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .relatedPatientModalActionWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .bookAppointmentModalActionWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .selectRelationshipInput {
+      width: 100%;
+
+      .formLabel {
+        color: $primary-font-color;
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+
+        @media (max-width: $extra-large) {
+          @include fontFSWH($primary-font, 13px, 400, 17px);
+        }
+      }
+
+      .selectInput {
+        border: 1px solid $grey;
+        border-radius: 10px;
+        box-sizing: border-box;
+        height: 45px;
+
+        @media (max-width: $extra-large) {
+          height: 36px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .backButton {
+      @include tertiary_button;
+    }
+
+    .continueButton {
+      @include primary_button;
+    }
+
+    .modalACtionBtn {
+      @include tertiary_button;
+    }
+  }
+
+  .crossBtn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .relationshipTableContainer {
+    .relationShipTableHead {
+      color: $white;
+    }
+
+    .relationshipTableRow {
+      cursor: pointer;
+
+      &:hover {
+        td {
+          background-color: $secondary-font-color;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .selectedRow {
+      td {
+        background-color: $secondary-font-color;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.existingAppointmentModalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  width: 90%;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 10px;
+
+  .modalInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .title {
+      width: auto;
+      color: $primary-font-color;
+      padding-bottom: 15px;
+      @include fontFSWH($primary-font, 20px, 500, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 500, 20px);
+      }
+    }
+
+    .subTitle {
+      color: $primary-font-color;
+
+      .appointmentList {
+        list-style: none;
+      }
+
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    .actionWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cancelButton {
+      @include tertiary_button;
+    }
+
+    .continueButton {
+      @include primary_button;
+    }
+  }
+}
+
+.modifyAptmodalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  width: 90%;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 10px;
+
+  .modalInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .modifyAptmodalModalTitle {
+      width: auto;
+      color: $primary-font-color;
+      border-bottom: 2px solid $primary-light-color;
+      padding: 5px;
+      @include fontFSWH($primary-font, 20px, 500, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 500, 20px);
+      }
+    }
+
+    .modifyAptmodalModalSubTitle {
+      text-align: center;
+      color: $primary-font-color;
+      @include fontFSWH($primary-font, 20px, 500, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 500, 20px);
+      }
+
+      @media (max-width: $small) {
+        margin-top: 20px;
+      }
+    }
+
+    .modifyAptmodalModalDetailsContainer {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 10px;
+      align-items: center;
+
+      .modifyAptmodalModalDetails {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 290px;
+
+        .title {
+          color: $primary-font-color;
+          @include fontFSWH($primary-font, 16px, 500, 20px);
+          min-width: 50px;
+        }
+
+        .subTitle {
+          color: $secondary-font-color;
+          @include fontFSWH($primary-font, 16px, 400, 20px);
+          margin-right: auto;
+        }
+
+        @media (max-width: $small) {
+          width: 90%;
+        }
+      }
+    }
+
+    .modifyAptActionItem {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 55%;
+      margin: 25px;
+
+      .iconContainer {
+        text-align: center;
+      }
+
+      @media (max-width: $small) {
+        width: 90%;
+      }
+    }
+
+    .modifyAptModalActionWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $secondary-font-color;
+    }
+
+    .selectRelationshipActionWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $secondary-font-color;
+    }
+
+    .continueButton {
+      @include primary_button;
+    }
+  }
+}
+
+.consent {
+  position: relative;
+
+  &__wrapper {
+    @include responsive("medium") {
+      width: 86%;
+      margin-inline: auto;
+    }
+  }
+
+  &__toggler {
+    margin-top: 2rem;
+    align-items: flex-start;
+    cursor: default;
+
+    // Styling the checkbox
+    &>span:first-of-type {
+      margin-top: -0.5rem;
+    }
+  }
+
+  &__text {
+    position: relative;
+    font-size: 14px;
+
+    &>a {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
+
+  &__privacy_policy_button {
+    background-color: transparent;
+    border: none;
+    color: $secondary-color;
+    cursor: pointer;
+    font-size: 14px;
+    outline-color: transparent;
+    text-decoration: underline;
+  }
+
+  .popup {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    padding: 1rem;
+    padding-top: 0.5rem;
+    background-color: $white;
+    box-shadow: 0 0 0 2px rgba(0 0 0 / 0.1);
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    &__list {
+      padding-left: 1rem;
+      text-align: justify;
+
+      li {
+        margin-top: 0.6rem;
+      }
+    }
+  }
+}

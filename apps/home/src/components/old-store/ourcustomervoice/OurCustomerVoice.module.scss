@@ -1,0 +1,35 @@
+@import "../../../../../assets//styles/variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+.mainBox {
+  background-color: $primary-light-color;
+  margin-top: 100px;
+  padding: 60px 100px;
+
+  & .heading {
+    text-align: center;
+    margin-bottom: 25px;
+    @include fontFSWH($secondary-font, 28px, 400, 38px);
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  & .reviewStore {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .reviewTxt {
+      margin-right: 22px;
+    }
+    & .imgMountain {
+      margin:0px 5px;
+      background: $secondary-font-color;
+      width: 80px;
+      height: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+  }
+}

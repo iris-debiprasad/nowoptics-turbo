@@ -1,0 +1,130 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/fonts";
+@import "../../../../../assets/styles/mixin";
+
+html body {
+  .recommendContainer {
+    width: 100%;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & > div {
+      width: 100%;
+    }
+
+    & > div:nth-child(2) {
+      width: 100%;
+      margin: 0 auto;
+      height: 1px;
+      background-color: $bg-color;
+    }
+  }
+
+  .switchControl {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+
+    & > * {
+      margin-right: 8px;
+    }
+  }
+
+  .radioControls {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .radioButtons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 16px;
+
+    & > div {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: 24px;
+
+      & > span {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .recommendInput {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    & > div {
+      margin: 16px 0;
+      width: 100%;
+    }
+  }
+
+  .autocompleteInput {
+    & fieldset {
+      border-color: transparent !important;
+    }
+
+    border-radius: 10px;
+    border: 1px solid $secondary-font-color;
+    background-color: $white;
+
+    & > input::placeholder {
+      color: $secondary-font-color;
+      transform: translateY(-5px);
+    }
+
+    color: $primary-font-color;
+
+    & > div {
+      padding: 4px 4px 0 4px;
+    }
+
+    input {
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+      color: $black;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+  }
+
+  .autocompletePopper {
+    @include fontFSWH($primary-font, 14px, 400, 17px);
+  }
+
+  .optionLabel {
+    margin-left: 8px;
+  }
+
+  .recommendErrorText {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .autocompleteChip {
+    border: 1px solid $secondary-font-color;
+    border-radius: 5px;
+    @include fontFSWH($primary-font, 15px, 400, 19px);
+    color: $primary-font-color;
+    background-color: $white;
+    margin-right: 5px;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+}

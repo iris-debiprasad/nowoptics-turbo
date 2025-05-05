@@ -1,0 +1,50 @@
+@import "../../../../assets/styles/mixin";
+@import "../../../../assets/styles/fonts";
+@import "../../../../assets/styles/variables";
+
+.modalHeader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+    & > span {
+        margin-right: 8px;
+
+    }
+
+    & > .closeBtn {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+
+        & > img {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+.modalBody {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 0 8px;
+    & > div {
+        margin: 16px 0;
+    }
+}
+
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  & > button {
+    cursor: pointer;
+    @include primary_button;
+  }
+
+  & > button:first-child {
+    @include tertiary_button;
+  }
+}

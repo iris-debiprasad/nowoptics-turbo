@@ -1,0 +1,91 @@
+@use "../../../../../../assets/styles/variables" as vars;
+@use "../../../../../../assets/styles/mixin" as mi;
+
+.ready {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+
+  &__title {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 700;
+    color: vars.$primary-font-color;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: vars.$primary-font-color;
+  }
+
+  &__bring_title {
+    display: block;
+    margin: 1rem 0.5rem;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: vars.$primary-font-color;
+  }
+
+  &__bring_item {
+    margin-top: 0.5rem;
+
+    display: flex;
+    gap: 0.5rem;
+
+    font-size: 1rem;
+    color: vars.$primary-font-color;
+
+    span {
+      display: block;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .group {
+    display: grid;
+
+    &__stan {
+      order: 2;
+      max-width: 250px;
+
+      &>img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__text {
+      display: flex;
+      justify-content: flex-end;
+
+      color: vars.$primary-color;
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 700;
+      text-align: center;
+      padding-inline: 1rem;
+    }
+  }
+
+  @include mi.responsive("medium") {
+    .group {
+      max-width: 500px;
+      margin-inline: auto;
+
+      display: grid;
+      grid-template-columns: auto auto;
+
+      &__stan {
+        order: unset;
+      }
+
+      &__text {
+        place-self: center;
+      }
+    }
+  }
+}

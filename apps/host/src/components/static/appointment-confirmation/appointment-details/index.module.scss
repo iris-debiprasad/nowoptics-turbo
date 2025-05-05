@@ -1,0 +1,46 @@
+@use "../../../../../../assets/styles/variables" as vars;
+
+.details {
+  :is(&__title, &__store) {
+    color: vars.$primary-color;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  &__title {
+    font-size: 1.3rem;
+  }
+
+  &__date {
+    margin-top: 1rem;
+
+    color: vars.$primary-font-color;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  &__store {
+    border-top: 2px solid vars.$primary-font-color;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__info {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+
+    &:last-of-type {
+      margin-block: 0.5rem 1rem;
+    }
+  }
+
+  &__map > div:last-of-type {
+    margin-top: 0.5rem;
+    min-height: 300px;
+  }
+}

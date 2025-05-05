@@ -1,0 +1,90 @@
+@use "../../../../../assets/styles/variables" as vars;
+@use "../../../../../assets/styles/mixin" as mi;
+
+.plans {
+  width: 100%;
+
+  max-height: 0;
+  overflow-y: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  background-color: vars.$white;
+
+  &.open {
+    box-shadow: -1px 2px 2px 1px rgba(vars.$tertiary-font-color, 0.1);
+    max-height: 400px;
+    opacity: 1;
+    overflow-y: auto;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    padding-block: 0.7rem;
+
+    background-color: rgba(vars.$white, 0.9);
+  }
+
+  &__filter {
+    display: block;
+    width: calc(100% - 1rem);
+    margin-inline: auto;
+
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px 2px rgba(vars.$tertiary-font-color, 0.15) inset;
+    outline-color: transparent;
+    padding: 0.7rem 0.9rem;
+    font-size: 16px;
+
+    @include mi.media-query(768px){
+      font-size: inherit;
+    } 
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+
+    margin-block: 0.5rem;
+  }
+
+  &__no-stores {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .store-item {
+    cursor: default;
+    font-weight: 400;
+    overflow: hidden;
+    padding: 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    transition: all 0.1s ease-out;
+
+    &__name {
+      color: vars.$secondary-color;
+      font-weight: 500;
+
+      transition: all 0.1s ease-out;
+    }
+
+    &:is(:hover, :focus) {
+      background-color: vars.$secondary-color;
+      color: vars.$white;
+
+      .store-item__name {
+        color: vars.$white;
+      }
+    }
+  }
+}
+
+.scrollSpan {
+  height: 1rem;
+  width: 100%;
+  display: block;
+}

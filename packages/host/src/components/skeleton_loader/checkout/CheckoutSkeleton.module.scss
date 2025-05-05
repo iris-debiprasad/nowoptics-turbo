@@ -1,0 +1,86 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.checkoutSkeleton {
+  margin-bottom: 50px;
+  .container {
+    @include iris_container;
+    padding-top: 20px;
+
+    .title {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      @media (max-width: $medium) {
+        margin-top: 10px;
+      }
+    }
+
+    .user {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .details {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      margin-top: 40px;
+
+      @media (max-width: $medium) {
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      .detailsLeft {
+        display: flex;
+        flex-direction: column;
+        width: 66.67%;
+        justify-content: space-between;
+
+        @media (max-width: $medium) {
+          width: 100%;
+        }
+      }
+
+      .detailsRight {
+        width: 33.33%;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media (max-width: $medium) {
+          width: 100%;
+          padding: 0;
+        }
+
+        .rightContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 100%;
+
+          .rightContainerTop {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

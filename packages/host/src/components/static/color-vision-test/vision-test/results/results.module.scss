@@ -1,0 +1,29 @@
+@use "../../../../../../../assets/styles/mixin" as mi;
+
+.container {
+  display: grid;
+  gap: 0.3rem;
+
+  .actions {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+
+    &__schedule-exam {
+      @include mi.primary_button;
+      text-transform: capitalize;
+    }
+
+    &__restart {
+      @include mi.secondary_button;
+    }
+
+    :is(&__schedule-exam, &__restart) {
+      padding-block: 0.5rem;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="106" failures="3" errors="0" time="36.152">
+  <testsuite name="PatientInformation test suite" errors="0" failures="1" skipped="0" timestamp="2023-08-31T14:52:02" time="11.56" tests="1">
+    <testcase classname="PatientInformation test suite should render" name="PatientInformation test suite should render" time="0.296">
+      <failure>Error: NextRouter was not mounted. https://nextjs.org/docs/messages/next-router-not-mounted
+    at useRouter (D:\Iris-UI\intake\node_modules\next\src\client\router.ts:135:11)
+    at PatientIntake (D:\Iris-UI\intake\src\components\patient\index.tsx:19:27)
+    at renderWithHooks (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:20074:13)
+    at beginWork (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:21587:16)
+    at beginWork$1 (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
+    at performUnitOfWork (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
+    at workLoopSync (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
+    at renderRootSync (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
+    at recoverFromConcurrentError (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:25850:20)
+    at performConcurrentWorkOnRoot (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:25750:22)
+    at flushActQueue (D:\Iris-UI\intake\node_modules\react\cjs\react.development.js:2667:24)
+    at act (D:\Iris-UI\intake\node_modules\react\cjs\react.development.js:2582:11)
+    at D:\Iris-UI\intake\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at renderRoot (D:\Iris-UI\intake\node_modules\@testing-library\react\dist\pure.js:161:26)
+    at render (D:\Iris-UI\intake\node_modules\@testing-library\react\dist\pure.js:247:10)
+    at renderWithProviders (D:\Iris-UI\intake\src\utils\jest.utils.tsx:6:16)
+    at Object.&lt;anonymous&gt; (D:\Iris-UI\intake\src\components\patient\__tests__\Patient.test.tsx:12:24)
+    at Promise.then.completed (D:\Iris-UI\intake\node_modules\jest-circus\build\utils.js:293:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (D:\Iris-UI\intake\node_modules\jest-circus\build\utils.js:226:10)
+    at _callCircusTest (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:297:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:233:3)
+    at _runTestsForDescribeBlock (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:135:9)
+    at _runTestsForDescribeBlock (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:130:9)
+    at run (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:68:3)
+    at runAndTransformResultsToJestFormat (D:\Iris-UI\intake\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (D:\Iris-UI\intake\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (D:\Iris-UI\intake\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (D:\Iris-UI\intake\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (D:\Iris-UI\intake\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Patient Intake Step Component test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:03" time="11.616" tests="1">
+    <testcase classname="Patient Intake Step Component test suite should render the component" name="Patient Intake Step Component test suite should render the component" time="0.879">
+    </testcase>
+  </testsuite>
+  <testsuite name="Question Step component suite" errors="0" failures="1" skipped="0" timestamp="2023-08-31T14:52:02" time="11.991" tests="2">
+    <testcase classname="Question Step component suite Renders the step component for each question step" name="Question Step component suite Renders the step component for each question step" time="0.291">
+    </testcase>
+    <testcase classname="Question Step component suite Questions rendering" name="Question Step component suite Questions rendering" time="3.428">
+      <failure>Error: Actions must be plain objects. Use custom middleware for async actions.
+    at dispatch (D:\Iris-UI\intake\node_modules\redux-mock-store\lib\index.js:41:19)
+    at D:\Iris-UI\intake\node_modules\@reduxjs\toolkit\src\query\react\buildHooks.ts:768:27
+    at commitHookEffectListMount (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:23150:26)
+    at commitPassiveMountOnFiber (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24931:11)
+    at commitPassiveMountEffects_complete (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24891:9)
+    at commitPassiveMountEffects_begin (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24878:7)
+    at commitPassiveMountEffects (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24866:3)
+    at flushPassiveEffectsImpl (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:27039:3)
+    at flushPassiveEffects (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26984:14)
+    at performSyncWorkOnRoot (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26076:3)
+    at flushSyncCallbacks (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:12042:22)
+    at commitRootImpl (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26959:3)
+    at commitRoot (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26682:5)
+    at finishConcurrentRender (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:25981:9)
+    at performConcurrentWorkOnRoot (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:25809:7)
+    at flushActQueue (D:\Iris-UI\intake\node_modules\react\cjs\react.development.js:2667:24)
+    at act (D:\Iris-UI\intake\node_modules\react\cjs\react.development.js:2582:11)
+    at D:\Iris-UI\intake\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at Object.&lt;anonymous&gt; (D:\Iris-UI\intake\src\components\questionstep\__tests__\QuestionStep.test.tsx:42:8)
+    at Promise.then.completed (D:\Iris-UI\intake\node_modules\jest-circus\build\utils.js:293:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (D:\Iris-UI\intake\node_modules\jest-circus\build\utils.js:226:10)
+    at _callCircusTest (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:297:40)
+    at _runTest (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:233:3)
+    at _runTestsForDescribeBlock (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:135:9)
+    at _runTestsForDescribeBlock (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:130:9)
+    at run (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:68:3)
+    at runAndTransformResultsToJestFormat (D:\Iris-UI\intake\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (D:\Iris-UI\intake\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (D:\Iris-UI\intake\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (D:\Iris-UI\intake\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (D:\Iris-UI\intake\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="PatientInformation test suite" errors="0" failures="1" skipped="0" timestamp="2023-08-31T14:52:02" time="13.58" tests="5">
+    <testcase classname="PatientInformation test suite switcher with patient information" name="PatientInformation test suite switcher with patient information" time="1.643">
+      <failure>Error: Actions must be plain objects. Use custom middleware for async actions.
+    at dispatch (D:\Iris-UI\intake\node_modules\redux-mock-store\lib\index.js:41:19)
+    at D:\Iris-UI\intake\node_modules\@reduxjs\toolkit\src\query\react\buildHooks.ts:768:27
+    at commitHookEffectListMount (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:23150:26)
+    at commitPassiveMountOnFiber (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24931:11)
+    at commitPassiveMountEffects_complete (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24891:9)
+    at commitPassiveMountEffects_begin (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24878:7)
+    at commitPassiveMountEffects (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:24866:3)
+    at flushPassiveEffectsImpl (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:27039:3)
+    at flushPassiveEffects (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26984:14)
+    at performSyncWorkOnRoot (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26076:3)
+    at flushSyncCallbacks (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:12042:22)
+    at commitRootImpl (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26959:3)
+    at commitRoot (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:26682:5)
+    at finishConcurrentRender (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:25981:9)
+    at performConcurrentWorkOnRoot (D:\Iris-UI\intake\node_modules\react-dom\cjs\react-dom.development.js:25809:7)
+    at flushActQueue (D:\Iris-UI\intake\node_modules\react\cjs\react.development.js:2667:24)
+    at act (D:\Iris-UI\intake\node_modules\react\cjs\react.development.js:2582:11)
+    at D:\Iris-UI\intake\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at renderRoot (D:\Iris-UI\intake\node_modules\@testing-library\react\dist\pure.js:161:26)
+    at render (D:\Iris-UI\intake\node_modules\@testing-library\react\dist\pure.js:247:10)
+    at renderWithProviders (D:\Iris-UI\intake\src\utils\jest.utils.tsx:6:16)
+    at Object.&lt;anonymous&gt; (D:\Iris-UI\intake\src\components\stepswitcher\__tests__\StepSwitcher.test.tsx:16:24)
+    at Promise.then.completed (D:\Iris-UI\intake\node_modules\jest-circus\build\utils.js:293:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (D:\Iris-UI\intake\node_modules\jest-circus\build\utils.js:226:10)
+    at _callCircusTest (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:297:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:233:3)
+    at _runTestsForDescribeBlock (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:135:9)
+    at _runTestsForDescribeBlock (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:130:9)
+    at run (D:\Iris-UI\intake\node_modules\jest-circus\build\run.js:68:3)
+    at runAndTransformResultsToJestFormat (D:\Iris-UI\intake\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (D:\Iris-UI\intake\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (D:\Iris-UI\intake\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (D:\Iris-UI\intake\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (D:\Iris-UI\intake\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="PatientInformation test suite switcher with generic step with back btn clicked" name="PatientInformation test suite switcher with generic step with back btn clicked" time="0.313">
+    </testcase>
+    <testcase classname="PatientInformation test suite switcher with generic step with next btn clicked" name="PatientInformation test suite switcher with generic step with next btn clicked" time="0.312">
+    </testcase>
+    <testcase classname="PatientInformation test suite switcher with hippa forms" name="PatientInformation test suite switcher with hippa forms" time="0.13">
+    </testcase>
+    <testcase classname="PatientInformation test suite switcher with Invalid step" name="PatientInformation test suite switcher with Invalid step" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="Setup component suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:03" time="14.774" tests="6">
+    <testcase classname="Setup component suite Tests the add step button" name="Setup component suite Tests the add step button" time="2.134">
+    </testcase>
+    <testcase classname="Setup component suite Form name input" name="Setup component suite Form name input" time="0.47">
+    </testcase>
+    <testcase classname="Setup component suite Form language input" name="Setup component suite Form language input" time="0.322">
+    </testcase>
+    <testcase classname="Setup component suite Test sections" name="Setup component suite Test sections" time="0.382">
+    </testcase>
+    <testcase classname="Setup component suite Test sections" name="Setup component suite Test sections" time="0.305">
+    </testcase>
+    <testcase classname="Setup component suite Test sections with catch error" name="Setup component suite Test sections with catch error" time="0.482">
+    </testcase>
+  </testsuite>
+  <testsuite name="MedicalForms test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:15" time="5.115" tests="1">
+    <testcase classname="MedicalForms test suite should render" name="MedicalForms test suite should render" time="0.45">
+    </testcase>
+  </testsuite>
+  <testsuite name="MedicalForms test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:03" time="17.676" tests="11">
+    <testcase classname="MedicalForms test suite should render" name="MedicalForms test suite should render" time="1.972">
+    </testcase>
+    <testcase classname="MedicalForms test suite should render availibility modal" name="MedicalForms test suite should render availibility modal" time="0.476">
+    </testcase>
+    <testcase classname="MedicalForms test suite should sort Id column" name="MedicalForms test suite should sort Id column" time="0.274">
+    </testcase>
+    <testcase classname="MedicalForms test suite copy the intake form with success" name="MedicalForms test suite copy the intake form with success" time="1.381">
+    </testcase>
+    <testcase classname="MedicalForms test suite copy the intake form with error" name="MedicalForms test suite copy the intake form with error" time="0.458">
+    </testcase>
+    <testcase classname="MedicalForms test suite closes the copy dialog" name="MedicalForms test suite closes the copy dialog" time="0.482">
+    </testcase>
+    <testcase classname="MedicalForms test suite publishes the intake form with success" name="MedicalForms test suite publishes the intake form with success" time="0.369">
+    </testcase>
+    <testcase classname="MedicalForms test suite publishes the intake form with catch error" name="MedicalForms test suite publishes the intake form with catch error" time="0.458">
+    </testcase>
+    <testcase classname="MedicalForms test suite publishes the intake form with error" name="MedicalForms test suite publishes the intake form with error" time="0.282">
+    </testcase>
+    <testcase classname="MedicalForms test suite closes the publish dialog" name="MedicalForms test suite closes the publish dialog" time="0.373">
+    </testcase>
+    <testcase classname="MedicalForms test suite navigates the user to edit the intake form" name="MedicalForms test suite navigates the user to edit the intake form" time="0.16">
+    </testcase>
+  </testsuite>
+  <testsuite name="AvailabilityModal" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:02" time="19.615" tests="5">
+    <testcase classname="AvailabilityModal Check if the modal renders and closes on btn click properly" name="AvailabilityModal Check if the modal renders and closes on btn click properly" time="2.063">
+    </testcase>
+    <testcase classname="AvailabilityModal Check autocomplete input" name="AvailabilityModal Check autocomplete input" time="5.7">
+    </testcase>
+    <testcase classname="AvailabilityModal Save button" name="AvailabilityModal Save button" time="0.39">
+    </testcase>
+    <testcase classname="AvailabilityModal Empty api options" name="AvailabilityModal Empty api options" time="0.387">
+    </testcase>
+    <testcase classname="AvailabilityModal Date input change" name="AvailabilityModal Date input change" time="0.391">
+    </testcase>
+  </testsuite>
+  <testsuite name="MedicalForms test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:18" time="6.171" tests="1">
+    <testcase classname="MedicalForms test suite should render" name="MedicalForms test suite should render" time="1.086">
+    </testcase>
+  </testsuite>
+  <testsuite name="QuestionOptionItem test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:18" time="5.652" tests="2">
+    <testcase classname="QuestionOptionItem test suite should render the component with checkbox option type" name="QuestionOptionItem test suite should render the component with checkbox option type" time="0.538">
+    </testcase>
+    <testcase classname="QuestionOptionItem test suite should render the component with radio option type" name="QuestionOptionItem test suite should render the component with radio option type" time="0.032">
+    </testcase>
+  </testsuite>
+  <testsuite name="OTP Modal test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:15" time="9.594" tests="7">
+    <testcase classname="OTP Modal test suite should render correctly" name="OTP Modal test suite should render correctly" time="1.772">
+    </testcase>
+    <testcase classname="OTP Modal test suite should render correctly and verify with success" name="OTP Modal test suite should render correctly and verify with success" time="0.417">
+    </testcase>
+    <testcase classname="OTP Modal test suite should render correctly and verify with error" name="OTP Modal test suite should render correctly and verify with error" time="0.292">
+    </testcase>
+    <testcase classname="OTP Modal test suite should render correctly and verify with error" name="OTP Modal test suite should render correctly and verify with error" time="0.415">
+    </testcase>
+    <testcase classname="OTP Modal test suite should render correctly and resend with success" name="OTP Modal test suite should render correctly and resend with success" time="0.305">
+    </testcase>
+    <testcase classname="OTP Modal test suite should render correctly and resend with error" name="OTP Modal test suite should render correctly and resend with error" time="0.268">
+    </testcase>
+    <testcase classname="OTP Modal test suite should render correctly and resend with error" name="OTP Modal test suite should render correctly and resend with error" time="0.225">
+    </testcase>
+  </testsuite>
+  <testsuite name="Recommend" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:17" time="7.668" tests="5">
+    <testcase classname="Recommend should render correctly and toggle the recommend switch" name="Recommend should render correctly and toggle the recommend switch" time="0.076">
+    </testcase>
+    <testcase classname="Recommend should test recommend toggle" name="Recommend should test recommend toggle" time="0.156">
+    </testcase>
+    <testcase classname="Recommend should test others input handleChange" name="Recommend should test others input handleChange" time="0.436">
+    </testcase>
+    <testcase classname="Recommend Tests autocomplete input" name="Recommend Tests autocomplete input" time="0.916">
+    </testcase>
+    <testcase classname="Recommend Renders the autocomplete tags" name="Recommend Renders the autocomplete tags" time="0.017">
+    </testcase>
+  </testsuite>
+  <testsuite name="PatientInformation test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:21" time="5.421" tests="1">
+    <testcase classname="PatientInformation test suite should render" name="PatientInformation test suite should render" time="1.593">
+    </testcase>
+  </testsuite>
+  <testsuite name="MedicalForms test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:23" time="5.515" tests="1">
+    <testcase classname="MedicalForms test suite should render" name="MedicalForms test suite should render" time="1.114">
+    </testcase>
+  </testsuite>
+  <testsuite name="PatientInformation test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:24" time="4.843" tests="1">
+    <testcase classname="PatientInformation test suite should render" name="PatientInformation test suite should render" time="0.118">
+    </testcase>
+  </testsuite>
+  <testsuite name="Question Switcher component suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:24" time="4.87" tests="10">
+    <testcase classname="Question Switcher component suite Render checkbox list questionType" name="Question Switcher component suite Render checkbox list questionType" time="0.852">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render radioList questionType" name="Question Switcher component suite Render radioList questionType" time="0.147">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render dropdown questionType" name="Question Switcher component suite Render dropdown questionType" time="0.082">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render Email questionType" name="Question Switcher component suite Render Email questionType" time="0.075">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render Text questionType" name="Question Switcher component suite Render Text questionType" time="0.068">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render Textarea questionType" name="Question Switcher component suite Render Textarea questionType" time="0.059">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render date questionType" name="Question Switcher component suite Render date questionType" time="0.07">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render datetime questionType" name="Question Switcher component suite Render datetime questionType" time="0.075">
+    </testcase>
+    <testcase classname="Question Switcher component suite Render number questionType" name="Question Switcher component suite Render number questionType" time="0.066">
+    </testcase>
+    <testcase classname="Question Switcher component suite Test question text input change" name="Question Switcher component suite Test question text input change" time="0.105">
+    </testcase>
+  </testsuite>
+  <testsuite name="Question Form component suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:24" time="5.468" tests="7">
+    <testcase classname="Question Form component suite Tests the switch buttons required" name="Question Form component suite Tests the switch buttons required" time="0.821">
+    </testcase>
+    <testcase classname="Question Form component suite Tests the copy button on the question form" name="Question Form component suite Tests the copy button on the question form" time="0.202">
+    </testcase>
+    <testcase classname="Question Form component suite Tests the delete button on the question form" name="Question Form component suite Tests the delete button on the question form" time="0.232">
+    </testcase>
+    <testcase classname="Question Form component suite Tests the add button on the question form" name="Question Form component suite Tests the add button on the question form" time="0.157">
+    </testcase>
+    <testcase classname="Question Form component suite Tests the question code input box" name="Question Form component suite Tests the question code input box" time="0.181">
+    </testcase>
+    <testcase classname="Question Form component suite Tests the question type select input input box" name="Question Form component suite Tests the question type select input input box" time="0.19">
+    </testcase>
+    <testcase classname="Question Form component suite Required toggle switch" name="Question Form component suite Required toggle switch" time="0.153">
+    </testcase>
+  </testsuite>
+  <testsuite name="PatientInformation test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:25" time="4.599" tests="2">
+    <testcase classname="PatientInformation test suite should render with completed set to true" name="PatientInformation test suite should render with completed set to true" time="0.271">
+    </testcase>
+    <testcase classname="PatientInformation test suite should render with completed set to false" name="PatientInformation test suite should render with completed set to false" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="MedicalForms test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:25" time="5.171" tests="3">
+    <testcase classname="MedicalForms test suite should render" name="MedicalForms test suite should render" time="0.45">
+    </testcase>
+    <testcase classname="MedicalForms test suite should render" name="MedicalForms test suite should render" time="0.111">
+    </testcase>
+    <testcase classname="MedicalForms test suite should render" name="MedicalForms test suite should render" time="0.17">
+    </testcase>
+  </testsuite>
+  <testsuite name="DateValidation component test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:26" time="4.702" tests="1">
+    <testcase classname="DateValidation component test suite DateValidation renders Date question type with checked" name="DateValidation component test suite DateValidation renders Date question type with checked" time="0.306">
+    </testcase>
+  </testsuite>
+  <testsuite name="OptionItem component test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:29" time="4.205" tests="3">
+    <testcase classname="OptionItem component test suite OptionItem renders Radio List question type" name="OptionItem component test suite OptionItem renders Radio List question type" time="0.624">
+    </testcase>
+    <testcase classname="OptionItem component test suite Modal actions" name="OptionItem component test suite Modal actions" time="0.113">
+    </testcase>
+    <testcase classname="OptionItem component test suite Checkbox list" name="OptionItem component test suite Checkbox list" time="0.064">
+    </testcase>
+  </testsuite>
+  <testsuite name="MultiOption component test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:30" time="3.672" tests="1">
+    <testcase classname="MultiOption component test suite MultiOption renders Radio List question type" name="MultiOption component test suite MultiOption renders Radio List question type" time="0.123">
+    </testcase>
+  </testsuite>
+  <testsuite name="AccordionStep test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:30" time="4.194" tests="6">
+    <testcase classname="AccordionStep test suite Renders the AccordionStep component" name="AccordionStep test suite Renders the AccordionStep component" time="0.364">
+    </testcase>
+    <testcase classname="AccordionStep test suite Tests the delete button" name="AccordionStep test suite Tests the delete button" time="0.337">
+    </testcase>
+    <testcase classname="AccordionStep test suite Step title input" name="AccordionStep test suite Step title input" time="0.081">
+    </testcase>
+    <testcase classname="AccordionStep test suite Rendering children" name="AccordionStep test suite Rendering children" time="0.043">
+    </testcase>
+    <testcase classname="AccordionStep test suite Tests the no button" name="AccordionStep test suite Tests the no button" time="0.196">
+    </testcase>
+    <testcase classname="AccordionStep test suite Tests accordion close/open" name="AccordionStep test suite Tests accordion close/open" time="0.093">
+    </testcase>
+  </testsuite>
+  <testsuite name="DateInput" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:30" time="3.886" tests="4">
+    <testcase classname="DateInput renders a DateInput when no error" name="DateInput renders a DateInput when no error" time="0.432">
+    </testcase>
+    <testcase classname="DateInput renders a DateInput when error" name="DateInput renders a DateInput when error" time="0.107">
+    </testcase>
+    <testcase classname="DateInput renders a DateInput when input is required" name="DateInput renders a DateInput when input is required" time="0.105">
+    </testcase>
+    <testcase classname="DateInput renders a DateInput when input is  not required" name="DateInput renders a DateInput when input is  not required" time="0.171">
+    </testcase>
+  </testsuite>
+  <testsuite name="Checkbox Modal test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:31" time="3.72" tests="1">
+    <testcase classname="Checkbox Modal test suite Render checkbox modal" name="Checkbox Modal test suite Render checkbox modal" time="0.363">
+    </testcase>
+  </testsuite>
+  <testsuite name="Question Input Component test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:29" time="5.052" tests="2">
+    <testcase classname="Question Input Component test suite should render the component with drop down selected" name="Question Input Component test suite should render the component with drop down selected" time="0.384">
+    </testcase>
+    <testcase classname="Question Input Component test suite should render the component with text input selected" name="Question Input Component test suite should render the component with text input selected" time="0.031">
+    </testcase>
+  </testsuite>
+  <testsuite name="Dialog test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:31" time="3.737" tests="2">
+    <testcase classname="Dialog test suite Renders the dialog component" name="Dialog test suite Renders the dialog component" time="0.399">
+    </testcase>
+    <testcase classname="Dialog test suite Tests the close button" name="Dialog test suite Tests the close button" time="0.134">
+    </testcase>
+  </testsuite>
+  <testsuite name="Checkbox" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:35" time="2.113" tests="4">
+    <testcase classname="Checkbox renders without errors" name="Checkbox renders without errors" time="0.075">
+    </testcase>
+    <testcase classname="Checkbox renders with the correct props" name="Checkbox renders with the correct props" time="0.007">
+    </testcase>
+    <testcase classname="Checkbox handles change event correctly" name="Checkbox handles change event correctly" time="0.067">
+    </testcase>
+    <testcase classname="Checkbox handles click for label event correctly" name="Checkbox handles click for label event correctly" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="Switch component suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:35" time="1.844" tests="1">
+    <testcase classname="Switch component suite renders the switch component" name="Switch component suite renders the switch component" time="0.073">
+    </testcase>
+  </testsuite>
+  <testsuite name="Intake Module test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:34" time="3.347" tests="2">
+    <testcase classname="Intake Module test suite Intake module renders and click close button icon" name="Intake Module test suite Intake module renders and click close button icon" time="0.404">
+    </testcase>
+    <testcase classname="Intake Module test suite Intake module renders and click cancel button icon" name="Intake Module test suite Intake module renders and click cancel button icon" time="0.08">
+    </testcase>
+  </testsuite>
+  <testsuite name="Checkbox" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:35" time="2.103" tests="4">
+    <testcase classname="Checkbox renders without errors" name="Checkbox renders without errors" time="0.077">
+    </testcase>
+    <testcase classname="Checkbox renders with the correct props" name="Checkbox renders with the correct props" time="0.026">
+    </testcase>
+    <testcase classname="Checkbox handles change event correctly" name="Checkbox handles change event correctly" time="0.054">
+    </testcase>
+    <testcase classname="Checkbox handles click for label event correctly" name="Checkbox handles click for label event correctly" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="Text component test suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:34" time="3.016" tests="1">
+    <testcase classname="Text component test suite Render text component" name="Text component test suite Render text component" time="0.226">
+    </testcase>
+  </testsuite>
+  <testsuite name="Input component suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:34" time="3.448" tests="1">
+    <testcase classname="Input component suite renders the Input component" name="Input component suite renders the Input component" time="0.238">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select component suite" errors="0" failures="0" skipped="0" timestamp="2023-08-31T14:52:34" time="3.298" tests="1">
+    <testcase classname="Select component suite renders the Select Component" name="Select component suite renders the Select Component" time="0.312">
+    </testcase>
+  </testsuite>
+</testsuites>

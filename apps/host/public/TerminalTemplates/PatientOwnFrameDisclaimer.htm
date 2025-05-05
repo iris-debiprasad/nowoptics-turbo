@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>Patient Own Frame (POF) Disclaimer</title>
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 25px 0px 440px 96px;
+            padding: 0px;
+            border: none;
+            width: 720px;
+        }
+
+        #page_1 #p1dimg1 {
+            position: absolute;
+            top: 0px;
+            left: 210px;
+            z-index: -1;
+            width: 205px;
+            height: 76px;
+        }
+
+        #page_1 #p1dimg1 #p1img1 {
+            width: 205px;
+            height: 76px;
+        }
+
+
+
+
+        .dclr {
+            clear: both;
+            float: none;
+            height: 1px;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+
+        .ft0 {
+            font: bold 19px 'Arial';
+            line-height: 22px;
+        }
+
+        .ft1 {
+            font: 15px 'Arial';
+            line-height: 17px;
+        }
+
+        .ft2 {
+            font: 15px 'Arial';
+            line-height: 18px;
+        }
+
+        .ft3 {
+            font: bold 15px 'Arial';
+            line-height: 19px;
+        }
+
+        .ft4 {
+            font: bold 15px 'Arial';
+            text-decoration: underline;
+            line-height: 18px;
+        }
+
+        .ft5 {
+            font: bold 15px 'Arial';
+            line-height: 18px;
+        }
+
+        .ft6 {
+            font: 15px 'Gautami';
+            text-decoration: underline;
+            line-height: 29px;
+        }
+
+        .p0 {
+            text-align: left;
+            padding-left: 154px;
+            margin-top: 104px;
+            margin-bottom: 0px;
+        }
+
+        .p1 {
+            text-align: left;
+            margin-top: 33px;
+            margin-bottom: 0px;
+        }
+
+        .p2 {
+            text-align: justify;
+            padding-right: 96px;
+            margin-top: 19px;
+            margin-bottom: 0px;
+        }
+
+        .p3 {
+            text-align: justify;
+            padding-right: 96px;
+            margin-top: 18px;
+            margin-bottom: 0px;
+        }
+
+        .p4 {
+            text-align: left;
+            margin-top: 34px;
+            margin-bottom: 0px;
+        }
+
+        .p5 {
+            text-align: left;
+            margin-top: 16px;
+            margin-bottom: 0px;
+        }
+
+        .p6 {
+            text-align: left;
+            margin-top: 7px;
+            margin-bottom: 0px;
+        }
+
+        .p7 {
+            text-align: left;
+            margin-top: 9px;
+            margin-bottom: 0px;
+        }
+    </style>
+    <script type="text/javascript">
+        var getParams = function (url) {
+            var params = {};
+            var parser = document.createElement('a');
+            parser.href = url;
+            var query = parser.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                params[pair[0]] = decodeURIComponent(pair[1]);
+            }
+            return params;
+        };
+        document.addEventListener('DOMContentLoaded', function() {
+            var parms = getParams(window.location.href);
+            for (var key in parms) {
+                if (parms.hasOwnProperty(key)) {
+                    document.body.innerHTML = document.body.innerHTML.replace(new RegExp('##' + key.toLowerCase() + '##', 'g'), parms[key]);
+
+                }
+            }
+        }, false);
+
+    </script>
+</head>
+<body>
+    <div id="page_1">
+        <div id="p1dimg1">
+            <img src="##imageurl##" id="p1img1">
+        </div>
+
+        <div class="dclr"></div>
+        <p class="p0 ft0">Lens Replacement Acknowledgement</p>
+        <p class="p1 ft1">
+            ##brand## will gladly fit new prescription lenses into your existing frame for a <nobr>one-time</nobr> $20 fee.
+        </p>
+        <p class="p2 ft2">While ##brand## eye care associates have received extensive training on properly evaluating eyeglass frames for lens replacement, the process of removing and replacing old lenses can stress the frame, sometimes causing breakage as a result of the manufacturing process. You hereby acknowledge that ##brand## has discussed these potential risks prior to acceptance of your existing eyeglass frames for lens replacement.</p>
+        <p class="p3 ft2">
+            In the event that your eyeglass frame is damaged or lost during the lens replacement process, ##brand## will attempt to replace the original frame. Due to many factors, however, ##brand## may be unable to offer a replacement for the same frames. In the event that we are unable to do so, we will replace it with a frame of your choice from our current store inventory at no additional cost to you. <b>##brand## does not offer cash back for loss or damage to a patient’s own frame </b>. This is not a bailment. Other than as provided herein, ##brand## assumes no responsibility for loss or damage to the frame through breakage, theft, or otherwise.
+        </p>
+        <p class="p4 ft5">
+            Frame Description: <span class="ft4">##framedescription## </span>
+        </p>
+        <p class="p5 ft5">
+            Date: <span class="ft6"> ##date## </span>
+        </p>
+        <p class="p6 ft5">
+            Name: <span class="ft6"> ##name## </span>
+        </p>
+        <p class="p7 ft1">
+            <span class="ft5">Signature: </span>_____________________________
+        </p>
+        <p class="p7 ft1">
+            <img src="data:image/png;base64, ##signature##" onerror="this.style.display='none'" />
+        </p>
+    </div>
+
+</body>
+</html>

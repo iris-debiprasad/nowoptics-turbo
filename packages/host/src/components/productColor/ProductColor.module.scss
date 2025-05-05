@@ -1,0 +1,44 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/mixin.scss";
+
+
+.colorDivWrapper {
+  cursor: pointer;
+  border: 2px solid $primary-light-color;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 5px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .colorDiv {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    .subColorDivLeft {
+      width: 50%;
+      height: 100%;
+      border-top-left-radius: 35px;
+      border-bottom-left-radius: 35px;
+    }
+    .subColorDivRight {
+      width: 50%;
+      height: 100%;
+      border-top-right-radius: 35px;
+      border-bottom-right-radius: 35px;
+    }
+  }
+
+  &:hover {
+    border: 2px solid $secondary-color;
+  }
+
+}
+
+.activeColorDiv {
+  border: 2px solid $secondary-color;
+}
+
+

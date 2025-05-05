@@ -1,0 +1,149 @@
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+.mainBox {
+  @include iris_container;
+  padding-top: 60px;
+
+  @media screen and (max-width: $medium) {
+    padding-top: 10px;
+  }
+
+  .mobileImageWrapper {
+    display: none;
+
+    @media screen and (max-width: $medium) {
+      display: block;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 35px;
+
+    h1 {
+      @include fontFSWH($primary-font, 28px, 700, 32px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 24px, 700, 28px);
+      }
+    }
+  }
+
+  .imgBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 520px;
+    margin-right: 50px;
+
+    @media screen and (max-width: $medium) {
+      display: none;
+    }
+  }
+
+  .des {
+    @include fontFSWH($primary-font, 18px, 400, 22px);
+    text-align: left;
+    padding: 20px 65px;
+
+    @media screen and (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 15px, 400, 19px);
+    }
+
+    @media screen and (max-width: $medium) {
+      padding: 20px 40px;
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+
+  .rightBox {
+    .featureBox {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-left: 15px;
+
+      @media screen and (max-width: $medium) {
+        flex-direction: column;
+        margin-left: 0px;
+      }
+    }
+
+    .iconBox {
+      width: 100px;
+      display: flex;
+      align-items: center;
+
+      .sliderCard {
+        background-color: transparent;
+      }
+
+      & .sliderIconItem {
+        width: 72px;
+        height: 60px;
+        border-radius: 10px;
+        margin: 0 auto;
+
+        .sliderIconImg {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          height: 60px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+        }
+      }
+    }
+
+    & .heading {
+      @include fontFSWH($primary-font, 18px, 600, 22px);
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 5px;
+
+      @media screen and (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 15px, 600, 19px);
+      }
+
+      @media screen and (max-width: $medium) {
+        text-align: center;
+        padding: 10px 40px;
+      }
+    }
+
+    .subText {
+      text-align: left;
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+
+      @media screen and (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+
+      @media screen and (max-width: $medium) {
+        text-align: center;
+        padding: 0px 20px;
+      }
+    }
+
+    & .btnBookEye {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+
+      & .btnColor {
+        @include primary_button;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.shopImageContainer {
+  @include displayFlex;
+  @include flexWrap;
+  justify-content: center;
+}

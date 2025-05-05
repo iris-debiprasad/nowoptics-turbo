@@ -1,0 +1,190 @@
+@import "../../../../assets/styles/_variables.scss";
+@import "../../../../assets/styles/mixin.scss";
+
+.addUserRoleModalWrapper {
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $secondary-font-color;
+
+    button {
+      min-width: 30px;
+      margin-bottom: 5px;
+
+      @media (max-width: $extra-large) {
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .modalHeading {
+      @include fontFSWH($primary-font, 18px, 400, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+  }
+
+  .formContainer {
+    padding-top: 10px;
+    .btnconatinerr {
+      display: flex;
+      justify-content: space-between;
+    }
+    .secondaryBtnn {
+      @include tertiary_button;
+      margin-bottom: 0px !important;
+      margin-left: 0px !important;
+      margin-top: 20px !important;
+    }
+    .pofTableContainer {
+      max-height: 70vh;
+      @media (max-height: 700px) {
+        max-height: 40vh;
+      }
+      @media (max-width: $large) {
+        max-height: 40vh;
+      }
+    }
+  }
+
+  .formGroup {
+    .inputLabel {
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+      color: $black;
+
+      margin-bottom: 5px;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    .inputRoleLabel {
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+
+      color: $black;
+      margin-bottom: 5px;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    .textInput {
+      margin: auto;
+
+      input {
+        border-radius: 10px;
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+
+        padding: 15px;
+
+        @media (max-width: $extra-large) {
+          @include fontFSWH($primary-font, 13px, 400, 17px);
+          padding: 10px 15px;
+        }
+      }
+
+      fieldset {
+        border-radius: 10px;
+      }
+    }
+
+    p {
+      margin: 5px 0 0 0px;
+    }
+  }
+
+  .disabled {
+    background-color: $primary-light-color;
+    border-radius: 10px;
+  }
+
+  .selectInput {
+    width: 100%;
+    @include fontFSWH($primary-font, 15px, 400, 18px);
+    padding-top: 2px;
+    color: $black;
+    padding-bottom: 2px;
+    border-radius: 10px;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 16px);
+    }
+
+    .menuItem {
+      @include fontFSWH($primary-font, 15px, 400, 18px);
+      color: $black;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 16px);
+      }
+    }
+  }
+
+  .checkBoxLabel {
+    width: fit-content;
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+
+    padding-top: 10px;
+    color: $black;
+    padding-bottom: 10px;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+
+    .checkBoxLabelText {
+      @include fontFSWH($primary-font, 16px, 400, 20px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+  }
+
+  .addBtn {
+    @include primary_button;
+    margin-top: 20px;
+  }
+
+  .checkBoxContainer {
+    margin-top: 14px;
+    height: 3rem;
+  }
+  .errorHelperText {
+    color: $red;
+    margin-left: 14px;
+  }
+}
+
+.formRowContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.prevbtn {
+  background-color: $white;
+
+  @include fontFSWH($primary-font, 16px, 400, 20px);
+  color: $black;
+  margin-top: 20px;
+
+  @media (max-width: $extra-large) {
+    @include fontFSWH($primary-font, 13px, 400, 17px);
+  }
+
+  .searchbtnPrevious {
+    margin-left: 20px;
+  }
+
+  &:hover {
+    background-color: $grey;
+    transition: all 0.5s ease;
+  }
+}

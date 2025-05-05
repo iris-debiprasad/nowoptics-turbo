@@ -1,0 +1,95 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.walkInSkeleton {
+  margin-bottom: 50px;
+  .container {
+    @include iris_container;
+    padding-top: 20px;
+
+    .title {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+
+      .bar {
+        @media (max-width: $medium) {
+          display: none;
+        }
+      }
+
+      .barMobile {
+        display: none;
+        @media (max-width: $medium) {
+          display: block;
+        }
+      }
+    }
+
+    .details {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      margin-top: 80px;
+      justify-content: center;
+
+      @media (max-width: $medium) {
+        flex-direction: column;
+      }
+
+      .detailsLeft {
+        width: 66.67%;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        @media (max-width: $medium) {
+          width: 100%;
+        }
+
+        .subDetails {
+          margin-top: 30px;
+          display: flex;
+          gap: 20px;
+        }
+
+        .calendar {
+          margin-top: 70px;
+
+          .dobField {
+            margin-top: 20px;
+          }
+
+          .button {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+
+    .disclaimer {
+      display: block;
+      margin-top: 20px;
+      margin-left: 30px;
+
+      @media (max-width: $medium) {
+        display: none;
+      }
+    }
+
+    .disclaimerMobile {
+      display: none;
+      margin-top: 20px;
+
+      @media (max-width: $medium) {
+        display: block;
+      }
+    }
+  }
+}

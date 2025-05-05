@@ -1,0 +1,41 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/fonts";
+@import "../../../../assets/styles/mixin";
+
+.questionTextContainer {
+  padding: 0 8px;
+}
+
+.questionTextInput {
+  border-bottom: 1px solid $secondary-font-color;
+  margin-top: 12px;
+  color: $black;
+
+  & textarea {
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+
+    &::placeholder {
+      @include fontFSWH($primary-font, 16px, 400, 19px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 16px);
+      }
+    }
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 16px);
+    }
+  }
+}
+
+.errorInput {
+  border-color: $red !important;
+}
+
+.errorSpan {
+  margin-top: 5px;
+}
+
+.marginBottom {
+  margin-bottom: 10px;
+}

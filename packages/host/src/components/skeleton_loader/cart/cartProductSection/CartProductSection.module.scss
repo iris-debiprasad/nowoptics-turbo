@@ -1,0 +1,111 @@
+@import "../../../../../../assets/styles/_variables.scss";
+@import "../../../../../../assets/styles/_mixin.scss";
+
+.skeletonContainer {
+  box-sizing: border-box;
+  background-color: $white;
+  width: 100%;
+  height: fit-content;
+  border-radius: 5px;
+  margin: 20px 0 30px;
+  padding: 30px;
+  border: 1px solid $grey;
+
+  .skeletonTopContainerWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    column-gap: 12px;
+    padding: 24px;
+    .skeletonTopContainer{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      column-gap: 12px;
+    }
+  }
+
+  .skeletonDetailsContainer {
+    width: 100%;
+  }
+
+  .skeletonDetails {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .skeletonTitleContainer {
+    width: 100%;
+  }
+
+  .circularSkelton {
+    flex-shrink: 0;
+  }
+
+  .skeletonSummaryContainer {
+    padding: 24px;
+  }
+
+  .skeletonOrderTable {
+    margin-top: 28px;
+  }
+
+  .skeletonOrderTableTitle {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: self-end;
+  }
+
+  .skeletonOrderTableDetails {
+    width: 100%;
+  }
+
+  .skeletonOrderTableRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: flex-end;
+  }
+
+  .skeletonOrderTableBottomRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: flex-end;
+    margin-top: 8px;
+  }
+
+  .skeletonTableRowTitle {
+    justify-self: flex-start;
+  }
+
+  .skeletonPrescription {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  .skeletonTotalPrice {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    column-gap: 12px;
+  }
+
+  .skeletonActionButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    column-gap: 12px;
+    width: 100%;
+  }
+
+  .skeletonActionButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 8px;
+  }
+}
