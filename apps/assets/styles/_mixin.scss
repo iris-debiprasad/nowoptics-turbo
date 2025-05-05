@@ -1,0 +1,325 @@
+@import "./variables";
+
+@mixin paddingTBLR($t, $b, $l, $r) {
+  padding-top: $t;
+  padding-bottom: $b;
+  padding-left: $l;
+  padding-right: $r;
+}
+
+@mixin marginTBLR($t, $b, $l, $r) {
+  margin-top: $t;
+  margin-bottom: $b;
+  margin-left: $l;
+  margin-right: $r;
+}
+
+@mixin widthMaxContent {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+@mixin transformX($val) {
+  -webkit-transform: translateX($val);
+  -moz-transform: translateX($val);
+  -ms-transform: translateX($val);
+  transform: translateX($val);
+}
+
+@mixin fontFSWH($f, $s, $w, $h) {
+  font-family: $f;
+  font-size: $s;
+  font-weight: $w;
+  line-height: $h;
+  //TODO: Adding this just for testing
+  letter-spacing: 0.5px !important;
+}
+
+@mixin displayFlex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin justifyContentSpaceEvenly {
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  justify-content: space-evenly;
+}
+
+@mixin flexWrap {
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin iris_container {
+  max-width: 1680px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0px 20px;
+  box-sizing: border-box;
+
+  @media (max-width: $extra-large) {
+    max-width: 1340px;
+  }
+}
+
+@mixin iris_modal_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  box-sizing: border-box;
+  height: fit-content;
+}
+
+@mixin iris_input_style {
+  input {
+    @include fontFSWH($primary-font, 15px, 400, 19px);
+    text-align: left;
+    height: auto;
+    padding: 14px 15px;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+
+    :disabled {
+      color: $primary-font-color;
+    }
+  }
+
+  label {
+    color: $secondary-font-color;
+    @include fontFSWH($primary-font, 15px, 400, 19px);
+    text-align: left;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+
+  fieldset {
+    border-radius: 10px;
+    border: 1px solid $secondary-font-color;
+  }
+}
+
+@mixin base_button {
+  @include fontFSWH($primary-font, 16px, 400, 19px);
+  @include paddingTBLR(11px, 11px, 25px, 25px);
+
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+
+  border-radius: 14px;
+  border: none;
+  color: $tertiary-font-color;
+  outline: none;
+
+  :is(&:hover, &:focus-visible) {
+    transition: all 0.5s ease;
+  }
+
+  @media (max-width: $extra-large) {
+    @include fontFSWH($primary-font, 13px, 400, 16px);
+    @include paddingTBLR(10px, 10px, 22px, 22px);
+  }
+}
+
+@mixin primary_button {
+  @include base_button;
+
+  background: $primary-color;
+  text-transform: uppercase;
+  letter-spacing: 0em;
+
+  &:hover {
+    background: $primary-dark-color;
+  }
+}
+
+@mixin secondary_button {
+  @include base_button;
+
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: $white;
+  bottom: 0;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    background-color: $primary-font-color;
+    color: $primary-color;
+  }
+
+  &:hover svg > path {
+    fill: $primary-color;
+    transition: all 0.5s ease;
+  }
+
+  svg > path {
+    fill: $primary-font-color;
+  }
+}
+
+@mixin tertiary_button {
+  @include base_button;
+
+  background: $secondary-color;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0em;
+
+  &:hover {
+    background: $secondary-light-color;
+  }
+}
+
+@mixin quaternary_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $primary-color;
+  @include fontFSWH($primary-font, 15px, 500, 19px);
+  padding: 8px 20px;
+  border: 1.5px solid $primary-color;
+  border-radius: 20px;
+  transition: color 0.1s ease-in-out;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: $primary-color;
+    transform: translate(-50%, -50%) scale(0, 1);
+    transition: transform 0.2s ease-in-out, opacity 0.1s ease-in-out;
+    opacity: 0.2;
+    z-index: -1;
+    border-radius: 20px;
+  }
+  &:hover {
+    color: $white;
+    &::before {
+      transform: translate(-50%, -50%) scale(1, 1);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin quinary_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $primary-color;
+  color: $white;
+  @include fontFSWH($primary-font, 15px, 500, 19px);
+  padding: 8px 20px;
+  border: 1.5px solid $primary-color;
+  border-radius: 20px;
+  transition: color 0.1s ease-in-out;
+}
+
+@mixin primary_link {
+  text-transform: capitalize;
+  @include fontFSWH($primary-font, 13px, 400, 17px);
+  letter-spacing: 0em;
+  text-align: center;
+  color: $primary-font-color;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 50px;
+  width: max-content;
+
+  &:hover {
+    color: $primary-color;
+    transition: all 0.5s ease;
+    background-color: transparent;
+  }
+
+  @media (max-width: $extra-large) {
+    margin-bottom: 12px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin flex(
+  $align-items: align-items,
+  $justify-content: justify-content,
+  $flex-direction: flex-direction
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+}
+
+/** ======= The next Mixins are going to be used for responsiveness ======= */
+
+$application-breakpoints: (
+  "small": $small,
+  "medium": $medium,
+  "large": $large,
+  "extra-large": $extra-large,
+);
+
+/** Style starting from a certain breakpoint registered in the 'application-breakpoints' map, media query uses mobile-first approach */
+@mixin responsive($breakpoint) {
+  @media screen and (min-width: map-get($application-breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+/** 
+  Mixin that implements a media query using a mobile-first approach, enter any breakpoint to use it
+*/
+@mixin media-query($screenSize) {
+  @media screen and (min-width: $screenSize) {
+    @content;
+  }
+}
+
+/** ====== END ====== */
+
+@mixin article-container {
+  width: min(100% - 2rem, 1200px);
+  margin: 1rem auto 3rem;
+
+  display: grid;
+  gap: 1rem;
+
+  & > * {
+    line-height: 1.5;
+    color: $primary-font-color;
+  }
+}
+
+/*
+mixin for all blue dark links in the site
+*/
+@mixin dark-site-link {
+  color: $secondary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Todo : For rx-renewal pages.
+@mixin iris_container_rx_renewal {
+  border-radius: 10px;
+  background: linear-gradient(180deg, $bg-header, $white 100%, $white 0);
+  box-shadow: 0 2px 11px 4px $shadow-color;
+}

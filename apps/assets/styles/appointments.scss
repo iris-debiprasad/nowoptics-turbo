@@ -1,0 +1,95 @@
+@import "./variables.scss";
+@import "./_mixin.scss";
+@import "@root/host/node_modules/@progress/kendo-theme-default/dist/all.scss";
+
+// TODO: IR-235 , We moved this file to assest folder to resolve build dependency of host on appointments module.
+// It is used to overwrite the kendo-scheduler styles in appointments (imported inside the host/src/pages/appointments/index.tsx).
+
+.scheduler {
+  border-radius: 10px;
+  .k-scheduler-layout {
+    overflow: auto;
+  }
+  .k-scheduler-layout.k-scheduler-day-view {
+    border-radius: 10px;
+  }
+  .k-toolbar-item .k-scheduler-views {
+    display: none;
+  }
+
+  .k-scheduler-head .k-scheduler-group:nth-child(2) {
+    height: 0;
+    overflow: hidden;
+  }
+
+  // for group heading cell
+  .k-scheduler-layout.k-scheduler-layout-flex
+    .k-scheduler-head
+    .k-scheduler-cell {
+    background: $grey;
+    @include fontFSWH($primary-font, 15px, 400, 19px);
+    color: $primary-font-color;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 12px, 400, 16px);
+    }
+  }
+
+  // for heading side (time) cell
+  .k-scheduler-layout-flex .k-scheduler-cell.k-side-cell {
+    min-width: 75px !important;
+    background: transparent;
+    @include fontFSWH($primary-font, 15px, 400, 19px);
+    color: $primary-font-color;
+    justify-content: flex-end;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 12px, 400, 16px);
+    }
+  }
+}
+
+.k-scheduler-head .k-event {
+  height: 0;
+  display: none;
+}
+
+.k-scheduler-head .k-scheduler-group .k-scheduler-row:nth-child(2) {
+  height: 0;
+  overflow: hidden;
+}
+.k-scheduler-head .k-scheduler-group .k-scheduler-row:nth-child(3) {
+  height: 0;
+  overflow: hidden;
+}
+
+.k-scheduler-row .k-scheduler-cell .k-slot-cell {
+  background-color: transparent;
+}
+
+// Walking dialog window css
+.walkinCustomDialog {
+  .k-dialog {
+    @include paddingTBLR(15px, 20px, 0px, 0px);
+    border-radius: 5px;
+    background: $white;
+  }
+
+  .k-dialog-titlebar {
+    @include paddingTBLR(0px, 13px, 3px, 0px);
+    @include marginTBLR(0px, 0px, 20px, 20px);
+    border-bottom: 1px solid $primary-light-color;
+    .k-dialog-title {
+      @include fontFSWH($primary-font, 20px, 400, 24px);
+      color: $black;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+  }
+
+  .k-dialog-content {
+    @include paddingTBLR(20px, 0px, 0px, 0px);
+  }
+}
