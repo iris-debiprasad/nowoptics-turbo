@@ -45,12 +45,13 @@
   gap: 1rem;
 
   &__menu {
-    margin-top: 0.8rem;
+    margin-top: 1.2rem;
     display: grid;
-    gap: 1.5rem;
+    gap: 1.8rem;
   }
 
   &__log_out {
     margin-top: 0.8rem;
+    cursor: pointer;
   }
 }

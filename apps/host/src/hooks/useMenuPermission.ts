@@ -9,7 +9,6 @@ const useMenuPermission = () => {
   const hasAccess = (access: boolean) => access;
 
   let {
-    pendingWebOrder,
     operationPermission,
     clinicalSchedulerPermission,
     operationCommandPermission,
@@ -24,8 +23,8 @@ const useMenuPermission = () => {
     stagingBinViewPermission,
     pendingShipPermission,
     pendingTracePermission,
-    manageCarePermission,
     claimsPermission,
+    pendingWebOrder,
     benefitsSheetPermission,
     dcSetupPermission,
     importSetupPermission,
@@ -54,7 +53,7 @@ const useMenuPermission = () => {
   } = useAppSelector((state) => {
     let pendingWebOrder = GetPermissionConfig({
       ...state,
-      permissionName: Permission.MENU.PENDING_WEB_ORDERS,
+      permissionName: Permission.MENU.OPERATION.PENDING_WEB_ORDERS,
     }) as boolean[];
     let clinicalSchedulerPermission = GetPermissionConfig({
       ...state,
@@ -114,11 +113,11 @@ const useMenuPermission = () => {
     }) as boolean[];
     const claimsPermission = GetPermissionConfig({
       ...state,
-      permissionName: Permission.MENU.MANAGE_CARE.CLAIMS,
+      permissionName: Permission.MENU.OPERATION.MANAGE_CARE_CLAIMS,
     }) as boolean[];
     const benefitsSheetPermission = GetPermissionConfig({
       ...state,
-      permissionName: Permission.MENU.MANAGE_CARE.BENEFITS_SHEET,
+      permissionName: Permission.MENU.OPERATION.MANAGE_CARE_BENEFITS_SHEET,
     }) as boolean[];
     const tabletCheckInPermission = GetPermissionConfig({
       ...state,
@@ -151,6 +150,9 @@ const useMenuPermission = () => {
         returnToCreditPermission.every(hasAccess),
         ccReportPermission.every(hasAccess),
         contactLensCalculatorPermission.every(hasAccess),
+        claimsPermission.every(hasAccess),
+        benefitsSheetPermission.every(hasAccess),
+        pendingWebOrder.every(hasAccess)
       ].some(hasAccess);
     };
 
@@ -161,13 +163,6 @@ const useMenuPermission = () => {
         stagingBinView.every(hasAccess),
         pendingShipPermission.every(hasAccess),
         pendingTracePermission.every(hasAccess),
-      ].some(hasAccess);
-    };
-
-    const manageCareAccess = () => {
-      return [
-        claimsPermission.every(hasAccess),
-        benefitsSheetPermission.every(hasAccess),
       ].some(hasAccess);
     };
 
@@ -256,8 +251,8 @@ const useMenuPermission = () => {
 
     return {
       //Header Menu
-      pendingWebOrder: pendingWebOrder.every(hasAccess),
       operationPermission: operationMenuAccess(),
+      pendingWebOrder: pendingWebOrder.every(hasAccess),
       clinicalSchedulerPermission: clinicalSchedulerPermission.every(hasAccess),
       operationCommandPermission: operationCommandPermission.every(hasAccess),
       closingPermission: closingPermission.every(hasAccess),
@@ -274,7 +269,6 @@ const useMenuPermission = () => {
       stagingBinViewPermission: stagingBinView.every(hasAccess),
       pendingShipPermission: pendingShipPermission.every(hasAccess),
       pendingTracePermission: pendingTracePermission.every(hasAccess),
-      manageCarePermission: manageCareAccess(),
       claimsPermission: claimsPermission.every(hasAccess),
       benefitsSheetPermission: benefitsSheetPermission.every(hasAccess),
       cartPermission: cartPermission.every(hasAccess),
@@ -307,7 +301,6 @@ const useMenuPermission = () => {
 
   return useMemo(() => {
     return {
-      pendingWebOrder,
       operationPermission,
       clinicalSchedulerPermission,
       operationCommandPermission,
@@ -322,8 +315,8 @@ const useMenuPermission = () => {
       jobStatusHistoryPermission,
       pendingShipPermission,
       pendingTracePermission,
-      manageCarePermission,
       claimsPermission,
+      pendingWebOrder,
       benefitsSheetPermission,
       dcSetupPermission,
       importSetupPermission,
@@ -352,7 +345,6 @@ const useMenuPermission = () => {
     };
   }, [
     //Header Menu
-    pendingWebOrder,
     operationPermission,
     clinicalSchedulerPermission,
     operationCommandPermission,
@@ -367,8 +359,8 @@ const useMenuPermission = () => {
     jobStatusHistoryPermission,
     pendingShipPermission,
     pendingTracePermission,
-    manageCarePermission,
     claimsPermission,
+    pendingWebOrder,
     benefitsSheetPermission,
     dcSetupPermission,
     importSetupPermission,

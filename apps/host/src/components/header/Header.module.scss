@@ -3,15 +3,6 @@
 
 .headerWrapper {
   display: flex;
-  margin-top: 100px;
-
-  @media (max-width: $extra-large) {
-    margin-top: 80px;
-  }
-
-  @media (max-width: 768px) {
-    margin-top: 90px;
-  }
 
   .header {
     z-index: 900;
@@ -23,35 +14,36 @@
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
-
-      @media (max-width: 768px) {
-        padding: 0;
-        height: 93px;
-        flex-direction: column-reverse;
-      }
     }
 
     display: flex;
-    margin-top: 49px;
     background: $white;
     height: 100px;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 4%);
+    border-bottom: 1px solid var(--primary-border-color);
 
     @media (max-width: $extra-large) {
       height: 80px;
     }
-
-    @media (max-width: 768px) {
-      padding: 0;
-      height: 93px;
-      flex-direction: column-reverse;
+    .menuIcon {
+      display: none;
+      @media (max-width: $medium) {
+        display: block;
+        margin-right: 20px;
+      }
+      @media (max-width: 768px) {
+        margin-right: 0px;
+      }
     }
-
     .logoSection {
       display: flex;
+      margin-right: 100px;
+      @media (max-width: $large) {
+        margin-right: 0px;
+      }
 
       img {
         height: auto;
@@ -62,7 +54,8 @@
       }
 
       @media (max-width: 768px) {
-        display: none;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .viewDetails {
@@ -79,7 +72,7 @@
 
     .searchSection {
       width: 475px;
-      margin: 0 30px;
+      margin: 0 auto;
       padding: 0;
 
       @media (max-width: $extra-large) {
@@ -96,17 +89,11 @@
           }
         }
       }
-
-      @media (max-width: $large) {
-        margin: 0;
+      @media (max-width: $medium) {
+        width: 300px;
       }
-      @media (min-width: 768px) {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      @media (max-width: 768px) {
-        width: 90%;
-        margin-bottom: 9px;
+      @media (max-width: $small) {
+        display: none;
       }
 
       input {
@@ -129,7 +116,7 @@
 
       fieldset {
         border: 1px solid #d8d8da;
-        border-radius: 10px;
+        border-radius: 20px;
       }
 
       .searchWithSelect {
@@ -183,46 +170,17 @@
     }
 
     .appointmentSection {
+      width: 300px;
+      @media (max-width: $large) {
+        width: 200px;
+      }
       @media (max-width: 768px) {
-        background: $primary-color;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 24px;
-        align-items: center;
-        color: $tertiary-font-color;
-        &.rowReverse{
-          flex-direction: row-reverse;
-        }
+        display: none;
       }
 
       .appointmentBtn {
-        @include primary_button;
-        padding: 11px 28px;
-        margin-bottom: 8px;
-
-        @media (max-width: 768px) {
-          display: none;
-        }
-      }
-
-      .bookingBtn {
-        display: none;
-        background-color: $primary-color;
-        color: $tertiary-font-color;
-        font-family: $primary-font;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 17px;
-        letter-spacing: 0em;
-        text-align: left;
-        text-transform: uppercase;
-        padding: 8.5px 5px;
-
-        @media (max-width: 768px) {
-          display: flex;
-          font-size: 12px;
-        }
+        @include quinary_button;
+        width: 100%;
       }
 
       > div {
@@ -378,6 +336,27 @@
       @media (max-width: $extra-large) {
         font-size: 12px;
       }
+    }
+  }
+}
+
+.staticMessageWrapper {
+  position: relative;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  background: $static-msg-bg;
+  padding: 20px;
+
+  .staticMessage {
+    width: 100%;
+    color: $black;
+    @include fontFSWH($primary-font, 14px, 400, 18px);
+    text-align: center;
+
+    a {
+      text-decoration: underline;
     }
   }
 }

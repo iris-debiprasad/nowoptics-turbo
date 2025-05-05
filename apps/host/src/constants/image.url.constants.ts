@@ -188,10 +188,13 @@ export const ImageUrlConstants: any = {
         "transform/538ce88f-aa94-4497-a18d-eadc84435bfe/OffersSection_TopBanner_M_SPA",
       TWO_FOR_79_PROMO:
         BASE_IMAGE_URL +
-        "transform/f24e253a-ea66-4de9-9910-e08f9e04bc73/1643_EIOT-Wrong-Dog_Offer-Tile_ENG",
+        "transform/26d0c0f0-f0e8-4505-ada7-70e5c687a58c/1634_Q2_EyeWitness_OfferTile_ENG",
       BOGO:
         BASE_IMAGE_URL +
-        "transform/030d0a69-ec7e-4fe9-afb4-abe657dd6fdc/1926_Q1HP_SO_BOGO_OfferTile_ENG",
+        "transform/16f302e8-6584-4e59-b4ce-d871595b5065/1966_Q2_BOGO_OfferTile_ENG",
+      CONTACT_LENS_VALUE_PACK:
+        BASE_IMAGE_URL +
+        "transform/fbc1a3a2-c083-4f61-badc-3de3aeaf2708/1994_Q2_ContactsMegaDeal_OfferTile_ENG",
       ACUVUE_SUPER_SAVINGS:
         BASE_IMAGE_URL +
         "transform/85cbe70e-2b99-4031-94a9-a870cb794498/WEB_SO_OfferTile_Acuvue-Super-Savings_ENG",
@@ -261,18 +264,26 @@ export const ImageUrlConstants: any = {
       TWO_FOR_79_SAME_DAY_BANNERS: {
         MOBILE:
           BASE_IMAGE_URL +
-          "transform/2132431b-cf6a-4481-8475-143a029fb131/1643_EIOT-Wrong-Dog_Landing-Page_Mobile_ENG",
+          "transform/986425a6-5468-4dbc-967b-4acf34e50e0f/1634_Q2_EyeWitness_LandingPage_Mobile_ENG",
         DESKTOP:
           BASE_IMAGE_URL +
-          "transform/9aedf860-2e11-498b-880b-b4cde1fb5836/1643_EIOT-Wrong-Dog_Landing-Page_Desktop_ENG",
+          "transform/92c944c1-804d-4745-8fe1-7a2ac0608562/1634_Q2_EyeWitness_LandingPage_Desktop_ENG",
       },
       BOGO_BANNERS: {
         MOBILE:
           BASE_IMAGE_URL +
-          "transform/c33b2c46-7048-475a-8c6b-28a1355ac455/1926_Q1HP_SO_BOGO_OfferLandingPage_Mobile",
+          "transform/60608bf4-ecb8-4f4d-8494-0b6d7762da5f/1966_Q2_BOGO_LandingPage_Mobile",
         DESKTOP:
           BASE_IMAGE_URL +
-          "transform/38dbe3a7-0398-4098-936b-290121120128/1926_Q1HP_SO_BOGO_OfferLandingPage_Desktop",
+          "transform/c0d586ee-1ab4-4cd5-93a5-d17b98254f8b/1966_Q2_BOGO_LandingPage_Desktop",
+      },
+      CONTACT_LENS_VALUE_PACK_BANNERS: {
+        MOBILE:
+          BASE_IMAGE_URL +
+          "transform/c4683c3c-23ee-406f-9a25-242490f79a06/1994_Q2_ContactsMegaDeal_LandingPage_TopBanner_Mobile",
+        DESKTOP:
+          BASE_IMAGE_URL +
+          "transform/4986df83-4350-4c4d-ac51-5ea1dc143275/1994_Q2_ContactsMegaDeal_LandingPage_TopBanner_Desktop",
       },
       INSURANCE_BANNERS: {
         MOBILE:
@@ -286,10 +297,13 @@ export const ImageUrlConstants: any = {
     SO_SPANISH: {
       TWO_FOR_79_PROMO:
         BASE_IMAGE_URL +
-        "transform/f53326d3-b927-495b-895e-a0691fb4323b/1643_EIOT-Wrong-Dog_Offer-Tile_SPA",
+        "transform/5f51fea2-a9ea-48d3-adc8-e6acd0725163/1634_Q2_EyeWitness_OfferTile_SPA",
       BOGO:
         BASE_IMAGE_URL +
-        "transform/c7fff9fa-afed-4348-b992-4871c0289cec/1926_Q1HP_SO_BOGO_OfferTile_SPA",
+        "transform/3be633ab-80e2-448e-85dd-6a8f475a4317/1966_Q2_BOGO_OfferTile_SPA",
+      CONTACT_LENS_VALUE_PACK:
+        BASE_IMAGE_URL +
+        "transform/aeaba237-cff2-40dd-a84c-b20ec9ea1167/1994_Q2_ContactsMegaDeal_OfferTile_SPA",
       ACUVUE_SUPER_SAVINGS:
         BASE_IMAGE_URL +
         "transform/a74e3f9b-be3d-42bb-af0e-c00939bd8084/WEB_SO_OfferTile_Acuvue-Super-Savings_SPA",
@@ -374,18 +388,26 @@ export const ImageUrlConstants: any = {
       TWO_FOR_79_SAME_DAY_BANNERS: {
         MOBILE:
           BASE_IMAGE_URL +
-          "transform/fc97509b-c611-4355-a1ef-f34574c751c9/1643_EIOT-Wrong-Dog_Landing-Page_Mobile_SPA",
+          "transform/08e8fc8b-422e-4750-bbf2-e1daee4cf478/1634_Q2_EyeWitness_LandingPage_Mobile_SPA",
         DESKTOP:
           BASE_IMAGE_URL +
-          "transform/fece1cf3-4cb1-42fb-b095-abdc6559d8b4/1643_EIOT-Wrong-Dog_Landing-Page_Desktop_SPA",
+          "transform/6a3bda4c-0092-4de8-9dd9-d0f79c312c05/1634_Q2_EyeWitness_LandingPage_Desktop_SPA",
       },
       BOGO_BANNERS: {
         MOBILE:
           BASE_IMAGE_URL +
-          "transform/c33b2c46-7048-475a-8c6b-28a1355ac455/1926_Q1HP_SO_BOGO_OfferLandingPage_Mobile",
+          "transform/60608bf4-ecb8-4f4d-8494-0b6d7762da5f/1966_Q2_BOGO_LandingPage_Mobile",
         DESKTOP:
           BASE_IMAGE_URL +
-          "transform/38dbe3a7-0398-4098-936b-290121120128/1926_Q1HP_SO_BOGO_OfferLandingPage_Desktop",
+          "transform/c0d586ee-1ab4-4cd5-93a5-d17b98254f8b/1966_Q2_BOGO_LandingPage_Desktop",
+      },
+      CONTACT_LENS_VALUE_PACK_BANNERS: {
+        MOBILE:
+          BASE_IMAGE_URL +
+          "transform/c4683c3c-23ee-406f-9a25-242490f79a06/1994_Q2_ContactsMegaDeal_LandingPage_TopBanner_Mobile",
+        DESKTOP:
+          BASE_IMAGE_URL +
+          "transform/4986df83-4350-4c4d-ac51-5ea1dc143275/1994_Q2_ContactsMegaDeal_LandingPage_TopBanner_Desktop",
       },
       INSURANCE_BANNERS: {
         MOBILE:
@@ -605,6 +627,20 @@ export const ImageUrlConstants: any = {
         BASE_IMAGE_URL +
         "transform/fd920751-87ab-4a0f-8ec3-988f02564ee5/2000_WEB_23_New_Catalog_Banners_SO_5_mobile",
     },
+    CONTACTS_BANNER: {
+      DESKTOP_ENG:
+        BASE_IMAGE_URL +
+        "transform/fb02f5f4-cf52-432d-8166-033d973e7d13/1951_Contacts-Section_HBanner_ENG_Desktop",
+      MOBILE_ENG:
+        BASE_IMAGE_URL +
+        "transform/08279e91-369f-46c5-b3ce-6c0e2375f207/1951_Contacts-Section_HBanner_ENG_Mobile",
+      DESKTOP_SPA:
+        BASE_IMAGE_URL +
+        "transform/09b7e2e1-650f-4669-8927-dded23db5c9d/1951_Contacts-Section_HBanner_SPA_Desktop",
+      MOBILE_SPA:
+        BASE_IMAGE_URL +
+        "transform/0e6bef54-4912-4e9f-acc7-98262a652049/1951_Contacts-Section_HBanner_SPA_Mobile",
+    },
   },
   DOCTOR_CONSULTATION: {
     DOCTOR_B_IMAGE:
@@ -791,6 +827,39 @@ export const ImageUrlConstants: any = {
     CAN_EYE_EXAM_BLOG_IMAGE1:
       BASE_IMAGE_URL +
       "transform/8de5b05a-5fc8-4f77-ab95-464ed419d402/Blog_AlondraTestimonial_Image1",
+    WOMEN_EYE_HEALTH_BLOG_TILE_DESKTOP:
+      BASE_IMAGE_URL +
+      "transform/1b7c385b-225b-4797-8533-3e24598223e2/BLOG_WomanEyeHealthMonth_MainBanner_Desktop",
+    WOMEN_EYE_HEALTH_BLOG_TILE_MOBILE:
+      BASE_IMAGE_URL +
+      "transform/b18ecc67-4263-42cd-ac13-3c6866b45edd/BLOG_WomanEyeHealthMonth_MainBanner_Mobile_Tile",
+    WOMEN_EYE_HEALTH_BLOG_TILE_IMAGE1:
+      BASE_IMAGE_URL +
+      "transform/fd17f52b-eefe-4af7-8cc4-49c0d73e679b/BLOG_WomanEyeHealthMonth_Pic1",
+    WOMEN_EYE_HEALTH_BLOG_TILE_IMAGE2:
+      BASE_IMAGE_URL +
+      "transform/8c340a86-5533-4c1d-9a17-660f0558b5b9/BLOG_WomanEyeHealthMonth_Pic2",
+    EASY_REMOVAL_CONTACT_BLOG_TILE_DESKTOP:
+      BASE_IMAGE_URL +
+      "transform/bdc8476e-f52b-4423-8b3b-1aa82e4cc508/BLOG_ContactLensRemoval_MainBanner_Desktop",
+    EASY_REMOVAL_CONTACT_BLOG_TILE_MOBILE:
+      BASE_IMAGE_URL +
+      "transform/af59242e-fff7-4e03-afa5-2b74051d3935/BLOG_ContactLensRemoval_MainBanner_Mobile_Tile",
+    EASY_REMOVAL_CONTACT_BLOG_TILE_IMAGE1:
+      BASE_IMAGE_URL +
+      "transform/d953ed69-92ec-4d12-b578-b9672e6dfe04/BLOG_ContactLensRemoval_Pic1",
+    RESTORE_SIGHT_CHANGE_LIVES:
+      BASE_IMAGE_URL +
+      "transform/546da3ee-903b-4c8d-8853-c40c2aad6b70/BLOG_CharityVision_MainBanner_Mobile_Tile",
+    RESTORE_SIGHT_CHANGE_LIVES_DESKTOP:
+      BASE_IMAGE_URL +
+      "/transform/89ceb9e0-7734-47e0-b5ae-e6c259e802cf/BLOG_CharityVision_MainBanner_Desktop",
+    RESTORE_SIGHT_CHANGE_LIVES_GIRL:
+      BASE_IMAGE_URL +
+      "/transform/d5f71de5-75b7-4e91-9aa9-2406f547745c/BLOG_CharityVision_Pic1",
+    RESTORE_SIGHT_CHANGE_LIVES_KIDS:
+      BASE_IMAGE_URL +
+      "/transform/ec9ea2e4-fea1-44ae-9cc8-ce23cff84868/BLOG_CharityVision_Pic2",
   },
   PLAY_VIDEO: {
     THUMBNAIL1:
@@ -959,4 +1028,7 @@ export const ImageUrlConstants: any = {
       BASE_IMAGE_URL +
       "transform/0c146ff2-1153-4274-bc23-bc9e6cdb3fe8/LiveHelp_Icon",
   },
+  DEFAULT_PRODUCT_IMAGE:
+    BASE_IMAGE_URL +
+    "transform/08653def-3656-4270-a17c-c4f874dee523/302_EM_21_Order-ReadyforPickUpCreative-Refresh_Sunglases",
 };

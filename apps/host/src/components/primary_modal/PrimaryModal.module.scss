@@ -892,3 +892,9 @@
   max-width: 800px;
   width: 90%;
 }
+
+.cancelReorderModal {
+  @include iris_modal_container;
+  max-width: 550px;
+  width: 90%;
+}

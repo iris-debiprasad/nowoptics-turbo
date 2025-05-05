@@ -8,6 +8,7 @@ import CloseIcon from "@root/assets/Images/icons/crossIcon.svg";
 import { SO_DEFAULT_STORE_CONTACT_NUMBER } from "@/constants/common.constants";
 import { UserMarketingConsentProps } from "@/types/UserMarketingConsent.types";
 import ConsentMessage from "./consentMessage";
+import Link from "next/link";
 
 export default function UserMarketingConsent<T extends FieldValues>({
   control,
@@ -37,6 +38,20 @@ export default function UserMarketingConsent<T extends FieldValues>({
 
   return (
     <Box className={`${style.consent} ${style.consent__wrapper}`}>
+      <div className={style.privacyContent}>
+        <p className={style.consent__text}>
+          {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P5")}
+          {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P6")}
+          {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P7")}
+          <Link
+            className={style.privacyModalLink}
+            target="_blank"
+            href={"/privacy-policy/"}
+          >
+            {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P8")}
+          </Link>
+        </p>
+      </div>
       <Controller
         control={control}
         name={fieldName as Path<T>}
@@ -47,22 +62,6 @@ export default function UserMarketingConsent<T extends FieldValues>({
             label={
               <p className={style.consent__text}>
                 <ConsentMessage />
-                {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P1")}
-                <button
-                  className={style.consent__privacy_policy_button}
-                  onClick={togglePopupDisplay}
-                  type="button"
-                >
-                  {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P2")}
-                </button>
-
-                {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P3")}
-
-                <a href={`tel:${SO_DEFAULT_STORE_CONTACT_NUMBER}`}>
-                  {SO_DEFAULT_STORE_CONTACT_NUMBER}
-                </a>
-
-                {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P4")}
               </p>
             }
             {...field}

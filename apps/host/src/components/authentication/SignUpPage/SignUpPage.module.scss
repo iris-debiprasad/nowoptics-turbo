@@ -2,23 +2,30 @@
 
 .authOuterWrapper {
   background-color: var(--quaternary-bg-color);
+
   .authContainer {
     @include iris_container;
-    display: flex;
-    justify-content: space-between;
-    @media (max-width: 1024px) {
-      flex-direction: column-reverse;
-    }
   }
 }
+
 .signUpWrapper {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: $medium) {
-    flex-direction: column;
+
+  @include responsive("medium") {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-query(1025px) {
+    gap: 2rem;
+    grid-template-columns: 1fr 0.5fr;
+  }
+
+  :is(.registration_form, .login_form)>div {
+    width: 100%;
   }
 }
+
 .wrapper {
   width: 100%;
   display: flex;

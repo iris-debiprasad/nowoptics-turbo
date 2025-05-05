@@ -89,7 +89,7 @@ function NewUserForm({
       email: "",
       gender: "",
       zipCode: "",
-      isMarketingConsent: true,
+      isMarketingConsent: false,
     },
   });
 
@@ -446,7 +446,7 @@ function NewUserForm({
           size="medium"
           className={style.submitButton}
         >
-          {i18n.t("BOOK_EYE_EXAM.SUBMIT")}
+          {i18n.t("BOOK_EYE_EXAM.NEXT")}
         </Button>
       </Box>
     </Box>

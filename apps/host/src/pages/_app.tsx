@@ -14,7 +14,7 @@ import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
 import { StoreAddressType } from "@/types/SideBar.types";
 import { getLatLong } from "@/utils/getLocation.utils";
 import Head from "next/head";
-import { checkBrand, checkGuidedSalesEnableForState, getLatLongForUser, getStateCodeForUser, setBrand, guidedSalesPilotOnlyCheck } from "@/utils/common.utils";
+import { checkBrand, checkGuidedSalesEnableForState, getLatLongForUser, getStateCodeForUser, setBrand, guidedSalesPilotOnlyCheck, getPublicEnv } from "@/utils/common.utils";
 import PPCPage from "./ppc/[[...slug]]";
 import useRefetchSession from "@/hooks/useRefetchSession";
 import SocialPage from "./social/[[...slug]]";
@@ -72,6 +72,10 @@ export default function App({
       // check if NEXT_PUBLIC_RECAPTCHA_ENABLE is present if there add it to window object
       if (initialData.NEXT_PUBLIC_RECAPTCHA_ENABLE) {
         window["NEXT_PUBLIC_RECAPTCHA_ENABLE"] = initialData.NEXT_PUBLIC_RECAPTCHA_ENABLE;
+      }
+
+      if(initialData.NEXT_PUBLIC_EMARSYS_TEST_MODE_ENABLE){
+        window["NEXT_PUBLIC_EMARSYS_TEST_MODE_ENABLE"] = initialData.NEXT_PUBLIC_EMARSYS_TEST_MODE_ENABLE;
       }
       setEnvData(initialData);
     }
@@ -221,15 +225,17 @@ export const ApplicationWrapper = React.memo(
         setIsGuidedSalesAgentEnabled(true)
       }
     }, [typeof window !== "undefined" && localStorage.getItem("session")])
-    
+
 
 
     return (
       <>
         <Head>
-          {crawlingDisable && (
+          {crawlingDisable ? (
             <meta name="robots" content="noindex, nofollow" />
-          )}
+          ) :
+            <meta name="robots" content="index, follow" />
+          }
           <link rel="canonical" href={canonicalUrl} />
         </Head>
         {/* TODO: We will find a generic solution for header footer removal */}
@@ -285,7 +291,7 @@ export const ApplicationWrapper = React.memo(
 ApplicationWrapper.displayName = "ApplicationWrapper";
 
 App.getInitialProps = async (appContext: any) => {
-  const initialData = { ...process.env };
+  const initialData = getPublicEnv();
 
   // Call the page's `getInitialProps` if it exists
   const appProps = await NextApp.getInitialProps(appContext);

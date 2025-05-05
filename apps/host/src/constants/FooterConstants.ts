@@ -1,42 +1,8 @@
 import { FooterLinkDTO } from "@/types/Footer.types";
-import { ImageUrlConstants } from "./image.url.constants";
 
 export const FooterConstants = {
   CONTACT_US: "CONTACT US",
 };
-
-export const STATIC_FOOTER = [
-  {
-    id: 1,
-    title: "Eye Exam",
-    link: "/eye-exam/",
-    img: ImageUrlConstants.STATIC_FOOTER.EYE_EXAM,
-  },
-  {
-    id: 2,
-    title: "Offers",
-    link: "/special-offers/",
-    img: ImageUrlConstants.STATIC_FOOTER.OFFERS,
-  },
-  {
-    id: 3,
-    title: "Same-Day Glasses",
-    link: "/same-day-glasses/",
-    img: ImageUrlConstants.STATIC_FOOTER.SAMEDAY_GLASSES,
-  },
-  {
-    id: 4,
-    title: "My Account",
-    link: "/my-account/",
-    img: ImageUrlConstants.STATIC_FOOTER.MY_ACCOUNT,
-  },
-  {
-    id: 5,
-    title: "Live Help",
-    link: "tel:8775185788",
-    img: ImageUrlConstants.STATIC_FOOTER.LIVE_HELP,
-  },
-];
 
 export const FooterData = [
   {
@@ -145,9 +111,9 @@ export const FOOTER_LINKS: FooterLinkDTO[] = [
 
       { id: 3, title: "Kids", link: "/catalog/youth/" },
 
-      { id: 4, title: "All frames", link: "/catalog/eyeglasses/" },
+      { id: 4, title: "All Frames", link: "/catalog/eyeglasses/" },
 
-      { id: 5, title: "Best Sellers", link: "/best-seller-glasses" },
+      { id: 5, title: "Best Sellers", link: "/catalog/best-seller-glasses" },
 
       { id: 6, title: "Same-Day Glasses", link: "/same-day-glasses/" },
 
@@ -156,7 +122,7 @@ export const FOOTER_LINKS: FooterLinkDTO[] = [
       {
         id: 8,
         title: "Frames Under $50",
-        link: "/eyeglasses-under-50/",
+        link: "/catalog/eyeglasses-under-50/",
       },
     ],
   },
@@ -168,19 +134,12 @@ export const FOOTER_LINKS: FooterLinkDTO[] = [
 
       { id: 2, title: "Men", link: "/catalog/mens-sunglasses/" },
 
-      { id: 3, title: "All Frames", link: "/catalog/sunglasses/" },
-
-      {
+      { id: 3, title: "All Sunglasses", link: "/catalog/sunglasses/" },
+      /* {
         id: 4,
-        title: "Best Sellers",
-        link: "/best-seller-glasses/",
-      },
-
-      {
-        id: 5,
         title: "Sunglasses Under $50",
-        link: "/sunglasses-under-50/",
-      },
+        link: "/catalog/sunglasses-under-50/",
+      },*/
     ],
   },
   {
@@ -193,11 +152,11 @@ export const FOOTER_LINKS: FooterLinkDTO[] = [
 
       { id: 3, title: "Monthly", link: "/catalog/monthly-contacts/" },
 
-      {
+      /*{
         id: 4,
         title: "Shop by Brand",
         link: "/catalog/contacts/",
-      },
+      },*/
 
       { id: 5, title: "All Contacts", link: "/catalog/contacts/" },
     ],
@@ -238,15 +197,15 @@ export const FOOTER_LINKS: FooterLinkDTO[] = [
         link: "/blog/",
       },
 
-      { id: 2, title: "Fashion in vision", link: "/blog/eyeglasses-trends-2024/" },
+      { id: 2, title: "Fashion in vision", link: "/blog/new-year-new-you-blog-2025/" },
 
       {
         id: 3,
         title: "Lens Technology",
-        link: "/blog/virtual-eye-care-with-telehealth-technology/",
+        link: "/blog/protect-your-eyes-with-platinum-blue-anti-glare-lenses/",
       },
 
-      { id: 4, title: "The “Eye Narrative“", link: "/blog/top-4-eye-charts-used-eye-exams/" },
+      { id: 4, title: "The “Eye Narrative“", link: "/blog/can-an-eye-exam-change-my-life/" },
     ],
   },
   {
@@ -282,17 +241,23 @@ export const FOOTER_LINKS: FooterLinkDTO[] = [
         title: "Contact Lens Value Pack",
         link: "/special-offers/cvp_biotrue/",
       },
+
+      {
+        id: 8,
+        title: "All Offers",
+        link: "/special-offers",
+      }
     ],
   },
   {
     id: 8,
     title: "At Your Service",
     menus: [
-      {
+      /*{
         id: 1,
         title: "Live Eye Care Specialist",
         link: "/prescription-renewal/",
-      },
+      },*/
 
       {
         id: 2,
@@ -319,7 +284,6 @@ export const FOOTER_LINKS: FooterLinkDTO[] = [
         title: "Accessibility",
         link: "/accessibility-statement/",
       },
-
       { id: 7, title: "Call us (877) 518-5788", link: "tel:8775185788" },
     ],
   },

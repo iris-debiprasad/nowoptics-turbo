@@ -781,3 +781,62 @@ export const isAssociate = () => {
   }
   return false;
 };
+
+/**
+ * Represents a segment of parsed text, which can be either plain text or a link.
+ */
+export interface ParsedMarkupSegment {
+  /**
+   * It will be either `text` or the `{markup}` shared in the 2nd parameter.
+   */
+  type: string | "text";
+  value: string;
+}
+
+/**
+ * Parses a string containing text and any markup like, link markup (#a##...##a#)
+ * into an array of objects representing text and markup segments.
+ *
+ * @param inputString The string to parse.
+ * @param markup The markup to split.
+ * @returns An array of ParsedSegment objects.
+ */
+export function parseStringWithMarkup(
+  inputString: string,
+  /**
+   * It can be text which is wrapped in opening markup - `#{markup}##` or closing markup - `##{markup}#`.
+   * Here `{markup}` can be replaced with any string.
+   */
+  markup: string
+): ParsedMarkupSegment[] {
+  const splitRegex = new RegExp(`(#${markup}##.*?##${markup}#)`, "g");
+  const markupContentRegex = new RegExp(`^#${markup}##(.*?)##${markup}#$`);
+
+  // Split the string using the regex. Filter out empty strings that can result from splitting.
+  const segments = inputString
+    .split(splitRegex)
+    .filter((segment) => segment.length > 0);
+
+  // Map the segments to the desired JSON structure
+  const result: ParsedMarkupSegment[] = segments.map((segment) => {
+    const linkMatch = segment.match(markupContentRegex);
+    if (linkMatch && linkMatch[1] !== undefined) {
+      // If the segment matches the link format, extract the content (group 1)
+      return { type: markup, value: linkMatch[1] };
+    } else {
+      // Otherwise, it's plain text
+      return { type: "text", value: segment };
+    }
+  });
+
+  return result;
+}
+
+export const getPublicEnv = () => {
+  return Object.keys(process.env)
+    .filter((key) => key.startsWith("NEXT_PUBLIC"))
+    .reduce((env, key) => {
+      env[key] = process.env[key];
+      return env;
+    }, {} as Record<string, string | undefined>);
+};

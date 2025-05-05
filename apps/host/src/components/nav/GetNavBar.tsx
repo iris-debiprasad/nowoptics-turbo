@@ -1,6 +1,6 @@
 import { AlertColor, Box, Button, styled } from "@mui/material";
 import * as React from "react";
-import { KeyboardArrowDown } from "@mui/icons-material";
+import { KeyboardArrowRight } from "@mui/icons-material";
 import style from "./Nav.module.scss";
 import { navProps } from "@/types/Header.types";
 import { NAV_ITEMS } from "@/constants/header.constants";
@@ -26,9 +26,8 @@ import { useAppDispatch, useAppSelector } from "@/store/useStore";
 import { clearLocalStorage } from "@/utils/common.utils";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
-import { updateLangCode } from "@/store/reducer/languageCodeReducer";
-import Cookies from "js-cookie";
 import { getLatLong } from "@/utils/getLocation.utils";
+import { setCount } from "@/store/reducer/favorite-products";
 
 const CustomButton = styled(Button)({
   "&:hover": {
@@ -44,7 +43,6 @@ const GetNavBar = ({
 }: navProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const [currentLanguage, setCurrentLanguage] = React.useState(i18n.language);
   const isCDC = useAppSelector((state) => state.cdcView.data.isCDCView);
   const isAgent = useAppSelector((state) => state.cdcView.data.isAgent);
   const router = useRouter();
@@ -58,6 +56,8 @@ const GetNavBar = ({
   const [userLocation, setUserLocation] = React.useState<LocationDTO | null>(
     null
   );
+
+  const loginDropdownRef = React.useRef<HTMLUListElement>(null);
   React.useEffect(() => {
     if (navigator.geolocation) {
       getLatLong((lat, long) => {
@@ -66,18 +66,6 @@ const GetNavBar = ({
           longitude: long,
         });
       });
-    }
-    if (localStorage.getItem("language")) {
-      let currentLanguage = localStorage.getItem("language") as string;
-      localStorage.setItem("language", currentLanguage);
-      i18n.changeLanguage(currentLanguage);
-      dispatch(updateLangCode(currentLanguage));
-      setCurrentLanguage(currentLanguage);
-    } else {
-      localStorage.setItem("language", currentLanguage);
-      i18n.changeLanguage(currentLanguage);
-      dispatch(updateLangCode(currentLanguage));
-      setCurrentLanguage(currentLanguage);
     }
   }, []);
   React.useEffect(() => {
@@ -96,10 +84,6 @@ const GetNavBar = ({
     typeof window !== "undefined" && localStorage?.getItem("updatedUser"),
     session,
   ]);
-
-  React.useEffect(() => {
-    setCurrentLanguage(i18n.language);
-  }, [i18n.language]);
 
   const getStoreGridData = async (page: number) => {
     GetPublicStoreLocatorGrid(
@@ -150,6 +134,7 @@ const GetNavBar = ({
         }
         clearStore();
         setCartBadgeCount && setCartBadgeCount(0);
+        dispatch(setCount(0));
       })
       .catch((err) => {
         setOpenLoader(false);
@@ -189,28 +174,29 @@ const GetNavBar = ({
     };
   }, [navItems, clearStore, session]);
 
+  // This implementation is for the My Account dropdown, we need the dropdown to close
+  // after clicking a link like "forgot my password" and "create my account"
+  // so the popup doesn't stay open while we are changing routes
+  React.useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      if ((event.target as HTMLElement).tagName === "A") {
+        (event.target as HTMLElement).blur();
+      }
+    };
+
+    const div = loginDropdownRef.current;
+    if (div) {
+      div.addEventListener("click", handleClick);
+      return () => div.removeEventListener("click", handleClick);
+    }
+  }, []);
+
   const currentParams =
     Object.keys(router?.query).length > 0 && router?.query?.ParentOrderId
       ? Object.keys(router?.query)
           .map((key) => key + "=" + router?.query[key])
           .join("&")
       : "";
-
-  const handleLanguageChange = (newLanguage: string) => {
-    i18n.changeLanguage(newLanguage);
-    dispatch(updateLangCode(newLanguage));
-    localStorage.setItem("language", newLanguage);
-    Cookies.set("language", newLanguage);
-    setCurrentLanguage(newLanguage);
-    // [IR-2064] - Redirect to stanton-access page if user is on stanton-access-spa page and language is english
-    if (
-      (router.pathname === "/stanton-access-spa" ||
-        router.pathname === "/stanton-access-spa/") &&
-      newLanguage === "en"
-    ) {
-      router.push("/stanton-access/");
-    }
-  };
 
   return (
     <>
@@ -259,54 +245,109 @@ const GetNavBar = ({
                   classes={{ endIcon: style.navEndIcon }}
                   data-testid={`nav-button-dropdown-${navItem.name}`}
                   id={navItem.name + navItem.id}
-                  endIcon={<KeyboardArrowDown />}
+                  endIcon={<KeyboardArrowRight />}
                   disabled
                 >
                   {t(`nav.${navItem.name}`)} {/* Desktop Nav options */}
                 </CustomButton>
 
-                <ul className={style.dropdown}>
-                  {filterLinkMenu.map((subMenuItem, index) => (
-                    <>
-                      {subMenuItem.type === NAV_ITEMS.NAV_TYPES.TEXT && (
-                        <li key={subMenuItem.id} className={style.menuBtn}>
-                          {subMenuItem.name === "Eye Exam" ? (
-                            <Link
-                              href="#"
-                              className={`${
-                                index === filterLinkMenu.length - 1
-                                  ? style.menuLinkRemoveBorder
-                                  : style.menuLinkBorder
-                              }`}
-                              id={subMenuItem.name + subMenuItem.id}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                setShowEyeExamFlow(true);
-                              }}
+                <ul
+                  className={`${style.dropdown} ${
+                    filterLinkMenu.length > 7 && style.splitDropdown
+                  }`}
+                >
+                  <div>
+                    {filterLinkMenu.slice(0, 7).map(
+                      (subMenuItem, index) =>
+                        subMenuItem.type === NAV_ITEMS.NAV_TYPES.TEXT && (
+                          <li
+                            key={navItem.name + subMenuItem.id + index}
+                            className={style.menuBtn}
+                          >
+                            {subMenuItem.name === "Eye Exam" ? (
+                              <Link
+                                href="#"
+                                className={`${
+                                  index === filterLinkMenu.length - 1
+                                    ? style.menuLinkRemoveBorder
+                                    : style.menuLinkBorder
+                                }`}
+                                id={subMenuItem.name + subMenuItem.id}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setShowEyeExamFlow(true);
+                                }}
+                              >
+                                {t(`nav.${subMenuItem.name}`)}
+                              </Link>
+                            ) : (
+                              <Link
+                                href={
+                                  subMenuItem?.query && currentParams
+                                    ? `${subMenuItem.url}?${currentParams}`
+                                    : subMenuItem?.url
+                                }
+                                className={`${
+                                  index === filterLinkMenu.length - 1
+                                    ? style.menuLinkRemoveBorder
+                                    : style.menuLinkBorder
+                                }`}
+                              >
+                                {t(`nav.${subMenuItem.name}`)}
+                                {/* Desktop Nav options dropdown */}
+                              </Link>
+                            )}
+                          </li>
+                        )
+                    )}
+                  </div>
+                  {filterLinkMenu.length > 7 && (
+                    <div>
+                      {filterLinkMenu.slice(7).map(
+                        (subMenuItem, index) =>
+                          subMenuItem.type === NAV_ITEMS.NAV_TYPES.TEXT && (
+                            <li
+                              key={navItem.name + subMenuItem.id + index}
+                              className={style.menuBtn}
                             >
-                              {t(`nav.${subMenuItem.name}`)}
-                            </Link>
-                          ) : (
-                            <Link
-                              href={
-                                subMenuItem?.query && currentParams
-                                  ? `${subMenuItem.url}?${currentParams}`
-                                  : subMenuItem?.url
-                              }
-                              className={`${
-                                index === filterLinkMenu.length - 1
-                                  ? style.menuLinkRemoveBorder
-                                  : style.menuLinkBorder
-                              }`}
-                            >
-                              {t(`nav.${subMenuItem.name}`)}
-                              {/* Desktop Nav options dropdown */}
-                            </Link>
-                          )}
-                        </li>
+                              {subMenuItem.name === "Eye Exam" ? (
+                                <Link
+                                  href="#"
+                                  className={`${
+                                    index === filterLinkMenu.length - 1
+                                      ? style.menuLinkRemoveBorder
+                                      : style.menuLinkBorder
+                                  }`}
+                                  id={subMenuItem.name + subMenuItem.id}
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    setShowEyeExamFlow(true);
+                                  }}
+                                >
+                                  {t(`nav.${subMenuItem.name}`)}
+                                </Link>
+                              ) : (
+                                <Link
+                                  href={
+                                    subMenuItem?.query && currentParams
+                                      ? `${subMenuItem.url}?${currentParams}`
+                                      : subMenuItem?.url
+                                  }
+                                  className={`${
+                                    index === filterLinkMenu.length - 1
+                                      ? style.menuLinkRemoveBorder
+                                      : style.menuLinkBorder
+                                  }`}
+                                >
+                                  {t(`nav.${subMenuItem.name}`)}
+                                  {/* Desktop Nav options dropdown */}
+                                </Link>
+                              )}
+                            </li>
+                          )
                       )}
-                    </>
-                  ))}
+                    </div>
+                  )}
                 </ul>
               </li>
             </ul>
@@ -327,7 +368,7 @@ const GetNavBar = ({
                   className={style.navLink}
                   classes={{ endIcon: style.navEndIcon }}
                   id={navItem.name + navItem.id}
-                  endIcon={<KeyboardArrowDown />}
+                  endIcon={<KeyboardArrowRight />}
                   disabled
                 >
                   {t(`nav.${navItem.name}`)}
@@ -337,6 +378,7 @@ const GetNavBar = ({
                   className={`${style["dropdown--login"]} ${
                     !session ? style["no-session"] : ""
                   }`}
+                  ref={loginDropdownRef}
                 >
                   <li>
                     {!session ? (
@@ -394,16 +436,6 @@ const GetNavBar = ({
           );
         }
       })}
-      {(session?.user as any)?.authData?.userType !== USER_TYPE.ASSOCIATE && (
-        <CustomButton
-          className={`${style.navLink} ${style.languageButton}`}
-          onClick={() =>
-            handleLanguageChange(currentLanguage === "en" ? "de" : "en")
-          }
-        >
-          {currentLanguage === "en" ? "Español" : "English"}
-        </CustomButton>
-      )}
     </>
   );
 };

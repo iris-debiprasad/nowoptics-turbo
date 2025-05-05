@@ -51,9 +51,18 @@
   align-items: center;
   gap: 1rem;
   justify-content: space-between;
-  
+
   border-bottom: 1px solid #636363;
   padding: 0.5rem 1rem;
+
+  &__actions_group {
+    display: flex;
+  }
+
+  &__icon_button {
+    position: relative;
+    display: flex;
+  }
 }
 
 .body {

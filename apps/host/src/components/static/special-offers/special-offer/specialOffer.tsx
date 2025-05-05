@@ -60,25 +60,27 @@ const SpecialOffer = (props: ISpecialOffer) => {
                   : props.data.content,
             }}
           ></div>
-          <Button
-            className={style.appointmentBtn}
-            endIcon={
-              <IconSVG
-                width="17"
-                height="18"
-                viewBox="0 0 17 18"
-                fill="none"
-                fillP="#010101"
-                name="arrow_solid_right"
-              />
-            }
-            onClick={() => router.push(props.data.ctaRoute)}
-            data-testid="BookEyeExam"
-          >
-            {isSpanish && props.data.cta_es
-              ? props.data.cta_es
-              : props.data.cta}
-          </Button>
+          {props.data.cta !== "" || props.data.cta_es ? (
+            <Button
+              className={style.appointmentBtn}
+              endIcon={
+                <IconSVG
+                  width="17"
+                  height="18"
+                  viewBox="0 0 17 18"
+                  fill="none"
+                  fillP="#010101"
+                  name="arrow_solid_right"
+                />
+              }
+              onClick={() => router.push(props.data.ctaRoute)}
+              data-testid="BookEyeExam"
+            >
+              {isSpanish && props.data.cta_es
+                ? props.data.cta_es
+                : props.data.cta}
+            </Button>
+          ) : null}        
         </div>
       </div>
 

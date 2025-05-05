@@ -1,0 +1,150 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.leftBannerWrapper {
+  display: flex;
+  min-height: 450px;
+
+  .container {
+    @include iris_container;
+    min-height: 450px;
+
+    @media (max-width: 768px) {
+      min-height: 500px;
+      margin-left: 0;
+      padding: 18px 26px;
+    }
+
+    .leftBannerContents {
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 768px) {
+        justify-content: flex-start !important;
+        position: relative;
+      }
+
+      .heading {
+        @include fontFSWH($primary-font, 42px, 400, 46px);
+        letter-spacing: 0em;
+        text-align: left;
+        color: $tertiary-font-color;
+
+        span {
+          color: $primary-color;
+        }
+
+        @media (max-width: 768px) {
+          @include fontFSWH($primary-font, 32px, 400, 36px);
+          letter-spacing: 0em;
+          text-align: center;
+        }
+      }
+
+      .headingMain {
+        @include fontFSWH($secondary-font, 34px, 600, 38px);
+        color: #0d0a05;
+
+        @media (max-width: 768px) {
+          @include fontFSWH($secondary-font, 24px, 600, 28px);
+          letter-spacing: 0em;
+          text-align: center;
+          margin-top: 10px;
+        }
+      }
+
+      .subHeading {
+        margin-top: 5px;
+
+        p {
+          @include fontFSWH($primary-font, 22px, 400, 26px);
+
+          @media (max-width: 768px) {
+            @include fontFSWH($primary-font, 14px, 400, 18px);
+          }
+
+          &:last-of-type {
+            max-width: 45ch;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+
+            @media (max-width: 768px) {
+              max-width: none;
+              margin-top: 1rem;
+            }
+          }
+        }
+
+        @media (max-width: 768px) {
+          span {
+            font-size: 18px !important;
+            line-height: 24px !important;
+          }
+        }
+      }
+
+      .description {
+        p {
+          @include fontFSWH($primary-font, 18px, 400, 30px);
+          margin: 2rem 0;
+
+          @media (max-width: 768px) {
+            @include fontFSWH($primary-font, 13px, 400, 20px);
+          }
+        }
+
+        @media (max-width: 768px) {
+          margin-top: 12px;
+          position: absolute;
+          bottom: 70px;
+          text-align: center;
+          width: 100%;
+        }
+      }
+
+      .leftBannerBottom {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          align-items: center;
+        }
+
+        .appointmentBtn {
+          @include quaternary_button;
+          width: 300px;
+
+          span {
+            z-index: 2;
+          }
+        }
+
+        .appointmentBtn::before {
+          z-index: 1 !important
+        }
+
+        .disclaimerBtn {
+          @include primary_link;
+
+          @media (max-width: $extra-large) {
+            margin-bottom: 50px;
+          }
+
+          @media (max-width: 768px) {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.popperContainer {
+  z-index: 3;
+}

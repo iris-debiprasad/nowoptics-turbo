@@ -1,5 +1,6 @@
 import {
   Box,
+  Breadcrumbs,
   Button,
   Table,
   TableBody,
@@ -19,6 +20,7 @@ import { useRouter } from "next/router";
 import ConfirmationModal from "../confirmationModal/ConfirmationModal";
 import { useAppDispatch } from "@/store/useStore";
 import { decrementCount } from "@/store/reducer/favorite-products";
+import Breadcrumb from "../breadcrumb/Breadcrumb";
 
 export function FavoriteProductsAsGuest(): React.JSX.Element {
   const router = useRouter();
@@ -29,10 +31,19 @@ export function FavoriteProductsAsGuest(): React.JSX.Element {
   const [isDeletionModalDisplayed, setIsDeletionModalDisplayed] =
     React.useState<boolean>(false);
 
+  const isUserLoggedIn =
+    typeof window !== "undefined" &&
+    localStorage.getItem("auth_status") === "authenticated";
+
   React.useEffect(() => {
+    if (isUserLoggedIn) {
+      router.push("/");
+      return;
+    }
+
     const data = JSON.parse(localStorage.getItem("user-favorites") || "[]");
     setFavorites(data);
-  }, []);
+  }, [isUserLoggedIn]);
 
   const handleAddToCart = (
     modelnumber: string,
@@ -63,116 +74,126 @@ export function FavoriteProductsAsGuest(): React.JSX.Element {
     localStorage.setItem("user-favorites", JSON.stringify(newFavorites));
     setSelectedProductVariantNumber(null);
     dispatch(decrementCount());
-    setIsDeletionModalDisplayed(false)
+    setIsDeletionModalDisplayed(false);
   };
 
   return (
-    <Box
-      className={`cardSection ${style.myAccountFavoritesWrapper}`}
-      data-testid="my-account-favorites"
-    >
-      <div className={style.favoritesInnerWrapper}>
-        <h2 className="iris_table_heading">Favorites</h2>
-        <div className={`iris_table`}>
-          <TableContainer sx={{ overflow: "auto" }}>
-            <Table aria-label="simple table" className={style.table}>
-              <TableBody>
-                {favorites.map((item, index) => (
-                  <TableRow
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                    key={item.id + item.vTitle}
-                    className={style.tableRow}
-                  >
-                    <TableCell className={style.productImage}>
-                      <Box className={style.likeIcon}>
-                        <IconSVG
-                          width="18"
-                          height="16"
-                          viewBox="0 0 18 16"
-                          fill="#f98300"
-                          name="like_fill_icon"
-                        />
-                      </Box>
-                      <div className={style.imageDiv}>
-                        <Image
-                          src={item.images[0]}
-                          alt="product"
-                          height={200}
-                          width={200}
-                          layout="responsive"
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "contain",
-                          }}
-                          className={style.imageThubmnail}
-                        />
-                      </div>
-                    </TableCell>
-                    <TableCell className={style.descriptionWrapper}>
-                      <Typography className={style.productName}>
-                        {item.brand[0]}
-                      </Typography>
-                      <Typography className={style.description}>
-                        {item.title}
-                      </Typography>
-                    </TableCell>
-                    <TableCell className={style.dateWrapper}>
-                      <Typography className={style.dateAdded}>
-                        Item Added On {dayjs(item.addedOn).format(DATE_FORMAT)}
-                      </Typography>
-                    </TableCell>
-                    <TableCell className={style.buttons}>
-                      <div className={style.actionButtonWrapper}>
-                        <Button
-                          className={style.addToCartBtn}
-                          onClick={() =>
-                            handleAddToCart(
-                              item.modelnumber,
-                              item.sku,
-                              item.title,
-                            )
-                          }
-                        >
-                          Add to Cart
-                        </Button>
-                        <Button
-                          data-testid={`deleteFavoriteBtn-${index}`}
-                          className={style.deleteBtn}
-                          onClick={() =>
-                            displayDeletionModal(item.variantNumber)
-                          }
-                        >
-                          Remove
-                        </Button>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          {favorites.length === 0 && (
-            <p>You haven{"'"}t added any items to your favorites yet.</p>
-          )}
-        </div>
-      </div>
+    <>
+      <Breadcrumb
+        links={[
+          { label: "Home", href: "/" },
+          { label: "My Favorites", href: "/favorites" },
+        ]}
+      />
 
-      {isDeletionModalDisplayed && (
-        <ConfirmationModal
-          data-testid="deleteFavoriteModal"
-          content="Are you sure you want to remove this favorite item?"
-          open={isDeletionModalDisplayed}
-          handleClose={() => {
-            setIsDeletionModalDisplayed(false);
-            setSelectedProductVariantNumber(null);
-          }}
-          performAction={deleteProduct}
-          Id={0}
-          btnOneText="CANCEL"
-          btnTwoText="YES"
-        />
-      )}
-    </Box>
+      <Box
+        className={`cardSection ${style.myAccountFavoritesWrapper}`}
+        data-testid="my-account-favorites"
+      >
+        <div className={style.favoritesInnerWrapper}>
+          <h2 className="iris_table_heading">Favorites</h2>
+          <div className={`iris_table`}>
+            <TableContainer sx={{ overflow: "auto" }}>
+              <Table aria-label="simple table" className={style.table}>
+                <TableBody>
+                  {favorites.map((item, index) => (
+                    <TableRow
+                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                      key={item.id + item.vTitle}
+                      className={style.tableRow}
+                    >
+                      <TableCell className={style.productImage}>
+                        <Box className={style.likeIcon}>
+                          <IconSVG
+                            width="18"
+                            height="16"
+                            viewBox="0 0 18 16"
+                            fill="#f98300"
+                            name="like_fill_icon"
+                          />
+                        </Box>
+                        <div className={style.imageDiv}>
+                          <Image
+                            src={item.images[0]}
+                            alt="product"
+                            height={200}
+                            width={200}
+                            layout="responsive"
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "contain",
+                            }}
+                            className={style.imageThubmnail}
+                          />
+                        </div>
+                      </TableCell>
+                      <TableCell className={style.descriptionWrapper}>
+                        <Typography className={style.productName}>
+                          {item.brand[0]}
+                        </Typography>
+                        <Typography className={style.description}>
+                          {item.title}
+                        </Typography>
+                      </TableCell>
+                      <TableCell className={style.dateWrapper}>
+                        <Typography className={style.dateAdded}>
+                          Item Added On{" "}
+                          {dayjs(item.addedOn).format(DATE_FORMAT)}
+                        </Typography>
+                      </TableCell>
+                      <TableCell className={style.buttons}>
+                        <div className={style.actionButtonWrapper}>
+                          <Button
+                            className={style.addToCartBtn}
+                            onClick={() =>
+                              handleAddToCart(
+                                item.modelnumber,
+                                item.sku,
+                                item.title,
+                              )
+                            }
+                          >
+                            Add to Cart
+                          </Button>
+                          <Button
+                            data-testid={`deleteFavoriteBtn-${index}`}
+                            className={style.deleteBtn}
+                            onClick={() =>
+                              displayDeletionModal(item.variantNumber)
+                            }
+                          >
+                            Remove
+                          </Button>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+            {favorites.length === 0 && (
+              <p>You haven{"'"}t added any items to your favorites yet.</p>
+            )}
+          </div>
+        </div>
+
+        {isDeletionModalDisplayed && (
+          <ConfirmationModal
+            data-testid="deleteFavoriteModal"
+            content="Are you sure you want to remove this favorite item?"
+            open={isDeletionModalDisplayed}
+            handleClose={() => {
+              setIsDeletionModalDisplayed(false);
+              setSelectedProductVariantNumber(null);
+            }}
+            performAction={deleteProduct}
+            Id={0}
+            btnOneText="CANCEL"
+            btnTwoText="YES"
+          />
+        )}
+      </Box>
+    </>
   );
 }

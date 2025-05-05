@@ -20,6 +20,7 @@ import { visionIntakeApiSlice } from "./reducer/visionIntakeApi.slice";
 import { guidedSaleReducerSlice } from "./reducer/GuidedSaleReducer";
 import { addPatientSlice } from "./reducer/addPatientReducer";
 import { favoriteProductsSlice } from "./reducer/favorite-products";
+import { headerSlice } from "./reducer/header.reducer";
 
 const persistConfig = {
   key: "root",
@@ -56,6 +57,7 @@ export const store = configureStore({
     [visionIntakeApiSlice.reducerPath]: visionIntakeApiSlice.reducer,
     addPatient: addPatientSlice.reducer,
     favoriteProducts: favoriteProductsSlice.reducer, 
+    header: headerSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

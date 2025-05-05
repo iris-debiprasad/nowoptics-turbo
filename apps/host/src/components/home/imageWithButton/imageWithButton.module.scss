@@ -1,0 +1,44 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.imageContainer {
+    height: auto;
+    position: relative;
+    width: 100%;
+
+    .borderRadius {
+        border-radius: 1rem;
+    }
+
+    & .image {
+        align-items: center;
+        justify-content: center;
+        @include displayFlex;
+    }
+
+    .categoryBtn {
+        @include quaternary_button;
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        background-color: white;
+        min-width: 150px;
+
+        span {
+            z-index: 2;
+        }
+    }
+
+    .categoryBtn::before {
+        z-index: 1 !important
+    }
+
+    .disclaimerBtn {
+        @include primary_link;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        color: white;
+        margin-bottom: 10px !important;
+    }
+}

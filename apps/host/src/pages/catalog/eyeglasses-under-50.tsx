@@ -20,11 +20,11 @@ const ProductComponent = dynamic<{ facets: any, filters?:string[] }>(
 const Products = (props: { facets: any }) => {
   const { t } = useTranslation();
   const brand = useGetBrand();
-  
+
   return (
     <>
       <Head>
-        <title>{`${t("EYEGLASSES/UNDER_50.META.TITLE")} - ${
+        <title>{`Glasses Under $50  - ${BRAND_NAME[brand]} | Gafas por Menos de $50 - ${
           BRAND_NAME[brand]
         }`}</title>
         <meta
@@ -33,6 +33,7 @@ const Products = (props: { facets: any }) => {
         />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow"/>
       </Head>
       <div>
         <ProductComponent facets={props.facets} />
@@ -40,12 +41,6 @@ const Products = (props: { facets: any }) => {
     </>
   );
 };
-
-//TODO: will add in future if required
-// export const getStaticProps = async () => {
-//   const result = await commonUtilForGetAllFacets();
-//   return result;
-// };
 
 export async function getServerSideProps(context: any) {
   const session = await getToken({

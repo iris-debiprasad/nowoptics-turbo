@@ -132,9 +132,11 @@ import SearchPatientBar from "../searchPatientBar/SearchPatientBar";
 import SelectPatientAssociateModal from "../selectPatientAssociateModal/SelectPatientAssociateModal";
 import ShowBrandStore from "../showBrandStore/ShowBrandStore";
 import CommonTableSkeleton from "../skeleton_loader/CommonTableSkeleton/CommonTableSkeleton";
-import useNonInitialEffect from "./../../hooks/useNonInitialEffect";
-import { ADD_POF } from "./../../store/reducer/AddPofReducer";
+import useNonInitialEffect from "../../hooks/useNonInitialEffect";
+import { ADD_POF } from "../../store/reducer/AddPofReducer";
 import BackdropLoader from "../backdrop_loader/BackdropLoader";
+import menuIcon from "../../../../assets/Images/icons/menuIcon.svg";
+import { toggleMobileMenu } from "@/store/reducer/header.reducer";
 
 const Prescription = dynamic(() => import("order/Prescription"), {
   ssr: false,
@@ -1261,8 +1263,23 @@ export default function Header(props: Props) {
     <>
       <BackdropLoader openLoader={loading} />
       <Box className={style.headerWrapper}>
-        <AppBar className={style.header}>
+        <AppBar
+          className={`${style.header} ${
+            (props.session?.user as any)?.authData?.userType !==
+              USER_TYPE.ASSOCIATE && style.headerCustomer
+          }`}
+          position="relative"
+        >
           <div className={style.headerContainer}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={() => dispatch(toggleMobileMenu())}
+              className={style.menuIcon}
+            >
+              <Image src={menuIcon} alt="menu" width={16} height={14} />
+            </IconButton>
             <Box className={style.logoSection}>
               <Link href="/">
                 {appLogo ? (
@@ -1775,39 +1792,10 @@ export default function Header(props: Props) {
                               className={style.appointmentBtn}
                               aria-label="supportNumber"
                               tabIndex={0}
-                              endIcon={
-                                <IconSVG
-                                  width="17"
-                                  height="18"
-                                  viewBox="0 0 17 18"
-                                  fill="none"
-                                  fillP="#010101"
-                                  name="arrow_solid_right"
-                                />
-                              }
                               data-testid="supportNumber"
                               component={Link}
                               href="https://nowoptics.franconnect.net/fc/"
                               target="_blank"
-                            >
-                              {t("HEADER.SUPPORT_NUMBER")}
-                            </Button>
-                            <Button
-                              className={style.bookingBtn}
-                              aria-label="supportNumber"
-                              tabIndex={0}
-                              startIcon={
-                                <IconSVG
-                                  width="17"
-                                  height="18"
-                                  viewBox="0 0 17 18"
-                                  fill="none"
-                                  fillP="#000000"
-                                  name="calender_icon"
-                                />
-                              }
-                              onClick={() => router.push("/book-eye-exam")}
-                              data-testid="BookEyeExam"
                             >
                               {t("HEADER.SUPPORT_NUMBER")}
                             </Button>
@@ -1818,35 +1806,6 @@ export default function Header(props: Props) {
                               className={style.appointmentBtn}
                               aria-label="appointments"
                               tabIndex={0}
-                              endIcon={
-                                <IconSVG
-                                  width="17"
-                                  height="18"
-                                  viewBox="0 0 17 18"
-                                  fill="none"
-                                  fillP="#010101"
-                                  name="arrow_solid_right"
-                                />
-                              }
-                              onClick={() => router.push("/appointments")}
-                              data-testid="Appointments"
-                            >
-                              {t("HEADER.APPOINTMENTS")}
-                            </Button>
-                            <Button
-                              className={style.bookingBtn}
-                              aria-label="appointments"
-                              tabIndex={0}
-                              startIcon={
-                                <IconSVG
-                                  width="17"
-                                  height="18"
-                                  viewBox="0 0 17 18"
-                                  fill="none"
-                                  fillP="#000000"
-                                  name="calender_icon"
-                                />
-                              }
                               onClick={() => router.push("/appointments")}
                               data-testid="Appointments"
                             >
@@ -1863,35 +1822,6 @@ export default function Header(props: Props) {
                           className={style.appointmentBtn}
                           aria-label="BookEyeExam"
                           tabIndex={0}
-                          endIcon={
-                            <IconSVG
-                              width="17"
-                              height="18"
-                              viewBox="0 0 17 18"
-                              fill="none"
-                              fillP="#010101"
-                              name="arrow_solid_right"
-                            />
-                          }
-                          onClick={() => router.push("/book-eye-exam")}
-                          data-testid="BookEyeExam"
-                        >
-                          {t("HEADER.BOOK_EYE_EXAM")}
-                        </Button>
-                        <Button
-                          className={style.bookingBtn}
-                          aria-label="BookEyeExam"
-                          tabIndex={0}
-                          startIcon={
-                            <IconSVG
-                              width="17"
-                              height="18"
-                              viewBox="0 0 17 18"
-                              fill="none"
-                              fillP="#000000"
-                              name="calender_icon"
-                            />
-                          }
                           onClick={() => router.push("/book-eye-exam")}
                           data-testid="BookEyeExam"
                         >
@@ -1899,57 +1829,28 @@ export default function Header(props: Props) {
                         </Button>
                       </>
                     )}
-                    {(!props.isCDCView ||
-                      props.roleType !== USER_TYPE.ASSOCIATE) && (
-                      <Box sx={{ display: "flex", justifyContent: "center" }}>
-                        <Box component="span" className={style.supportNumber}>
-                          {props.roleType === USER_TYPE.ASSOCIATE
-                            ? t("HEADER.STORE_SUPPORT")
-                            : t("HEADER.CALL_US")}
-                          &nbsp;
-                          {
-                            <a
-                              href={`tel:${
-                                props.roleType === USER_TYPE.ASSOCIATE
-                                  ? SO_DEFAULT_STORE_SUPPORT_NUMBER
-                                  : SO_DEFAULT_STORE_CONTACT_NUMBER
-                              }`}
-                            >
-                              {props.roleType === USER_TYPE.ASSOCIATE
-                                ? SO_DEFAULT_STORE_SUPPORT_NUMBER
-                                : SO_DEFAULT_STORE_CONTACT_NUMBER}
-                            </a>
-                          }
-                        </Box>
-                        <Button
-                          startIcon={
-                            <IconSVG
-                              width="15"
-                              height="23"
-                              viewBox="0 0 15 23"
-                              fill="none"
-                              fillP="#000000"
-                              name="phone_icon"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          }
+                    {!props.isCDCView &&
+                      props.roleType === USER_TYPE.ASSOCIATE && (
+                        <Box
+                          sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginTop: "5px",
+                          }}
                         >
-                          <a
-                            href={`tel:${
-                              props.roleType === USER_TYPE.ASSOCIATE
-                                ? SO_DEFAULT_STORE_SUPPORT_NUMBER
-                                : SO_DEFAULT_STORE_CONTACT_NUMBER
-                            }`}
-                          >
-                            {props.roleType === USER_TYPE.ASSOCIATE
-                              ? SO_DEFAULT_STORE_SUPPORT_NUMBER
-                              : SO_DEFAULT_STORE_CONTACT_NUMBER}
-                          </a>
-                        </Button>
-                      </Box>
-                    )}
+                          <Box component="span" className={style.supportNumber}>
+                            {t("HEADER.STORE_SUPPORT")}
+                            &nbsp;
+                            {
+                              <a
+                                href={`tel:${SO_DEFAULT_STORE_SUPPORT_NUMBER}`}
+                              >
+                                {SO_DEFAULT_STORE_SUPPORT_NUMBER}
+                              </a>
+                            }
+                          </Box>
+                        </Box>
+                      )}
                   </Box>
                 )}
               </>

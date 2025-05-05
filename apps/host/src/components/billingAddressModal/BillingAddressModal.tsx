@@ -27,26 +27,39 @@ import { savePatientAddress, ValidateZipCode } from "@/service/common.service";
 import IconSVG from "../iconsvg/IconSVG";
 
 const BillingAddressModal = (props: BillingAddressModalProps) => {
+  const { isEasyReorderFlow, shippingAddress } = props;
   const { showSnackBar } = useSnackBar();
   const [billingAddressData, setBillingAddressData] =
     useState<billingAddressFormData>({
       addressLine1: {
-        value: "",
+        value:
+          isEasyReorderFlow && shippingAddress?.AddressLine1
+            ? shippingAddress.AddressLine1
+            : "",
         error: false,
         errorMessage: ERROR_MESSAGE.INVALID_ADDRESS,
       },
       addressLine2: {
-        value: "",
+        value:
+          isEasyReorderFlow && shippingAddress?.AddressLine2
+            ? shippingAddress.AddressLine2
+            : "",
         error: false,
         errorMessage: "",
       },
       zipcode: {
-        value: "",
+        value:
+          isEasyReorderFlow && shippingAddress?.ZipCode
+            ? shippingAddress.ZipCode
+            : "",
         error: false,
         errorMessage: ERROR_MESSAGE.ZIP_CODE,
       },
       city: {
-        value: "",
+        value:
+          isEasyReorderFlow && shippingAddress?.City
+            ? shippingAddress.City
+            : "",
         error: false,
         errorMessage: "",
       },
@@ -102,7 +115,9 @@ const BillingAddressModal = (props: BillingAddressModalProps) => {
         setBillingZipCodeDetails(result);
         const city =
           result?.AddressCityZip?.CitiesNameList.length > 1
-            ? ""
+            ? isEasyReorderFlow && shippingAddress?.City
+              ? shippingAddress.City
+              : ""
             : result?.AddressCityZip?.CitiesNameList[0];
         const state = result?.StateName;
         const county = result?.CountyName;
@@ -272,26 +287,42 @@ const BillingAddressModal = (props: BillingAddressModalProps) => {
       !newFormValues.zipcode.error &&
       !newFormValues.city.error
     ) {
+      if (props.isEasyReorderFlow && props.saveShippingAddress) {
+        props.saveShippingAddress(newFormValues);
+        return;
+      }
       saveBillingAddress();
     }
   };
+
+  useEffect(() => {
+    if (isEasyReorderFlow && shippingAddress?.ZipCode) {
+      getBillingAddressDataByZipCode(shippingAddress.ZipCode);
+    }
+  }, [isEasyReorderFlow, shippingAddress?.ZipCode]);
   return (
-    <div className={styles.form}>
-      <div className={styles.headingwrapper}>
-        <h3 className={styles.headingLabel}>Billing Address</h3>
-        <div
-          className={styles.closeIconWrapper}
-          onClick={() => props.setIsBillingAddressModalOpen(false)}
-        >
-          <IconSVG
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="#4d4d4d"
-            name="modal_cross"
-          />
+    <div
+      className={`${styles.form} ${
+        props.isEasyReorderFlow ? styles.easyreorderShipping : ""
+      }`}
+    >
+      {!props.isEasyReorderFlow && (
+        <div className={styles.headingwrapper}>
+          <h3 className={styles.headingLabel}>Billing Address</h3>
+          <div
+            className={styles.closeIconWrapper}
+            onClick={() => props.setIsBillingAddressModalOpen(false)}
+          >
+            <IconSVG
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="#4d4d4d"
+              name="modal_cross"
+            />
+          </div>
         </div>
-      </div>
+      )}
       <div
         className={styles.formFields}
         data-testid="billing-address-container"
@@ -350,6 +381,11 @@ const BillingAddressModal = (props: BillingAddressModalProps) => {
                     } else {
                       return selected;
                     }
+                  }}
+                  MenuProps={{
+                    style: {
+                      zIndex: 2002,
+                    },
                   }}
                 >
                   {billingCityList.map((city, index) => (

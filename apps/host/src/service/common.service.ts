@@ -223,11 +223,12 @@ export const getProducts = (
   rowPerPage: number,
   isVariant: boolean,
   filter?: string,
-  includeIsWebEnabled?: boolean // send true if you want to include isWebEnabled filter
+  includeIsWebEnabled?: boolean, // send true if you want to include isWebEnabled filter
+  categoryPath?: string
 ) => {
   let url = `https://search.unbxd.io/${process.env.NEXT_PUBLIC_UNBXD_API_KEY}/${
     process.env.NEXT_PUBLIC_UNBXD_SITE_KEY
-  }/category?p=categoryPath:*&pagetype=boolean&filter=mIsWebEnabled_uFilter:true${
+  }/category?p=${categoryPath ? categoryPath :'categoryPath:*'}&pagetype=boolean&filter=mIsWebEnabled_uFilter:true${
     includeIsWebEnabled ? `&filter=isWebEnabled_uFilter:true` : ""
   }${filter ? `&filter=${filter}` : ""}`;
   url = `${url}&page=${page}&rows=${rowPerPage}&variants=${isVariant}&variants.count=*`;

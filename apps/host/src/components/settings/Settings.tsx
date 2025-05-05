@@ -16,13 +16,13 @@ import Image from "next/image";
 import settingsIcon from "../../../../assets/Images/icons/settingsIcon.svg";
 import IconSVG from "../iconsvg/IconSVG";
 import { NavItem } from "@/types/Header.types";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
 type Props = {
   anchor: Anchor;
-  settings: NavItem[]
+  settings: NavItem[];
   settingsState: {
     top: boolean;
     left: boolean;
@@ -39,7 +39,7 @@ export default function SettingsDrawer({
   anchor,
   settingsState,
   toggleSettingsDrawer,
-  settings
+  settings,
 }: Props) {
   const { t } = useTranslation();
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -47,7 +47,6 @@ export default function SettingsDrawer({
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
-
 
   return (
     <div>
@@ -77,8 +76,8 @@ export default function SettingsDrawer({
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  fillP="#a9afbb"
-                  name="close_icon_large"
+                  fillP="#000000"
+                  name="modal_cross"
                 />
               </Box>
             </Box>
@@ -110,7 +109,7 @@ export default function SettingsDrawer({
                         className={style.menuAccordionSummary}
                       >
                         <Typography className={style.accordionHead}>
-                        {t(`nav.${settingsItems.name}`)}
+                          {t(`nav.${settingsItems.name}`)}
                         </Typography>
                       </AccordionSummary>
                       <AccordionDetails className={style.accordionDetails}>

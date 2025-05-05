@@ -31,6 +31,8 @@ import { GA_TAG_EVENTS } from "@/constants/google-analytics.constants";
 import { useTranslation } from "react-i18next";
 import { useMaskInput } from "@/hooks/useMaskInput";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
+import { Cookies } from "@/utils/cookie.utils";
+import { MODIFY_APPOINTMENT_COOKIE } from "@/constants/mobile-menu.constants";
 
 export default function LoginForm(props: SignInPropsDTO) {
   const env = React.useContext(RuntimeVarContext);
@@ -163,6 +165,12 @@ export default function LoginForm(props: SignInPropsDTO) {
               router.push(`/my-account/my-prescriptions`);
             }
             localStorage.removeItem("auth_status");
+            
+            const comesFromModifyAppointmentFlow: string | undefined = 
+              Cookies.get(MODIFY_APPOINTMENT_COOKIE); 
+            
+            if (comesFromModifyAppointmentFlow) 
+              router.push("/my-account/my-appointments")
           } else {
             throw new Error(
               res?.error ? res?.error : ERROR_MESSAGE.SIGNIN_ERROR,

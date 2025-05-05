@@ -32,7 +32,8 @@ export const facetKeyMappingWithPathName = {
   SUNGLASSES_OVAL_FRAMES: `p=categoryPath:"sunglasses>oval-frames"&filter=vHasHisResImage:true`,
   SUNGLASSES_RECTANGLE_FRAMES: `p=categoryPath:"sunglasses>rectangle-frames"&filter=vHasHisResImage:true`,
   SUNGLASSES_SQUARE_FRAMES: `p=categoryPath:"sunglasses>square-frames"&filter=vHasHisResImage:true`,
-  BEST_SELLER_GLASSES: `p=categoryPath:"best-seller-glasses"&filter=vHasHisResImage:true`
+  BEST_SELLER_GLASSES: `p=categoryPath:"best-seller-glasses"&filter=vHasHisResImage:true`,
+  NEW_ARRIVAL_GLASSES: `p=categoryPath:"Glasses>Eyeglasses>Brand>Elite"&filter=vHasHisResImage:true`
 };
 
 export const CatalogCategoryPathCheck = {
@@ -51,5 +52,6 @@ export const CatalogCategoryPathCheck = {
   CATALOG_SQUARE: "square",
   CATALOG_ALL_SUNGLASSES: "/catalog/sunglasses",
   VISION_SUPPLEMENTS: "/catalog/vision-supplements",
-  BEST_SELLER_GLASSES: "/best-seller-glasses"
+  BEST_SELLER_GLASSES: "/best-seller-glasses",
+  NEW_ARRIVAL_GLASSES: "/catalog/new-arrivals"
 };

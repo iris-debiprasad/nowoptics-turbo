@@ -3,7 +3,7 @@
 
 
 .ftmb {
-  @include responsive("medium") {
+  @include responsive("large") {
     display: none;
   }
 

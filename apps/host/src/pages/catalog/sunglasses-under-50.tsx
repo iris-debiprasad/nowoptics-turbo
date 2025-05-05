@@ -24,7 +24,7 @@ const Products = (props: { facets: any }) => {
   return (
     <>
       <Head>
-        <title>{`${t("SUNGLASSES/UNDER_50.META.TITLE")} - ${
+        <title>{`Sunglasses Under $50  - ${BRAND_NAME[brand]} | Gafas de Sol por Menos de $50 - ${
           BRAND_NAME[brand]
         }`}</title>
         <meta
@@ -33,6 +33,7 @@ const Products = (props: { facets: any }) => {
         />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow"/>
       </Head>
       <div>
         <ProductComponent facets={props.facets} />
@@ -40,12 +41,6 @@ const Products = (props: { facets: any }) => {
     </>
   );
 };
-
-//TODO: will add in future if required
-// export const getStaticProps = async () => {
-//   const result = await commonUtilForGetAllFacets();
-//   return result;
-// };
 
 export async function getServerSideProps(context: any) {
   const session = await getToken({

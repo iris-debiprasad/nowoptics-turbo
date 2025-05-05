@@ -1,20 +1,14 @@
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./StaticFooter.module.scss";
-import { STATIC_FOOTER } from "@/constants/FooterConstants";
-import { useTranslation } from "react-i18next";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
 import { useContext, useEffect, useState } from "react";
-import useIsAssociate from "@/hooks/useIsAssociate";
 
 export default function StaticFooter() {
-  const { t } = useTranslation();
   const env = useContext(RuntimeVarContext);
 
   const [showRecaptchaMessage, setShowRecaptchaMessage] =
     useState<boolean>(true);
 
-  const isAssociateView = useIsAssociate();
 
   const handleShowRecaptchaMessage = () => {
     const scrollTop = window.scrollY;
@@ -38,18 +32,8 @@ export default function StaticFooter() {
 
   return (
     <div
-      className={`${styles.st_ft} ${isAssociateView ? styles.st_ft_associate : ""}`}
+      className={`${styles.st_ft} ${styles.st_ft_associate}`}
     >
-      {!isAssociateView && (
-        <>
-          {STATIC_FOOTER.map((item) => (
-            <Link className={styles.st_ft_item} key={item.id} href={item.link}>
-              <Image src={item.img} width={30} height={30} alt={item.title} />
-              <div>{t(`STATIC_FOOTER.${item.title}`)}</div>
-            </Link>
-          ))}
-        </>
-      )}
       {env?.NEXT_PUBLIC_RECAPTCHA_ENABLE === "true" && (
         <div
           className={`${styles.st_ft_recaptcha_msg} ${showRecaptchaMessage ? styles.st_ft_recaptcha_msg_show : ""}`}

@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export interface SubMenuItem extends Pick<NavItem, "name" | "id" | "url"> { }
 
-interface Props extends NavbarProps {
+interface Props extends Pick<NavbarProps, "onClose"> {
   label: string;
   items: SubMenuItem[];
 }

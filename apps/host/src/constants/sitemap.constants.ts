@@ -18,11 +18,11 @@ export const SITEMAPS = {
         },
         {
             label: "Best Sellers",
-            path: "/best-seller-glasses"
+            path: "/catalog/best-seller-glasses"
         },
         {
             label: "Frames Under $50",
-            path: "/eyeglasses-under-50"
+            path: "/catalog/eyeglasses-under-50"
         },
         {
             label: "Metal Frames",
@@ -72,7 +72,7 @@ export const SITEMAPS = {
         },
         {
             label: "Frames Under $50",
-            path: "/sunglasses-under-50"
+            path: "/catalog/sunglasses-under-50"
         },
         {
             label: "Metal Frames",

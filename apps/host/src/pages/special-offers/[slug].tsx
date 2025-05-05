@@ -85,24 +85,24 @@ const ProductDetailPage = ({ pageData }: Props) => {
     );
   }
 
-  const getPageTitle = (): string => {
-    let title = "";
+  const getPageMeta = (type: "title" | "description"): string => {
+    let metaValue = "";
     const hasTranslation: boolean =
-      pageData.meta.title.includes("SPECIAL_OFFERS");
+      pageData.meta[type].includes("SPECIAL_OFFERS");
 
-    if (!hasTranslation) title = pageData.meta.title;
-    else title = t(pageData.meta.title);
+    if (!hasTranslation) metaValue = pageData.meta[type];
+    else metaValue = t(pageData.meta[type]);
 
-    title += ` - ${BRAND_NAME[brand]}`;
+    metaValue += ` - ${BRAND_NAME[brand]}`;
 
-    return title;
+    return metaValue;
   };
 
   return (
     <>
       <Head>
-        <title>{getPageTitle()}</title>
-        <meta name="description" content={pageData.meta.description} />
+        <title>{getPageMeta("title")}</title>
+        <meta name="description" content={getPageMeta("description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>

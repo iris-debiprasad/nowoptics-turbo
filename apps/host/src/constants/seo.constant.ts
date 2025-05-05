@@ -3,7 +3,7 @@ export const LocationSEO = {
     title:
       "Eyeglasses, Contacts & Eye Exams Near You in [CITY], [STATE] - Stanton Optical",
     description:
-      "Stanton Optical offers 1,500+ frames in [CITY], [STATE]. Get 2 Pairs of Eyeglasses with Anti-glare Lenses for $79, plus a FREE Eye Exam.",
+      "Stanton Optical offers 1,000+ frames in [CITY], [STATE]. Get 2 Pairs of Eyeglasses with Anti-glare Lenses for $79, plus a FREE Eye Exam.",
   },
   MEL: {
     title:

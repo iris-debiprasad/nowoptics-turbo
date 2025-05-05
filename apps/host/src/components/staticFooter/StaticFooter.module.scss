@@ -8,16 +8,16 @@
   background: v.$white;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  z-index: 5000;
+  z-index: 1000;
   width: 100%;
+  padding: 0;
+  height: 0;
   justify-items: center;
-  padding: 10px 10px 5px 10px;
   -webkit-box-shadow: 0px -5px 4px -3px rgba(112, 112, 112, 1);
   -moz-box-shadow: 0px -5px 4px -3px rgba(112, 112, 112, 1);
   box-shadow: 0px -5px 4px -3px rgba(112, 112, 112, 1);
 
   @include m.responsive("large") {
-    padding: 20px 15rem;
     grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr;
   }
 

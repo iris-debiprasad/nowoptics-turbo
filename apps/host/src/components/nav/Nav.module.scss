@@ -33,7 +33,7 @@
       display: flex;
       align-items: center;
 
-      >button {
+      > button {
         margin-right: 9px;
       }
     }
@@ -58,7 +58,7 @@
       }
     }
 
-    +ul {
+    + ul {
       margin: 0 35px 0 65px;
 
       @media (max-width: $small) {
@@ -69,17 +69,17 @@
         margin: 0;
 
         .accoridionSummary {
-          >div:first-child {
+          > div:first-child {
             margin: 12px 0;
           }
         }
       }
 
-      >.drawerBtnWrapper>li {
+      > .drawerBtnWrapper > li {
         flex-direction: column;
         align-items: flex-start;
 
-        >div {
+        > div {
           padding: 0;
           margin: 8px 0;
 
@@ -119,17 +119,17 @@
           display: block;
         }
 
-        >li {
+        > li {
           padding: 5px 0px;
         }
       }
 
-      >div {
+      > div {
         &::before {
           display: none;
         }
 
-        >div:first-child {
+        > div:first-child {
           padding: 0;
           border-bottom: 1px solid #d9d9d9;
           min-height: auto !important;
@@ -201,40 +201,27 @@
 
 .nav {
   display: flex;
-  margin-top: 50px;
+
+  .favorite_button {
+    position: relative;
+    display: flex;
+  }
 
   .navBar {
     background-color: var(--primary-bg-color);
-    border-bottom: 1px solid var(--primary-border-color);
     box-shadow: none;
-
-    &__favorite_button {
-      position: relative;
-      display: flex;
-
-      small {
-        position: absolute;
-        top: 5px;
-        left: 0px;
-
-        width: 20px;
-        height: 20px;
-        display: grid;
-        place-items: center;
-        
-        background-color: $primary-color;
-        border-radius: 100vmax;
-        color: $white;
-        pointer-events: none;
-      }
-    }
+    box-shadow: 0px 3px 6px rgba($black, 0.2);
 
     .navToolBar {
-      min-height: 48px;
+      min-height: 60px;
       display: flex;
       justify-content: space-between;
       width: 100%;
       padding: 0;
+
+      @media screen and (min-device-width: 768px) and (max-device-width: $medium) {
+        justify-content: center;
+      }
 
       .menuIcon {
         display: none;
@@ -280,6 +267,7 @@
         display: flex;
         align-items: center;
         text-align: left;
+        column-gap: 10px;
         @include fontFSWH($primary-font, 16px, 400, 15px);
 
         @media screen and (max-width: $extra-large) {
@@ -332,7 +320,7 @@
           color: $tertiary-font-color;
           text-transform: none;
 
-          @include fontFSWH($primary-font, 16px, 400, 19px);
+          @include fontFSWH($primary-font, 14px, 400, 18px);
 
           @media screen and (max-width: $extra-large) {
             @include fontFSWH($primary-font, 12px, 400, 15px);
@@ -370,12 +358,64 @@
         }
       }
 
+      .mobileBookEyeExam {
+        display: none;
+
+        @media (max-width: 768px) {
+          display: block;
+        }
+
+        .appointmentBtn {
+          @include quinary_button;
+          width: 100%;
+        }
+      }
+
+      .iconButtonSection {
+        display: flex;
+
+        .navIcon {
+          display: flex;
+          button {
+            padding: 6px;
+
+            @media (max-width: 768px) {
+              padding: 4px;
+            }
+          }
+        }
+
+        .languageButton {
+          @include primary_link;
+          @include fontFSWH($primary-font, 14px, 400, 18px);
+          margin-top: 0;
+          margin-bottom: 0;
+          margin-left: 15px;
+
+          @media (max-width: $extra-large) {
+            margin-bottom: 0;
+            @include fontFSWH($primary-font, 12px, 400, 16px);
+          }
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+
       .navItems {
         display: flex;
         align-items: center;
 
+        @media (max-width: $medium) {
+          display: none;
+        }
+
         .navItemBtn {
-          @media (max-width: $large) {
+          cursor: pointer;
+          padding: 10px 0;
+
+          @media (max-width: $small) {
             display: none;
           }
 
@@ -384,12 +424,18 @@
               color: $primary-color;
             }
           }
+
+          &:hover .navEndIcon {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease;
+            color: $primary-color;
+          }
         }
 
-        .navBadge {
-          cursor: pointer;
-          margin-right: 15px;
-        }
+        // .navBadge {
+        //   cursor: pointer;
+        //   margin-right: 15px;
+        // }
 
         .navList {
           list-style: none;
@@ -400,20 +446,16 @@
 
           :is(.dropdown, .dropdown--login) {
             position: absolute;
-            top: 35px;
-
+            top: 46px;
             background-color: $white;
             list-style: none;
-            padding: 5px 10px;
-            box-shadow:
-              rgba(0, 0, 0, 0.2) 0px 5px 5px -3px,
-              rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
-              rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
+            padding: 20px;
+            box-shadow: 1px 1px 4px $secondary-font-color;
+            border-radius: 3px;
 
             opacity: 0;
             visibility: hidden;
-            scale: 0;
-
+            transform: translateY(10%);
             transition: all 0.2s ease;
           }
 
@@ -429,15 +471,6 @@
                 }
               }
 
-              &::after {
-                display: block;
-                content: "";
-                width: 100%;
-                height: 2px;
-                margin-inline: auto;
-                background-color: var(--primary-light-color);
-              }
-
               &:last-of-type::after {
                 display: none;
               }
@@ -445,17 +478,21 @@
               a {
                 display: block;
                 width: 100%;
-
-                color: var(--secondary-light-color);
-                padding: 5px;
+                color: $primary-font-color;
+                padding: 8px;
                 font-size: 15px;
               }
             }
           }
 
+          .splitDropdown {
+            display: flex;
+            column-gap: 20px;
+          }
+
           li ul.dropdown--login {
             right: 0;
-            top: 20px;
+            top: 38px;
           }
 
           li:is(:hover, :focus-visible) ul.dropdown,
@@ -464,7 +501,7 @@
           li:is(:hover, :focus-visible, :focus-within) ul.dropdown--login.no-session {
             opacity: 1;
             visibility: visible;
-            scale: 1;
+            transform: translateY(0%);
           }
         }
 
@@ -486,6 +523,11 @@
           .navEndIcon {
             margin: 0;
             pointer-events: none;
+            color: $primary-font-color;
+
+            > svg {
+              width: 15px;
+            }
           }
 
           @media (max-width: $extra-large) {
@@ -524,7 +566,7 @@
           min-width: 40px;
           padding: 10px 0;
 
-          >div {
+          > div {
             font-size: 14px;
             font-weight: 400;
             line-height: 17px;
@@ -553,7 +595,7 @@
           color: $primary-font-color;
         }
 
-        .navLink:hover~.menuList,
+        .navLink:hover ~ .menuList,
         .menuList:hover {
           display: block;
           animation: 0.3s ease-in;
@@ -577,7 +619,7 @@
           flex: 1;
         }
 
-        >button {
+        > button {
           @media (max-width: 768px) {
             padding: 0 15px;
             margin-right: 9px;
@@ -863,13 +905,13 @@
       flex-direction: column;
 
       .notificationItem {
-        &>div {
+        & > div {
           padding: 10px 20px;
           cursor: pointer;
           border-bottom: 1px solid $primary-light-color;
         }
 
-        &>div:hover {
+        & > div:hover {
           background: $bg-color;
 
           .crossIcon {
@@ -887,7 +929,7 @@
             background-color: $primary-light-color;
           }
 
-          &>div:nth-child(2) {
+          & > div:nth-child(2) {
             width: 100%;
           }
         }
@@ -927,5 +969,11 @@
         }
       }
     }
+  }
+}
+
+.navBadge {
+  button {
+    padding: 8px 6px;
   }
 }

@@ -8,6 +8,10 @@ import { getToken } from "next-auth/jwt";
 import { BRAND_NAME, USER_TYPE } from "@/constants/common.constants";
 import { useGetBrand } from "@/hooks/useGetBrand";
 import { useTranslation } from "react-i18next";
+import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { useOnResize } from "@/hooks/use-on-resize";
+import i18n from "@/language/i18n";
+import { getSmallScreenBreakpoint } from "@/utils/common.utils";
 
 const ProductComponent = dynamic<{ facets: any }>(
   () => import("order/Products"),
@@ -20,6 +24,14 @@ const ProductComponent = dynamic<{ facets: any }>(
 const Products = (props: { facets: any }) => {
   const { t } = useTranslation();
   const brand = useGetBrand();
+  const smallScreenBreakpoint = getSmallScreenBreakpoint();
+  const isMobile = useOnResize({ breakpoint: smallScreenBreakpoint });
+  const backgroundImageEng = isMobile
+    ? `url(${ImageUrlConstants.CATALOG_PAGE_BANNER.CONTACTS_BANNER.DESKTOP_ENG})`
+    : `url(${ImageUrlConstants.CATALOG_PAGE_BANNER.CONTACTS_BANNER.MOBILE_ENG})`;
+  const backgroundImageSpa = isMobile
+    ? `url(${ImageUrlConstants.CATALOG_PAGE_BANNER.CONTACTS_BANNER.DESKTOP_SPA})`
+    : `url(${ImageUrlConstants.CATALOG_PAGE_BANNER.CONTACTS_BANNER.MOBILE_SPA})`;
 
   return (
     <>
@@ -34,7 +46,41 @@ const Products = (props: { facets: any }) => {
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div>
+      
+      <div className="catalog_page">
+        <div
+          style={{
+            background:
+              i18n.language === "en" ? backgroundImageEng : backgroundImageSpa,
+          }}
+          className="catalog_banner_section"
+        >
+          <div className="banner_text_section">
+            <div className="banner_title contacts">
+              {!isMobile ? (
+                <>
+                  <h1>
+                    {t("CONTACTS_BANNER.MOBILE.HEADING_1")}
+                    <br />
+                    {t("CONTACTS_BANNER.MOBILE.HEADING_2")}
+                    <br />
+                    {t("CONTACTS_BANNER.MOBILE.HEADING_3")}
+                  </h1>
+                </>
+              ) : (
+                <>
+                  <h1>
+                    {t("CONTACTS_BANNER.DESKTOP.HEADING_1")}
+                    <br />
+                    {t("CONTACTS_BANNER.DESKTOP.HEADING_2")}
+                  </h1>
+                </>
+              )}
+              <br />
+              <p>{t("CONTACTS_BANNER.SUB_HEADING")}</p>
+            </div>
+          </div>
+        </div>
         <ProductComponent facets={props.facets} />
       </div>
     </>

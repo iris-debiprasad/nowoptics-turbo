@@ -19,7 +19,7 @@ function parseJwt(token: string) {
 }
 
 async function refreshAccessToken(accessToken: JWT) {
-  const url = `https://login.microsoftonline.com/${process.env.NEXT_PUBLIC_TENANTID}/oauth2/v2.0/token`;
+  const url = `https://login.microsoftonline.com/${process.env.AZURE_AD_TENANTID}/oauth2/v2.0/token`;
   try {
     const req = await fetch(url, {
       method: "POST",
@@ -28,9 +28,9 @@ async function refreshAccessToken(accessToken: JWT) {
       },
       body:
         `grant_type=refresh_token` +
-        `&client_secret=${process.env.NEXT_PUBLIC_CLIENT_SECRET}` +
+        `&client_secret=${process.env.AZURE_AD_CLIENT_SECRET}` +
         `&refresh_token=${accessToken.refreshToken}` +
-        `&client_id=${process.env.NEXT_PUBLIC_CLIENTID}`,
+        `&client_id=${process.env.AZURE_AD_CLIENTID}`,
     });
 
     const res = await req.json();
@@ -45,9 +45,9 @@ export default NextAuth({
   secret: process.env.NEXT_PUBLIC_SECRET,
   providers: [
     AzureADProvider({
-      clientId: process.env.NEXT_PUBLIC_CLIENTID as string,
-      clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET as string,
-      tenantId: process.env.NEXT_PUBLIC_TENANTID,
+      clientId: process.env.AZURE_AD_CLIENTID as string,
+      clientSecret: process.env.AZURE_AD_CLIENT_SECRET as string,
+      tenantId: process.env.AZURE_AD_TENANTID,
       authorization: {
         params: { scope: "offline_access openid profile", prompt: "login" },
       },
@@ -122,7 +122,7 @@ export default NextAuth({
       if (user) {
         token.user = user;
       }
-  
+
       if ((token?.user as any)?.authData?.userType === USER_TYPE.ASSOCIATE && Date.now() && token?.accessTokenExpires) {
         if (Date.now() < (token.accessTokenExpires as number) * 1000) {
           return token;

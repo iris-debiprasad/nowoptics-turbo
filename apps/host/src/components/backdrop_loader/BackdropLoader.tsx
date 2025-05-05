@@ -6,7 +6,7 @@ function BackdropLoader(props: { openLoader: boolean }) {
     <>
       {props.openLoader ? (
         <Backdrop
-          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.modal + 1 }}
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.modal + 1000 }}
           open={props.openLoader}
           data-testid="loader-comp"
         >

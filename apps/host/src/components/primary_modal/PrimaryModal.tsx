@@ -7,7 +7,9 @@ import { useAppSelector } from "@root/host/src/store/useStore";
 
 const PrimaryModal = (props: PrimaryModalDTO) => {
   const { modalOpen, setModalOpen, setModalOpenWIthId } = props;
-  const guidedSalesStep = useAppSelector(state => state?.guidedSales?.state?.currentStep)
+  const guidedSalesStep = useAppSelector(
+    (state) => state?.guidedSales?.state?.currentStep
+  );
   const handleClose = () => setModalOpen && setModalOpen(false);
   const handleCloseWithId = () =>
     setModalOpenWIthId && setModalOpenWIthId({ id: null });
@@ -20,6 +22,9 @@ const PrimaryModal = (props: PrimaryModalDTO) => {
       onClose={setModalOpen ? handleClose : handleCloseWithId}
       open={modalOpen}
       role="dialog"
+      sx={{
+        zIndex: props.increaseZIndex ? 2002 : 1300, // 1300 is the default zIndex for MUI Modal
+      }}
       disableEnforceFocus={guidedSalesStep === 0}
       disableAutoFocus={guidedSalesStep === 0}
       slotProps={{
@@ -33,8 +38,9 @@ const PrimaryModal = (props: PrimaryModalDTO) => {
       }}
     >
       <Box
-        className={`${style.modalWrapper} ${props.cstmStyle ? style[props.cstmStyle] : style.formModal
-          }`}
+        className={`${style.modalWrapper} ${
+          props.cstmStyle ? style[props.cstmStyle] : style.formModal
+        }`}
       >
         {typeof props.modalInner === "string" && (
           <>

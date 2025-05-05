@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Nav from "../nav/Nav";
-import NavCustomer from "../navCustomer/Nav";
 import Header from "../header/Header";
-import HeaderCustomer from "../headerCustomer/Header";
 import { useSession } from "next-auth/react";
 import { StoreAddressType } from "@/types/SideBar.types";
 import { autoLogoutHandler, isProtectedPath } from "@/utils/common.utils";
@@ -16,7 +14,7 @@ import { useAppSelector } from "@/store/useStore";
 import { getDetails } from "@/utils/getSessionData";
 import useAppIdleTimerPatient from "@/hooks/useAppIdeleTimmerPatient";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
-import StaticMessage from "../headerCustomer/StaticMessage";
+import StaticMessage from "../header/StaticMessage";
 
 interface Props {
   onLogout: () => void;
@@ -278,55 +276,31 @@ const AppHeader = React.memo((props: Props) => {
 
   return (
     <>
-      {/* IR-2322 - Rendering different Nav and Header component for customer view, We will remove this logic in future with IR-2387 */}
-      {session?.user.authData?.userType === USER_TYPE.ASSOCIATE ? (
-        <>
-          <Nav
-            onLogout={props.onLogout}
-            handleStore={props.handleStore}
-            handleCDCView={props.handleCDCView}
-            session={session}
-            sessionStatus={status}
-            setShowTimerModal={setShowTimerModal}
-            showTimerModal={showTimerModal}
-          />
-          <Header
-            roleType={
-              session?.user.authData
-                ? (session?.user.authData as any).userType
-                : null
-            }
-            storeData={props.storeData}
-            isCDCView={props.isCDCView}
-            session={session}
-            addShippingProductToCart={addShippingProductToCart}
-          />
-        </>
-      ) : (
-        <>
-          <StaticMessage />
-          <HeaderCustomer
-            roleType={
-              session?.user.authData
-                ? (session?.user.authData as any).userType
-                : null
-            }
-            storeData={props.storeData}
-            isCDCView={props.isCDCView}
-            session={session}
-            addShippingProductToCart={addShippingProductToCart}
-          />
-          <NavCustomer
-            onLogout={props.onLogout}
-            handleStore={props.handleStore}
-            handleCDCView={props.handleCDCView}
-            session={session}
-            sessionStatus={status}
-            setShowTimerModal={setShowTimerModal}
-            showTimerModal={showTimerModal}
-          />
-        </>
+      {(session?.user.authData as any)?.userType !== USER_TYPE.ASSOCIATE && (
+        <StaticMessage />
       )}
+      <div style={{ position: "sticky", top: "0", zIndex: "200" }}>
+        <Header
+          roleType={
+            session?.user.authData
+              ? (session?.user.authData as any).userType
+              : null
+          }
+          storeData={props.storeData}
+          isCDCView={props.isCDCView}
+          session={session}
+          addShippingProductToCart={addShippingProductToCart}
+        />
+        <Nav
+          onLogout={props.onLogout}
+          handleStore={props.handleStore}
+          handleCDCView={props.handleCDCView}
+          session={session}
+          sessionStatus={status}
+          setShowTimerModal={setShowTimerModal}
+          showTimerModal={showTimerModal}
+        />
+      </div>
       {showTimerModal && (
         <AutologoutModal
           showAutoLogoutModal={showTimerModal}

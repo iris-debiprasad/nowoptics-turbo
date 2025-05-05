@@ -49,7 +49,7 @@ export default function SignUpPage() {
             <Box className={style.signUpWrapper}>
               {router?.isReady && (
                 <>
-                  <section ref={registrationFormRef}>
+                  <section className={style.registration_form} ref={registrationFormRef}>
                     <RegistrationForm
                       isValidated={isValidated}
                       setIsValidated={setIsValidated}
@@ -59,7 +59,7 @@ export default function SignUpPage() {
                     />
                   </section>
 
-                  <section ref={loginFormRef}>
+                  <section className={style.login_form} ref={loginFormRef}>
                     <LoginForm
                       formHead={t(`AUTHENTICATION.SIGN_IN`)}
                       formMessage={t(`AUTHENTICATION.ALREADY_HAVE_ACCOUNT`)}

@@ -3,20 +3,11 @@ import * as React from "react";
 import { useCallback, useEffect, useMemo } from "react";
 import { AxiosError } from "axios";
 import { signOut } from "next-auth/react";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   AppBar,
   Box,
   CssBaseline,
-  Divider,
   IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
   Toolbar,
   Typography,
   Button,
@@ -28,35 +19,20 @@ import {
   Skeleton,
   styled,
   Badge,
-  Drawer,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   NavDataPatient,
   NavDataAssociate,
   SettingsData,
 } from "@/constants/menu.constants";
 import GetNavBar from "./GetNavBar";
-import {
-  sideDrawerProps,
-  NavItem,
-  NavStoreDataDTO,
-  EventJourney,
-} from "@/types/Header.types";
-import {
-  DOCTOR_CONSULTATION_STORAGE_KEY,
-  NAV_ITEMS,
-  NEED_HELP,
-} from "@/constants/header.constants";
+import { NavItem, NavStoreDataDTO, EventJourney } from "@/types/Header.types";
 import SideBar from "../sidebar/SideBar";
-import IconSVG from "../iconsvg/IconSVG";
-import LoginForm from "../authentication/LoginForm/LoginForm";
 import { useSnackBar } from "../../contexts/Snackbar/SnackbarContext";
 import style from "./Nav.module.scss";
-import cartIcon from "../../../../assets/Images/icons/cart.svg";
-import menuIcon from "../../../../assets/Images/icons/menuIcon.svg";
-import crossIcon from "../../../../assets/Images/icons/crossIcon.svg";
-import rightArrow from "../../../../assets/Images/icons/rightArrow.svg";
+import CartIcon from "../../../../assets/Images/icons/CartNewIcon.svg";
+import LocationIcon from "../../../../assets/Images/icons/LocationIcon.svg";
+import FavoriteIcon from "../../../../assets/Images/icons/FavoriteIcon.svg";
 import settingsIcon from "../../../../assets/Images/icons/settingsIcon.svg";
 import { STORE_ERROR_MESSAGE } from "@/constants/store.constants";
 import {
@@ -130,12 +106,18 @@ import {
   getPatientCartData,
   onSubmitScarabEvent,
 } from "@/utils/scarabController.utils";
-import { updateLangCode } from "@/store/reducer/languageCodeReducer";
 import ConfirmationModal from "../confirmationModal/ConfirmationModal";
 import { getWeekday } from "@/utils/storeHourFormatter";
-import { getPatientOrderFrameApi } from "@/service/exchangeMenu.service";
-import { selectCount, setCount } from "@/store/reducer/favorite-products";
+import { updateLangCode } from "@/store/reducer/languageCodeReducer";
+import Cookies from "js-cookie";
+import { GetPermissionConfig } from "@/config/permissionConfig";
+import CommonPermission from "@/constants/common-permission.constants";
 import { MobileMenu } from "./mobile-menu";
+import {
+  selectIsMobileMenuDisplayed,
+  toggleMobileMenu,
+} from "@/store/reducer/header.reducer";
+import { selectCount, setCount } from "@/store/reducer/favorite-products";
 
 const CustomBadgeContent = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -144,408 +126,13 @@ const CustomBadgeContent = styled(Badge)(({ theme }) => ({
   },
 }));
 
+const CustomButton = styled(Button)({
+  "&:hover": {
+    backgroundColor: "transparent",
+  },
+});
+
 const FAVORITES_LS_KEY = "user-favorites";
-
-// TODO: Might delete later
-const SideDrawer = (props: sideDrawerProps) => {
-  const { t } = useTranslation();
-  const isCDC = useAppSelector((state) => state.cdcView.data.isCDCView);
-  const { navItems, handleDrawerToggle } = props;
-  const { showSnackBar } = useSnackBar();
-  const router = useRouter();
-  const [openLoader, setOpenLoader] = React.useState(false);
-  const dispatch = useAppDispatch();
-  const [showEyeExamFlow, setShowEyeExamFlow] = React.useState<boolean>(false);
-  const [updatedUser, setUpdatedUser] = React.useState<string>("");
-  const [currentLanguage, setCurrentLanguage] = React.useState<string>(
-    i18n.language,
-  );
-
-  function handleCartBadgeClick(): void {
-    if (props.session) {
-      if (
-        (props.session?.user as any)?.authData?.userType === USER_TYPE.ASSOCIATE
-      ) {
-        router.push("/pending-cart");
-      } else {
-        router.push("/cart");
-      }
-    } else {
-      router.push("/cart");
-    }
-  }
-
-  let userLocation = {
-    latitude: 0,
-    longitude: 0,
-  };
-  if (navigator.geolocation) {
-    getLatLong((lat, long) => {
-      userLocation = {
-        latitude: lat,
-        longitude: long,
-      };
-    });
-  }
-  const getStoreGridData = async (page: number) => {
-    GetPublicStoreLocatorGrid(
-      page.toString(),
-      "",
-      "",
-      userLocation?.latitude.toString(),
-      userLocation?.longitude.toString(),
-    )
-      .then(({ data }) => {
-        if (data.Result.Results && data.Result.Results.length) {
-          localStorage.setItem(
-            "selectedStore",
-            JSON.stringify(data.Result.Results[0]),
-          );
-        }
-        props.clearStore();
-      })
-      .catch((err) => {
-        const errorMessage = (err as AxiosError).message
-          ? (err as AxiosError).message
-          : STORE_ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE;
-        showSnackBar(errorMessage, SNACKBAR_COLOR_TYPE.ERROR as AlertColor);
-      });
-  };
-  const handleLogoutClick = () => {
-    setOpenLoader(true);
-    signOut({ redirect: false })
-      .then(() => {
-        localStorage.setItem("isLogout", "true");
-        localStorage.removeItem("isLogout");
-        setOpenLoader(false);
-        clearAllCookie();
-        showSnackBar(
-          "Signed out successfully",
-          SNACKBAR_COLOR_TYPE.SUCCESS as AlertColor,
-        );
-        clearLocalStorage();
-        sessionStorage.clear();
-        handleDrawerToggle();
-        router.replace("/");
-        props.clearStore();
-      })
-      .catch((err) => {
-        setOpenLoader(false);
-        showSnackBar(
-          err.response
-            ? err?.response?.data?.Error?.Message
-            : "Something went wrong",
-          SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
-        );
-      });
-
-    if (navigator.geolocation) {
-      getLatLong((lat, long) => {
-        if (lat && long) {
-          getStoreGridData(1);
-        } else {
-          props.clearStore();
-        }
-      });
-    } else {
-      props.clearStore();
-    }
-    props.clearStore();
-  };
-
-  const handleShowEyeExamFlow = () => {
-    setShowEyeExamFlow(true);
-    handleDrawerToggle();
-  };
-
-  const handleLanguageChange = (newLanguage: string) => {
-    i18n.changeLanguage(newLanguage);
-    dispatch(updateLangCode(newLanguage));
-    localStorage.setItem("language", newLanguage);
-    setCurrentLanguage(newLanguage);
-    // [IR-2064] - Redirect to stanton-access page if user is on stanton-access-spa page and language is english
-    if (
-      (router.pathname === "/stanton-access-spa" ||
-        router.pathname === "/stanton-access-spa/") &&
-      newLanguage === "en"
-    ) {
-      router.push("/stanton-access/");
-    }
-  };
-
-  const desiredOrder = [
-    "My Account",
-    "Offers",
-    "Eyeglasses",
-    "Sunglasses",
-    "Contacts",
-    "Eye Health",
-    "Order Status",
-  ];
-
-  const desiredNavItems = desiredOrder.map((name) =>
-    navItems.find((item) => item.name === name),
-  );
-  const remainingNavItems = navItems.filter(
-    (item) => !desiredOrder.includes(item.name),
-  );
-
-  const mobileNavItems = [...desiredNavItems, ...remainingNavItems];
-
-  useEffect(() => {
-    const updatedUserData = JSON.parse(
-      localStorage?.getItem("updatedUser") as string,
-    );
-    if (
-      updatedUserData &&
-      (props.session?.user as any)?.authData?.PatientId ===
-      updatedUserData?.PatientId
-    ) {
-      setUpdatedUser(
-        updatedUserData?.FirstName + " " + updatedUserData?.LastName,
-      );
-    }
-  }, [
-    typeof window !== "undefined" && localStorage?.getItem("updatedUser"),
-    props.session,
-  ]);
-  const appLogo = useAppLogo();
-  return (
-    <Box className={style.drawerWrapper}>
-      {showEyeExamFlow && (
-        <EyeExamFlow
-          isVisible={showEyeExamFlow}
-          toggle={() => setShowEyeExamFlow(false)}
-        />
-      )}
-      <BackdropLoader openLoader={openLoader} />
-      <Box className={style.drawerHeader}>
-        <Box className={style.mobileMenu}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            className={style.menuIcon}
-            onClick={handleDrawerToggle}
-          >
-            <Image src={crossIcon} alt="menu" width={12} height={12} />
-          </IconButton>
-          {appLogo ? (
-            <Image src={appLogo} alt="logo" width={60} height={25} />
-          ) : (
-            <Skeleton height={25} width={60} variant="rectangular" />
-          )}
-        </Box>
-      </Box>
-      <List>
-        <>
-          {mobileNavItems?.map((navItem) => {
-            if (
-              navItem?.type === NAV_ITEMS.NAV_TYPES.TEXT &&
-              ((navItem.cdcViewShow && isCDC) || !navItem.cdcViewShow) &&
-              ((navItem.cdcViewHide && !isCDC) || !navItem.cdcViewHide)
-            ) {
-              return (
-                <Box
-                  key={navItem.name + navItem.id}
-                  className={style.drawerBtnWrapper}
-                >
-                  <ListItem disablePadding onClick={handleDrawerToggle}>
-                    <ListItemButton>
-                      <Link href={navItem?.url}>
-                        <ListItemText
-                          primary={t(`nav.${navItem.name}`)}
-                          classes={{ primary: style.btnText }}
-                        />
-                      </Link>
-                    </ListItemButton>
-                  </ListItem>
-                  <Divider />
-                </Box>
-              );
-            } else if (
-              navItem?.type === NAV_ITEMS.NAV_TYPES.DROPDOWN &&
-              ((navItem.cdcViewShow && isCDC) || !navItem.cdcViewShow) &&
-              ((navItem.cdcViewHide && !isCDC) || !navItem.cdcViewHide)
-            ) {
-              return (
-                <Accordion
-                  key={navItem.name + navItem.id}
-                  elevation={0}
-                  className={style.accoridionMenu}
-                >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    className={style.accoridionSummary}
-                  >
-                    <Typography className={style.btnText}>
-                      {t(`nav.${navItem.name}`)}
-                    </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {navItem.subMenu
-                      .filter(
-                        (subMenuItem) =>
-                          ((subMenuItem.cdcViewShow && isCDC) ||
-                            !subMenuItem.cdcViewShow) &&
-                          ((subMenuItem.cdcViewHide && !isCDC) ||
-                            !subMenuItem.cdcViewHide),
-                      )
-                      .map((subMenuItem) => {
-                        return (
-                          <div key={subMenuItem.name + subMenuItem.id}>
-                            {subMenuItem.name === "Eye Exam" ? (
-                              <Typography
-                                key={subMenuItem.name + subMenuItem.id}
-                                className="mobileSubMenu"
-                                onClick={() => handleShowEyeExamFlow()}
-                              >
-                                {t(`nav.${subMenuItem.name}`)}
-                              </Typography>
-                            ) : (
-                              <Link
-                                key={subMenuItem.name + subMenuItem.id}
-                                href={subMenuItem?.url}
-                                className={style.mobileMenuLink}
-                                onClick={handleDrawerToggle}
-                              >
-                                <Typography className="mobileSubMenu">
-                                  {t(`nav.${subMenuItem.name}`)}
-                                </Typography>
-                              </Link>
-                            )}
-                          </div>
-                        );
-                      })}
-                  </AccordionDetails>
-                </Accordion>
-              );
-            } else if (
-              navItem?.type === NAV_ITEMS.NAV_TYPES.COMPONENT_DROPDOWN &&
-              ((navItem.cdcViewShow && isCDC) || !navItem.cdcViewShow) &&
-              ((navItem.cdcViewHide && !isCDC) || !navItem.cdcViewHide)
-            ) {
-              return (
-                <Accordion
-                  key={navItem.name + navItem.id}
-                  elevation={0}
-                  className={style.accoridionMenu}
-                >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    className={style.accoridionSummary}
-                  >
-                    <Typography className={style.btnText}>
-                      {t(`nav.${navItem.name}`)}
-                    </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {!props.session ? (
-                      <LoginForm
-                        formHead={t("nav.Sign Into Your Account")}
-                        formMessage=""
-                        cstmStyles="sideBar"
-                        handleClose={handleDrawerToggle}
-                      />
-                    ) : (
-                      <Box className={style.myAccountWrapper}>
-                        <Box className={style.menuHeading}>
-                          {t("nav.Welcome")} -{" "}
-                          {(props.session?.user as any)?.authData?.userType ===
-                            USER_TYPE.ASSOCIATE
-                            ? props.session?.user.name
-                            : updatedUser
-                              ? updatedUser
-                              : (props.session?.user as any)?.authData
-                                ?.FirstName +
-                              " " +
-                              (props.session?.user as any)?.authData
-                                ?.LastName}
-                        </Box>
-
-                        {navItem?.subMenu
-                          .filter(
-                            (subMenuItem) =>
-                              ((subMenuItem.cdcViewShow && isCDC) ||
-                                !subMenuItem.cdcViewShow) &&
-                              ((subMenuItem.cdcViewHide && !isCDC) ||
-                                !subMenuItem.cdcViewHide),
-                          )
-                          .map((subMenuItem) => {
-                            return (
-                              <Link
-                                href={subMenuItem.url}
-                                key={subMenuItem.name + subMenuItem.id}
-                                className={style.myAccLink}
-                                onClick={handleDrawerToggle}
-                              >
-                                <Button className={style.logoutButton}>
-                                  {t(`nav.${subMenuItem.name}`)}
-                                </Button>
-                              </Link>
-                            );
-                          })}
-                        <Button
-                          onClick={handleLogoutClick}
-                          className={style.logoutButton}
-                        >
-                          {t("nav.Sign out")}
-                        </Button>
-                      </Box>
-                    )}
-                  </AccordionDetails>
-                </Accordion>
-              );
-            }
-          })}
-        </>
-        {(props.session?.user as any)?.authData?.userType !==
-          USER_TYPE.ASSOCIATE && (
-            <Box
-              className={`${style.drawerBtnWrapper} ${style.mobileLanguageButton}`}
-            >
-              <ListItem disablePadding onClick={handleDrawerToggle}>
-                <ListItemButton
-                  onClick={() =>
-                    handleLanguageChange(currentLanguage === "en" ? "de" : "en")
-                  }
-                >
-                  {currentLanguage === "en" ? "Español" : "English"}
-                </ListItemButton>
-              </ListItem>
-              <Divider />
-            </Box>
-          )}
-      </List>
-      {(props.session?.user as any)?.authData?.userType !==
-        USER_TYPE.ASSOCIATE && (
-          <Button
-            className={style.bookingBtn}
-            endIcon={
-              <Image src={rightArrow} alt="calender" width={18} height={14} />
-            }
-            onClick={() =>
-              router.push("/book-eye-exam").then(() => {
-                handleDrawerToggle();
-              })
-            }
-          >
-            {t("nav.BOOK_EYE_EXAM")}
-          </Button>
-        )}
-      <Typography className={style.needHelp}>
-        {t("nav.NEED_HELP")}{" "}
-        <a href={`tel:${unformatPhoneNumber(SO_DEFAULT_STORE_CONTACT_NUMBER)}`}>
-          {SO_DEFAULT_STORE_CONTACT_NUMBER}
-        </a>
-      </Typography>
-    </Box>
-  );
-};
 
 export default function Nav(props: NavProps) {
   const { t } = useTranslation();
@@ -553,17 +140,30 @@ export default function Nav(props: NavProps) {
   const [openLoader, setOpenLoader] = React.useState(false);
   const [permissionLoaded, setPerMissionLoded] = React.useState(false);
   const [cartBadgeCount, setCartBadgeCount] = React.useState<number>(0);
+  const [currentLanguage, setCurrentLanguage] = React.useState(i18n.language);
   const router = useRouter();
   const isCartUpdated = useAppSelector((state) => state.cartId.data);
   const isPendingCartCountApiCall = useAppSelector(
-    (state) => state.cartId.isPendingCartCountApiCall,
+    (state) => state.cartId.isPendingCartCountApiCall
   );
   const cartCountForMRSOrder = useAppSelector(
-    (state) => state.cartId.cartCountForMRSOrder,
+    (state) => state.cartId.cartCountForMRSOrder
   );
   const patientData = useAppSelector((state) => state.guidedSales.data);
+  const [isPageLoading, setIsPageLoading] = React.useState(false);
+
+  const [getPosAppintmentsPermisison] = useAppSelector((state) =>
+    GetPermissionConfig({
+      ...state,
+      permissionName: [CommonPermission.APPOINTMENTS.GET_POS_APPOINTMENTS],
+    })
+  ) as boolean[];
+
   const favoriteProductsCount = useAppSelector(selectCount);
-  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    setIsPageLoading(true);
+  }, []);
 
   const {
     userHasInHousePxs: { primary: userHasInHousePxs },
@@ -606,7 +206,7 @@ export default function Nav(props: NavProps) {
 
     /* Creates a copy of the current values to avoid modifying the original value */
     const updatedItems = items.map((it) =>
-      it.url === MY_ACCOUNT_MENU_URL ? updatedItem : it,
+      it.url === MY_ACCOUNT_MENU_URL ? updatedItem : it
     );
 
     return updatedItems;
@@ -636,7 +236,7 @@ export default function Nav(props: NavProps) {
           subMenu: item.subMenu.filter(
             (subItem) =>
               subItem.permissionKey !== "inventoryCountPermission" &&
-              subItem.permissionKey !== "inventoryAdjustmentPermission",
+              subItem.permissionKey !== "inventoryAdjustmentPermission"
           ),
         };
       }
@@ -676,13 +276,13 @@ export default function Nav(props: NavProps) {
   }, [props.session, menuPermission, userHasInHousePxs, selectedStoreForNav]);
 
   const windowTemp = props.window;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const dispatch = useDispatch();
   const [storeId, setStoreId] = React.useState<string | null>(
-    SO_DEFAULT_STORE_ID,
+    SO_DEFAULT_STORE_ID
   );
   const [logoutTrigger, setLogoutTrigger] = React.useState(false);
   const [storeData, setStoreData] = React.useState<NavStoreDataDTO | null>(
-    null,
+    null
   );
 
   const memoizedStoreData = useMemo(
@@ -695,20 +295,24 @@ export default function Nav(props: NavProps) {
       storeData?.OpenAt,
       storeData?.WebDescription,
       storeData?.TimeZoneCode,
-    ],
+    ]
   );
 
   const [employeeStoreData, setEmployeeStoreData] =
     React.useState<NavStoreDataDTO | null>(null);
   const [userLocation, setUserLocation] = React.useState<LocationDTO | null>(
-    null,
+    null
   );
   const [sideBarOC, setSideBarOC] = React.useState(false);
   const [isLockSidebar, setIsLockSidebar] = React.useState(false);
   const [isForceClose, setIsForceClose] = React.useState(false);
+
+  const isMobileMenuDisplayed = useAppSelector(selectIsMobileMenuDisplayed);
+
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    dispatch(toggleMobileMenu());
   };
+
   const container =
     windowTemp !== undefined ? () => windowTemp().document.body : undefined;
 
@@ -723,10 +327,10 @@ export default function Nav(props: NavProps) {
   const [statusMessage, setStatusMessage] = React.useState("");
   const [role, setRole] = React.useState<string | null>(null);
   const [selectedStoreId, setSelectedStoreId] = React.useState<string | null>(
-    null,
+    null
   );
   const [cartIdForAgent, setCartIdForAgent] = React.useState<string | null>(
-    null,
+    null
   );
   const [patientIdForAgentView, setPatientIdForAgentView] = React.useState<
     string | null
@@ -756,7 +360,7 @@ export default function Nav(props: NavProps) {
         //      const storeHour = getWeekday(storeData.WorkingHours);
         const storeHour = await getStoreWorkingHour(
           memoizedStoreData.Id.toString(),
-          dayjs().format(DATE_FORMAT),
+          dayjs().format(DATE_FORMAT)
         )
           .then(({ data }) => {
             if (data?.Result) {
@@ -771,7 +375,7 @@ export default function Nav(props: NavProps) {
 
         const options = { timeZone: storeTimezone };
         const currentTimeInStoreTimezone = new Date(
-          currentTime.toLocaleString("en-US", options),
+          currentTime.toLocaleString("en-US", options)
         );
 
         const currentDay = currentTimeInStoreTimezone.getDay();
@@ -780,7 +384,7 @@ export default function Nav(props: NavProps) {
         openTime.setHours(
           parseInt(openTimeParts[0], 10),
           parseInt(openTimeParts[1], 10),
-          parseInt(openTimeParts[2], 10),
+          parseInt(openTimeParts[2], 10)
         );
         openTime.toLocaleString("en-US", options);
 
@@ -788,7 +392,7 @@ export default function Nav(props: NavProps) {
         closeTime.setHours(
           parseInt(closeTimeParts[0], 10),
           parseInt(closeTimeParts[1], 10),
-          parseInt(closeTimeParts[2], 10),
+          parseInt(closeTimeParts[2], 10)
         );
         closeTime.toLocaleString("en-US", options);
 
@@ -800,24 +404,24 @@ export default function Nav(props: NavProps) {
         ) {
           setStatusMessage(
             t("nav.CLOSES_AT") +
-            `${new Date(
-              `2024-01-01T${memoizedStoreData?.CloseAt}`,
-            ).toLocaleTimeString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-            })}`,
+              `${new Date(
+                `2024-01-01T${memoizedStoreData?.CloseAt}`
+              ).toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              })}`
           );
         } else {
           setStatusMessage(
             t("nav.OPENS_AT") +
-            `${new Date(
-              `2024-01-01T${memoizedStoreData?.OpenAt}`,
-            ).toLocaleTimeString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-            })}`,
+              `${new Date(
+                `2024-01-01T${memoizedStoreData?.OpenAt}`
+              ).toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              })}`
           );
         }
       } else {
@@ -865,7 +469,7 @@ export default function Nav(props: NavProps) {
         setStoreData(
           localStorage.getItem("selectedStore")
             ? JSON.parse(localStorage.getItem("selectedStore") as string)
-            : null,
+            : null
         );
         router.replace("/");
       })
@@ -875,7 +479,7 @@ export default function Nav(props: NavProps) {
           err.response
             ? err.response.data.Error.Description
             : "Something went wrong",
-          SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+          SNACKBAR_COLOR_TYPE.ERROR as AlertColor
         );
       });
   };
@@ -902,7 +506,7 @@ export default function Nav(props: NavProps) {
             } else {
               localStorage.setItem(
                 "selectedStore",
-                JSON.stringify(data.Result),
+                JSON.stringify(data.Result)
               );
               props.handleStore(data.Result);
             }
@@ -913,7 +517,7 @@ export default function Nav(props: NavProps) {
             err.response
               ? err?.response?.data?.Error?.Message
               : STORE_ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE,
-            SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+            SNACKBAR_COLOR_TYPE.ERROR as AlertColor
           );
         });
     }
@@ -931,7 +535,7 @@ export default function Nav(props: NavProps) {
           const data = resp.data?.Result as EventJourney[];
           if (data) {
             const callEnded = data.find(
-              (event) => event.JourneyActionCode === "CallEnded",
+              (event) => event.JourneyActionCode === "CallEnded"
             );
             if (callEnded) {
               localStorage.removeItem("GuidedSalesEventId");
@@ -951,7 +555,7 @@ export default function Nav(props: NavProps) {
           dispatch(updateAgent(false));
           showSnackBar(
             ERROR_MESSAGE.GUIDED_SALE_AGENT_VIEW_FAIL,
-            SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+            SNACKBAR_COLOR_TYPE.ERROR as AlertColor
           );
         });
     } else {
@@ -964,7 +568,7 @@ export default function Nav(props: NavProps) {
     if (props.session) {
       localStorage.setItem(
         "user",
-        JSON.stringify(props.session.user?.authData),
+        JSON.stringify(props.session.user?.authData)
       );
 
       if (
@@ -980,7 +584,7 @@ export default function Nav(props: NavProps) {
       ) {
         localStorage.setItem(
           "empUserName",
-          JSON.stringify(props.session.user?.name || ""),
+          JSON.stringify(props.session.user?.name || "")
         );
         i18n.changeLanguage("en");
         localStorage.setItem("language", "en");
@@ -989,7 +593,7 @@ export default function Nav(props: NavProps) {
 
       if (
         (props.session.user as any)?.authData?.userType ===
-        USER_TYPE.ASSOCIATE &&
+          USER_TYPE.ASSOCIATE &&
         !isApiCall
       ) {
         GetAuthenticatedUserPermission()
@@ -1011,10 +615,10 @@ export default function Nav(props: NavProps) {
               setShowCDCView(true);
               setSelectedStoreId(selectedStore?.Id.toString() || null);
               const checkCDCView = Boolean(
-                Number(localStorage.getItem("isCDCUser")),
+                Number(localStorage.getItem("isCDCUser"))
               );
               const storeData = JSON.parse(
-                localStorage.getItem("selectedStore") as string,
+                localStorage.getItem("selectedStore") as string
               );
               if (checkCDCView || !storeData) {
                 setIsCDC(true);
@@ -1031,7 +635,7 @@ export default function Nav(props: NavProps) {
                   }
                 } else {
                   const storeData = JSON.parse(
-                    localStorage.getItem("selectedStore") as string,
+                    localStorage.getItem("selectedStore") as string
                   );
                   props.handleStore(storeData);
                   setStoreData(storeData);
@@ -1042,7 +646,7 @@ export default function Nav(props: NavProps) {
                 //Signing out user if store is not found and user is locked
                 showSnackBar(
                   STORE_ERROR_MESSAGE.AUTO_LOGOUT_ERROR_MESSAGE,
-                  SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+                  SNACKBAR_COLOR_TYPE.ERROR as AlertColor
                 );
                 setLogoutTrigger(true);
                 handleLogout();
@@ -1060,7 +664,7 @@ export default function Nav(props: NavProps) {
                   getStoreDetailsById(selectedStore?.Id.toString() || "");
                 } else {
                   const storeData = JSON.parse(
-                    localStorage.getItem("selectedStore") as string,
+                    localStorage.getItem("selectedStore") as string
                   );
                   props.handleStore(storeData);
                   setStoreData(storeData);
@@ -1078,7 +682,7 @@ export default function Nav(props: NavProps) {
                   setIsForceClose(true);
                 } else {
                   const storeData = JSON.parse(
-                    localStorage.getItem("selectedStore") as string,
+                    localStorage.getItem("selectedStore") as string
                   );
                   props.handleStore(storeData);
                   setStoreData(storeData);
@@ -1100,7 +704,7 @@ export default function Nav(props: NavProps) {
             } else {
               //TODO: This code is for development purpose will remove once upper code will be uncommented
               const storeData = JSON.parse(
-                localStorage.getItem("selectedStore") as string,
+                localStorage.getItem("selectedStore") as string
               );
               props.handleStore(storeData);
               setStoreData(storeData);
@@ -1121,7 +725,7 @@ export default function Nav(props: NavProps) {
 
           if (Boolean(localStorage.getItem("selectedStore"))) {
             const storeData = JSON.parse(
-              localStorage.getItem("selectedStore") as string,
+              localStorage.getItem("selectedStore") as string
             );
             props.handleStore(storeData);
             setStoreData(storeData);
@@ -1141,7 +745,7 @@ export default function Nav(props: NavProps) {
       if (!Boolean(isEmployee)) {
         if (Boolean(localStorage.getItem("selectedStore"))) {
           const storeData = JSON.parse(
-            localStorage.getItem("selectedStore") as string,
+            localStorage.getItem("selectedStore") as string
           );
           props.handleStore(storeData);
           setStoreData(storeData);
@@ -1161,7 +765,7 @@ export default function Nav(props: NavProps) {
       if (localStorage.getItem("isComingFromLoginForm")) {
         onSubmitScarabEvent(
           "setCustomerId",
-          (props.session?.user as any)?.authData?.PatientId,
+          (props.session?.user as any)?.authData?.PatientId
         );
         getPatientCartData((props.session?.user as any)?.authData, router);
         localStorage.removeItem("isComingFromLoginForm");
@@ -1172,7 +776,7 @@ export default function Nav(props: NavProps) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const userSessionData = JSON.parse(
-        localStorage.getItem("session") as string,
+        localStorage.getItem("session") as string
       );
       if (props.sessionStatus === "loading") {
         return;
@@ -1203,12 +807,12 @@ export default function Nav(props: NavProps) {
     if (window) {
       window.addEventListener(AppEvents.STORE_CHANGE, () => {
         const storeData = JSON.parse(
-          localStorage.getItem("selectedStore") as string,
+          localStorage.getItem("selectedStore") as string
         );
         setStoreData(storeData);
       });
       return () => {
-        window.removeEventListener(AppEvents.STORE_CHANGE, () => { });
+        window.removeEventListener(AppEvents.STORE_CHANGE, () => {});
       };
     }
   }, []);
@@ -1221,7 +825,7 @@ export default function Nav(props: NavProps) {
       "",
       "",
       userLocation?.latitude.toString(),
-      userLocation?.longitude.toString(),
+      userLocation?.longitude.toString()
     )
       .then(({ data }) => {
         const closestCoordinate = data.Result.Results && data.Result.Results[0];
@@ -1237,7 +841,7 @@ export default function Nav(props: NavProps) {
           });
           localStorage.setItem(
             "selectedStore",
-            JSON.stringify(closestCoordinate),
+            JSON.stringify(closestCoordinate)
           );
           props.handleStore(closestCoordinate);
         }
@@ -1282,7 +886,7 @@ export default function Nav(props: NavProps) {
 
       if (localStorage.getItem("selectedStore")) {
         const storeData = JSON.parse(
-          localStorage.getItem("selectedStore") as string,
+          localStorage.getItem("selectedStore") as string
         );
         props.handleStore(storeData);
         setStoreData(storeData);
@@ -1366,21 +970,21 @@ export default function Nav(props: NavProps) {
 
   const toggleSettingsDrawer =
     (anchor: Anchor, open: boolean) =>
-      (event: React.KeyboardEvent | React.MouseEvent) => {
-        if (
-          event.type === EVENT_TYPES.KEYDOWN &&
-          ((event as React.KeyboardEvent).key === KEYBOARD_KEYS.TAB ||
-            (event as React.KeyboardEvent).key === KEYBOARD_KEYS.SHIFT)
-        ) {
-          return;
-        }
-        setSettingsState({ ...settingsState, [anchor]: open });
-      };
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === EVENT_TYPES.KEYDOWN &&
+        ((event as React.KeyboardEvent).key === KEYBOARD_KEYS.TAB ||
+          (event as React.KeyboardEvent).key === KEYBOARD_KEYS.SHIFT)
+      ) {
+        return;
+      }
+      setSettingsState({ ...settingsState, [anchor]: open });
+    };
   const handleAutoLogout = () => {
     handleLogout();
     showSnackBar(
       "Your session has expired. Please sign in to continue.",
-      SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+      SNACKBAR_COLOR_TYPE.ERROR as AlertColor
     );
   };
   useNonInitialEffect(() => {
@@ -1394,7 +998,7 @@ export default function Nav(props: NavProps) {
         if (timeUntilExpiration > 0) {
           const timeoutId = setTimeout(
             handleAutoLogout,
-            timeUntilExpiration * 1000,
+            timeUntilExpiration * 1000
           );
           return () => clearTimeout(timeoutId);
         } else if (timeUntilExpiration < 0) {
@@ -1415,7 +1019,7 @@ export default function Nav(props: NavProps) {
           err.response
             ? err?.response?.data?.Error?.Message
             : STORE_ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE,
-          SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+          SNACKBAR_COLOR_TYPE.ERROR as AlertColor
         );
       });
   };
@@ -1431,7 +1035,7 @@ export default function Nav(props: NavProps) {
           err.response
             ? err?.response?.data?.Error?.Message
             : STORE_ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE,
-          SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+          SNACKBAR_COLOR_TYPE.ERROR as AlertColor
         );
       });
   };
@@ -1449,7 +1053,7 @@ export default function Nav(props: NavProps) {
           err.response
             ? err?.response?.data?.Error?.Message
             : STORE_ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE,
-          SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+          SNACKBAR_COLOR_TYPE.ERROR as AlertColor
         );
       });
   };
@@ -1466,7 +1070,7 @@ export default function Nav(props: NavProps) {
           err.response
             ? err?.response?.data?.Error?.Message
             : STORE_ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE,
-          SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+          SNACKBAR_COLOR_TYPE.ERROR as AlertColor
         );
       });
   };
@@ -1482,7 +1086,7 @@ export default function Nav(props: NavProps) {
     patientData,
     isAgent,
     typeof window !== "undefined" &&
-    localStorage.getItem("CurrentSelectedPatient"),
+      localStorage.getItem("CurrentSelectedPatient"),
   ]);
 
   useEffect(() => {
@@ -1493,7 +1097,7 @@ export default function Nav(props: NavProps) {
         selectedpatientDetails.storeCartId
       ) {
         getCartCountOfPatientForAgentViewUsingCartId(
-          selectedpatientDetails.storeCartId,
+          selectedpatientDetails.storeCartId
         );
       } else if (
         event.key === "CartCount" &&
@@ -1501,7 +1105,7 @@ export default function Nav(props: NavProps) {
         selectedpatientDetails?.Id
       ) {
         getCartBadgeCountOfPatientForAgentView(
-          selectedpatientDetails?.Id as string,
+          selectedpatientDetails?.Id as string
         );
       }
     };
@@ -1518,16 +1122,24 @@ export default function Nav(props: NavProps) {
     if (parsedStoreDet?.Id || SO_DEFAULT_STORE_ID) {
       getPatientFavourites(
         patientId,
-        parsedStoreDet?.Id?.toString() || SO_DEFAULT_STORE_ID,
+        parsedStoreDet?.Id?.toString() || SO_DEFAULT_STORE_ID
       )
         .then((res) => {
           const result = res.data.Result.Results.map(
             (product: any) =>
-              product.ProductCode || product?.masterProductId?.toString(),
+              product.ProductCode || product?.masterProductId?.toString()
           );
-          if (result && result.length) {
+
+          const hasFavorites = result && result.length;
+
+          // If there are no favorites, would reset the guest favorites to sync
+          // with no favorites that patient has
+          if (hasFavorites) {
             localStorage.setItem(FAVORITES_LS_KEY, JSON.stringify(result));
             dispatch(setCount(res.data.Result.RowCount));
+          } else {
+            localStorage.setItem(FAVORITES_LS_KEY, JSON.stringify([]));
+            dispatch(setCount(0));
           }
         })
         .catch((err) => {
@@ -1535,7 +1147,7 @@ export default function Nav(props: NavProps) {
             err.response
               ? err?.response?.data?.Error?.Message
               : STORE_ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE,
-            SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+            SNACKBAR_COLOR_TYPE.ERROR as AlertColor
           );
         });
     }
@@ -1543,14 +1155,16 @@ export default function Nav(props: NavProps) {
 
   const getGuestFavoriteProductsCount = () => {
     const favoriteProducts = JSON.parse(
-      localStorage.getItem(FAVORITES_LS_KEY) || "[]",
+      localStorage.getItem(FAVORITES_LS_KEY) || "[]"
     );
     if (Object.keys(favoriteProducts).length === 0) return 0;
 
     return favoriteProducts.length;
   };
 
-  const isUserLoggedIn: boolean = props.session !== null;
+  const isUserLoggedIn: boolean =
+    typeof window !== "undefined" &&
+    localStorage.getItem("auth_status") === "authenticated";
 
   React.useEffect(() => {
     if (isUserLoggedIn) return;
@@ -1586,12 +1200,12 @@ export default function Nav(props: NavProps) {
           getCartBadgeCountOfPatientForAgentView(selectedpatient?.Id);
       } else if (isCartUpdated.cartId) {
         getCartCountOfPatientForAgentViewUsingCartId(
-          isCartUpdated?.cartId as unknown as string,
+          isCartUpdated?.cartId as unknown as string
         );
       }
     } else if (
       (props.session?.user as any)?.authData?.userType ===
-      USER_TYPE.ASSOCIATE &&
+        USER_TYPE.ASSOCIATE &&
       storeId
     ) {
       getCartBadgeCountAssociate();
@@ -1603,7 +1217,7 @@ export default function Nav(props: NavProps) {
         localStorage.getItem("orderGroupId")
       ) {
         getCartBadgeCountPatient(
-          (props.session?.user as any)?.authData?.PatientId,
+          (props.session?.user as any)?.authData?.PatientId
         );
       } else if (isCartUpdated.cartId) {
         getCartOrderCount(isCartUpdated.cartId);
@@ -1621,7 +1235,7 @@ export default function Nav(props: NavProps) {
   useEffect(() => {
     if (
       (props.session?.user as any)?.authData?.userType ===
-      USER_TYPE.ASSOCIATE &&
+        USER_TYPE.ASSOCIATE &&
       storeId &&
       isPendingCartCountApiCall &&
       !cartCountForMRSOrder
@@ -1633,7 +1247,7 @@ export default function Nav(props: NavProps) {
   useEffect(() => {
     if (
       (props.session?.user as any)?.authData?.userType ===
-      USER_TYPE.ASSOCIATE &&
+        USER_TYPE.ASSOCIATE &&
       storeId &&
       cartCountForMRSOrder
     ) {
@@ -1654,7 +1268,7 @@ export default function Nav(props: NavProps) {
           err.response
             ? err?.response?.data?.Error?.Message
             : ERROR_MESSAGE.API_DEFAULT_ERROR_MESSAGE,
-          SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
+          SNACKBAR_COLOR_TYPE.ERROR as AlertColor
         );
       });
   };
@@ -1666,7 +1280,7 @@ export default function Nav(props: NavProps) {
     });
 
     return () => {
-      window.removeEventListener(AppEvents.STORE_CHANGE, () => { });
+      window.removeEventListener(AppEvents.STORE_CHANGE, () => {});
     };
   }, [typeof window !== "undefined" && localStorage.getItem("selectedStore")]);
 
@@ -1676,7 +1290,7 @@ export default function Nav(props: NavProps) {
       setCartBadgeCount(0);
     } else if (
       (props.session?.user as any)?.authData?.userType ===
-      USER_TYPE.ASSOCIATE &&
+        USER_TYPE.ASSOCIATE &&
       !isAgent &&
       storeId &&
       menuPermission["cartPermission"]
@@ -1696,10 +1310,10 @@ export default function Nav(props: NavProps) {
     ) {
       localStorage.removeItem("patient_cartId");
       getCartBadgeCountPatient(
-        (props.session?.user as any)?.authData?.PatientId,
+        (props.session?.user as any)?.authData?.PatientId
       );
       getPatientFavouritesList(
-        (props.session?.user as any)?.authData?.PatientId,
+        (props.session?.user as any)?.authData?.PatientId
       );
     }
   }, [(props.session?.user as any)?.authData?.userType]);
@@ -1755,96 +1369,178 @@ export default function Nav(props: NavProps) {
 
   const appLogo = useAppLogo();
 
+  React.useEffect(() => {
+    if (localStorage.getItem("language")) {
+      let currentLanguage = localStorage.getItem("language") as string;
+      localStorage.setItem("language", currentLanguage);
+      i18n.changeLanguage(currentLanguage);
+      dispatch(updateLangCode(currentLanguage));
+      setCurrentLanguage(currentLanguage);
+    } else {
+      localStorage.setItem("language", currentLanguage);
+      i18n.changeLanguage(currentLanguage);
+      dispatch(updateLangCode(currentLanguage));
+      setCurrentLanguage(currentLanguage);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    setCurrentLanguage(i18n.language);
+  }, [i18n.language]);
+
+  const handleLanguageChange = (newLanguage: string) => {
+    i18n.changeLanguage(newLanguage);
+    dispatch(updateLangCode(newLanguage));
+    localStorage.setItem("language", newLanguage);
+    Cookies.set("language", newLanguage);
+    setCurrentLanguage(newLanguage);
+    // [IR-2064] - Redirect to stanton-access page if user is on stanton-access-spa page and language is english
+    if (
+      (router.pathname === "/stanton-access-spa" ||
+        router.pathname === "/stanton-access-spa/") &&
+      newLanguage === "en"
+    ) {
+      router.push("/stanton-access/");
+    }
+  };
+
   return (
     <>
       <BackdropLoader openLoader={openLoader} />
       <Box className={style.nav}>
         <CssBaseline />
-        <AppBar component="nav" className={style.navBar}>
+        <AppBar
+          component="nav"
+          className={`${style.navBar} ${
+            (props.session?.user as any)?.authData?.userType !==
+              USER_TYPE.ASSOCIATE && style.navBarCustomer
+          }`}
+          position="relative"
+        >
           <div className={style.navBarWrapper}>
-            <Link
-              className={style.navBar__favorite_button}
-              href={
-                isUserLoggedIn ? "/my-account/my-favorites" : "/favorites"
-              }
-            >
-              <IconButton>
-                <FavoriteBorderIcon />
-              </IconButton>
-
-              {favoriteProductsCount > 0 ? (
-                <small>{favoriteProductsCount}</small>
-              ) : (
-                <></>
-              )}
-            </Link>
             <Toolbar className={style.navToolBar}>
-              <Box className={style.mobileMenu}>
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={handleDrawerToggle}
-                  data-testid="nav-button-toggle"
-                  className={style.menuIcon}
-                >
-                  <Image src={menuIcon} alt="menu" width={16} height={14} />
-                </IconButton>
-
-                <Box mt={0.5} className={style.mobileLogo}>
-                  <Link href="/">
-                    {appLogo ? (
-                      <Image
-                        src={appLogo}
-                        alt="header"
-                        width={60}
-                        height={25}
-                      />
-                    ) : (
-                      <Skeleton width={60} height={25} variant="rectangular" />
-                    )}
-                  </Link>
-                </Box>
+              <Box className={style.navItems}>
+                <GetNavBar
+                  session={props.session}
+                  navItems={navData}
+                  clearStore={() => {
+                    props.onLogout && props.onLogout();
+                    setStoreData(
+                      localStorage.getItem("selectedStore")
+                        ? JSON.parse(
+                            localStorage.getItem("selectedStore") as string
+                          )
+                        : null
+                    );
+                    setCartBadgeCount(0);
+                  }}
+                  setCartBadgeCount={setCartBadgeCount}
+                />
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center" }}>
+
+              <Box className={style.mobileBookEyeExam}>
+                {isPageLoading ? (
+                  <>
+                    {!isAgent && (
+                      <Box
+                        className={`${style.appointmentSection} ${
+                          (props.session?.user as any)?.authData?.userType !==
+                            USER_TYPE.ASSOCIATE && style.rowReverse
+                        }`}
+                      >
+                        {(props.session?.user as any)?.authData?.userType ===
+                        USER_TYPE.ASSOCIATE ? (
+                          <>
+                            {isCDC ? (
+                              <>
+                                <Button
+                                  className={style.appointmentBtn}
+                                  aria-label="supportNumber"
+                                  tabIndex={0}
+                                  data-testid="supportNumber"
+                                  component={Link}
+                                  href="https://nowoptics.franconnect.net/fc/"
+                                  target="_blank"
+                                >
+                                  {t("HEADER.SUPPORT_NUMBER")}
+                                </Button>
+                              </>
+                            ) : getPosAppintmentsPermisison ? (
+                              <>
+                                <Button
+                                  className={style.appointmentBtn}
+                                  aria-label="appointments"
+                                  tabIndex={0}
+                                  onClick={() => router.push("/appointments")}
+                                  data-testid="Appointments"
+                                >
+                                  {t("HEADER.APPOINTMENTS")}
+                                </Button>
+                              </>
+                            ) : (
+                              <></>
+                            )}
+                          </>
+                        ) : (
+                          <>
+                            <Button
+                              className={style.appointmentBtn}
+                              aria-label="BookEyeExam"
+                              tabIndex={0}
+                              onClick={() => router.push("/book-eye-exam")}
+                              data-testid="BookEyeExam"
+                            >
+                              {t("HEADER.BOOK_EYE_EXAM")}
+                            </Button>
+                          </>
+                        )}
+                      </Box>
+                    )}
+                  </>
+                ) : (
+                  <Skeleton height={60} width={142} variant="rectangular" />
+                )}
+              </Box>
+
+              <Box className={`${style.iconButtonSection}`}>
                 <Box className={style.navHead}>
                   {(props.session?.user as any)?.authData?.userType !==
                     USER_TYPE.ASSOCIATE && (
-                      <>
-                        <Button
-                          startIcon={
-                            <IconSVG
-                              width="16"
-                              height="20"
-                              viewBox="0 0 16 20"
-                              fill="#f98300"
-                              name="location_icon"
-                            />
+                    <>
+                      <Button
+                        endIcon={
+                          <Image
+                            src={LocationIcon}
+                            alt="location"
+                            width={16}
+                            height={21}
+                          />
+                        }
+                        onClick={() => {
+                          if (isLockSidebar) {
+                            setSideBarOC(!isLockSidebar);
+                          } else {
+                            setSideBarOC(!sideBarOC);
                           }
-                          onClick={() => {
-                            if (isLockSidebar) {
-                              setSideBarOC(!isLockSidebar);
-                            } else {
-                              setSideBarOC(!sideBarOC);
-                            }
-                          }}
-                          sx={{ cursor: "pointer" }}
-                          className={style.navHeadTitle}
-                        >
-                          <span className={style.storeDetails}>
-                            {storeData
-                              ? `${storeData?.WebDescription || ""}`
-                              : t("nav.SELECT_STORE")}
-                          </span>
-                          <span className={style.mobileStoreDetails}>
-                            {!storeData && t("nav.SELECT_STORE")}
-                          </span>
-                        </Button>
-                        {statusMessage && (
-                          <span className={style.closed}>{statusMessage}</span>
-                        )}
-                      </>
-                    )}
+                        }}
+                        sx={{ cursor: "pointer" }}
+                        className={style.navHeadTitle}
+                      >
+                        <span className={style.storeDetails}>
+                          {storeData
+                            ? `${storeData?.WebDescription || ""}`
+                            : t("nav.SELECT_STORE")}
+                        </span>
+                        <span className={style.mobileStoreDetails}>
+                          {!storeData && t("nav.SELECT_STORE")}
+                        </span>
+                      </Button>
+                      {/* IR-2322 TODO: Could be required for associate view */}
+                      {/* {statusMessage && (
+                        <span className={style.closed}>{statusMessage}</span>
+                      )} */}
+                    </>
+                  )}
                   {(props.session?.user as any)?.authData?.userType ===
                     USER_TYPE.ASSOCIATE &&
                     permissionLoaded &&
@@ -1866,13 +1562,12 @@ export default function Nav(props: NavProps) {
                             }
                           >
                             <Button
-                              startIcon={
-                                <IconSVG
-                                  width="16"
-                                  height="20"
-                                  viewBox="0 0 16 20"
-                                  fill="#f98300"
-                                  name="location_icon"
+                              endIcon={
+                                <Image
+                                  src={LocationIcon}
+                                  alt="location"
+                                  width={16}
+                                  height={21}
                                 />
                               }
                               onClick={() => {
@@ -1894,7 +1589,7 @@ export default function Nav(props: NavProps) {
                             </Button>
                           </Tooltip>
                         ) : null}
-                        2rem 1rem 2rem
+
                         <div
                           className={style.cdcSwitch}
                           style={{
@@ -1909,17 +1604,21 @@ export default function Nav(props: NavProps) {
                                   size="small"
                                   checked={isCDC}
                                   onChange={handleCDCUser}
+                                  sx={{
+                                    "& .MuiSwitch-switchBase.Mui-checked": {
+                                      color: "var(--primary-color)",
+                                    },
+                                    "& .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track":
+                                      {
+                                        backgroundColor: "var(--primary-color)",
+                                      },
+                                  }}
                                 />
                               }
                               label="DC view"
                             />
                           </FormGroup>
                         </div>
-                        {/* 
-                        <ToggleSwitch
-                          checked={isCDC}
-                          handleChange={(isChecked) => handleCDCUser(isChecked)}
-                        /> */}
                       </>
                     ) : (
                       <>
@@ -1937,13 +1636,12 @@ export default function Nav(props: NavProps) {
                           }
                         >
                           <Button
-                            startIcon={
-                              <IconSVG
-                                width="16"
-                                height="20"
-                                viewBox="0 0 16 20"
-                                fill="#f98300"
-                                name="location_icon"
+                            endIcon={
+                              <Image
+                                src={LocationIcon}
+                                alt="location"
+                                width={16}
+                                height={21}
                               />
                             }
                             onClick={() => {
@@ -1985,13 +1683,12 @@ export default function Nav(props: NavProps) {
                           }
                         >
                           <Button
-                            startIcon={
-                              <IconSVG
-                                width="16"
-                                height="20"
-                                viewBox="0 0 16 20"
-                                fill="#f98300"
-                                name="location_icon"
+                            endIcon={
+                              <Image
+                                src={LocationIcon}
+                                alt="location"
+                                width={16}
+                                height={21}
                               />
                             }
                             onClick={() => {
@@ -2010,10 +1707,11 @@ export default function Nav(props: NavProps) {
                             className={style.navHeadTitle}
                           >
                             {storeData
-                              ? `${isAgent
-                                ? storeData.WebDescription
-                                : storeData?.StoreNumber
-                              }`
+                              ? `${
+                                  isAgent
+                                    ? storeData.WebDescription
+                                    : storeData?.StoreNumber
+                                }`
                               : t("nav.SELECT_STORE")}
                           </Button>
                         </Tooltip>
@@ -2036,6 +1734,15 @@ export default function Nav(props: NavProps) {
                                       setShouldEndGuidedSalesMeeting(true);
                                     }
                                   }}
+                                  sx={{
+                                    "& .MuiSwitch-switchBase.Mui-checked": {
+                                      color: "var(--primary-color)",
+                                    },
+                                    "& .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track":
+                                      {
+                                        backgroundColor: "var(--primary-color)",
+                                      },
+                                  }}
                                 />
                               }
                               label="Eye Care Specialist View"
@@ -2051,7 +1758,7 @@ export default function Nav(props: NavProps) {
                     changeStoreOpen={false}
                     handleNewStore={() => {
                       const storeData = JSON.parse(
-                        localStorage.getItem("selectedStore") as string,
+                        localStorage.getItem("selectedStore") as string
                       );
                       props.handleStore(storeData);
                       setStoreData(storeData);
@@ -2077,25 +1784,38 @@ export default function Nav(props: NavProps) {
                     }}
                   />
                 </Box>
-              </Box>
+                {(props.session?.user as any)?.authData?.userType !==
+                  USER_TYPE.ASSOCIATE && (
+                  <Box
+                    className={style.navIcon}
+                    onClick={() => {
+                      router.push(
+                        props.sessionStatus === "unauthenticated"
+                          ? "/favorites"
+                          : "/my-account/my-favorites"
+                      );
+                    }}
+                  >
+                    <IconButton className={style.favorite_button}>
+                      <CustomBadgeContent
+                        {...(favoriteProductsCount > 0 && {
+                          badgeContent:
+                            favoriteProductsCount > 9
+                              ? "9+"
+                              : favoriteProductsCount,
+                        })}
+                      >
+                        <Image
+                          src={FavoriteIcon}
+                          alt="favorite"
+                          width={25}
+                          height={23}
+                        />
+                      </CustomBadgeContent>
+                    </IconButton>
+                  </Box>
+                )}
 
-              <Box className={style.navItems}>
-                <GetNavBar
-                  session={props.session}
-                  navItems={navData}
-                  clearStore={() => {
-                    props.onLogout && props.onLogout();
-                    setStoreData(
-                      localStorage.getItem("selectedStore")
-                        ? JSON.parse(
-                          localStorage.getItem("selectedStore") as string,
-                        )
-                        : null,
-                    );
-                    setCartBadgeCount(0);
-                  }}
-                  setCartBadgeCount={setCartBadgeCount}
-                />
                 {(props.session?.user as any)?.authData?.userType ===
                   USER_TYPE.ASSOCIATE &&
                   !isCDC &&
@@ -2118,7 +1838,7 @@ export default function Nav(props: NavProps) {
                   !isAgent &&
                   menuPermission["cartPermission"] && (
                     <Box
-                      className={style.cartBtn}
+                      className={style.navIcon}
                       onClick={() => {
                         router.push("/pending-cart");
                       }}
@@ -2126,9 +1846,14 @@ export default function Nav(props: NavProps) {
                       <IconButton
                         aria-label={notificationsLabel(cartBadgeCount)}
                       >
-                        <CustomBadgeContent badgeContent={cartBadgeCount}>
+                        <CustomBadgeContent
+                          {...(cartBadgeCount > 0 && {
+                            badgeContent:
+                              cartBadgeCount > 9 ? "9+" : cartBadgeCount,
+                          })}
+                        >
                           <Image
-                            src={cartIcon}
+                            src={CartIcon}
                             alt="cart"
                             width={20}
                             height={22}
@@ -2139,14 +1864,14 @@ export default function Nav(props: NavProps) {
                   )}
 
                 {isAgent ||
-                  (props.session?.user as any)?.authData?.userType !==
+                (props.session?.user as any)?.authData?.userType !==
                   USER_TYPE.ASSOCIATE ? (
                   <Box
-                    className={style.cartBtn}
+                    className={style.navIcon}
                     onClick={() => {
                       if (isAgent) {
                         router.push(
-                          `/cart?patientId=${patientIdForAgentView}&cartId=${cartIdForAgent}`,
+                          `/cart?patientId=${patientIdForAgentView}&cartId=${cartIdForAgent}`
                         );
                       } else {
                         router.push("/cart");
@@ -2156,7 +1881,7 @@ export default function Nav(props: NavProps) {
                     <IconButton aria-label={notificationsLabel(cartBadgeCount)}>
                       <CustomBadgeContent badgeContent={cartBadgeCount}>
                         <Image
-                          src={cartIcon}
+                          src={CartIcon}
                           alt="cart"
                           width={20}
                           height={22}
@@ -2171,7 +1896,7 @@ export default function Nav(props: NavProps) {
                   !isAgent &&
                   getSettingsByPermission(SettingsData).length > 0 && (
                     <>
-                      <Button
+                      <IconButton
                         className={style.settingsBtn}
                         onClick={toggleSettingsDrawer("right", true)}
                         disabled={logoutTrigger}
@@ -2182,7 +1907,7 @@ export default function Nav(props: NavProps) {
                           width={20}
                           height={20}
                         />
-                      </Button>
+                      </IconButton>
                       <SettingsDrawer
                         settings={getSettingsByPermission(SettingsData)}
                         anchor="right"
@@ -2191,6 +1916,19 @@ export default function Nav(props: NavProps) {
                       />
                     </>
                   )}
+                {(props.session?.user as any)?.authData?.userType !==
+                  USER_TYPE.ASSOCIATE && (
+                  <CustomButton
+                    className={`${style.navLink} ${style.languageButton}`}
+                    onClick={() =>
+                      handleLanguageChange(
+                        currentLanguage === "en" ? "de" : "en"
+                      )
+                    }
+                  >
+                    {currentLanguage === "en" ? "Español" : "English"}
+                  </CustomButton>
+                )}
               </Box>
             </Toolbar>
           </div>
@@ -2199,21 +1937,30 @@ export default function Nav(props: NavProps) {
         <Box component="nav">
           <MobileMenu
             {...{ getStoreGridData }}
+            cartCount={cartBadgeCount}
             session={props.session}
-            open={mobileOpen}
+            open={isMobileMenuDisplayed}
             onClose={handleDrawerToggle}
+            onLocationClick={() => {
+              if (isLockSidebar) {
+                setSideBarOC(!isLockSidebar);
+              } else {
+                setSideBarOC(!sideBarOC);
+              }
+            }}
             clearStore={() => {
               props.onLogout && props.onLogout();
               setStoreData(
                 localStorage.getItem("selectedStore")
                   ? JSON.parse(localStorage.getItem("selectedStore") as string)
-                  : null,
+                  : null
               );
               setCartBadgeCount(0);
             }}
           />
         </Box>
       </Box>
+
       {shouldEndGuidedSalesMeeting && (
         <ConfirmationModal
           content={GUIDED_SALES_MESSAGES.AGENT_VIEW_OFF}

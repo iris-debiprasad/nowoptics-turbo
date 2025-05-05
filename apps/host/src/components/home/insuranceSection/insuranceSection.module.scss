@@ -1,0 +1,118 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.insuranceSectionContainer {
+    padding: 3rem 0;
+    background-color: #ffaa00;
+    text-align: center;
+
+    h1,
+    p {
+        color: white;
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 0.5rem 0 2rem 0;
+    }
+
+    .description {
+        color: black;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .marqueeContainer {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .marqueeImagesLeftToRight {
+        display: flex;
+        animation: scrollLeftToRight 40s linear infinite;
+
+        @media (max-width: 768px) {
+            animation: scrollLeftToRightFull 40s linear infinite;
+        }
+    }
+
+    .marqueeImagesRightToLeft {
+        display: flex;
+        animation: scrollRightToLeft 40s linear infinite;
+
+        @media (max-width: 768px) {
+            animation: scrollRightToLeftFull 40s linear infinite;
+        }
+    }
+
+    .marqueeImagesLeftToRight img,
+    .marqueeImagesRightToLeft img {
+        height: 40px;
+        width: auto;
+        margin-right: 2.5rem;
+    }
+
+    @keyframes scrollLeftToRight {
+        0% {
+            transform: translateX(-60%);
+        }
+
+        100% {
+            transform: translateX(60%);
+        }
+    }
+
+    @keyframes scrollRightToLeft {
+        0% {
+            transform: translateX(60%);
+        }
+
+        100% {
+            transform: translateX(-60%);
+        }
+    }
+
+    @keyframes scrollLeftToRightFull {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    @keyframes scrollRightToLeftFull {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+    .appointmentBtn {
+        @include quaternary_button;
+        width: 40%;
+        color: white;
+        border-color: white;
+        margin: auto;
+
+        span {
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            width: 80%;
+        }
+    }
+
+    .appointmentBtn::before {
+        z-index: 1 !important;
+        background: none !important;
+    }
+}

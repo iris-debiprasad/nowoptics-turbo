@@ -1,5 +1,6 @@
 {
   "nav": {
+    "Contacts": "Lentes de Contacto",
     "Eye Health": "Salud Visual",
     "Vision Supplements": "Suplementos de la Visuales",
     "Eye Care Products": "Productos de la Vista",
@@ -9,18 +10,21 @@
     "Men": "Hombres",
     "Kids": "Niños",
     "All Frames": "Todos los Marcos",
+    "All Sunglasses": "Todas las Gafas de Sol",
     "Sunglasses": "Gafas de Sol",
-    "Best Sellers": "Marcos Populares",
-    "Metal Frames": "Marcos de Metal",
-    "Frames Under $50": "Gafas por Menos de $50",
+    "Best Selling Eyeglasses": "Marcos Populares de Gafas",
+    "Metal Eyeglass Frames": "Marcos de Gafas de Metal",
+    "Eyeglass Frames Under $50": "Marcos por Menos de $50",
     "Sunglasses Under $50": "Gafas de Sol por Menos de $50",
-    "Plastic Frames": "Marcos de Plástico",
-    "Rimless Frames": "Marcos sin Montura",
-    "Cat Eye Frames": "Marcos Cat Eye",
-    "Oval Frames": "Marcos Ovalados",
-    "Rectangle Frames": "Marcos Rectangulares",
-    "Round Frames": "Marcos Redondos",
-    "Square Frames": "Marcos Cuadrados",
+    "Plastic Eyeglass Frames": "Marcos de Gafas de Plástico",
+    "Rimless Eyeglass Frames": "Marcos sin Montura",
+    "Cat Eye Eyeglass Frames": "Marcos de Gafas Cat Eye",
+    "Oval Eyeglass Frames": "Marcos de Gafas Ovaladas",
+    "Rectangle Eyeglass Frames": "Marcos de Gafas Rectangulares",
+    "Round Eyeglass Frames": "Marcos de Gafas Redondas",
+    "Square Eyeglass Frames": "Marcos de Gafas Cuadradas",
+    "Metal Sunglasses": "Marcos de Gafas de Sol de Metal",
+    "Plastic Sunglasses": "Marcos de Gafas de Sol de Plástico",
     "Eye Health Guide": "Guía de Salud Visual",
     "Book Eye Exam": "Haz tu Cita",
     "Shop by Brand": "Compra por Marca",
@@ -66,7 +70,7 @@
     "Staging Bin View": "Vista del contenedor de preparación",
     "Pending Shipped": "Pendiente Enviado",
     "Pending Trace": "Seguimiento pendiente",
-    "Managed Care": "Atención administrada",
+    "Managed Care Claims": "Atención administrada",
     "Claims": "Reclamos",
     "Benefit Sheet": "Hoja de beneficios",
     "Settings": "Ajustes",
@@ -101,16 +105,17 @@
     "CLOSES_AT": "Cierra a las ",
     "OPENS_AT": "Abre en ",
     "CLOSED": "Cerrada",
-    "Return To Credit": "Volver al crédito"
+    "Return To Credit": "Volver al crédito",
+    "New Arrivals": "Nuevos Marcos"
   },
   "NEW_MOBILE_NAV": {
     "BOOK_EYE_EXAM": "Haz tu Cita",
     "ITEMS": {
       "EYE_HEALTH": {
         "NAME": "Salud Visual",
-        "VISION_SUPPLEMENTS": "Guía de Salud Visual",
-        "EYE_CARE_PRODUCTS": "Suplementos Visuales",
-        "EYE_HEALTH_GUIDE": "Productos de la Vista",
+        "VISION_SUPPLEMENTS": "Suplementos Visuales",
+        "EYE_CARE_PRODUCTS": "Productos de la Vista",
+        "EYE_HEALTH_GUIDE": "Guía de Salud Visual",
         "BOOK_EYE_EXAM": "Haz tu Cita"
       },
       "EYEGLASSES": {
@@ -119,16 +124,16 @@
         "KIDS": "Niños",
         "MEN": "Hombres",
         "ALL_FRAMES": "Todos los Marcos",
-        "BEST_SELLERS": "Marcos Populares",
-        "METAL_FRAMES": "Marcos de Metal",
-        "FRAMES_UNDER_FIFTY": "Gafas por menos de $50",
-        "PLASTIC_FRAMES": "Marcos de Plástico",
-        "RIMLESS_FRAMES": "Marcos sin Montura",
-        "CAT_EYE_FRAMES": "Marcos Cat Eye",
-        "OVAL_FRAMES": "Marcos Ovalados",
-        "RECTANGLE_FRAMES": "Marcos Rectangulares",
-        "ROUND_FRAMES": "Marcos Redondos",
-        "SQUARE_FRAMES": "Marcos Cuadrados"
+        "BEST_SELLERS": "Marcos Populares de Gafas",
+        "METAL_FRAMES": "Marcos de Gafas de Metal",
+        "FRAMES_UNDER_FIFTY": "Marcos por Menos de $50",
+        "PLASTIC_FRAMES": "Marcos de Gafas de Plástico",
+        "RIMLESS_FRAMES": "Marcos de Gafas sin Montura",
+        "CAT_EYE_FRAMES": "Marcos de Gafas Cat Eye",
+        "OVAL_FRAMES": "Marcos de Gafas Ovaladas",
+        "RECTANGLE_FRAMES": "Marcos de Gafas Rectangulares",
+        "ROUND_FRAMES": "Marcos de Gafas Redondas",
+        "SQUARE_FRAMES": "Marcos de Gafas Cuadradas"
       },
       "CONTACT_LENSES": {
         "NAME": "Lentes de Contacto",
@@ -143,17 +148,10 @@
         "WOMEN": "Mujeres",
         "KIDS": "Niños",
         "MEN": "Hombres",
-        "ALL_FRAMES": "Todos los Marcos",
-        "BEST_SELLERS": "Marcos Populares",
-        "METAL_FRAMES": "Marcos de Metal",
-        "FRAMES_UNDER_FIFTY": "Gafas por menos de $50",
-        "PLASTIC_FRAMES": "Marcos de Plástico",
-        "RIMLESS_FRAMES": "Marcos sin Montura",
-        "CAT_EYE_FRAMES": "Marcos Cat Eye",
-        "OVAL_FRAMES": "Marcos Ovalados",
-        "RECTANGLE_FRAMES": "Marcos Rectangulares",
-        "ROUND_FRAMES": "Marcos Redondos",
-        "SQUARE_FRAMES": "Marcos Cuadrados"
+        "ALL_SUNGLASSES": "Todas las Gafas de Sol",
+        "FRAMES_UNDER_FIFTY": "Gafas de Sol por Menos de $50",
+        "METAL_FRAMES": "Marcos de Gafas de Sol de Metal",
+        "PLASTIC_FRAMES": "Marcos de Gafas de Sol de Plástico"
       },
       "STORES_NEAR_ME": "Tiendas Cerca de Mi",
       "BEST_OFFERS": "Mejores Ofertas",
@@ -189,6 +187,7 @@
     }
   },
   "HEADER": {
+    "SHOP_NOW": "Compra ahora",
     "FIND_A_STORE": "Buscar Tienda - Ingresa Ciudad, Estado o Código Postal",
     "FIRST_NAME": "Nombre, apellido, teléfono, correo electrónico, identificación del paciente",
     "SKU": "SKU, nombre del producto",
@@ -202,7 +201,8 @@
     "BOOK_EYE_EXAM": "Haz Tu Cita",
     "STORE_SUPPORT": "Soporte de tienda",
     "CALL_US": "Llámanos al",
-    "STATIC_MESSAGE": "Exámenes de la Vista Disponibles el Mismo Día"
+    "STATIC_MESSAGE": "Exámenes disponibles el mismo día. #a##Reserva ahora##a#.",
+    "STATIC_MESSAGE_MOBILE": "Exámenes disponibles hoy. #a##Reserva ahora##a#."
   },
   "WHAT_TO_EXPECT": {
     "WHAT_TO_EXPECT_FROM": "Lo que esperas de tu examen de la vista",
@@ -371,6 +371,12 @@
   "SPECIAL_OFFERS/2-FOR-79-SAME-DAY": {
     "META": {
       "TITLE": "2 Por $79 Entrega el Mismo Día"
+    }
+  },
+  "SPECIAL_OFFERS/CLVP": {
+    "META": {
+      "TITLE": "Mega Oferta En Lentes De Contacto",
+      "DESCRIPTION": "Stanton Optical es el hogar de los mejores lentes de contacto, incluyendo ACUVUE® OASYS™ con HYDRACLEAR™ PLUS, que cuenta con un nuevo y revolucionario material de lente que ofrece una alta transmisibilidad de oxígeno con un mayor volumen de agentes humectantes."
     }
   },
   "SPECIAL_OFFERS/BOGO": {
@@ -788,7 +794,7 @@
     "SHOP_NOW": "Compra ahora",
     "CHECK_EXAM_TIMES": "Consultar horarios de exámenes",
     "HOW_MUCH_DOES": "¿Cuánto cuesta un examen de la vista?",
-    "YOUR_COMPREHENSIVE_EYE_EXAM": "Tu examen integral de la vista es completamente gratis con la compra de 2 pares de anteojos. De lo contrario, el examen de la vista cuesta solo $69* ($99 en AK, ND) sin seguro o $109* ($119 en OK, AR, AK, ND y SD) por un examen de la vista con lentes de contacto, que también incluye una receta para anteojos.",
+    "YOUR_COMPREHENSIVE_EYE_EXAM": "Tu examen integral de la vista es completamente gratis con la compra de 2 pares de anteojos. De lo contrario, el examen de la vista cuesta solo $79* ($109 en AK, ND) sin seguro o $119* ($129 en OK, AR, AK, ND y SD) por un examen de la vista con lentes de contacto, que también incluye una receta para anteojos.",
     "DO_YOU_ACCEPT_INSURANCE": "¿Aceptas seguro?",
     "WE_ACCEPT_MOST": "Aceptamos la mayoría de los seguros de la vista, FSA, HSA y CareCredit, incluidas las opciones sin intereses Compre ahora y pague después en la tienda.",
     "WHAT_TO_EXPECT": "Que esperar",
@@ -903,13 +909,13 @@
       "SECTION_TITLE": "Examen Visual",
       "Q1": "¿Cuánto cuesta un examen de la vista?",
       "A1": {
-        "P1": "El examen de la vista es gratuito con la compra de gafas. Sin seguro ni compra de gafas, el costo del examen de la vista es de $69 ($99 en AK, ND). Un examen de lentes de contacto generalmente cuesta $109 ($119 en OK, AR, AK, ND y SD)* e incluye las prescripciones tanto para lentes de contacto como para gafas, y un par de lentes de contacto para probar gratis. También tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Mira todas las ofertas",
+        "P1": "El examen de la vista es gratuito con la compra de gafas. Sin seguro ni compra de gafas, el costo del examen de la vista es de $79 ($109 en AK, ND). Un examen de lentes de contacto generalmente cuesta $119 ($129 en OK, AR, AK, ND y SD)* e incluye las prescripciones tanto para lentes de contacto como para gafas, y un par de lentes de contacto para probar gratis. También tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Mira todas las ofertas",
         "P2": "aquí",
         "P3": ". *El precio del examen puede variar según el estado; visita o llama a tu tienda más cercana para más detalles. Los exámenes de la vista son realizados por médicos independientes en optometría u oftalmología. Stanton Optical® no realiza exámenes de la vista."
       },
       "Q2": "¿Cuánto cuesta un examen de lentes de contacto?",
       "A2": {
-        "P1": "Un examen de lentes de contacto generalmente cuesta $109 ($119 en OK, AR, AK, ND y SD)* e incluye prescripciones tanto para lentes de contacto como para gafas, y un par de lentes de contacto para probar gratis. También tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Mira todas las ofertas",
+        "P1": "Un examen de lentes de contacto generalmente cuesta $119 ($129 en OK, AR, AK, ND y SD)* e incluye prescripciones tanto para lentes de contacto como para gafas, y un par de lentes de contacto para probar gratis. También tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Mira todas las ofertas",
         "P2": "aquí",
         "P3": ". *El precio del examen puede variar según el estado; visita o llama a tu tienda más cercana para más detalles. Los exámenes de la vista son realizados por médicos independientes en optometría u oftalmología. Stanton Optical® no realiza exámenes de la vista."
       },
@@ -951,30 +957,30 @@
       "SECTION_TITLE": "Precios y Promociones",
       "Q1": "¿Qué incluye la oferta 2 por $79?",
       "A1": {
-        "P1": "La oferta 2 por $ 79 de Stanton Optical es la mejor oferta que encontrarás en el mundo del cuidado de la vista. Incluye 2 pares de gafas con lentes monofocales de plástico, un upgrade en lentes antiglare/UV y un examen completo de la vista* gratis, con servicio el mismo día, lo que significa que tus gafas se pueden fabricar en el laboratorio de la tienda. Para más detalles, haz clic",
+        "P1": "La oferta 2 por $ 79 de Stanton Optical es la mejor oferta que encontrarás en el mundo del cuidado de la vista. Incluye 2 pares de gafas con lentes monofocales de plástico, un upgrade en lentes antiglare y un examen completo de la vista* gratis, con servicio el mismo día, lo que significa que tus gafas se pueden fabricar en el laboratorio de la tienda. Para más detalles, haz clic",
         "P2": "AQUÍ."
       },
       "Q2": "¿Cuál es el precio de sus gafas?",
       "A2": {
-        "P1": "Tenemos ofertas increíbles en gafas, a todas las gafas de nuestra tienda le aplica la oferta compra uno y llévate uno gratis, además tu examen de la vista está incluido. Nuestros marcos comienzan desde $59.99. Los lentes se basan en tu receta y estilo de vida, pero pueden costar tan bajo cómo $50.49. Puedes ver todas nuestras ofertas especiales en la tienda",
+        "P1": "Tenemos ofertas increíbles en gafas, a todas las gafas de nuestra tienda le aplica la oferta compra uno y llévate uno gratis, además tu examen de la vista está incluido. Nuestros marcos comienzan desde $59.99. Los lentes se basan en tu receta y estilo de vida, pero pueden costar tan bajo cómo $55.99. Puedes ver todas nuestras ofertas especiales en la tienda",
         "P2": "AQUÍ."
       },
       "Q3": "¿Tienen alguna oferta en lentes multifocales o progresivos sin líneas?",
       "A3": {
-        "P1": "Sí. Stanton Optical ofrece 2 pares de gafas con lentes progresivos standard, además de un upgrade en lentes antiglare/UV y un examen completo de la vista* gratis por $135. Para más detalles, haz clic",
+        "P1": "Sí. Stanton Optical ofrece 2 pares de gafas con lentes progresivos standard, además de un upgrade en lentes antiglare y un examen completo de la vista* gratis por $135. Para más detalles, haz clic",
         "P2": "AQUÍ."
       },
       "Q4": "¿El examen de la vista gratuito se aplica para gafas y lentes de contacto?",
       "A4": {
-        "P1": "La oferta para recibir un examen de la vista gratis solo aplica para la compra de gafas. Un examen de lentes de contacto generalmente cuesta $109 ($119 en OK, AR, AK, ND y SD)* e incluye prescripciones tanto para lentes de contacto y gafas, como un par de lentes de contacto para probar gratis. Pero también tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Revisa todas las ofertas",
+        "P1": "La oferta para recibir un examen de la vista gratis solo aplica para la compra de gafas. Un examen de lentes de contacto generalmente cuesta $119 ($129 en OK, AR, AK, ND y SD)* e incluye prescripciones tanto para lentes de contacto y gafas, como un par de lentes de contacto para probar gratis. Pero también tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Revisa todas las ofertas",
         "P2": "aquí",
         "P3": ". *El precio del examen puede variar según el estado; visita o llama tu tienda más cercana para más detalles."
       },
       "Q5": "¿El examen de la vista es realmente gratis?",
       "A5": {
-        "P1": "Sí, el examen de la vista es gratis* con la compra de gafas. Un examen de lentes de contacto generalmente cuesta $109 ($119 en OK, AR, AK, ND y SD)** e incluye recetas tanto para lentes de contacto como para gafas, y un par de lentes de prueba gratis. Pero también tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Revisa todas las ofertas",
+        "P1": "Sí, el examen de la vista es gratis* con la compra de gafas. Un examen de lentes de contacto generalmente cuesta $119 ($129 en OK, AR, AK, ND y SD)** e incluye recetas tanto para lentes de contacto como para gafas, y un par de lentes de prueba gratis. Pero también tenemos ofertas en la tienda para lentes de contacto. que incluyen un Examen de la Vista Gratis para Lentes de Contacto. Revisa todas las ofertas",
         "P2": "aquí",
-        "P3": ". *En la tienda, se te cobrará el costo del examen de la vista, pero recibirás un crédito contra el valor y/o ofertas de 2 gafas (como Compra Uno, Llévate Uno) equivalente al menor entre el costo del examen de la vista o $69 ($99 en AK, ND). **El precio del examen puede variar según el estado, comunícate con nosotros o visita la tienda para más detalles."
+        "P3": ". *En la tienda, se te cobrará el costo del examen de la vista, pero recibirás un crédito contra el valor y/o ofertas de 2 gafas (como Compra Uno, Llévate Uno) equivalente al menor entre el costo del examen de la vista o $79 ($109 en AK, ND). **El precio del examen puede variar según el estado, comunícate con nosotros o visita la tienda para más detalles."
       },
       "Q6": "¿Puedo dividir el 2 por $79 o la oferta BOGO con dos personas?",
       "A6": "A menos que se especifique, las ofertas enumeradas para más de un par solo pueden canjearse por cada cliente, cada receta.",
@@ -996,9 +1002,9 @@
         "P4": "AQUÍ",
         "P5": "para más detalles.",
         "P6": "El Club de Contactos",
-        "P7": "se te hace disponible cuando compras un examen de lentes de contacto en la tienda. Por una cuota de membresía de $20, recibirás el examen de lentes de contacto del próximo año gratis (un valor de $109 y $119 en OK, AR, AK, ND y SD)*, un 20% de descuento para tu suministro anual de lentes de contacto y un 50% de descuento en marcos y lentes (incluyendo capas y complementos). Haz clic",
-        "P8": "AQUÍ",
-        "P9": "para más detalles."
+        "P7": "se te hace disponible cuando compras un examen de lentes de contacto en la tienda. Por una cuota de membresía de $20, recibirás el examen de lentes de contacto del próximo año gratis (un valor de $119 y $129 en OK, AR, AK, ND y SD)*, un 20% de descuento para tu suministro anual de lentes de contacto y un 50% de descuento en marcos y lentes (incluyendo capas y complementos). Haz clic",
+        "P8": "AQUÍ.",
+        "P9": ""
       }
     },
     "INSURANCE_PAYMENT": {
@@ -1265,7 +1271,8 @@
   },
   "HOME_PAGE": {
     "SEE_OFFER_DETAILS": "*Ver detalles de la oferta",
-    "SEE_DETAILS": "VER DETALLES"
+    "SEE_DETAILS": "VER DETALLES",
+    "VIEW_ALL": "Ver Todo"
   },
   "PAGE_TITLE": {
     "HOME_PAGE": "Gafas recetadas, lentes de contacto y exámenes de la vista | /brand/",
@@ -1489,7 +1496,12 @@
       "P1": " Haga clic para ver los Términos de servicio y ",
       "P2": "política de privacidad",
       "P3": ". Para obtener asistencia, llame al ",
-      "P4": "."
+      "P4": ".",
+      "P5" : "Al hacer clic ",
+      "P6" : "PRÓXIMO ",
+      "P7" : "Estas de acuerdo con nuestro ",
+      "P8" : "TÉRMINOS DE SERVICIO Y POLÍTICA DE PRIVACIDAD.",
+      "P9" : "PROCESO "
     },
     "MARKETING_CALLS_USER_CONSENT_POPUP_TITLE": "Mensajes de marketing o promocionales",
     "MARKETING_CALLS_USER_CONSENT_PRIVACY_POLICY": {
@@ -1578,7 +1590,8 @@
     "EDIT": "Editar",
     "ENTER_PROMO": "Código de Promoción",
     "APPLY": "Aplicar",
-    "APPLIED": "Aplicada"
+    "APPLIED": "Aplicada",
+    "REORDER_AND_SAVE": "Reordenar y guardar:"
   },
   "PRODUCTS": {
     "PRICE_LTH": "Precio: Baja a Alta",
@@ -1924,7 +1937,7 @@
     "Offers": "Ofertas",
     "Same-Day Glasses": "Gafas el Mismo Día",
     "My Account": "Mi Cuenta",
-    "Live Help":"Ayuda en Vivo"
+    "Live Help": "Ayuda en Vivo"
   },
   "FOOTER": {
     "Eye Health. Best Options": "Salud Visual. Mejores Opciones",
@@ -1945,6 +1958,8 @@
     "Women": "Mujeres",
     "Men": "Hombres",
     "All Frames": "Todos los Marcos",
+    "All Sunglasses": "Todas las Gafas de Sol",
+    "All Offers": "Todas las Ofertas",
     "Best Sellers": "Marcos Populares",
     "Sunglasses Under $50": "Gafas de Sol por Menos de $50",
     "Contact Lenses. Best Brands": "Lentes de Contacto. Mejores Marcas",
@@ -1992,5 +2007,17 @@
     "Copyright": "Derechos de Autor /year/ /brand/. Todos derechos reservados.",
     "Privacy Policy": "Política de Privacidad",
     "Available Rebates": "Reembolsos disponibles"
+  },
+  "CONTACTS_BANNER": {
+    "DESKTOP": {
+      "HEADING_1": "20% de Descuento en un ",
+      "HEADING_2": "Suministro Anual + Envío Gratis"
+    },
+    "MOBILE": {
+      "HEADING_1": "20% de Descuento",
+      "HEADING_2": "en un Suministro",
+      "HEADING_3": "Anual + Envío Gratis"
+    },
+    "SUB_HEADING": "Ahorra en TODAS las Marcas de Lentes de Contacto"
   }
 }

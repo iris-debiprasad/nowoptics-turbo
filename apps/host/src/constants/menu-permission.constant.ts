@@ -1,6 +1,5 @@
 const Permission = {
   MENU: {
-    PENDING_WEB_ORDERS: ["Order_GetPendingWebOrderGrid"],
     OPERATION: {
       CLINICAL_SCHEDULER: ["Scheduler_GetClinicalSchedule"],
       OPERATION_COMMAND: ["Order_GetDataForOperationCommandCenter"],
@@ -17,6 +16,9 @@ const Permission = {
       RETURN_TO_CREDIT: ["Inventory_GetAllSubmittedReturnForms"],
       CC_REPORT: ["Order_GetCashCollectionReport"],
       CONTACT_LENS_CALCULATOR: ["OrderSetup_CalculateContactLensRebate"],
+      MANAGE_CARE_CLAIMS: ["ManagedCare_GetBillingClaimGrid"],
+      MANAGE_CARE_BENEFITS_SHEET: ["Setup_GetBenefitSheetGrid"],
+      PENDING_WEB_ORDERS: ["Order_GetPendingWebOrderGrid"],
     },
     JOB_TRACKING: {
       JOB_STATUS: ["Order_GetOrderStatuses"],
@@ -27,10 +29,6 @@ const Permission = {
       STAGING_BIN_VIEW: ["Order_GetFrameStagingBin"],
       PENDING_SHIP: ["Order_GetFrameStagingBin"],
       PENDING_TRACE: ["Order_GetFrameStagingBin"],
-    },
-    MANAGE_CARE: {
-      CLAIMS: ["ManagedCare_GetBillingClaimGrid"],
-      BENEFITS_SHEET: ["Setup_GetBenefitSheetGrid"],
     },
     TABLET_CHECK_IN: ["Scheduler_GetTabletCheckInDetails"],
     CART: ["Order_GetStoreAllCartDetails"],

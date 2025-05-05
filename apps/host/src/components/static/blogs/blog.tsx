@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import style from "./blogs.module.scss";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { BLOGS, IBlogMeta } from "@/constants/blogConstants";
 import Link from "next/link";

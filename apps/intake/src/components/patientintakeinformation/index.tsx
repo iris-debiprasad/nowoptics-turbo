@@ -63,6 +63,7 @@ import dynamic from "next/dynamic";
 import { PrimaryModalDTO } from "@root/host/src/types/PrimaryModal.types";
 import i18n from "@root/host/src/language/i18n";
 import ConsentMessage from "@root/host/src/components/UserMarketingConsent/consentMessage";
+import Link from "next/link";
 
 const PrimaryModal = dynamic(() => import("host/PrimaryModal"), {
   ssr: false,
@@ -812,8 +813,23 @@ const PatientIntakeInformation: FC<PatientInformationProps> = ({
           </div>
         </div>
       </div>
-      <div className={styles.concentContainer}>
-        <Checkbox
+        <div className={styles.concentContainerWrapper}>
+          <div>
+            <p className={`${styles.concentDescription} ${styles.privacyText}`}>
+              {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P5")}
+              {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P6")}
+              {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P7")}
+              <Link
+                className={styles.privacyModalLink}
+                target="_blank"
+                href={"/privacy-policy/"}
+              >
+                {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P8")}
+              </Link>
+            </p>
+          </div>
+          <div className={styles.concentContainer}>
+          <Checkbox
           disabled={!editing}
           checked={formValues.IsMarketingConsent}
           onChange={(e) => {
@@ -822,22 +838,11 @@ const PatientIntakeInformation: FC<PatientInformationProps> = ({
           className={editing ? styles.concentChekcBox : ''}
           color="default"
         />
-        <span className={styles.concentDescription}>
-        <ConsentMessage />
-        {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P1")}
-        <span
-           className={styles.privacyModalLink} 
-           onClick={() => {
-             setShowModal(!showModal) 
-            }}
-          >
-            {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P2")}
-          </span>
-          {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P3")}{" "}
-          {`${DEFAULT_STORE_SUPPORT_NUMBER.SO}`}{" "}
-          {i18n.t("BOOK_EYE_EXAM.MARKETING_CALLS_USER_CONSENT.P4")}
-        </span>
-      </div>
+            <p className={styles.concentDescription}>
+              <ConsentMessage />
+            </p>
+          </div>
+        </div>
       <PrimaryModal
         modalOpen={showModal}
         setModalOpen={setShowModal}

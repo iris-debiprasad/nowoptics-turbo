@@ -2,6 +2,9 @@
 @import "../../../../assets/styles/variables";
 
 .myAccountFavoritesWrapper {
+  @include iris_container;
+  margin-inline: auto !important;
+  
   min-height: 700px;
   margin: 0;
   padding: 0;

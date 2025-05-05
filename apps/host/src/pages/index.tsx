@@ -1,5 +1,5 @@
 import HomeSkeleton from "@/components/skeleton_loader/HomeSkeleton";
-import { BRAND, USER_TYPE } from "@/constants/common.constants";
+import { USER_TYPE } from "@/constants/common.constants";
 import { getProducts, GetSOHomePageData } from "@/service/common.service";
 import { HomePageDTO } from "@/types/home.types";
 import { GetServerSideProps } from "next";
@@ -9,11 +9,11 @@ import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
 interface HomeProps {
-  homePageData: HomePageDTO | undefined;
-  apiFailed: boolean;
+  homePageData: HomePageDTO;
   language: string;
-  stockUpFrameData: any[];
-  frameSliderData: any[]
+  eyeglasses: any[];
+  sunglasses: any[];
+  contacts: any[];
 }
 
 const HomeComponent = dynamic(() => import("@/components/home/index"), {
@@ -21,8 +21,8 @@ const HomeComponent = dynamic(() => import("@/components/home/index"), {
   loading: () => <HomeSkeleton />,
 });
 
-export default function Home({ homePageData, apiFailed, language, stockUpFrameData, frameSliderData }: HomeProps) {
-  const { t, i18n } = useTranslation();
+export default function Home({ homePageData, language, eyeglasses, sunglasses, contacts }: HomeProps) {
+  const { t } = useTranslation();
 
 
   return (
@@ -37,19 +37,18 @@ export default function Home({ homePageData, apiFailed, language, stockUpFrameDa
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div>
-        
+
         <HomeComponent
-          brand={BRAND.SO}
           homePageData={homePageData}
           incomingLang={language}
-          stockUpFrameData={stockUpFrameData}
-          frameSliderData={frameSliderData}
+          eyeglasses={eyeglasses}
+          sunglasses={sunglasses}
+          contacts={contacts}
         />
       </div>
     </>
   );
 }
-// TODO: We can use this if needed in future
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getToken({
     req: context.req,
@@ -60,8 +59,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const language = userType === USER_TYPE.ASSOCIATE ? 'en' : (cookie.language || "en");
   let homePageData = null;
   let apiFailed = false;
-  let stockUpFrameData: any[];
-  let frameSliderData: any[];
+  let eyeglasses = [];
+  let sunglasses = [];
+  let contacts = [];
 
   try {
     const res = await GetSOHomePageData(language);
@@ -71,25 +71,29 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     apiFailed = true;
   }
 
-  //Get Frame data for stockup section home page
-
   try {
-    let resp = await getProducts(1, 10, true, "wear_frequency:*");
-    stockUpFrameData = resp?.data?.response?.products
+    let products = await getProducts(1, 4, true, 'vHasHisResImage:true', true, `categoryPath:"Glasses>Eyeglasses"`);
+    eyeglasses = products?.data?.response?.products || [];
   } catch (err) {
-    stockUpFrameData = []
+    eyeglasses = [];
+    apiFailed = true;
   }
 
-  //Get Frame data for Frame section home page
-
   try {
-    let resp = await getProducts(1, 10, true, 'vHasHisResImage:true', true);
-    frameSliderData = resp?.data?.response?.products?.filter((product: any) => {
-      return product.variants.length > 0;
-    });
+    let products = await getProducts(1, 4, true, 'vHasHisResImage:true', true, `categoryPath:"Glasses>Sunglasses"`);
+    sunglasses = products?.data?.response?.products || [];
   } catch (err) {
-    frameSliderData = []
+    sunglasses = [];
+    apiFailed = true;
   }
 
-  return { props: { homePageData, apiFailed, language, stockUpFrameData, frameSliderData } };
+  try {
+    let products = await getProducts(1, 4, true, "wear_frequency:*");
+    contacts = products?.data?.response?.products || [];
+  } catch (err) {
+    contacts = [];
+    apiFailed = true;
+  }
+
+  return { props: { homePageData, apiFailed, language, eyeglasses, sunglasses, contacts } };
 };

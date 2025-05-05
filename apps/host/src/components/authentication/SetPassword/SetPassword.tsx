@@ -32,6 +32,8 @@ import { useTranslation } from "react-i18next";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { resetPassword } from "@/service/common.service";
+import { Cookies } from "@/utils/cookie.utils";
+import { MODIFY_APPOINTMENT_COOKIE } from "@/constants/mobile-menu.constants";
 
 export default function SetPassword(props: SetPasswordPropsDTO) {
   const [openLoader, setLoaderOpen] = React.useState(false);
@@ -130,6 +132,15 @@ export default function SetPassword(props: SetPasswordPropsDTO) {
       .then((resp) => {
         showSnackBar("Signed in", SNACKBAR_COLOR_TYPE.SUCCESS as AlertColor);
         if (router.pathname === "/prescription-renewal/start") return;
+      
+        const comesFromModifyAppointmentFlow: string | undefined = 
+          Cookies.get(MODIFY_APPOINTMENT_COOKIE); 
+      
+        if (comesFromModifyAppointmentFlow) {
+          router.push("/my-account/my-appointments")
+          return
+        } 
+      
         router.push("/");
       })
       .catch((err) => {

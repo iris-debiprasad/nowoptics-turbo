@@ -9,15 +9,18 @@ import { NavItem } from "@/types/Header.types";
 import { signOut } from "next-auth/react";
 import { clearAllCookie } from "@/utils/cookie.utils";
 import { SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
-import { AlertColor } from "@mui/material";
+import { AlertColor, CircularProgress } from "@mui/material";
 import { clearLocalStorage } from "@/utils/common.utils";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import { useRouter } from "next/router";
 import { getLatLong } from "@/utils/getLocation.utils";
+import React from "react";
+import { useAppDispatch } from "@/store/useStore";
+import { setCount } from "@/store/reducer/favorite-products";
 
 const DOCTOR_CONSULTATION_URL = "/my-account/ask-a-doctor";
 
-interface Props extends Omit<MyAccountProps, "session"> { }
+interface Props extends Omit<MyAccountProps, "session"> {}
 
 export function LoggedIn({
   clearStore,
@@ -25,11 +28,13 @@ export function LoggedIn({
   onClose,
 }: Readonly<Props>): React.JSX.Element {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const {
     userHasInHousePxs: { primary: userHasInHousePxs },
   } = useHasInHousePxsContext();
   const { showSnackBar } = useSnackBar();
+  const [isSigningOut, setIsSigningOut] = React.useState<boolean>(false);
 
   const getPatientNavData = () => {
     /*
@@ -47,6 +52,7 @@ export function LoggedIn({
   };
 
   const onLogout = () => {
+    setIsSigningOut(true);
     signOut({ redirect: false })
       .then(() => {
         localStorage.setItem("isLogout", "true");
@@ -61,6 +67,7 @@ export function LoggedIn({
         router.replace("/");
         clearStore();
         onClose();
+        dispatch(setCount(0));
       })
       .catch((err) => {
         showSnackBar(
@@ -69,7 +76,8 @@ export function LoggedIn({
             : "Something went wrong",
           SNACKBAR_COLOR_TYPE.ERROR as AlertColor,
         );
-      });
+      })
+      .finally(() => setIsSigningOut(false));
 
     if (navigator.geolocation) {
       getLatLong((lat, long) => {
@@ -94,6 +102,7 @@ export function LoggedIn({
             key={item.id}
             href={item.url}
             className={`${sharedStyles.link} ${sharedStyles.uppercase}`}
+            onClick={onClose}
           >
             {t(`NEW_MOBILE_NAV.MY_ACCOUNT.LOGGED_IN.ITEMS.${item.name}`)}
           </Link>
@@ -104,8 +113,13 @@ export function LoggedIn({
         className={`${sharedStyles.button} ${styles.logged_in__log_out}`}
         type="button"
         onClick={onLogout}
+        disabled={isSigningOut}
       >
-        {t("NEW_MOBILE_NAV.MY_ACCOUNT.LOGGED_IN.ITEMS.LOG_OUT")}
+        {isSigningOut ? (
+          <CircularProgress size={15} />
+        ) : (
+          t("NEW_MOBILE_NAV.MY_ACCOUNT.LOGGED_IN.ITEMS.LOG_OUT")
+        )}
       </button>
     </div>
   );

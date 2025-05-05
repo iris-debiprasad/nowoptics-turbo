@@ -1,0 +1,45 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.trendSectionContainer {
+    @include displayFlex;
+    @include iris_container;
+    min-height: 350px;
+
+    @media (max-width: 768px) {
+        width: calc(100% - 20px);
+        padding: 0 10px;
+    }
+
+    h1 {
+        margin-top: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    p {
+        margin: 5px 0 1.5rem 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.imageContainer {
+    text-align: center;
+    margin: 3rem 0;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.imagebox {
+    @media (max-width: 768px) {
+        padding: 0 !important;
+        margin-bottom: 2rem;
+    }
+}

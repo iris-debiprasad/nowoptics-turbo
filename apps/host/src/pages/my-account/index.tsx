@@ -48,9 +48,12 @@ export default function MyAccountProfile() {
 
   useEffect(() => {
     if (localStorage.getItem("session")) {
-      if (session?.user?.authData?.userType === USER_TYPE.ASSOCIATE) {
+      const sessionCheck = JSON.parse(
+        localStorage.getItem("session") as string
+      );
+      if (sessionCheck?.user?.authData?.userType === USER_TYPE.ASSOCIATE) {
         router.push("/");
-      } else if (session?.user?.authData?.userType === USER_TYPE.PATIENT) {
+      } else if (sessionCheck?.user?.authData?.userType === USER_TYPE.PATIENT) {
         if (view === "forgot-password") {
           router.push("/my-account");
         }

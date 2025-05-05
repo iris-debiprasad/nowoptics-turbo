@@ -42,6 +42,18 @@ export interface BillingAddressModalProps {
   setIsBillingAddressModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   patientId: string;
   setSnackBar?: (text: string, typeColor: AlertColor) => void;
+  isEasyReorderFlow?: boolean;
+  saveShippingAddress?: (data: billingAddressFormData) => void;
+  shippingAddress?: {
+    AddressLine1: string;
+    AddressLine2: string;
+    State: string;
+    City: string;
+    ZipCode: string;
+    StateCode: string;
+    CityCode: string;
+    Country: string;
+  }
 }
 
 export interface ZipCodeDetailsDTO {

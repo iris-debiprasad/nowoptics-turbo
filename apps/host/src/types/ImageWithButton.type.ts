@@ -3,4 +3,6 @@ export interface PropsDTO {
   imageAlt: string;
   btnName: string;
   btnLink: string;
+  disclaimer?: string;
+  borderRadius?: boolean;
 }

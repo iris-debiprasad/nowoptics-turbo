@@ -7,4 +7,5 @@ export interface PrimaryModalDTO {
   modalInner?: React.ReactNode | React.ReactNode[];
   cstmStyle?: string;
   preventBackdropClick?: boolean;
+  increaseZIndex?: boolean
 }

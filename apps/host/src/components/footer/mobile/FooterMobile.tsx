@@ -120,8 +120,11 @@ export default function FooterMobile() {
               >
                 {getCorrectSubmenuOrder(item.menus, item.id).map((sitem) =>
                   sitem &&
-                  sitem.title === "Online Vision Test" &&
-                  env?.NEXT_PUBLIC_RX_RENEWAL_ENABLE === "false" ? (
+                    sitem.title === "Online Vision Test" &&
+                    env?.NEXT_PUBLIC_RX_RENEWAL_ENABLE === "false" ? (
+
+                    <></>
+                  ) : sitem ? (
                     <Link
                       href={sitem.link}
                       key={sitem.id}
@@ -132,9 +135,7 @@ export default function FooterMobile() {
                             : t(`FOOTER.${sitem.title}`),
                       }}
                     />
-                  ) : (
-                    <></>
-                  ),
+                  ) : (<></>),
                 )}
               </div>
             )}

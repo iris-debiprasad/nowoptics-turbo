@@ -25,6 +25,10 @@
 
       &:last-child {
         grid-template-rows: 0.12fr 0.78fr 1fr;
+        
+        .ft_item:first-of-type {
+          margin-top: -3px;
+        }
       }
 
       align-items: flex-start;

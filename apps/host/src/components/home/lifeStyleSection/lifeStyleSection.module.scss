@@ -1,0 +1,52 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.lifeStyleSectionContainer {
+    @include iris_container;
+
+    .headerContainer {
+        text-align: center;
+
+        p {
+            margin: 0.5rem 0 2rem 0;
+        }
+    }
+
+    .imageContainer {
+        @include displayFlex;
+        flex-wrap: wrap;
+    }
+
+    .d-none {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .w-50 {
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+    }
+
+    .w40 {
+        width: 40%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    .w20 {
+        width: 20%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            display: flex;
+        }
+    }
+
+    .p05 {
+        padding: 0.5rem;
+    }
+}

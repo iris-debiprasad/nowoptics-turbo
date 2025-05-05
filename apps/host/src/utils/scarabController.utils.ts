@@ -29,9 +29,10 @@ const getScarab = (): any | null => {
 };
 
 const executeScarabTestMode = () => {
-  const isProd = process.env.NEXT_PUBLIC_EMARSYS_TEST_MODE_ENABLE == "false";
+  if (typeof window === "undefined") return;
+  const isProd = window.NEXT_PUBLIC_EMARSYS_TEST_MODE_ENABLE === "false";
   const sc: IScarab | null = getScarab();
-  
+
   if (!isProd) {
     sc?.ScarabQueue.push([`testMode`]);
   }

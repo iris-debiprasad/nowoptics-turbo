@@ -1,5 +1,6 @@
 {
   "nav": {
+    "Contacts": "Contacts",
     "Eye Health": "Eye Health",
     "Vision Supplements": "Vision Supplements",
     "Eye Care Products": "Eye Care Products",
@@ -9,18 +10,21 @@
     "Men": "Men",
     "Kids": "Kids",
     "All Frames": "All Frames",
+    "All Sunglasses": "All Sunglasses",
     "Sunglasses": "Sunglasses",
-    "Best Sellers": "Best Sellers",
-    "Metal Frames": "Metal Frames",
-    "Frames Under $50": "Frames Under $50",
+    "Best Selling Eyeglasses": "Best Selling Eyeglasses",
+    "Metal Eyeglass Frames": "Metal Eyeglass Frames",
+    "Eyeglass Frames Under $50": "Eyeglass Frames Under $50",
     "Sunglasses Under $50": "Frames Under $50",
-    "Plastic Frames": "Plastic Frames",
-    "Rimless Frames": "Rimless Frames",
-    "Cat Eye Frames": "Cat Eye Frames",
-    "Oval Frames": "Oval Frames",
-    "Rectangle Frames": "Rectangle Frames",
-    "Round Frames": "Round Frames",
-    "Square Frames": "Square Frames",
+    "Plastic Eyeglass Frames": "Plastic Eyeglass Frames",
+    "Rimless Eyeglass Frames": "Rimless Eyeglass Frames",
+    "Cat Eye Eyeglass Frames": "Cat Eye Eyeglass Frames",
+    "Oval Eyeglass Frames": "Oval Eyeglass Frames",
+    "Rectangle Eyeglass Frames": "Rectangle Eyeglass Frames",
+    "Round Eyeglass Frames": "Round Eyeglass Frames",
+    "Square Eyeglass Frames": "Square Eyeglass Frames",
+    "Metal Sunglasses": "Metal Sunglasses",
+    "Plastic Sunglasses": "Plastic Sunglasses",
     "Eye Health Guide": "Eye Health Guide",
     "Book Eye Exam": "Book Eye Exam",
     "Shop by Brand": "Shop by Brand",
@@ -66,7 +70,7 @@
     "Staging Bin View": "Staging Bin View",
     "Pending Shipped": "Pending Shipped",
     "Pending Trace": "Pending Trace",
-    "Managed Care": "Managed Care",
+    "Managed Care Claims": "Managed Care Claims",
     "Claims": "Claims",
     "Benefit Sheet": "Benefit Sheet",
     "Settings": "Settings",
@@ -101,7 +105,8 @@
     "CLOSES_AT": "Closes at ",
     "OPENS_AT": "Opens at ",
     "CLOSED": "Closed",
-    "Return To Credit": "Return To Credit"
+    "Return To Credit": "Return To Credit",
+    "New Arrivals": "New Arrivals"
   },
   "NEW_MOBILE_NAV": {
     "BOOK_EYE_EXAM": "Book Eye Exam",
@@ -119,16 +124,16 @@
         "KIDS": "Kids",
         "MEN": "Men",
         "ALL_FRAMES": "All Frames",
-        "BEST_SELLERS": "Best Sellers",
-        "METAL_FRAMES": "Metal Frames",
-        "FRAMES_UNDER_FIFTY": "Frames Under $50",
-        "PLASTIC_FRAMES": "Plastic Frames",
-        "RIMLESS_FRAMES": "Rimless Frames",
-        "CAT_EYE_FRAMES": "Cat Eye Frames",
-        "OVAL_FRAMES": "Oval Frames",
-        "RECTANGLE_FRAMES": "Rectangle Frames",
-        "ROUND_FRAMES": "Round Frames",
-        "SQUARE_FRAMES": "Square Frames"
+        "BEST_SELLERS": "Best Selling Eyeglasses",
+        "METAL_FRAMES": "Metal Eyeglass Frames",
+        "FRAMES_UNDER_FIFTY": "Eyeglass Frames Under $50",
+        "PLASTIC_FRAMES": "Plastic Eyeglass Frames",
+        "RIMLESS_FRAMES": "Rimless Eyeglass Frames",
+        "CAT_EYE_FRAMES": "Cat Eye Eyeglass Frames",
+        "OVAL_FRAMES": "Oval Eyeglass Frames",
+        "RECTANGLE_FRAMES": "Rectangle Eyeglass Frames",
+        "ROUND_FRAMES": "Round Eyeglass Frames",
+        "SQUARE_FRAMES": "Square Eyeglass Frames"
       },
       "CONTACT_LENSES": {
         "NAME": "Contact Lenses",
@@ -143,17 +148,10 @@
         "WOMEN": "Women",
         "MEN": "Men",
         "KIDS": "Kids",
-        "ALL_FRAMES": "All Frames",
-        "BEST_SELLERS": "Best Sellers",
-        "METAL_FRAMES": "Metal Frames",
+        "ALL_SUNGLASSES": "All Sunglasses",
         "FRAMES_UNDER_FIFTY": "Frames Under $50",
-        "PLASTIC_FRAMES": "Plastic Frames",
-        "RIMLESS_FRAMES": "Rimless Frames",
-        "CAT_EYE_FRAMES": "Cat Eye Frames",
-        "OVAL_FRAMES": "Oval Frames",
-        "RECTANGLE_FRAMES": "Rectangle Frames",
-        "ROUND_FRAMES": "Round Frames",
-        "SQUARE_FRAMES": "Square Frames"
+        "METAL_FRAMES": "Metal Sunglasses",
+        "PLASTIC_FRAMES": "Plastic Sunglasses"
       },
       "STORES_NEAR_ME": "Stores Near Me",
       "BEST_OFFERS": "Best Offers",
@@ -189,6 +187,7 @@
     }
   },
   "HEADER": {
+    "SHOP_NOW": "Shop Now",
     "FIND_A_STORE": "Find A Store - Enter City, State or Zip",
     "FIRST_NAME": "First Name, Last Name, Phone, Email, Patient ID",
     "SKU": "SKU, Product Name",
@@ -202,7 +201,8 @@
     "BOOK_EYE_EXAM": "Book Eye Exam",
     "STORE_SUPPORT": "Store Support",
     "CALL_US": "Call us",
-    "STATIC_MESSAGE": "Same-Day Eye Exams Available"
+    "STATIC_MESSAGE": "Walk-in or book your eye exam in just 2 minutes. #a##Schedule now##a#.",
+    "STATIC_MESSAGE_MOBILE": "Same-day eye exams available. #a##Book now##a#."
   },
   "WHAT_TO_EXPECT": {
     "WHAT_TO_EXPECT_FROM": "What to Expect from your Eye Exam",
@@ -369,6 +369,12 @@
   "SPECIAL_OFFERS/2-FOR-79-SAME-DAY": {
     "META": {
       "TITLE": "2 for $79 Same Day Delivery"
+    }
+  },
+  "SPECIAL_OFFERS/CLVP": {
+    "META": {
+      "TITLE": "Contact Lens Mega Deals",
+      "DESCRIPTION": "Stanton Optical is home to the best contact lenses, including ACUVUE® OASYS™ with HYDRACLEAR™ PLUS, which features a revolutionary new lens material that offers high oxygen transmissibility that delivers a higher volume of moisture-rich wetting agents."
     }
   },
   "SPECIAL_OFFERS/BOGO": {
@@ -788,7 +794,7 @@
     "SHOP_NOW": "Shop Now",
     "CHECK_EXAM_TIMES": "Check Exam Times",
     "HOW_MUCH_DOES": "How much does an eye exam cost?",
-    "YOUR_COMPREHENSIVE_EYE_EXAM": "Your comprehensive eye exam is completely free when you purchase 2 pairs of glasses. Otherwise, the eye exam is only $69* ($99 in AK, ND) without insurance or $109* ($119 in OK, AR, AK, ND and SD) for contacts, which also includes a prescription for glasses.",
+    "YOUR_COMPREHENSIVE_EYE_EXAM": "Your comprehensive eye exam is completely free when you purchase 2 pairs of glasses. Otherwise, the eye exam is only $79* ($109 in AK, ND) without insurance or $119* ($129 in OK, AR, AK, ND and SD) for contacts, which also includes a prescription for glasses.",
     "DO_YOU_ACCEPT_INSURANCE": "Do you accept insurance?",
     "WE_ACCEPT_MOST": "We accept most vision insurance, FSA, HSA, and CareCredit, including Buy Now Pay Later interest-free options in-store.",
     "WHAT_TO_EXPECT": "What to expect",
@@ -903,13 +909,13 @@
       "SECTION_TITLE": "Eye Exam",
       "Q1": "How much does an eye exam cost?",
       "A1": {
-        "P1": "The eye exam is free with the purchase of glasses. Without insurance or eyeglass purchase, the cost of the eye exam is $69* ($99 in AK, ND). A contact lens exam typically costs $109* ($119 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. We also have in-store deals on contact lenses that include a Free Contact Lens Eye Exam. Check out all our deals",
+        "P1": "The eye exam is free with the purchase of glasses. Without insurance or eyeglass purchase, the cost of the eye exam is $79* ($109 in AK, ND). A contact lens exam typically costs $119* ($129 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. We also have in-store deals on contact lenses that include a Free Contact Lens Eye Exam. Check out all our deals",
         "P2": "here",
         "P3": ". *Exam pricing may vary by state, visit or call your local store for more details. Eye exams are provided by independent doctors of optometry or ophthalmology. Stanton Optical® does not perform eye exams."
       },
       "Q2": "How much does a contact lens exam cost?",
       "A2": {
-        "P1": "A contact lens exam typically costs $109* ($119 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. We also have in-store deals on contact lenses that include a Free Contact Lens Eye Exam. Check out all our deals",
+        "P1": "A contact lens exam typically costs $119* ($129 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. We also have in-store deals on contact lenses that include a Free Contact Lens Eye Exam. Check out all our deals",
         "P2": "here",
         "P3": ". *Exam pricing may vary by state, visit or call your local store for more details. Eye exams are provided by independent doctors of optometry or ophthalmology. Stanton Optical® does not perform eye exams."
       },
@@ -951,30 +957,30 @@
       "SECTION_TITLE": "Pricing & Promotion",
       "Q1": "What is included in the 2 for $79 deal?",
       "A1": {
-        "P1": "Stanton Optical's 2 for $79 deal is the best value in eye care. It includes 2 pairs of glasses with single-vision plastic lenses, plus an antiglare UV lens upgrade, and a free comprehensive eye exam*, plus same-day service which means your glasses can be made on the spot with our on-site lab. For additional details, click",
+        "P1": "Stanton Optical's 2 for $79 deal is the best value in eye care. It includes 2 pairs of glasses with single-vision plastic lenses, plus an antiglare lens upgrade, and a free comprehensive eye exam*, plus same-day service which means your glasses can be made on the spot with our on-site lab. For additional details, click",
         "P2": "HERE."
       },
       "Q2": "What is the price of your glasses?",
       "A2": {
-        "P1": "We have amazing deals on glasses, our entire store is buy one, get one free, plus your eye exam is included. Our frames start at $59.99. Lenses are based on your prescription and lifestyle, but can be as low as $50.49. See all our in-store specials",
+        "P1": "We have amazing deals on glasses, our entire store is buy one, get one free, plus your eye exam is included. Our frames start at $59.99. Lenses are based on your prescription and lifestyle, but can be as low as $55.99. See all our in-store specials",
         "P2": "HERE."
       },
       "Q3": "Do you have any deals on No-line Multifocals or Progressives?",
       "A3": {
-        "P1": "Yes. Stanton Optical offers 2 pairs of glasses with standard progressive lenses, plus an antiglare UV lens upgrade, and a free comprehensive eye exam* for $135. For additional details, click",
+        "P1": "Yes. Stanton Optical offers 2 pairs of glasses with standard progressive lenses, plus an antiglare lens upgrade, and a free comprehensive eye exam* for $135. For additional details, click",
         "P2": "HERE."
       },
       "Q4": "Does the free eye exam apply for glasses and contact lenses?",
       "A4": {
-        "P1": "The free eye exam offer only applies to the purchase of glasses. A contact lens exam typically costs $109* ($119 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. However, we have in-store deals on contact lenses that include a Free Contact Lens Eye Exam too! Check out all our deals",
+        "P1": "The free eye exam offer only applies to the purchase of glasses. A contact lens exam typically costs $119* ($129 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. However, we have in-store deals on contact lenses that include a Free Contact Lens Eye Exam too! Check out all our deals",
         "P2": "here",
         "P3": ". *Exam pricing may vary by state, please visit or call your local store for more details."
       },
       "Q5": "Is the eye exam really free?",
       "A5": {
-        "P1": "Yes, the eye exam is free* with the purchase of glasses. A contact lens exam typically costs $109* ($119 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. However, we have in-store deals on contact lenses that include a Free Contact Lens Eye Exam too! Check out all our deals",
+        "P1": "Yes, the eye exam is free* with the purchase of glasses. A contact lens exam typically costs $119* ($129 in OK, AR, AK, ND and SD) and includes prescriptions for both contacts and glasses, and a free pair of trial lenses. However, we have in-store deals on contact lenses that include a Free Contact Lens Eye Exam too! Check out all our deals",
         "P2": "here",
-        "P3": ". *In-store, you will be charged for the cost of the eye exam, but will receive a credit against the value and/or BOGO 2 pair offers equal to the lesser of the cost of the eye exam or $69* ($99 in AK, ND). **Exam pricing may vary by state, contact us or visit the store for more details."
+        "P3": ". *In-store, you will be charged for the cost of the eye exam, but will receive a credit against the value and/or BOGO 2 pair offers equal to the lesser of the cost of the eye exam or $79* ($109 in AK, ND). **Exam pricing may vary by state, contact us or visit the store for more details."
       },
       "Q6": "Can I split the 2 for $79 or BOGO offer with two people?",
       "A6": "Unless specified, offers listed for more than one pair can only be redeemed by one customer, one prescription.",
@@ -996,7 +1002,7 @@
         "P4": "HERE",
         "P5": "for additional details.",
         "P6": "The Contacts Club",
-        "P7": "is available when you purchase a contact lens exam in-store. For a $20 membership fee, you will receive next year's contact lens exam for free (a $109 value and $119 in OK, AR, AK, ND and SD)*, 20% off your annual contact lens supply, and 50% off frames and lenses (including coatings and add ons). Click",
+        "P7": "is available when you purchase a contact lens exam in-store. For a $20 membership fee, you will receive next year's contact lens exam for free (a $119 value and $129 in OK, AR, AK, ND and SD)*, 20% off your annual contact lens supply, and 50% off frames and lenses (including coatings and add ons). Click",
         "P8": "HERE",
         "P9": "for additional details."
       }
@@ -1265,7 +1271,8 @@
   },
   "HOME_PAGE": {
     "SEE_OFFER_DETAILS": "*See offer details",
-    "SEE_DETAILS": "SEE DETAILS"
+    "SEE_DETAILS": "SEE DETAILS",
+    "VIEW_ALL": "View all"
   },
   "PAGE_TITLE": {
     "HOME_PAGE": "Prescription Glasses, Contacts & Eye Exams | Stanton Optical",
@@ -1489,7 +1496,12 @@
       "P1": " Click for Terms of service and ",
       "P2": "privacy policy",
       "P3": ". Call ",
-      "P4": " for support."
+      "P4": " for support.",
+      "P5" : "By clicking ",
+      "P6" : "NEXT ",
+      "P7" : "you agree to our ",
+      "P8" : "TERMS OF SERVICE AND PRIVACY POLICY.",
+      "P9" : "PROCESS "
     },
     "MARKETING_CALLS_USER_CONSENT_POPUP_TITLE": "Marketing or Promotional Messages",
     "MARKETING_CALLS_USER_CONSENT_PRIVACY_POLICY": {
@@ -1578,7 +1590,8 @@
     "EDIT": "Edit",
     "ENTER_PROMO": "Enter a promo code",
     "APPLY": "Apply",
-    "APPLIED": "Applied"
+    "APPLIED": "Applied",
+    "REORDER_AND_SAVE": "Reorder & Save:"
   },
   "PRODUCTS": {
     "PRICE_LTH": "Price: Low to High",
@@ -1994,10 +2007,10 @@
     "Offers": "Offers",
     "Same-Day Glasses": "Same-Day Glasses",
     "My Account": "My Account",
-    "Live Help":"Live Help"
+    "Live Help": "Live Help"
   },
   "FOOTER": {
-    "Eye Health. Best Options"  : "Eye Health. Best Options",
+    "Eye Health. Best Options": "Eye Health. Best Options",
     "Comprehensive Eye Exams*": "Comprehensive Eye Exams*",
     "Online Vision Test": "Online Vision Test",
     "Vision Supplements": "Vision Supplements",
@@ -2009,12 +2022,14 @@
     "Kids": "Kids",
     "All frames": "All frames",
     "Same-Day Glasses": "Same-Day Glasses",
-    "Virtual Try on": "Virtual Try on",
+    "Virtual Try on": "Virtual Try-on",
     "Frames Under $50": "Frames Under $50",
     "Sunglasses. Best Protection": "Sunglasses. Best Protection",
     "Women": "Women",
     "Men": "Men",
     "All Frames": "All Frames",
+    "All Sunglasses": "All Sunglasses",
+    "All Offers": "All Offers",
     "Best Sellers": "Best Sellers",
     "Sunglasses Under $50": "Sunglasses Under $50",
     "Contact Lenses. Best Brands": "Contact Lenses. Best Brands",
@@ -2062,5 +2077,17 @@
     "Copyright": "Copyright /year/ /brand/. All rights reserved.",
     "Privacy Policy": "Privacy Policy",
     "Available Rebates": "Available Rebates"
+  },
+  "CONTACTS_BANNER": {
+    "DESKTOP": {
+      "HEADING_1": "20% Off Annual Supply",
+      "HEADING_2": "+ Free Shipping"
+    },
+    "MOBILE": {
+      "HEADING_1": "20% Off",
+      "HEADING_2": "Annual Supply",
+      "HEADING_3": "+ Free Shipping"
+    },
+    "SUB_HEADING": "Save on ALL Contact Lens Brands"
   }
 }
