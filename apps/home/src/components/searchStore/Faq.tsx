@@ -9,7 +9,7 @@ import React, { FunctionComponent } from "react";
 import styles from "./StoreList.module.scss";
 import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
-import { FaqQnA } from "@/constants/Constants";
+import { FaqQnA } from "@root/home/src/constants/Constants";
 import { BRAND } from "@root/host/src/constants/common.constants";
 
 const IconSVG = dynamic(() => import("Host/IconSVG"), {

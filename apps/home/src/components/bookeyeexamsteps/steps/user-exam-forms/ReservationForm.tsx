@@ -20,10 +20,7 @@ import {
   isMobileNumberValidRegex,
 } from "@root/host/src/constants/common.constants";
 import i18n from "@root/host/src/language/i18n";
-
-// const IconSVG = dynamic(() => import("Host/IconSVG"), {
-//   ssr: false,
-// }) as FunctionComponent<IconDTO>;
+import UserMarketingConsent from "@root/host/src/components/UserMarketingConsent/index";
 import dayjs from "dayjs";
 import AddGTMEvent from "@root/host/src/utils/gtmEvent";
 import { GA_TAG_EVENTS } from "@root/host/src/constants/google-analytics.constants";

@@ -24,9 +24,6 @@ import { Controller, useForm } from "react-hook-form";
 import style from "./../Steps.module.scss";
 import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
-// const IconSVG = dynamic(() => import("Host/IconSVG"), {
-//   ssr: false,
-// }) as FunctionComponent<IconDTO>;
 import dayjs from "dayjs";
 import { useMaskInput } from "@root/host/src/hooks/useMaskInput";
 import i18n from "@root/host/src/language/i18n";
@@ -35,11 +32,7 @@ import { UserMarketingConsentProps } from "@root/host/src/types/UserMarketingCon
 import { forwardRef } from "react";
 import { IMaskInput } from "react-imask";
 import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
-
-// const UserMarketingConsent = dynamic(
-//   () => import("Host/UserMarketingConsent"),
-//   { ssr: false },
-// ) as FunctionComponent<UserMarketingConsentProps<ReservationFormFull>>;
+import UserMarketingConsent from "@root/host/src/components/UserMarketingConsent/index";
 
 //TODO: Will Refactor latter IR24-4905
 interface ZipCodeMaskProps {
@@ -418,10 +411,10 @@ function NewUserForm({
         />
       </Box>
 
-      {/* <UserMarketingConsent
+      <UserMarketingConsent
         control={methods.control as any}
         fieldName="isMarketingConsent"
-      /> */}
+      />
 
       <Box className={style.leftSideBEEUserActionWrapper}>
         <Button

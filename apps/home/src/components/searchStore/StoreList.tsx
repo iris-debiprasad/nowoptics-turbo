@@ -62,7 +62,7 @@ import {
   GetCurrentLocation,
   GetGeoLocationData,
 } from "@root/host/src/service/common.service";
-import { getStoreWorkingHour } from "@root/host/src/service/storeLocator.service";
+import { getStoreWorkingHour } from "@root/home/src/service/storeLocator.service";
 import {
   bookEyeExamHandler,
   checkBrand,

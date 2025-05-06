@@ -14,7 +14,7 @@ import {
   BookEyeExamStepProps,
   PatientSearchError,
   ReservationResponse,
-} from "@/types/bookEyeExamSteps.types";
+} from "@root/home/src/types/bookEyeExamSteps.types";
 
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import {
@@ -24,7 +24,7 @@ import {
   SNACKBAR_COLOR_TYPE,
   USER_TYPE,
 } from "@root/host/src/constants/common.constants";
-import { Constants } from "@/constants/Constants";
+import { Constants } from "@root/home/src/constants/Constants";
 import AddGTMEvent from "@root/host/src/utils/gtmEvent";
 import { GA_TAG_EVENTS } from "@root/host/src/constants/google-analytics.constants";
 import i18n from "@root/host/src/language/i18n";

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Steps from "./steps/Steps";
 import EyeExamHeader from "./header/EyeExamHeader";
 import EyeExamFooter from "./footer/EyeExamFooter";
-import useAxiosLoader from "@/hooks/useAxiosLoader";
+import useAxiosLoader from "@root/home/src/hooks/useAxiosLoader";
 import dynamic from "next/dynamic";
 import { SnackBarProvider } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { USER_TYPE } from "@root/host/src/constants/common.constants";

@@ -6,7 +6,7 @@ import {
   BookAppointmentPayloadDTO,
   NewPatientDTO,
   PatientSearchDTO,
-} from "@/types/bookEyeExamSteps.types";
+} from "@root/home/src/types/bookEyeExamSteps.types";
 
 export const GetUserStoreDetails = (storeId: string, date: string) =>
   axios.get(

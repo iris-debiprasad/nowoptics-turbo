@@ -15,7 +15,7 @@ import {
   RelationshipPayload,
   ReservationFormFull,
   ReservationFormPartial,
-} from "@/types/bookEyeExamSteps.types";
+} from "@root/home/src/types/bookEyeExamSteps.types";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 
 import {
@@ -39,7 +39,7 @@ import {
   UpdatePatientDetails,
   UpdatePatientDetailsGuest,
   searchPatient,
-} from "@/service/storeLocator.service";
+} from "@root/home/src/service/storeLocator.service";
 import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import ExistingUserForm from "./user-exam-forms/ExistingUserForm";
 import dayjs from "dayjs";

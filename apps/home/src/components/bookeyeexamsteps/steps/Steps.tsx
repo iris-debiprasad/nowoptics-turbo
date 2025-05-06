@@ -14,7 +14,7 @@ import {
   ReservationResponse,
   StoreDetails,
   TypeOfExamDTO,
-} from "@/types/bookEyeExamSteps.types";
+} from "@root/home/src/types/bookEyeExamSteps.types";
 import {
   AppEvents,
   DATE_FORMAT,
@@ -31,14 +31,14 @@ import {
   GetStoreDetailsByStoreNumber,
   GetUserStoreDetails,
   getMyAccountProfileData,
-} from "@/service/storeLocator.service";
+} from "@root/home/src/service/storeLocator.service";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { STORE_ERROR_MESSAGE } from "@root/host/src/constants/store.constants";
 import { useRouter } from "next/router";
 import { getDetails } from "@root/host/src/utils/getSessionData";
 import ModifyAppointmentConfirmation from "./ModifyAppointmentConfirmation";
-import { Constants } from "@/constants/Constants";
+import { Constants } from "@root/home/src/constants/Constants";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 import useAppointmentScheduler from "../../../hooks/useEmailAppointmentScheduler";
 import SideBar from "@root/host/src/components/sideBar/SideBar";

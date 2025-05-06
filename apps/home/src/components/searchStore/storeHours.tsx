@@ -9,8 +9,8 @@ import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import style from "./StoreList.module.scss";
 
 import storeHours from "../../../../assets/Images/icons/storeHours.svg";
-import { StoreHoursDTO } from "@/types/sidebar.type";
-import { getStoreWorkingHour } from "@/service/storeLocator.service";
+import { StoreHoursDTO } from "@root/home/src/types/sidebar.type";
+import { getStoreWorkingHour } from "@root/home/src/service/storeLocator.service";
 import {
   DATE_FORMAT,
   SNACKBAR_COLOR_TYPE,
