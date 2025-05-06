@@ -2,7 +2,7 @@ import React from "react";
 import { render, waitFor, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import StoreHours from "../storeHours";
-import { SnackBarProvider } from "@/contexts/Snackbar/SnackbarContext";
+import { SnackBarProvider } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 
 jest.mock("axios");
 

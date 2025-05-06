@@ -4,7 +4,7 @@ import { useState, useRef, Fragment } from "react";
 
 import { Button, Grow, Popper, Box, AlertColor } from "@mui/material";
 
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 
 import style from "./StoreList.module.scss";
 

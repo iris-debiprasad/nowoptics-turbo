@@ -40,7 +40,7 @@ import {
   UpdatePatientDetailsGuest,
   searchPatient,
 } from "@/service/storeLocator.service";
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import ExistingUserForm from "./user-exam-forms/ExistingUserForm";
 import dayjs from "dayjs";
 import AddGTMEvent from "@root/host/src/utils/gtmEvent";

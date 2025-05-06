@@ -6,7 +6,7 @@ import { TypeOfExamDTO } from "@/types/bookEyeExamSteps.types";
 
 import sharedStyle from "../index.module.scss";
 import style from "./index.module.scss";
-import { useLeftSideOfBEEContext } from "@/contexts/book-eye-exam-left-side";
+import { useLeftSideOfBEEContext } from "@root/home/src/contexts/book-eye-exam-left-side";
 
 export function ExamTypeChooser(): JSX.Element {
   const ctx = useLeftSideOfBEEContext();

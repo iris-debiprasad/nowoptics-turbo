@@ -4,7 +4,7 @@ import i18n from "@root/host/src/language/i18n";
 import {
   INITIAL_TIME_SLOTS,
   useLeftSideOfBEEContext,
-} from "@/contexts/book-eye-exam-left-side";
+} from "@root/home/src/contexts/book-eye-exam-left-side";
 
 import sharedStyle from "../index.module.scss";
 import style from "./index.module.scss";

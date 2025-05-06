@@ -6,9 +6,9 @@ import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { DuplicatePhoneModalProp } from "@/types/bookEyeExamSteps.types";
 import { phoneFormatRegex } from "@root/host/src/constants/common.constants";
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 
 
 function DuplicatePhoneModal(props: DuplicatePhoneModalProp) {
@@ -22,13 +22,13 @@ function DuplicatePhoneModal(props: DuplicatePhoneModalProp) {
     <Box className={style.modalWrapper}>
       <Box className={style.crossBtn}>
         <IconButton onClick={props.handleClose}>
-          <IconSVG
+          {/* <IconSVG
             width="10"
             height="10"
             viewBox="0 0 16 16"
             fill="var(--primary-text-color)"
             name="modal_cross"
-          />
+          /> */}
         </IconButton>
       </Box>
       <Box className={style.modalInner}>

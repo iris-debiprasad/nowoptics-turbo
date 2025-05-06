@@ -1,4 +1,4 @@
-import { SnackBarProvider } from "@/contexts/Snackbar/SnackbarContext";
+import { SnackBarProvider } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import StoreList from "./StoreList";
 import useLanguageTranslation from "@root/host/src/hooks/useLanguageTranslation";
 import { ISearchStoreProps } from "@/types/searchPage.types";

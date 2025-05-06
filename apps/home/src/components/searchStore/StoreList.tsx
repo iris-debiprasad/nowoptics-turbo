@@ -49,7 +49,7 @@ import {
   GetPublicStoreLocatorGrid,
 } from "@/service/storeLocator.service";
 
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { getDetails } from "../../../../host/src/utils/getSessionData";
 
 import storeHours from "@root/assets/Images/icons/storeHours.svg";

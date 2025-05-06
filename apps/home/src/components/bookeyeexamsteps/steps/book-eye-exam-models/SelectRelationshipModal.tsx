@@ -11,16 +11,16 @@ import {
 } from "@mui/material";
 import style from "../Steps.module.scss";
 import { GetAllRelationshipsTypes } from "@root/host/src/service/common.service";
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { PatientRelationShipType, SelectRelationshipModalProp } from "@/types/bookEyeExamSteps.types";
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 
 function SelectRelationshipModal(props: SelectRelationshipModalProp) {
   const { showSnackBar } = useSnackBar();
@@ -69,13 +69,13 @@ function SelectRelationshipModal(props: SelectRelationshipModalProp) {
       <Box className={style.modalWrapper}>
         <Box className={style.crossBtn}>
           <IconButton onClick={props.handleClose}>
-            <IconSVG
+            {/* <IconSVG
               width="10"
               height="10"
               viewBox="0 0 16 16"
               fill="var(--primary-text-color)"
               name="modal_cross"
-            />
+            /> */}
           </IconButton>
         </Box>
         <Box className={style.modalInner}>

@@ -1,4 +1,4 @@
-import { HomeUrlConstants } from "@/constants/home.url.constants";
+import { HomeUrlConstants } from "@root/home/src/constants/home.url.constants";
 import { HeaderConfig } from "@root/host/src/config/headerConfig";
 import { TableQueryParamsDTO } from "@root/host/src/types/TableFilter.types";
 import axios from "axios";

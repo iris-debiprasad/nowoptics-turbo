@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { GetAllWebSchedulerVisibleAppointmentTypes } from "@/service/storeLocator.service";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
+import { GetAllWebSchedulerVisibleAppointmentTypes } from "@root/home/src/service/storeLocator.service";
 import { type AlertColor } from "@mui/material";
 import {
   BookEyeExamStepProps,

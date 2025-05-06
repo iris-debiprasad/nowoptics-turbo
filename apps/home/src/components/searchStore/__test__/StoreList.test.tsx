@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { GetPublicStoreLocatorGrid } from "../../../service/storeLocator.service";
 import StoreList from "../StoreList";
 import "@testing-library/jest-dom";
-import { SnackBarProvider } from "@/contexts/Snackbar/SnackbarContext";
+import { SnackBarProvider } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),

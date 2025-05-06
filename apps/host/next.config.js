@@ -14,9 +14,6 @@ module.exports = withImages({
       new NextFederationPlugin({
         name: "host",
         remotes: {
-          home: `home@${process.env.NEXT_PUBLIC_APP_HOME}/_next/static/${
-            isServer ? "ssr" : "chunks"
-          }/remoteEntry.js`,
           patient: `patient@${
             process.env.NEXT_PUBLIC_APP_PATIENT
           }/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
@@ -52,6 +49,7 @@ module.exports = withImages({
           }/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
         },
         exposes: {
+          "./SideBar": "./src/components/sidebar/SideBar",
           "./ConsentPrivacyPolicy":
             "./src/components/consentPrivacyPolicy/ConsentPrivacyPolicy",
           "./PrimaryModal": "./src/components/primary_modal/PrimaryModal",
@@ -69,7 +67,6 @@ module.exports = withImages({
           "./Breadcrumb": "./src/components/breadcrumb/Breadcrumb",
           "./TableFilter": "./src/components/tableFilter/TableFilter",
           "./BackdropLoader": "./src/components/backdrop_loader/BackdropLoader",
-          "./SideBar": "./src/components/sidebar/SideBar",
           "./ConfirmationModal":
             "./src/components/confirmationModal/ConfirmationModal",
           "./UploadFile": "./src/components/uploadFile/UploadFile",
@@ -117,10 +114,17 @@ module.exports = withImages({
     );
 
     config.module.rules.push({
-      test: /\.(ts)x?$/, // Just `tsx?` file only
+      test: /\.(ts|tsx)$/,
+      exclude: /node_modules/,
       use: [
         {
-          loader: "ts-loader",
+          loader: 'babel-loader',
+          options: {
+            presets: ['next/babel'],
+          },
+        },
+        {
+          loader: 'ts-loader',
           options: {
             transpileOnly: true,
             experimentalWatchApi: true,

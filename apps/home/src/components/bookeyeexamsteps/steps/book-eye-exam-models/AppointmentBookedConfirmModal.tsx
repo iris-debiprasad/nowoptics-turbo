@@ -7,10 +7,10 @@ import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import dayjs from "dayjs";
 import { EYE_EXAM_APPOINTMENT_DATE_FORMAT } from "@root/host/src/constants/common.constants";
 import { AppointmentBookedProp } from "@/types/bookEyeExamSteps.types";
-import { useLeftSideOfBEEContext } from "@/contexts/book-eye-exam-left-side";
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+import { useLeftSideOfBEEContext } from "@root/home/src/contexts/book-eye-exam-left-side";
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 
 function AppointmentBookedConfirmModal(props: AppointmentBookedProp) {
   const ctx = useLeftSideOfBEEContext();
@@ -37,13 +37,13 @@ function AppointmentBookedConfirmModal(props: AppointmentBookedProp) {
       <Box className={style.modalWrapper}>
         <Box className={style.crossBtn}>
           <IconButton onClick={props.handleClose}>
-            <IconSVG
+            {/* <IconSVG
               width="10"
               height="10"
               viewBox="0 0 16 16"
               fill="var(--primary-text-color)"
               name="modal_cross"
-            />
+            /> */}
           </IconButton>
         </Box>
         <Box className={style.modalInner}>

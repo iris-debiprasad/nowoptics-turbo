@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { v4 as getUniqueId } from "uuid";
 import { AlertColor, Box } from "@mui/material";
 
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 
 import style from "./index.module.scss";
 
@@ -37,7 +37,7 @@ import { AppointmentScheduler } from "./appointment-scheduler";
 import {
   Provider,
   useLeftSideOfBEEContext,
-} from "@/contexts/book-eye-exam-left-side";
+} from "@root/home/src/contexts/book-eye-exam-left-side";
 import { PatientDOB } from "./patient-dob";
 
 const EXAM_BOOKING_TYPE = {
@@ -52,6 +52,8 @@ const LeftSideOfBEENoProvider = (): JSX.Element => {
   const { fetchRecaptchaToken } = useRecaptchaToken();
   const [appointentBooked, setAppointmentBooked] = useState(false);
   const [dobErrMsg, setDobErrMsg] = useState(ERROR_MESSAGE.DOB);
+
+  console.log(ctx)
 
   React.useEffect(() => {
     const isAppointmentTypeSelected = ctx.appointmentType !== null;

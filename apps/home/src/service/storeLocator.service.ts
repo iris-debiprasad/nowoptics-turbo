@@ -1,6 +1,6 @@
 import { HeaderConfig } from "./../../../host/src/config/headerConfig";
 import axios from "axios";
-import { HomeUrlConstants } from "@/constants/home.url.constants";
+import { HomeUrlConstants } from "@root/home/src/constants/home.url.constants";
 import {
   AppointmentReservation,
   BookAppointmentPayloadDTO,

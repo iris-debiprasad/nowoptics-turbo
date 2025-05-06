@@ -6,7 +6,6 @@ import RightSideOfBEE from "./RightSideOfBEE";
 import dayjs from "dayjs";
 import style from "./Steps.module.scss";
 import { AlertColor, Grid, Modal } from "@mui/material";
-import { Props } from "../../../../../host/src/components/sidebar/SideBar";
 import dynamic from "next/dynamic";
 import {
   AppointmentDetails,
@@ -34,7 +33,7 @@ import {
   getMyAccountProfileData,
 } from "@/service/storeLocator.service";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { STORE_ERROR_MESSAGE } from "@root/host/src/constants/store.constants";
 import { useRouter } from "next/router";
 import { getDetails } from "@root/host/src/utils/getSessionData";
@@ -42,9 +41,7 @@ import ModifyAppointmentConfirmation from "./ModifyAppointmentConfirmation";
 import { Constants } from "@/constants/Constants";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 import useAppointmentScheduler from "../../../hooks/useEmailAppointmentScheduler";
-const SideBar = dynamic(() => import("Host/SideBar"), {
-  ssr: false,
-}) as React.FunctionComponent<Props>;
+import SideBar from "@root/host/src/components/sideBar/SideBar";
 
 const FirstStep: FC<{
   stepCount: number;

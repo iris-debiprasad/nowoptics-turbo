@@ -15,7 +15,7 @@ import { SubmitAppointmentModalProps } from "@/types/bookEyeExamSteps.types";
 import { useRouter } from "next/router";
 import { getDetails } from "@root/host/src/utils/getSessionData";
 import { getMyAccountProfileData } from "@/service/storeLocator.service";
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 

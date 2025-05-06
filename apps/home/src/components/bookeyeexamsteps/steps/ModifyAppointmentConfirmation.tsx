@@ -8,9 +8,9 @@ import { StoreDetails } from "@/types/bookEyeExamSteps.types";
 import dayjs from "dayjs";
 import { DATE_FORMAT } from "@root/host/src/constants/common.constants";
 import Image from "next/image";
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 
 interface Props {
   storeDetails: StoreDetails | null;
@@ -59,23 +59,23 @@ function ModifyAppointmentConfirmation(props: Props) {
         </Box>
         <Box className={style.modifyAptActionItem}>
           <Box className={style.iconContainer}>
-            <IconSVG
+            {/* <IconSVG
               width="30"
               height="30"
               viewBox="0 0 16 20"
               fill="#f98300"
               name="location_icon"
-            />
+            /> */}
             <p>Store</p>
           </Box>
           <Box className={style.iconContainer}>
-            <IconSVG
+            {/* <IconSVG
               width="30"
               height="30"
               viewBox="0 0 16 20"
               fill="#f98300"
               name="calender_icon"
-            />
+            /> */}
             <p>Date/Time</p>
           </Box>
           <Box className={style.iconContainer}>

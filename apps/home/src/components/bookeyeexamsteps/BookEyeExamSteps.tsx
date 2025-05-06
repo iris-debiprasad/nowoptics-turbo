@@ -5,13 +5,12 @@ import EyeExamHeader from "./header/EyeExamHeader";
 import EyeExamFooter from "./footer/EyeExamFooter";
 import useAxiosLoader from "@/hooks/useAxiosLoader";
 import dynamic from "next/dynamic";
-import { SnackBarProvider } from "@/contexts/Snackbar/SnackbarContext";
+import { SnackBarProvider } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import useLanguageTranslation from "@root/host/src/hooks/useLanguageTranslation";
+import BackdropLoader from "@root/host/src/components/backdrop_loader/BackdropLoader";
 
-const BackdropLoader = dynamic(() => import("Host/BackdropLoader"), {
-  ssr: false,
-}) as FunctionComponent<{ openLoader: boolean }>;
+
 
 interface BookEyeExamProp {
   userType: any;

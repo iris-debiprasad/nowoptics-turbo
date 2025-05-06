@@ -8,7 +8,7 @@ import {
 import i18n from "@root/host/src/language/i18n";
 import dayjs, { Dayjs } from "dayjs";
 
-import { useLeftSideOfBEEContext } from "@/contexts/book-eye-exam-left-side";
+import { useLeftSideOfBEEContext } from "@root/home/src/contexts/book-eye-exam-left-side";
 import style from "./index.module.scss";
 import React from "react";
 

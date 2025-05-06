@@ -5,9 +5,9 @@ import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { useRouter } from "next/router";
 import { NoRelationConfirmationProp } from "@/types/bookEyeExamSteps.types";
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 
 
 function NoRelationConfirmation(props: NoRelationConfirmationProp) {
@@ -22,13 +22,13 @@ function NoRelationConfirmation(props: NoRelationConfirmationProp) {
       <Box className={style.modalWrapper}>
         <Box className={style.crossBtn}>
           <IconButton onClick={() => props.setShowNoRelationModal(false)}>
-            <IconSVG
+            {/* <IconSVG
               width="10"
               height="10"
               viewBox="0 0 16 16"
               fill="var(--primary-text-color)"
               name="modal_cross"
-            />
+            /> */}
           </IconButton>
         </Box>
         <Box className={style.modalInner}>

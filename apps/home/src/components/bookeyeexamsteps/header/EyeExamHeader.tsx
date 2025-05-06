@@ -18,10 +18,8 @@ import style from "./EyeExamHeader.module.scss";
 import { BreadcrumbProps } from "@root/host/src/types/Breadcrumb.types";
 
 import i18n from "@root/host/src/language/i18n";
+import Breadcrumb from "@root/host/src/components/breadcrumb/Breadcrumb";
 
-const Breadcrumb = dynamic(() => import("Host/Breadcrumb"), {
-  ssr: false,
-}) as FunctionComponent<BreadcrumbProps>;
 
 export const links = [
   { label: "Home", href: "/" },

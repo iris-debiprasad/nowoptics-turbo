@@ -16,11 +16,11 @@ import { IMask } from "react-imask";
 import style from "./Steps.module.scss";
 import { getAllConfigurations } from "@root/host/src/service/common.service";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 
-const ConfirmationModal = dynamic(() => import("Host/ConfirmationModal"), {
-  ssr: false,
-}) as React.FunctionComponent<ConfirmationModalProps>;
+// const ConfirmationModal = dynamic(() => import("Host/ConfirmationModal"), {
+//   ssr: false,
+// }) as React.FunctionComponent<ConfirmationModalProps>;
 
 const RightSideOfBEE: FC<{
   stepCount: number;
@@ -172,7 +172,7 @@ const RightSideOfBEE: FC<{
             </Box>
           </Box>
         ) : null}
-        <ConfirmationModal
+        {/* <ConfirmationModal
           content={i18n.t("BOOK_EYE_EXAM.ARE_YOU_SURE")}
           open={showCancelAppointmentModal}
           handleClose={() => setShowCancelAppointmentModal(false)}
@@ -183,7 +183,7 @@ const RightSideOfBEE: FC<{
           Id={1}
           btnOneText={i18n.t("BOOK_EYE_EXAM.NO")}
           btnTwoText={i18n.t("BOOK_EYE_EXAM.YES")}
-        />
+        /> */}
       </div>
     );
   };

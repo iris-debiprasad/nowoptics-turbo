@@ -21,13 +21,14 @@ import {
 } from "@root/host/src/constants/common.constants";
 import i18n from "@root/host/src/language/i18n";
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 import dayjs from "dayjs";
 import AddGTMEvent from "@root/host/src/utils/gtmEvent";
 import { GA_TAG_EVENTS } from "@root/host/src/constants/google-analytics.constants";
 import { useMaskInput } from "@root/host/src/hooks/useMaskInput";
+import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
 
 interface Props {
   dob: string;

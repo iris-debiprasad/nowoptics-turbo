@@ -29,7 +29,7 @@ import {
 } from "@/types/bookEyeExamSteps.types";
 
 import style from "./index.module.scss";
-import { useLeftSideOfBEEContext } from "@/contexts/book-eye-exam-left-side";
+import { useLeftSideOfBEEContext } from "@root/home/src/contexts/book-eye-exam-left-side";
 import { DaySlotsConfig } from "@/types/book-eye-exam-left-side.types";
 
 const DAY_SLOTS_CONFIG: DaySlotsConfig[] = [

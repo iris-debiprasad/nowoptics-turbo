@@ -33,19 +33,19 @@ import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { useIMask } from "react-imask";
 import { GetExistingAppointmentDetails } from "@/service/storeLocator.service";
-import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
+import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { useMaskInput } from "@root/host/src/hooks/useMaskInput";
 import i18n from "@root/host/src/language/i18n";
 import { UserMarketingConsentProps } from "@root/host/src/types/UserMarketingConsent.types";
 
-const UserMarketingConsent = dynamic(
-  () => import("Host/UserMarketingConsent"),
-  { ssr: false },
-) as FunctionComponent<UserMarketingConsentProps<ReservationFormFull>>;
+// const UserMarketingConsent = dynamic(
+//   () => import("Host/UserMarketingConsent"),
+//   { ssr: false },
+// ) as FunctionComponent<UserMarketingConsentProps<ReservationFormFull>>;
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 
 interface Props {
   back: () => void;
@@ -362,13 +362,14 @@ function ExistingUserForm({
                   fullWidth
                   InputProps={{
                     endAdornment: (
-                      <IconSVG
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="#7b7e7b"
-                        name="calender_icon"
-                      />
+                      // <IconSVG
+                      //   width="24"
+                      //   height="24"
+                      //   viewBox="0 0 24 24"
+                      //   fill="#7b7e7b"
+                      //   name="calender_icon"
+                      // />
+                      <></>
                     ),
                   }}
                   className={`${style.disabled} ${style.textInputDatePicker}`}
@@ -453,23 +454,24 @@ function ExistingUserForm({
           />
         </Box>
 
-        <UserMarketingConsent
+        {/* <UserMarketingConsent
           control={methods.control as any}
           fieldName="isMarketingConsent"
-        />
+        /> */}
 
         <Box className={style.leftSideBEEUserActionWrapper}>
           <Button
             className={style.leftSideBEEUserBackBtn}
             startIcon={
-              <IconSVG
-                width="9"
-                height="12"
-                viewBox="0 0 9 15"
-                fill="none"
-                fillP="#ffff"
-                name="arrow_solid_left"
-              />
+              // <IconSVG
+              //   width="9"
+              //   height="12"
+              //   viewBox="0 0 9 15"
+              //   fill="none"
+              //   fillP="#ffff"
+              //   name="arrow_solid_left"
+              // />
+              <></>
             }
             onClick={back}
           >
