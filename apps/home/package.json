@@ -60,6 +60,7 @@
     "sass": "^1.66.1",
     "slick-carousel": "^1.8.1",
     "typescript": "^5.7.3",
+    "uuid": "^11.1.0",
     "webpack": "^5.95.0"
   },
   "devDependencies": {

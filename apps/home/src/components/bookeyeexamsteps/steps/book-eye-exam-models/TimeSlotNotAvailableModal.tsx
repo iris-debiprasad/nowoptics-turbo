@@ -11,6 +11,7 @@ import style from "../Steps.module.scss";
 // const IconSVG = dynamic(() => import("Host/IconSVG"), {
 //   ssr: false,
 // }) as FunctionComponent<IconDTO>;
+import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
 
 
 function TimeSlotNotAvailableModal(props: TimeSlotNotAvailableModalProps) {
@@ -24,13 +25,13 @@ function TimeSlotNotAvailableModal(props: TimeSlotNotAvailableModalProps) {
       <Box className={style.modalWrapper}>
         <Box className={style.crossBtn}>
           <IconButton onClick={props.handleClose}>
-            {/* <IconSVG
+            <IconSVG
               width="10"
               height="10"
               viewBox="0 0 16 16"
               fill="var(--primary-text-color)"
               name="modal_cross"
-            /> */}
+            />
           </IconButton>
         </Box>
         <Box className={style.modalInner}>

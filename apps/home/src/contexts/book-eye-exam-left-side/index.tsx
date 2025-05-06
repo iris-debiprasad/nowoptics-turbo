@@ -18,7 +18,7 @@ import i18n from "@root/host/src/language/i18n";
 import {
   AvailableTimeSlots,
   TimeSlotsError,
-} from "@/types/book-eye-exam-left-side.types";
+} from "@root/home/src/types/book-eye-exam-left-side.types";
 
 interface ContextValues extends BookEyeExamStepProps {
   availableTimeSlots: AvailableTimeSlots;
@@ -114,6 +114,7 @@ export function Provider({ children, ...rest }: Readonly<Props>): JSX.Element {
     React.useState<AvailableTimeSlots>(INITIAL_TIME_SLOTS);
 
   React.useEffect(() => {
+    console.log("get time slot data")
     const getAllWebSchedulerVisibleAppointment = async () => {
       try {
         const data = (await GetAllWebSchedulerVisibleAppointmentTypes()).data;

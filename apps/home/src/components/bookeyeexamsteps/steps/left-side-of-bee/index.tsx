@@ -7,7 +7,7 @@ import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 
 import style from "./index.module.scss";
 
-import { ReserveSlot } from "@/service/storeLocator.service";
+import { ReserveSlot } from "@root/home/src/service/storeLocator.service";
 
 import {
   AppointmentReservation,
@@ -155,6 +155,7 @@ const LeftSideOfBEENoProvider = (): JSX.Element => {
           });
         })
         .catch((error) => {
+          console.log("Error in reserving slot", error);
           const errorResponse: PatientSearchError = error.response?.data?.Error;
           const message = errorResponse
             ? errorResponse.Message

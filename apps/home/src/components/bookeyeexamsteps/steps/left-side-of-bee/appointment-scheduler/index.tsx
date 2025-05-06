@@ -13,7 +13,7 @@ import {
 import { DateCalendar, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-import { GetSlotsForWebScheduler } from "@/service/storeLocator.service";
+import { GetSlotsForWebScheduler } from "@root/home/src/service/storeLocator.service";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import i18n from "@root/host/src/language/i18n";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
