@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 import style from "./Faq.module.scss";
-import { StoreContentDTO, StoreDetailsDTO } from "@/types/store.type";
+import { StoreContentDTO, StoreDetailsDTO } from "@root/host/src/types/store.type";
 import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { useRouter } from "next/router";

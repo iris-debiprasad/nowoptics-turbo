@@ -16,9 +16,9 @@ import {
 } from "@/service/common.service";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { useRouter } from "next/router";
-import { AppEvents, RING_CENTRAL_CALL_NOTIFICATION_STACK_LENGTH, SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
+import { AppEvents, RING_CENTRAL_CALL_NOTIFICATION_STACK_LENGTH, SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { useDispatch } from "react-redux";
 import { updateCartCountForMRSOrder } from "@root/host/src/store/reducer/cartIdReducer";
 import {
@@ -30,7 +30,7 @@ import {
   RingCentralCallDataDTO,
   RingCentralPopUpDTO,
   RingCentralCallNotiItemsDTO,
-} from "@/types/ringCentral.types";
+} from "@root/host/src/types/ringCentral.types";
 import dynamic from "next/dynamic";
 import { useAppSelector } from "@/hooks/useStore";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";

@@ -1,6 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { SaveVisionIntakeRequest } from "@/types/visionIntake.types";
+import { SaveVisionIntakeRequest } from "@root/host/src/types/visionIntake.types";
 
 export const GetVisionIntakeStepByIndex = createSelector(
   (state: RootState) => state.visionIntake.steps,

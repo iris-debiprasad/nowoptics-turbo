@@ -1,5 +1,5 @@
-import { FrameSEO, LanceSEO, OtcSEO } from "@/constants/seo.constant";
-import { ProductSEOData } from "@/types/seo.types";
+import { FrameSEO, LanceSEO, OtcSEO } from "@root/host/src/constants/seo.constant";
+import { ProductSEOData } from "@root/host/src/types/seo.types";
 
 export const generateProductDescription = (seoData: ProductSEOData) => {
   let description = "";

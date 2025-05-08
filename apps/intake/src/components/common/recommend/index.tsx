@@ -34,7 +34,7 @@ import Input from "../input";
 import Radio from "../radio";
 import SwitchInput from "../switch";
 import styles from "./Recommend.module.scss";
-import { FREE_TEXT_MAX_LENGTH } from "@/constants/intake.constants";
+import { FREE_TEXT_MAX_LENGTH } from "@root/intake/src/constants/intake.constants";
 
 const Recommend: FunctionComponent<RecommendProps> = ({
   OptionIndex,

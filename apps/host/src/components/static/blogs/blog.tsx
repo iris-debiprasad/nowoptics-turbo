@@ -3,7 +3,7 @@ import style from "./blogs.module.scss";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import { BLOGS, IBlogMeta } from "@/constants/blogConstants";
+import { BLOGS, IBlogMeta } from "@root/host/src/constants/blogConstants";
 import Link from "next/link";
 import BlogItem from "./blog-item";
 import { BREAKPOINT_TO_STOP_INTERSECTING } from "./blogs";

@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Button, Modal } from "@mui/material";
 import style from "./NonBusinessHrsInfo.module.scss";
 import IconSVG from "../iconsvg/IconSVG";
-import { NonBusinessHrsModalProps } from "@/types/nonBusinessHrsModal";
+import { NonBusinessHrsModalProps } from "@root/host/src/types/nonBusinessHrsModal";
 import useResponsive from "@/hooks/useResponsive";
-import { RX_RENEWAL_CONSTANT } from "@/constants/RxRenewal.constants";
+import { RX_RENEWAL_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
 import { useRouter } from "next/router";
 function NonBusinessHrsInfo(props: NonBusinessHrsModalProps) {
   const router = useRouter();

@@ -1,4 +1,4 @@
-import { IconDTO } from "@/types/IconSVG.types";
+import { IconDTO } from "@root/host/src/types/IconSVG.types";
 
 export const iconSVGMockData: IconDTO = {
   width: "17",

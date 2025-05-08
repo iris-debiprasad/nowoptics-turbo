@@ -87,29 +87,29 @@ export const links = [
   { label: "Search", href: "/" },
 ];
 
-const Breadcrumb = dynamic(() => import("Host/Breadcrumb"), {
-  ssr: false,
-}) as FunctionComponent<BreadcrumbProps>;
+import Breadcrumb from "@shared/host/Breadcrumb";
 
-const CustomMap = dynamic(() => import("Host/Custommap"), {
-  ssr: false,
-}) as FunctionComponent<MapDTO>;
+// const CustomMap = dynamic(() => import("Host/Custommap"), {
+//   ssr: false,
+// }) as FunctionComponent<MapDTO>;
+import CustomMap from "@root/host/src/components/custommap/CustomMap";
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+import IconSVG from "@shared/host/IconSVG";
 
-const ShowBrandStore = dynamic(() => import("Host/ShowBrandStore"), {
-  ssr: false,
-}) as FunctionComponent<IShowBrandStore>;
+// const ShowBrandStore = dynamic(() => import("Host/ShowBrandStore"), {
+//   ssr: false,
+// }) as FunctionComponent<IShowBrandStore>;
+import ShowBrandStore from "@root/host/src/components/showBrandStore/ShowBrandStore";
 
-const RemoteStoreSkeleton = dynamic(() => import("Host/StoreSkeleton"), {
-  ssr: false,
-}) as FunctionComponent<any>;
+// const RemoteStoreSkeleton = dynamic(() => import("Host/StoreSkeleton"), {
+//   ssr: false,
+// }) as FunctionComponent<any>;
 
-const RemoteStoreTiming = dynamic(() => import("Host/StoreTiming"), {
-  ssr: false,
-}) as FunctionComponent<any>;
+// const RemoteStoreTiming = dynamic(() => import("Host/StoreTiming"), {
+//   ssr: false,
+// }) as FunctionComponent<any>;
+import RemoteStoreSkeleton from "@root/host/src/components/skeleton_loader/SelectStore/StoreSkeleton";
+import RemoteStoreTiming from "@root/host/src/components/skeleton_loader/SelectStore/StoreTiming";
 
 interface Location {
   lat: number;

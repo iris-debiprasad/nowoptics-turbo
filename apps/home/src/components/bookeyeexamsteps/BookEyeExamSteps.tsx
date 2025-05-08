@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 import { SnackBarProvider } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import useLanguageTranslation from "@root/host/src/hooks/useLanguageTranslation";
-import BackdropLoader from "@root/host/src/components/backdrop_loader/BackdropLoader";
+import BackdropLoader from "@shared/host/BackdropLoader";
 
 
 

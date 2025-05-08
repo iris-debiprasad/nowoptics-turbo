@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import style from "./GetStartedSection.module.scss";
 import Image from "next/image";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import Button from "@mui/material/Button";
-import { RX_RENEWAL_CONSTANT } from "@/constants/RxRenewal.constants";
+import { RX_RENEWAL_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
 import { useRouter } from "next/router";
 import { Box, Typography } from "@mui/material";
 import NonBusinessHrsInfo from "@/components/nonBusinessHrsInfoModel/NonBusinessHrsInfo";

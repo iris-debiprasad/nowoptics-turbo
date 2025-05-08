@@ -1,4 +1,4 @@
-import Radio from "@/components/common/radio";
+import Radio from "@root/intake/src/components/common/radio";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   GetFormSectionByCode,

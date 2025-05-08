@@ -17,7 +17,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
-import { RegistrationFormDTO, SignUpPropsDTO } from "@/types/auth.type";
+import { RegistrationFormDTO, SignUpPropsDTO } from "@root/host/src/types/auth.type";
 import { ERROR_MESSAGE } from "../../../constants/auth.constants";
 import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
 import {
@@ -28,9 +28,9 @@ import {
   isZipcodeValidRegex,
   COMMON_DATE_FORMAT,
   INPUT_MASK,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { nameFieldValidator } from "@/utils/common.utils";
+import { nameFieldValidator } from "@root/host/src/utils/common.utils";
 import { ValidateZipCode, createAccount } from "@/service/common.service";
 import { useMaskInput } from "@/hooks/useMaskInput";
 import { useTranslation } from "react-i18next";

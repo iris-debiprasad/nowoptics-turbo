@@ -5,7 +5,7 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import { Box, Grid, Typography, AlertColor, Button } from "@mui/material";
 
 import style from "./BookEyeExamContent.module.scss";
-import { StoreContentDTO, StoreDetailsDTO } from "@/types/store.type";
+import { StoreContentDTO, StoreDetailsDTO } from "@root/host/src/types/store.type";
 import {
   bookEyeExamHandler,
   handleBookAppointment,

@@ -1,4 +1,4 @@
-import { useSnackBar } from "@/context/SnackbarContext";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import * as appStore from "@root/host/src/store/useStore"
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import { GetEditStateForUser, GetPatientIntakeStepper, IsCurrentStepUpdated } from "@root/host/src/store/reducer/intake.selector";
@@ -15,7 +15,7 @@ import { useEffect, useMemo } from "react";
 import Customstepper from "../common/customstepper";
 import StepSwitcher from "../stepswitcher";
 import styles from "./PatientSetup.module.scss";
-import { IntakePermission } from "@/constants/intake-permission.constant";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 import { GetPermissionConfig } from "@root/host/src/config/permissionConfig";
 
 const PatientSetup = () => {

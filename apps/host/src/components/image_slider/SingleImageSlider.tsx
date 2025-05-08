@@ -1,8 +1,8 @@
 import {
   SINGLE_IMAGE_SLIDER_SETTING
-} from "@/constants/ImageSlider.constants";
-import { BRAND } from "@/constants/common.constants";
-import { SingleSliderDTO } from "@/types/ImageSlider.types";
+} from "@root/host/src/constants/ImageSlider.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
+import { SingleSliderDTO } from "@root/host/src/types/ImageSlider.types";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Slider from "react-slick";

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Box } from "@mui/system";
 import style from "./OurCustomerVoice.module.scss";
-import { StoreContentDTO } from "@/types/store.type";
+import { StoreContentDTO } from "@root/host/src/types/store.type";
 import { BRAND } from "@root/host/src/constants/common.constants";
 import SingleImageSlider from "@/components/image_slider/SingleImageSlider";
 

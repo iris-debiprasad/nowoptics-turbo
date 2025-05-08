@@ -6,7 +6,7 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { QUICK_JUMPS, SectionReference } from "../faq-sections.constants";
 import { UseNavigationSpyReturn } from "../use-navigation-spy";
 import styles from "./navigation-mobile.module.scss";
-import { throttle } from "@/utils/performance.utils";
+import { throttle } from "@root/host/src/utils/performance.utils";
 import { useTranslation } from "react-i18next";
 
 interface Props extends UseNavigationSpyReturn {

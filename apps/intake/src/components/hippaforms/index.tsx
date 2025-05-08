@@ -9,13 +9,13 @@ import { FunctionComponent, memo, useCallback } from "react";
 import styles from "./HippaForms.module.scss";
 import DefaultTable from "./defaultable";
 import StateTable from "./statetable";
-import { SnackBarProvider } from "@/context/SnackbarContext";
+import { SnackBarProvider } from "@root/intake/src/context/SnackbarContext";
 import { store } from "@root/host/src/store/store";
 import { Provider } from "react-redux";
 import { useAppSelector } from "@root/host/src/hooks/useStore";
 import { GetApiLoadingState } from "@root/host/src/store/reducer/intake.selector";
 import usePermission from "@root/host/src/hooks/usePermission";
-import { IntakePermission } from "@/constants/intake-permission.constant";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 const Breadcrumb = dynamic(() => import("host/Breadcrumb"), {
   ssr: false,
 }) as FunctionComponent<BreadcrumbProps>;

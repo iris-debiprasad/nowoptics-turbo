@@ -2,7 +2,7 @@ import {
   ALLOWED_HIPPA_FILE_TYPES,
   DEFAULT_EMPTY_TABLE_MESSAGE,
   HIPPA_FILE_ERRORS,
-} from "@/constants/intake.constants";
+} from "@root/intake/src/constants/intake.constants";
 import { HIPPA_LANGUAGE_FORM_COLUMNS } from "@/constants/intakeTable.constants";
 import {
   useGetDefaultHippaFormsQuery,
@@ -33,18 +33,20 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { FunctionComponent, memo, useState, useRef } from "react";
 import styles from "../HippaForms.module.scss";
-import { useSnackBar } from "@/context/SnackbarContext";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { GetPermissionConfig } from "@root/host/src/config/permissionConfig";
-import { IntakePermission } from "@/constants/intake-permission.constant";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 import { useAppSelector } from "@root/host/src/hooks/useStore";
-const CustomTablePagination = dynamic(
-  () => import("host/CustomTablePagination"),
-  { ssr: false }
-) as FunctionComponent<CustomTablePaginationDTO>;
-const IconSVG = dynamic(() => import("host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const CustomTablePagination = dynamic(
+//   () => import("host/CustomTablePagination"),
+//   { ssr: false }
+// ) as FunctionComponent<CustomTablePaginationDTO>;
+import CustomTablePagination from "@root/host/src/components/customTablePagination/CustomTablePagination";
+// const IconSVG = dynamic(() => import("host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
+import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
 
 const DefaultTable: FunctionComponent<HippaFormTableProps> = ({
   handleDownloadHippaFile,

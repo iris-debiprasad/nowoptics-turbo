@@ -13,9 +13,9 @@ import {
   TableContainer,
 } from "@mui/material";
 import styles from "./index.module.scss";
-import { APIRelatedPatient } from "@/types/stantonAccess.types";
+import { APIRelatedPatient } from "@root/host/src/types/stantonAccess.types";
 import React from "react";
-import { formatPhoneNumber } from "@/utils/common.utils";
+import { formatPhoneNumber } from "@root/host/src/utils/common.utils";
 
 interface Props {
   open: boolean;

@@ -1,4 +1,4 @@
-import { Section } from "@/types/home.types";
+import { Section } from "@root/host/src/types/home.types";
 import style from "./informationSection.module.scss";
 import ImageWithButton from "../imageWithButton/imageWithButton";
 import { Button, Grid } from "@mui/material";

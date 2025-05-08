@@ -11,10 +11,8 @@ import dynamic from "next/dynamic";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { FaqQnA } from "@root/home/src/constants/Constants";
 import { BRAND } from "@root/host/src/constants/common.constants";
+import IconSVG from "@shared/host/IconSVG";
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
 
 export const FAQ = ({ brand }: { brand: string }): JSX.Element => {
   const [activeQuestion, setActiveQuestion] = React.useState<number | null>(

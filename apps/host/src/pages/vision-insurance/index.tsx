@@ -3,8 +3,8 @@ import Head from "next/head";
 import type { NextPage } from "next";
 import { VisionInsurance } from "@/components/static/vision-insurance";
 import { useTranslation } from "react-i18next";
-import { checkBrand } from "@/utils/common.utils";
-import { BRAND } from "@/constants/common.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const VisionInsurancePage: NextPage = (): JSX.Element => {
     const { t } = useTranslation();

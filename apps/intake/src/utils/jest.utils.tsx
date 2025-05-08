@@ -1,4 +1,4 @@
-import { SnackBarProvider } from "@/context/SnackbarContext";
+import { SnackBarProvider } from "@root/intake/src/context/SnackbarContext";
 import { render } from "@testing-library/react";
 import configureStore from "redux-mock-store";
 

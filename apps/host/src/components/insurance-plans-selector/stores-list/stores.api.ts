@@ -6,7 +6,7 @@ import {
     Store,
 } from "../insurance-plans.interface";
 import { HeaderConfig } from "@/config/headerConfig";
-import { ApiResponse } from "@/types/api.types";
+import { ApiResponse } from "@root/host/src/types/api.types";
 import { GET_STORES_ENDPOINT } from "../insurance-plans.constants";
 
 interface GetStoresParams {

@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor, screen } from "@testing-library/react";
 import Otp from "../Otp";
-import { OtpPropsDTO } from "@/types/auth.type";
+import { OtpPropsDTO } from "@root/host/src/types/auth.type";
 import "@testing-library/jest-dom";
 import axios from "axios";
 import { SnackBarProvider } from "@/contexts/Snackbar/SnackbarContext";

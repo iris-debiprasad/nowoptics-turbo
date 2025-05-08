@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import useAxiosLoader from "../../hooks/useAxiosLoader";
 import { useRouter } from "next/router";
 import BackdropLoader from "../backdrop_loader/BackdropLoader";
-import { HomePageDTO } from "@/types/home.types";
+import { HomePageDTO } from "@root/host/src/types/home.types";
 import i18n from "@root/host/src/language/i18n";
 import HomePage from "./homePage";
 

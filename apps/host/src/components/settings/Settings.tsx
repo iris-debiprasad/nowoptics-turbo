@@ -15,7 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 import settingsIcon from "../../../../assets/Images/icons/settingsIcon.svg";
 import IconSVG from "../iconsvg/IconSVG";
-import { NavItem } from "@/types/Header.types";
+import { NavItem } from "@root/host/src/types/Header.types";
 import { useTranslation } from "react-i18next";
 
 type Anchor = "top" | "left" | "bottom" | "right";

@@ -1,9 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import Image from "next/image";
 import useResponsive from "@/hooks/useResponsive";
 import style from "./PrescriptionRenewalDescription.module.scss";
-import { RX_RENEWAL_CONSTANT } from "@/constants/RxRenewal.constants";
+import { RX_RENEWAL_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import NonBusinessHrsInfo from "@/components/nonBusinessHrsInfoModel/NonBusinessHrsInfo";

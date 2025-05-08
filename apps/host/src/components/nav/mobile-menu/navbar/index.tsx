@@ -1,21 +1,21 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { NAV_ITEMS } from "@/constants/header.constants";
+import { NAV_ITEMS } from "@root/host/src/constants/header.constants";
 import {
   MOBILE_NAV_ITEMS,
   MODIFY_APPOINTMENT_COOKIE,
-} from "@/constants/mobile-menu.constants";
+} from "@root/host/src/constants/mobile-menu.constants";
 import { SubMenu, SubMenuItem } from "./sub-menu";
 import type { Props as MobileMenuProps } from "..";
 import sharedStyles from "../index.module.scss";
-import { unformatPhoneNumber } from "@/utils/common.utils";
-import { SO_DEFAULT_STORE_CONTACT_NUMBER } from "@/constants/common.constants";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
+import { SO_DEFAULT_STORE_CONTACT_NUMBER } from "@root/host/src/constants/common.constants";
 import { updateLangCode } from "@/store/reducer/languageCodeReducer";
 import React from "react";
 import { useAppDispatch } from "@/store/useStore";
-import i18n from "@/language/i18n";
+import i18n from "@root/host/src/language/i18n";
 import { useRouter } from "next/router";
-import { Cookies } from "@/utils/cookie.utils";
+import { Cookies } from "@root/host/src/utils/cookie.utils";
 
 export interface Props extends Pick<MobileMenuProps, "onClose"> {
   isUserLoggedIn: boolean;

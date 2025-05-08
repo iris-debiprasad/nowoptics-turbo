@@ -1,7 +1,7 @@
 import React from "react";
 import { Store } from "../insurance-plans.interface";
 import { getStores } from "./stores.api";
-import { isZipcodeValidRegex } from "@/constants/common.constants";
+import { isZipcodeValidRegex } from "@root/host/src/constants/common.constants";
 import { GetGeoLocationData } from "@/service/common.service";
 
 interface PaginatedData {

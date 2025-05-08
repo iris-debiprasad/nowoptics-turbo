@@ -2,7 +2,7 @@ import style from "./BrandTransition.module.scss";
 import React from "react";
 import { Box, Button } from "@mui/material";
 import IconSVG from "@/components/iconsvg/IconSVG";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import PrimaryModal from "../primary_modal/PrimaryModal";

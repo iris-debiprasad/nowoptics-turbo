@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import LeftContentBanner from "../leftContentBanner/leftContentBanner";
-import { homePageDataPropsDTO, Section } from "@/types/home.types";
+import { homePageDataPropsDTO, Section } from "@root/host/src/types/home.types";
 import style from "./carouselSection.module.scss";
 
 const CarouselSection = (props: homePageDataPropsDTO) => {

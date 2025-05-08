@@ -12,8 +12,8 @@ import {
 import React, { useContext, useEffect, useRef, useState } from "react";
 import style from "./AutoLogoutModal.module.scss";
 import IconSVG from "../iconsvg/IconSVG";
-import { checkBrand } from "@/utils/common.utils";
-import { BRAND, USER_TYPE } from "@/constants/common.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
+import { BRAND, USER_TYPE } from "@root/host/src/constants/common.constants";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({

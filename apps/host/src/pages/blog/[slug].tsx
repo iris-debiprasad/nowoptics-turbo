@@ -1,5 +1,5 @@
 import Blog from "@/components/static/blogs/blog";
-import { BLOGS_PAGES, IBlog_Page } from "@/constants/blogConstants";
+import { BLOGS_PAGES, IBlog_Page } from "@root/host/src/constants/blogConstants";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 

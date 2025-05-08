@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import ImageWithButton from "../ImageWithButton";
-import { PropsDTO } from "@/types/ImageWithButton.type";
+import { PropsDTO } from "@root/host/src/types/ImageWithButton.type";
 
 describe("ImageWith Button Slider component", () => {
   const props: PropsDTO = {

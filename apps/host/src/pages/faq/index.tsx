@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { FAQLP, FaqHeadMarkups } from "@/components/static/faq-lp";
 import React from "react";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import { useGetBrand } from "@/hooks/useGetBrand";
 
 const FAQPage: NextPage = (): JSX.Element => {

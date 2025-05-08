@@ -3,17 +3,19 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useTranslation } from 'react-i18next';
 
-const MedicalForms = dynamic(() => import("intake/MedicalForms"), {
-  ssr: false,
-  loading: () => (
-    <CommonTabsTablePageSkeleton
-      rows={7}
-      columns={5}
-      headSkeletonHeight={20}
-      bodySkeletonHieght={30}
-    />
-  ),
-});
+// const MedicalForms = dynamic(() => import("intake/MedicalForms"), {
+//   ssr: false,
+//   loading: () => (
+//     <CommonTabsTablePageSkeleton
+//       rows={7}
+//       columns={5}
+//       headSkeletonHeight={20}
+//       bodySkeletonHieght={30}
+//     />
+//   ),
+// });
+
+import MedicalForms from "intake/MedicalForms";
 
 const Index = () => {
   const { t } = useTranslation();

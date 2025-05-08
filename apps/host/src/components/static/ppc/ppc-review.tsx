@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import style from "./ppc.module.scss";
 import IconSVG from "@/components/iconsvg/IconSVG";
-import { PPC_CONTACTS_USER_REVIEW, PPC_EYEGLASSES_USER_REVIEW } from "@/constants/ppcUserReviewConstants";
+import { PPC_CONTACTS_USER_REVIEW, PPC_EYEGLASSES_USER_REVIEW } from "@root/host/src/constants/ppcUserReviewConstants";
 
 const PPCReview = (props: any) => {
     const [reviews, setReviews] = useState([]);

@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import LoginForm from "../LoginForm";
-import { SignInPropsDTO } from "@/types/auth.type";
+import { SignInPropsDTO } from "@root/host/src/types/auth.type";
 import { useRouter } from "next/router";
 import "@testing-library/jest-dom";
 import axios from "axios";

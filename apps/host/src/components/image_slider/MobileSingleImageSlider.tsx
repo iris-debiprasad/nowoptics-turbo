@@ -6,19 +6,19 @@ import style from "./ImageSlider.module.scss";
 import {
   SINGLE_IMAGE_SLIDER_SETTING,
   INLINE_STYLE,
-} from "@/constants/ImageSlider.constants";
+} from "@root/host/src/constants/ImageSlider.constants";
 import IconSVG from "../iconsvg/IconSVG";
-import { ArrowDTO, StoreOfferSliderDTO } from "@/types/ImageSlider.types";
+import { ArrowDTO, StoreOfferSliderDTO } from "@root/host/src/types/ImageSlider.types";
 import { Box, Button, Typography } from "@mui/material";
 import PrimaryModal from "../primary_modal/PrimaryModal";
-import { LocationDTO } from "@/types/SideBar.types";
-import { calculateDistance } from "@/utils/calculateDistance";
+import { LocationDTO } from "@root/host/src/types/SideBar.types";
+import { calculateDistance } from "@root/host/src/utils/calculateDistance";
 import { useTranslation } from "react-i18next";
 import { IMask } from "react-imask";
 import { INPUT_MASK } from "@root/host/src/constants/common.constants";
-import { PhoneNumber } from "@/types/store.type";
+import { PhoneNumber } from "@root/host/src/types/store.type";
 import dayjs from "dayjs";
-import { stringToSlug } from "@/utils/common.utils";
+import { stringToSlug } from "@root/host/src/utils/common.utils";
 import { useRouter } from "next/router";
 
 function Arrow(props: ArrowDTO) {

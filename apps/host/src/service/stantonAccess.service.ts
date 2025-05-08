@@ -1,6 +1,6 @@
 import { HeaderConfig } from "@/config/headerConfig";
-import { IrisUrlConstants } from "@/constants/iris.url.constants";
-import { APISubscribeUsersPayload } from "@/types/stantonAccess.types";
+import { IrisUrlConstants } from "@root/host/src/constants/iris.url.constants";
+import { APISubscribeUsersPayload } from "@root/host/src/types/stantonAccess.types";
 import axios from "axios";
 
 export const GetListOfRelatedPatients = (

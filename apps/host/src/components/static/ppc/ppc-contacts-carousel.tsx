@@ -8,7 +8,7 @@ import { BRAND, SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.cons
 import { getAllConfigurations } from "@/service/common.service";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import ImageSlider from "@/components/image_slider/ImageSlider";
-import { SLIDER_CONSTANT } from "@/constants/ImageSlider.constants";
+import { SLIDER_CONSTANT } from "@root/host/src/constants/ImageSlider.constants";
 import { useRouter } from "next/router";
 
 

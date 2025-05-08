@@ -4,7 +4,7 @@ import style from "./UploadFile.module.scss";
 import Image from "next/image";
 import uploadIcon from "../../../../assets/Images/icons/uploadIcon.svg";
 import rightArrow from "../../../../assets/Images/icons/rightArrow.svg";
-import { UploadFileDTO } from "@/types/UploadFile.types";
+import { UploadFileDTO } from "@root/host/src/types/UploadFile.types";
 
 const UploadFile = ({
   maxFileSize,

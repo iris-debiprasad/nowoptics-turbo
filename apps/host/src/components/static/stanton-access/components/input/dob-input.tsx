@@ -5,7 +5,7 @@ import { FormControl, FormHelperText } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Dayjs } from "dayjs";
-import { DATE_FORMAT } from "@/constants/common.constants";
+import { DATE_FORMAT } from "@root/host/src/constants/common.constants";
 
 import styles from "./index.module.scss";
 

@@ -2,8 +2,8 @@ import { AlertColor, Box, Button, styled } from "@mui/material";
 import * as React from "react";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import style from "./Nav.module.scss";
-import { navProps } from "@/types/Header.types";
-import { NAV_ITEMS } from "@/constants/header.constants";
+import { navProps } from "@root/host/src/types/Header.types";
+import { NAV_ITEMS } from "@root/host/src/constants/header.constants";
 import LoginForm from "../authentication/LoginForm/LoginForm";
 import { signOut } from "next-auth/react";
 import { useSnackBar } from "../../contexts/Snackbar/SnackbarContext";
@@ -11,22 +11,22 @@ import {
   AppEvents,
   SNACKBAR_COLOR_TYPE,
   USER_TYPE,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import BackdropLoader from "../backdrop_loader/BackdropLoader";
 import { GetPublicStoreLocatorGrid } from "@/service/storeLocator.service";
-import { findClosestCoordinate } from "@/utils/calculateDistance";
-import { STORE_ERROR_MESSAGE } from "@/constants/store.constants";
+import { findClosestCoordinate } from "@root/host/src/utils/calculateDistance";
+import { STORE_ERROR_MESSAGE } from "@root/host/src/constants/store.constants";
 import { AxiosError } from "axios";
-import { LocationDTO } from "@/types/SideBar.types";
+import { LocationDTO } from "@root/host/src/types/SideBar.types";
 import EyeExamFlow from "../eyeExamFlow/EyeExamFlow";
-import { clearAllCookie } from "@/utils/cookie.utils";
+import { clearAllCookie } from "@root/host/src/utils/cookie.utils";
 import { useAppDispatch, useAppSelector } from "@/store/useStore";
-import { clearLocalStorage } from "@/utils/common.utils";
+import { clearLocalStorage } from "@root/host/src/utils/common.utils";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
-import { getLatLong } from "@/utils/getLocation.utils";
+import { getLatLong } from "@root/host/src/utils/getLocation.utils";
 import { setCount } from "@/store/reducer/favorite-products";
 
 const CustomButton = styled(Button)({

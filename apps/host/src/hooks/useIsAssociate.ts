@@ -1,7 +1,7 @@
-import { AppEvents, USER_TYPE } from "@/constants/common.constants";
+import { AppEvents, USER_TYPE } from "@root/host/src/constants/common.constants";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import { getDetails } from "@/utils/getSessionData";
+import { getDetails } from "@root/host/src/utils/getSessionData";
 
 export default function useIsAssociate(): boolean {
   const [isAssociateUser, setIsAssociateUser] = useState(false);

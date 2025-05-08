@@ -3,7 +3,7 @@ import {
     Props as ResponsiveBannerProps,
 } from "../responsive-banner";
 import styles from "./banner.module.scss";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 interface BaseBannerClasses {
     /** Parent container */

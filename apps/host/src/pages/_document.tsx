@@ -1,7 +1,7 @@
 {
   /* @ts-nocheck */
 }
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import { Head, Html, Main, NextScript } from "next/document";
 export default function Document() {
   return (

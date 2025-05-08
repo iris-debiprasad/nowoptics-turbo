@@ -13,7 +13,7 @@ import style from "./Store.module.scss";
 import {
   StoreContentDTO,
   StoreDetailsDTO,
-} from "@/types/store.type";
+} from "@root/host/src/types/store.type";
 import {
   SnackBarProvider,
   useSnackBar,

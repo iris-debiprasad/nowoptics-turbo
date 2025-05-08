@@ -17,7 +17,6 @@ import IconButton from "@mui/material/IconButton";
 import ArrowDownIcon from "@root/assets/Images/icons/arrow-down.svg";
 import DeleteIcon from "@root/assets/Images/icons/delete.svg";
 import type { ConfirmationModalProps } from "@root/host/src/types/confirmationModal.types";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import {
   FC,
@@ -28,10 +27,8 @@ import {
   useState,
 } from "react";
 import styles from "./AccordionStep.module.scss";
-import { COMMON_INPUT_MAX_LENGTH } from "@/constants/intake.constants";
-const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
-  ssr: false,
-}) as FC<ConfirmationModalProps>;
+import { COMMON_INPUT_MAX_LENGTH } from "@root/intake/src/constants/intake.constants";
+import  ConfirmationModal  from "@root/host/src/components/confirmationModal/ConfirmationModal";
 import EditIcon from "@root/assets/Images/icons/editProfileIcon.svg";
 import { useGetLanguageTypesQuery } from "@root/host/src/store/reducer/intakeApi.slice";
 

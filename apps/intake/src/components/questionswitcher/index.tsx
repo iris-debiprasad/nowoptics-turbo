@@ -13,7 +13,7 @@ import { ChangeEvent, FunctionComponent, memo, useMemo } from "react";
 import MultiOption from "../questiontypes/multioption";
 import Text from "../questiontypes/text";
 import styles from "./QuestionSwitcher.module.scss";
-import { FREE_TEXT_MAX_LENGTH } from "@/constants/intake.constants";
+import { FREE_TEXT_MAX_LENGTH } from "@root/intake/src/constants/intake.constants";
 import Collapse from "@mui/material/Collapse";
 
 const QuestionSwitcher: FunctionComponent<QuestionSwitcherProps> = ({

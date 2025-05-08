@@ -23,9 +23,6 @@ module.exports = withImages({
           appointments: `appointments@${
             process.env.NEXT_PUBLIC_APP_APPOINTMENTS
           }/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
-          intake: `intake@${process.env.NEXT_PUBLIC_APP_INTAKE}/_next/static/${
-            isServer ? "ssr" : "chunks"
-          }/remoteEntry.js`,
           managedCare: `managedCare@${
             process.env.NEXT_PUBLIC_APP_MANAGEDCARE
           }/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,

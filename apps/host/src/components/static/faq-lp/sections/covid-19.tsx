@@ -1,4 +1,4 @@
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import { SectionReference } from "../faq-sections.constants";
 import styles from "../faq.module.scss";
 import { useTranslation } from "react-i18next";

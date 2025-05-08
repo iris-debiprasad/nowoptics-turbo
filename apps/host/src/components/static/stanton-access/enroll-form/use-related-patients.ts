@@ -1,9 +1,9 @@
-import { ISD_CODE, SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
+import { ISD_CODE, SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import { useRecaptchaToken } from "@/hooks/useGoogleRecaptcha";
 import { GetListOfRelatedPatients } from "@/service/common.service";
-import { APIRelatedPatient } from "@/types/stantonAccess.types";
-import { unformatPhoneNumber } from "@/utils/common.utils";
+import { APIRelatedPatient } from "@root/host/src/types/stantonAccess.types";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
 import { AlertColor } from "@mui/material";
 import React from "react";
 

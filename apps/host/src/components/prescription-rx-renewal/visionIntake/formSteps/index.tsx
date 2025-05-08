@@ -1,10 +1,10 @@
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import {
   GOOGLE_MAP_RESPONSE_COUNTRY_KEY,
   GOOGLE_MAP_RESPONSE_STATE_KEY,
   GOOGLE_MAP_US_CODE,
   USA_COUNTRY_CODE,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import useDetectScrolledToBottom from "@/hooks/useDetectScrolledToBottom";
 import { useRecaptchaToken } from "@/hooks/useGoogleRecaptcha";
@@ -30,19 +30,19 @@ import {
   useSaveVisionIntakeMutation,
 } from "@/store/reducer/visionIntakeApi.slice";
 import { useAppDispatch, useAppSelector } from "@/store/useStore";
-import { ErrorResponseType } from "@/types/intakeApi.types";
-import { SelectOptions } from "@/types/intakeInput.types";
+import { ErrorResponseType } from "@root/host/src/types/intakeApi.types";
+import { SelectOptions } from "@root/host/src/types/intakeInput.types";
 import {
   GetAllStatesResponse,
   GetVisionIntakeByPatientIdForView,
   GetVisionIntakeByPatientIdResponse,
   SaveVisionIntakeRequest,
   VisionIntakeRemoteTypes,
-} from "@/types/visionIntake.types";
+} from "@root/host/src/types/visionIntake.types";
 import {
   exportComponentToPDF,
   generateVisionIntakeFormPDF,
-} from "@/utils/intake.utils";
+} from "@root/host/src/utils/intake.utils";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";

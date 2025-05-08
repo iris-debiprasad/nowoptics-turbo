@@ -6,7 +6,7 @@ import { formatPhoneNumber } from "./ppc-header";
 import style from "./ppc.module.scss";
 import { useEffect, useState } from "react";
 import PPCStoreHours from "./ppc-store-hours";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const PPCStoreLocator = (props: any) => {
     const [stores, setStores] = useState([]);

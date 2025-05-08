@@ -3,8 +3,8 @@ import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import { ColorVisionTest } from "@/components/static/color-vision-test";
 import { useEffect, useState } from "react";
-import { checkBrand } from "@/utils/common.utils";
-import { BRAND } from "@/constants/common.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const ColorVisionTestPage: NextPage = (): JSX.Element => {
   const { t } = useTranslation();

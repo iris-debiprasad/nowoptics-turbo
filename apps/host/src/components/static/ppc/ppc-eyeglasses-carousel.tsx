@@ -7,7 +7,7 @@ import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { BRAND, SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import ImageSlider from "@/components/image_slider/ImageSlider";
-import { SLIDER_CONSTANT } from "@/constants/ImageSlider.constants";
+import { SLIDER_CONSTANT } from "@root/host/src/constants/ImageSlider.constants";
 import { getAllConfigurations } from "@/service/common.service";
 import { useRouter } from "next/router";
 

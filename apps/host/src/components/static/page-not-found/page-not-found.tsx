@@ -8,8 +8,8 @@ import styles from "./page-not-found.module.scss";
 import { INTEREST_LINKS } from "./interest-links.constants";
 import { InterestLinkItem } from "./interest-link-item";
 import { useGetBrand } from "@/hooks/useGetBrand";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
-import { BRAND } from "@/constants/common.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const BRAND_IMAGE = ImageUrlConstants.PAGE_NOT_FOUND;
 

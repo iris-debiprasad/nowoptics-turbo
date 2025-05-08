@@ -16,3 +16,6 @@ declare module "host/ShowBrandStore";
 declare module "host/StoreSkeleton";
 declare module "host/StoreTiming";
 declare module "host/UserMarketingConsent";
+declare module "@shared/host/BackdropLoader";
+declare module "@shared/host/BackdropLoader";
+declare module "@shared/host/IconSVG";

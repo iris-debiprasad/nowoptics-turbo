@@ -15,7 +15,7 @@ import {
 } from "@root/host/src/store/reducer/intake.slice";
 import { GetPatientIntakeFormStep } from "@root/host/src/store/reducer/intake.selector";
 import { validateIntakeStep } from "@root/host/src/utils/intake.utils";
-import { HIPPA_LABEL } from "@/constants/intake.constants";
+import { HIPPA_LABEL } from "@root/intake/src/constants/intake.constants";
 
 const CustomIconComponent: FC<StepIconProps> = ({ completed }) => {
   const icons = {

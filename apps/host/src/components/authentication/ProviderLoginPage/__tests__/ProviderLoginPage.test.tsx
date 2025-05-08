@@ -1,6 +1,6 @@
 import { fireEvent, render } from "@testing-library/react"
 import ProviderLoginPage from "../ProviderLoginPage"
-import { AuthPropsDTO, SuccessPropsDTO } from "@/types/auth.type"
+import { AuthPropsDTO, SuccessPropsDTO } from "@root/host/src/types/auth.type"
 
 describe("", () => {
 

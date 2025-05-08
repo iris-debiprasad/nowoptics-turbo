@@ -6,8 +6,8 @@ import CustomMap from "@/components/custommap/CustomMap";
 import {
   AppointmentConfirmationDateAndTime,
   AppointmentConfirmationStore,
-} from "@/types/appointmentConfirmation.types";
-import { formatPhoneNumber } from "@/utils/common.utils";
+} from "@root/host/src/types/appointmentConfirmation.types";
+import { formatPhoneNumber } from "@root/host/src/utils/common.utils";
 
 import sharedStyles from "../index.module.scss";
 import styles from "./index.module.scss";

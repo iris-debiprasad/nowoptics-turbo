@@ -7,12 +7,10 @@ import { Box, Button, Grid } from "@mui/material";
 import style from "./BookEyeExamContent.module.scss";
 
 import { IconDTO } from "../../../../../host/src/types/IconSVG.types";
+import IconSVG from "@shared/host/IconSVG";
 
 type Props = {};
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
 
 export default function BookEyeExamContent({}: Props) {
   const router = useRouter();

@@ -1,5 +1,5 @@
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
-import { SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
+import { SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import { GetAllRelationshipsTypes } from "@/service/common.service";
 import { AlertColor } from "@mui/material";

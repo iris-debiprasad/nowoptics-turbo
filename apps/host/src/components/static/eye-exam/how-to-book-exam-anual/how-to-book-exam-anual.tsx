@@ -5,14 +5,14 @@ import Image from "next/image";
 import { EyeExamCta } from "../cta-btn";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
-import { TBrand } from "@/utils/common.utils";
+import { TBrand } from "@root/host/src/utils/common.utils";
 import {
   BRAND,
   SO_DEFAULT_STORE_CONTACT_NUMBER,
-} from "@/constants/common.constants";
-import { MEL_DEFAULT_STORE_CONTACT_NUMBER } from "@/constants/common.constants";
-import { unformatPhoneNumber } from "@/utils/common.utils";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+} from "@root/host/src/constants/common.constants";
+import { MEL_DEFAULT_STORE_CONTACT_NUMBER } from "@root/host/src/constants/common.constants";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 export function HowToBookExamAnual({ brand }: { brand: TBrand }): JSX.Element {
   const { t } = useTranslation();

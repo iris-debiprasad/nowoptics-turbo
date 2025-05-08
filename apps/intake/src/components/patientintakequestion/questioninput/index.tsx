@@ -1,5 +1,5 @@
-import DateInput from "@/components/common/dateinput";
-import Input from "@/components/common/input";
+import DateInput from "@root/intake/src/components/common/dateinput";
+import Input from "@root/intake/src/components/common/input";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   GetPatientIntakeColumnCount,

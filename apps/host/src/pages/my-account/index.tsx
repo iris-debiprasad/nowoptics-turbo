@@ -5,7 +5,7 @@ import {
   USER_TYPE,
   menuItemConstants,
   subMenuItems,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useHasInHousePxsContext } from "@/contexts/ HasInHousePxs/ HasInHousePxsContext";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
 import { MyAccountDTO } from "@root/patient/src/types/MyAccount.types";

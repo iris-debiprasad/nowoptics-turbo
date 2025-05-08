@@ -1,4 +1,4 @@
-import { isNumeric } from "@/constants/common.constants";
+import { isNumeric } from "@root/host/src/constants/common.constants";
 import { useEffect, useState } from "react";
 
 const useZipCodeMask = () => {

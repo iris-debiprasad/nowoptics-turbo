@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import style from "./ppc.module.scss";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import { useTranslation } from "react-i18next";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const PPCPromotionalBanner = (props: any) => {
     const { t } = useTranslation();

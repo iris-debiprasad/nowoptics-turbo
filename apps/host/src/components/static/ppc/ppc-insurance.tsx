@@ -1,9 +1,9 @@
 import { Box, Container, Grid } from "@mui/material";
 import style from "./ppc.module.scss";
 import Image from "next/image";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import { useTranslation } from 'react-i18next';
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const PPC_INSURANCE_IMAGES = ImageUrlConstants.PPC_INSURANCE;
 

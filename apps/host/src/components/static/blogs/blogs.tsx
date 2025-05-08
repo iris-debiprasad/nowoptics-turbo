@@ -4,7 +4,7 @@ import { Grid } from "@mui/material";
 import {
   BLOG_DESKTOP_BANNER,
   BLOG_MOBILE_BANNER,
-} from "@/constants/blogConstants";
+} from "@root/host/src/constants/blogConstants";
 import { ResponsiveBanner } from "@/components/responsive-banner";
 import BlogItem from "./blog-item";
 import { useOnResize } from "@/hooks/use-on-resize";

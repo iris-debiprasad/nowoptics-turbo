@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ForgotPassword from "../ForgotPassword";
-import { ForgotPasswordPropsDTO } from "@/types/auth.type";
+import { ForgotPasswordPropsDTO } from "@root/host/src/types/auth.type";
 import "@testing-library/jest-dom";
 import axios from "axios";
 import { SnackBarProvider } from "@/contexts/Snackbar/SnackbarContext";

@@ -1,6 +1,6 @@
-import { DATE_TIME_ISO } from "@/constants/intake.constants";
-import { useSnackBar } from "@/context/SnackbarContext";
-import { useDebounce } from "@/hooks/useDebounce";
+import { DATE_TIME_ISO } from "@root/intake/src/constants/intake.constants";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
+import { useDebounce } from "@root/intake/src/hooks/useDebounce";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   RESET_AVAILIBILITY_MODAL,
@@ -40,13 +40,10 @@ import Checkbox from "../common/checkbox";
 import DateInput from "../common/dateinput";
 import styles from "./AvailibilityModal.module.scss";
 import Availibilitytable from "./availibilitytable";
+import ConfirmationModal from "@root/host/src/components/confirmationModal/ConfirmationModal";
 import { ConfirmationModalProps } from "@root/host/src/types/confirmationModal.types";
-import dynamic from "next/dynamic";
-import { IntakePermission } from "@/constants/intake-permission.constant";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 import { GetPermissionConfig } from "@root/host/src/config/permissionConfig";
-const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
-  ssr: false,
-}) as FunctionComponent<ConfirmationModalProps>;
 
 const AvailibilityModal = () => {
   const [canSaveAvailibiity, canVerifyAvalibility] = useAppSelector((state) =>

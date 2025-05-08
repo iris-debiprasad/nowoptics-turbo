@@ -1,7 +1,7 @@
 import BookEyeExamSkeleton from "@/components/skeleton_loader/bookEyeExam/BookEyeExamSkeleton";
-import { USER_TYPE } from "@/constants/common.constants";
-import { checkBrand } from "@/utils/common.utils";
-import { getDetails } from "@/utils/getSessionData";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
+import { getDetails } from "@root/host/src/utils/getSessionData";
 import { Session } from "inspector";
 import { useSession } from "next-auth/react";
 import dynamic from "next/dynamic";

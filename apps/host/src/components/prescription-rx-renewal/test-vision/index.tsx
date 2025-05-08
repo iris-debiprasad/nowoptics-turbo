@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
-import { PRESCRIPTION_RX_RENEWAL } from "@/constants/prescriptionRxRenewal.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
+import { PRESCRIPTION_RX_RENEWAL } from "@root/host/src/constants/prescriptionRxRenewal.constants";
 import useResponsive from "@/hooks/useResponsive";
 import style from "./testVision.module.scss";
 

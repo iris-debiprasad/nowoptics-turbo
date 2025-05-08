@@ -6,10 +6,10 @@ import CommonTableSkeleton from "@/components/skeleton_loader/CommonTableSkeleto
 import {
   AddNewRxPrescriptionModalPropsDTO,
   ContactRxPrescriptionDTO,
-} from "@/types/commonRx.types";
-import { USER_TYPE } from "@/constants/common.constants";
+} from "@root/host/src/types/commonRx.types";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { RxRenewalAddNew } from "@/types/rxRenewal.types";
+import { RxRenewalAddNew } from "@root/host/src/types/rxRenewal.types";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 
 const AddNewRxPrescriptionModal = dynamic(

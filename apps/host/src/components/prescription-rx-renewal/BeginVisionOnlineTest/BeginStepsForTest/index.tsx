@@ -12,7 +12,7 @@ import {
 import {
   BEGIN_ONLINE_VISION_TEST_STEPS,
   PRESCRIPTION_RX_RENEWAL,
-} from "@/constants/prescriptionRxRenewal.constants";
+} from "@root/host/src/constants/prescriptionRxRenewal.constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useAxiosLoader from "@/hooks/useAxiosLoader";
@@ -22,20 +22,20 @@ import {
   createAppointmentOnVisionTestClick,
   getMrsToken,
 } from "@/service/rxRenewal.service";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import {
   AppEvents,
   SNACKBAR_COLOR_TYPE,
   SO_DEFAULT_STORE_ID,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import {
   convertJsonPayloadToBase64,
   decodeBase64Payload,
-} from "@/utils/rxRenewal";
+} from "@root/host/src/utils/rxRenewal";
 import { useRecaptchaToken } from "@/hooks/useGoogleRecaptcha";
-import { RX_TYPE_CONSTANT } from "@/constants/RxRenewal.constants";
-import { beginStepsForTestPropsDTO } from "@/types/rxRenewal.types";
+import { RX_TYPE_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
+import { beginStepsForTestPropsDTO } from "@root/host/src/types/rxRenewal.types";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
 
 const BeginStepsForTest = (props: beginStepsForTestPropsDTO) => {

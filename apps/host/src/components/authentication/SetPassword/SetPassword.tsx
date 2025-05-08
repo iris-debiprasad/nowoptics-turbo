@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import style from "./SetPassword.module.scss";
-import { SetPasswordDTO, SetPasswordPropsDTO } from "@/types/auth.type";
+import { SetPasswordDTO, SetPasswordPropsDTO } from "@root/host/src/types/auth.type";
 import { ERROR_MESSAGE } from "../../../constants/auth.constants";
 import {
   AlertColor,
@@ -26,14 +26,14 @@ import {
   SO_DEFAULT_STORE_NUMBER,
   SNACKBAR_COLOR_TYPE,
   ISD_CODE,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 import { useTranslation } from "react-i18next";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { resetPassword } from "@/service/common.service";
-import { Cookies } from "@/utils/cookie.utils";
-import { MODIFY_APPOINTMENT_COOKIE } from "@/constants/mobile-menu.constants";
+import { Cookies } from "@root/host/src/utils/cookie.utils";
+import { MODIFY_APPOINTMENT_COOKIE } from "@root/host/src/constants/mobile-menu.constants";
 
 export default function SetPassword(props: SetPasswordPropsDTO) {
   const [openLoader, setLoaderOpen] = React.useState(false);

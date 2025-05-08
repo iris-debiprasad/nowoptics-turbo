@@ -2,9 +2,9 @@ import Box from '@mui/material/Box'
 import React from 'react'
 import style from "./LoginHeader.module.scss"
 import Image from 'next/image'
-import { ImageUrlConstants } from '@/constants/image.url.constants'
+import { ImageUrlConstants } from '@root/host/src/constants/image.url.constants'
 import Typography from '@mui/material/Typography'
-import { RX_RENEWAL_CONSTANT } from '@/constants/RxRenewal.constants'
+import { RX_RENEWAL_CONSTANT } from '@root/host/src/constants/RxRenewal.constants'
 
 const LoginHeader = () => {
     return (

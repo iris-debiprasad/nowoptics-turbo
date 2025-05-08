@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { generateProductLink, getProductImage, isDefaultImage } from "@/utils/common.utils";
+import { generateProductLink, getProductImage, isDefaultImage } from "@root/host/src/utils/common.utils";
 import style from "./frames.module.scss";
 import Link from "next/link";
 import FrameLoaderImage from "@root/assets/Images/icons/frame-loader.svg";
-import { VariantDTO, VariantProps } from "@/types/order-common.types";
+import { VariantDTO, VariantProps } from "@root/host/src/types/order-common.types";
 import Image from "next/image";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import ProductColor from "@/components/productColor/ProductColor";

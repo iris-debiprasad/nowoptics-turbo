@@ -18,7 +18,7 @@ import earthIcon from "@root/assets/Images/icons/earth.svg";
 
 
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { StoreContentDTO, StoreDetailsDTO } from "@/types/store.type";
+import { StoreContentDTO, StoreDetailsDTO } from "@root/host/src/types/store.type";
 import {
   BRAND,
   BRAND_NAME,
@@ -37,8 +37,8 @@ import { useRouter } from "next/router";
 import { IMask } from "react-imask";
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb";
 import IconSVG from "@/components/iconsvg/IconSVG";
-import { getWeekday } from "@/utils/storeHourFormatter";
-import { timezoneConverter } from "@/utils/timezone.utils";
+import { getWeekday } from "@root/host/src/utils/storeHourFormatter";
+import { timezoneConverter } from "@root/host/src/utils/timezone.utils";
 
 
 type StoreDTO = {

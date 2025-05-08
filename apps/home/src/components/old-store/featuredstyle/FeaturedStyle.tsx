@@ -8,9 +8,7 @@ import style from "./FeaturedStyle.module.scss";
 import { Props as ImageSliderProps } from "@root/host/src/types/ImageSlider.types";
 import { SLIDER_CONSTANT } from "@/constants/imageslider.constants";
 
-const ImageSlider = dynamic(() => import("Host/ImageSlider"), {
-  ssr: false,
-}) as FunctionComponent<ImageSliderProps>;
+import ImageSlider from "@root/host/src/components/image_slider/ImageSlider";
 
 type Props = {};
 

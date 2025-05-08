@@ -60,7 +60,8 @@
     "slick-carousel": "^1.8.1",
     "typescript": "^5.7.3",
     "uuid": "^11.1.0",
-    "webpack": "^5.95.0"
+    "webpack": "^5.95.0",
+    "@shared/host": "workspace:*"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

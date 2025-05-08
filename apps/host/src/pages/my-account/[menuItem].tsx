@@ -6,12 +6,12 @@ import {
   USER_TYPE,
   menuItemConstants,
   subMenuItems,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { MyAccountDTO } from "@root/patient/src/types/MyAccount.types";
 import { useHasInHousePxsContext } from "@/contexts/ HasInHousePxs/ HasInHousePxsContext";
 import { useContext, useEffect, useState } from "react";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
-import { getDetails } from "@/utils/getSessionData";
+import { getDetails } from "@root/host/src/utils/getSessionData";
 const MyAccount = dynamic(() => import("patient/MyAccount"), {
   ssr: false,
   loading: () => <MyAccountLoader />,

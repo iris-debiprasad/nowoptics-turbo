@@ -1,4 +1,4 @@
-import { COMMON_INPUT_MAX_LENGTH } from "@/constants/intake.constants";
+import { COMMON_INPUT_MAX_LENGTH } from "@root/intake/src/constants/intake.constants";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   GetAllQuestionsBySectionCode,
@@ -41,9 +41,10 @@ import QuestionSwitcher from "../questionswitcher";
 import styles from "./QuestionForm.module.scss";
 import dynamic from "next/dynamic";
 import { ConfirmationModalProps } from "@root/host/src/types/confirmationModal.types";
-const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
-  ssr: false,
-}) as FC<ConfirmationModalProps>;
+// const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
+//   ssr: false,
+// }) as FC<ConfirmationModalProps>;
+import ConfirmationModal from "@root/host/src/components/confirmationModal/ConfirmationModal";
 import Collapse from "@mui/material/Collapse";
 import ArrowDownIcon from "@root/assets/Images/icons/arrow-down.svg";
 

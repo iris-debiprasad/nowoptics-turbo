@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import AccesibilityStatement from "@/components/static/accesibilityStatement/AccesibilityStatement";
 import { useGetBrand } from "@/hooks/useGetBrand";
-import { BRAND_NAME } from "@/constants/common.constants";
+import { BRAND_NAME } from "@root/host/src/constants/common.constants";
 
 const AccesibilityPage = () => {
   const brand = useGetBrand();

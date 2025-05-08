@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import style from "./LoginForm.module.scss";
-import { LoginFormDTO, SignInPropsDTO } from "@/types/auth.type";
+import { LoginFormDTO, SignInPropsDTO } from "@root/host/src/types/auth.type";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 import { ERROR_MESSAGE } from "../../../constants/auth.constants";
 import { getSession, signIn } from "next-auth/react";
@@ -18,21 +18,21 @@ import {
   SNACKBAR_COLOR_TYPE,
   AppEvents,
   INPUT_MASK,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { usePathname } from "next/navigation";
-import { getGuestToLocalStorage } from "@/utils/common.utils";
-import { getDetails } from "@/utils/getSessionData";
+import { getGuestToLocalStorage } from "@root/host/src/utils/common.utils";
+import { getDetails } from "@root/host/src/utils/getSessionData";
 import { signin } from "@/service/common.service";
 import { useDispatch } from "react-redux";
-import AddGTMEvent from "@/utils/gtmEvent";
-import { GA_TAG_EVENTS } from "@/constants/google-analytics.constants";
+import AddGTMEvent from "@root/host/src/utils/gtmEvent";
+import { GA_TAG_EVENTS } from "@root/host/src/constants/google-analytics.constants";
 import { useTranslation } from "react-i18next";
 import { useMaskInput } from "@/hooks/useMaskInput";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
-import { Cookies } from "@/utils/cookie.utils";
-import { MODIFY_APPOINTMENT_COOKIE } from "@/constants/mobile-menu.constants";
+import { Cookies } from "@root/host/src/utils/cookie.utils";
+import { MODIFY_APPOINTMENT_COOKIE } from "@root/host/src/constants/mobile-menu.constants";
 
 export default function LoginForm(props: SignInPropsDTO) {
   const env = React.useContext(RuntimeVarContext);

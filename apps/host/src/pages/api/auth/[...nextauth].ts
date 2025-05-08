@@ -1,6 +1,6 @@
 import { HeaderConfig } from "@/config/headerConfig";
-import { ISD_CODE, USER_TYPE } from "@/constants/common.constants";
-import { IrisUrlConstants } from "@/constants/iris.url.constants";
+import { ISD_CODE, USER_TYPE } from "@root/host/src/constants/common.constants";
+import { IrisUrlConstants } from "@root/host/src/constants/iris.url.constants";
 import axios from "axios";
 import NextAuth, { TokenSet, User } from "next-auth";
 import AzureADProvider from "next-auth/providers/azure-ad";

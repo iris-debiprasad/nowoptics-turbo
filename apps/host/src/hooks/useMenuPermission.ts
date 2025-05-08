@@ -1,8 +1,8 @@
 import { GetPermissionConfig } from "@/config/permissionConfig";
-import Permission from "@/constants/menu-permission.constant";
-import { NavDataAssociate } from "@/constants/menu.constants";
+import Permission from "@root/host/src/constants/menu-permission.constant";
+import { NavDataAssociate } from "@root/host/src/constants/menu.constants";
 import { useAppSelector } from "@/store/useStore";
-import { NavItem } from "@/types/Header.types";
+import { NavItem } from "@root/host/src/types/Header.types";
 import { useMemo } from "react";
 
 const useMenuPermission = () => {

@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import { Button, Card, Grid } from "@mui/material";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import { CTLBanner } from "@/components/banner";
-import { checkBrand } from "@/utils/common.utils";
+import { checkBrand } from "@root/host/src/utils/common.utils";
 
 import style from "./Careers.module.scss";
-import { BRAND } from "@/constants/common.constants";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const CAREERS_IMAGES = ImageUrlConstants.CAREERS;
 

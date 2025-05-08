@@ -1,5 +1,5 @@
-import { NavItem } from "@/types/Header.types";
-import { StoreAddressType } from "@/types/SideBar.types";
+import { NavItem } from "@root/host/src/types/Header.types";
+import { StoreAddressType } from "@root/host/src/types/SideBar.types";
 
 const CommonNavData = [
   {

@@ -1,12 +1,12 @@
-import { ISD_CODE } from "@/constants/common.constants";
+import { ISD_CODE } from "@root/host/src/constants/common.constants";
 import {
   APIDependentUser,
   APIRelatedPatient,
   EnrollFormFields,
   PatientRelationPayload,
   RelatedPatientPayload,
-} from "@/types/stantonAccess.types";
-import { unformatPhoneNumber } from "@/utils/common.utils";
+} from "@root/host/src/types/stantonAccess.types";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
 import { PatientRelationShipType } from "@root/home/src/types/bookEyeExamSteps.types";
 import dayjs from "dayjs";
 

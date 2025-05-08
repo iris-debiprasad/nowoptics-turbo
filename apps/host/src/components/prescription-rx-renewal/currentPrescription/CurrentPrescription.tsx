@@ -18,7 +18,7 @@ import {
   RX_RENEWAL_CONSTANT,
   RX_TYPE_CONSTANT,
   currentPrescriptionHeader,
-} from "@/constants/RxRenewal.constants";
+} from "@root/host/src/constants/RxRenewal.constants";
 import { Visibility } from "@mui/icons-material";
 import BeginVisionOnlineTest from "../BeginVisionOnlineTest";
 import ChooseToRenew from "../choseToRenew";
@@ -37,9 +37,9 @@ import {
   CYLINDER_HELP_TEXT_CONFIG_CODE,
   DIAMETER_HELP_TEXT_CONFIG_CODE,
   SPHERE_HELP_TEXT_CONFIG_CODE,
-} from "@/constants/commonRx.constants";
-import { getPatientEyeGlassHeaders } from "@/utils/getRxHeaders";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+} from "@root/host/src/constants/commonRx.constants";
+import { getPatientEyeGlassHeaders } from "@root/host/src/utils/getRxHeaders";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import {
   DATE_FORMAT,
   LOADING,
@@ -47,25 +47,25 @@ import {
   SNACKBAR_COLOR_TYPE,
   SO_DEFAULT_STORE_ID,
   USER_TYPE,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import AddNewRx from "../addNewRx";
-import { CurrentPrescriptionrDTO } from "@/types/rxRenewal.types";
+import { CurrentPrescriptionrDTO } from "@root/host/src/types/rxRenewal.types";
 import {
   AddNewRxPrescriptionModalPropsDTO,
   ContactRxPrescriptionDTO,
   EyeGlassType,
   MyAccountPrescriptionType,
   helpingTextsDTO,
-} from "@/types/commonRx.types";
+} from "@root/host/src/types/commonRx.types";
 import PrimaryModal from "@/components/primary_modal/PrimaryModal";
 import CommonTableSkeleton from "@/components/skeleton_loader/CommonTableSkeleton/CommonTableSkeleton";
 import dynamic from "next/dynamic";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 import { addMyAccountPrescription } from "@/service/common.service";
 import dayjs from "dayjs";
-import { Order } from "@/types/order-common.types";
+import { Order } from "@root/host/src/types/order-common.types";
 import LoadingScreen from "@/components/loadingScreen/LoadingScreen";
-import { tableQueryParams } from "@/utils/getTableQueryParams";
+import { tableQueryParams } from "@root/host/src/utils/getTableQueryParams";
 import {
   getMrsToken,
   getRxRangeBasedOnBrandIdItemNumber,
@@ -77,8 +77,8 @@ import { getPrescriptionByIdCustomer } from "@/service/rxRenewal.service";
 import {
   convertToPrescriptionDataAssociatePatient,
   convertToPrescriptionDataAssociatePatientContact,
-} from "@/utils/commonRxUtils";
-import { AddPrescriptionDTO } from "@/types/MyAccount.types";
+} from "@root/host/src/utils/commonRxUtils";
+import { AddPrescriptionDTO } from "@root/host/src/types/MyAccount.types";
 import { useAppSelector } from "@/store/useStore";
 
 const AddNewRxPrescriptionModal = dynamic(

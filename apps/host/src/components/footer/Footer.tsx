@@ -1,7 +1,7 @@
 import { useMediaQuery } from "@mui/material";
 import FooterDesktop from "./desktop/FooterDesktop";
 import FooterMobile from "./mobile/FooterMobile";
-import { Constants } from "@/constants/Constants";
+import { Constants } from "@root/host/src/constants/Constants";
 
 export default function NewFooter() {
 

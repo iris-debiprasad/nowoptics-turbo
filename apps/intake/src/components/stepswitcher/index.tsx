@@ -15,10 +15,10 @@ import {
 import Patientintakehippa from "../patientintakehippa";
 import Patientintakeinformation from "../patientintakeinformation";
 import PatientIntakeStep from "../patientintakestep";
-const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
-  ssr: false,
-}) as FunctionComponent<ConfirmationModalProps>;
-
+// const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
+//   ssr: false,
+// }) as FunctionComponent<ConfirmationModalProps>;
+import ConfirmationModal from "@root/host/src/components/confirmationModal/ConfirmationModal";
 function sleep(ms : number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }

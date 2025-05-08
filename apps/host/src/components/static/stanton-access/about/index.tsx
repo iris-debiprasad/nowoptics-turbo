@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import CheckIcon from "@mui/icons-material/Check";
 import styles from "./index.module.scss";
 

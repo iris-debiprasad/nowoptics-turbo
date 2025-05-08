@@ -1,9 +1,8 @@
-import { SnackBarProvider } from "@/context/SnackbarContext";
+import { SnackBarProvider } from "@root/intake/src/context/SnackbarContext";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import { GetApiLoadingState } from "@root/host/src/store/reducer/intake.selector";
 import { PatientIntakePageProps } from "@root/host/src/types/Intake.types";
 import { store } from "@root/host/src/store/store";
-import dynamic from "next/dynamic";
 import { FC, FunctionComponent, useEffect } from "react";
 import { Provider } from "react-redux";
 import PatientSetup from "../patientsetup";
@@ -14,9 +13,7 @@ import {
 } from "@root/host/src/store/reducer/intake.slice";
 import { getDetails } from "@root/host/src/utils/getSessionData";
 import { AppEvents } from "@root/host/src/constants/common.constants";
-const BackdropLoader = dynamic(() => import("host/BackdropLoader"), {
-  ssr: false,
-}) as FunctionComponent<{ openLoader: boolean }>;
+import  BackdropLoader  from "@root/host/src/components/backdrop_loader/BackdropLoader";
 
 const PatientIntake: FC<PatientIntakePageProps> = ({ patientId }) => {
   const dispatch = useAppDispatch();

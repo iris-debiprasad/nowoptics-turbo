@@ -1,4 +1,4 @@
-import { FooterLinkDTO } from "@/types/Footer.types";
+import { FooterLinkDTO } from "@root/host/src/types/Footer.types";
 
 export const FooterConstants = {
   CONTACT_US: "CONTACT US",

@@ -10,12 +10,10 @@ import { ACCEPTED_INSURANCE_PLANS } from "@/constants/store.constants";
 
 import { AcceptedInsurancePlansDTO } from "@/types/store.type";
 import { IconDTO } from "../../../../../host/src/types/IconSVG.types";
+import IconSVG from "@shared/host/IconSVG";
 
 type Props = {};
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
 
 function AcceptInsurancePlan({}: Props) {
   return (

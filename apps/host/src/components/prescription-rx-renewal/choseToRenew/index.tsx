@@ -6,7 +6,7 @@ import IconSpectable from "@root/assets/Images/icons/icon-spectable.svg";
 import IconContacts from "@root/assets/Images/icons/icon-contacts.svg";
 import Link from "next/link";
 import IconSVG from "@/components/iconsvg/IconSVG";
-import { ChooseToRenewType } from "@/types/rxRenewal.types";
+import { ChooseToRenewType } from "@root/host/src/types/rxRenewal.types";
 import useResponsive from "@/hooks/useResponsive";
 
 const ChooseToRenew = (props: ChooseToRenewType) => {

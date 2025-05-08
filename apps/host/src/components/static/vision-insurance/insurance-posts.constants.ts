@@ -1,4 +1,4 @@
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import { Props as InsurancePostItemProps } from "./insurance-post-item";
 
 const IMAGES = ImageUrlConstants.VISION_INSURANCE;

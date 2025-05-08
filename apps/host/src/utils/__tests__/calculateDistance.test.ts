@@ -1,5 +1,5 @@
 import { calculateDistance, findClosestCoordinate } from "../calculateDistance";
-import { LocationDTO, StoreAddressType } from "@/types/SideBar.types";
+import { LocationDTO, StoreAddressType } from "@root/host/src/types/SideBar.types";
 
 describe("calculateDistanceUtils", () => {
   describe("calculateDistance", () => {

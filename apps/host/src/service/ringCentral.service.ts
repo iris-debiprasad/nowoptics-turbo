@@ -1,6 +1,6 @@
 import { HeaderConfig } from "@/config/headerConfig";
-import { CommonUrlConstants } from "@/constants/common.url.constants";
-import { RingCentralAcceptPayloadDTO } from "@/types/ringCentral.types";
+import { CommonUrlConstants } from "@root/host/src/constants/common.url.constants";
+import { RingCentralAcceptPayloadDTO } from "@root/host/src/types/ringCentral.types";
 import axios from "axios";
 
 export const acceptRingCentralNotification = (

@@ -1,7 +1,7 @@
-import { USER_TYPE } from "@/constants/common.constants";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
 import { useAppSelector } from "@/store/useStore";
-import { getDetails } from "@/utils/getSessionData";
+import { getDetails } from "@root/host/src/utils/getSessionData";
 import { useContext, useEffect, useRef, useState } from "react";
 
 interface Props {

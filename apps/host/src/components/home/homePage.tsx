@@ -5,7 +5,7 @@ import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import { useEffect, useState } from "react";
 import { GetSOHomePageData, } from "@root/host/src/service/common.service";
-import { HomePageDTO } from "@/types/home.types";
+import { HomePageDTO } from "@root/host/src/types/home.types";
 import { useTranslation } from "react-i18next";
 import InformationSection from "./informationSection/informationSection";
 import LifeStyleSection from "./lifeStyleSection/lifeStyleSection";

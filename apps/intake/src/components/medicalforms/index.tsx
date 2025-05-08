@@ -1,10 +1,11 @@
-import { IntakePermission } from "@/constants/intake-permission.constant";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 import {
+  DATE_TIME_ISO,
   DEFAULT_EMPTY_TABLE_MESSAGE,
   MEDICAL_FORM_ERRORS,
-} from "@/constants/intake.constants";
-import { MEDICAL_FORM_COLUMNS } from "@/constants/intakeTable.constants";
-import { SnackBarProvider, useSnackBar } from "@/context/SnackbarContext";
+} from "@root/intake/src/constants/intake.constants";
+import { MEDICAL_FORM_COLUMNS } from "@root/intake/src/constants/intakeTable.constants";
+import { SnackBarProvider, useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { GetApiLoadingState } from "@root/host/src/store/reducer/intake.selector";
 import {
   RESET_INTAKE_FORM,
@@ -51,9 +52,8 @@ import { store } from "@root/host/src/store/store";
 import type { BreadcrumbProps } from "@root/host/src/types/Breadcrumb.types";
 import { PrimaryModalDTO } from "@root/host/src/types/PrimaryModal.types";
 import type { TableFilterDTO } from "@root/host/src/types/TableFilter.types";
+import TableFilter from "@root/host/src/components/tablefilter/TableFilter";
 import dayjs from "dayjs";
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment, FunctionComponent, useState } from "react";
@@ -67,28 +67,13 @@ import Previewintake from "../previewintake";
 import styles from "./MedicalForms.module.scss";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import { ConfirmationModalProps } from "@root/host/src/types/confirmationModal.types";
-const BackdropLoader = dynamic(() => import("host/BackdropLoader"), {
-  ssr: false,
-}) as FunctionComponent<{ openLoader: boolean }>;
-const Breadcrumb = dynamic(() => import("host/Breadcrumb"), {
-  ssr: false,
-}) as FunctionComponent<BreadcrumbProps>;
-const PrimaryModal = dynamic(() => import("host/PrimaryModal"), {
-  ssr: false,
-}) as FunctionComponent<PrimaryModalDTO>;
-const CustomTablePagination = dynamic(
-  () => import("host/CustomTablePagination"),
-  { ssr: false }
-) as FunctionComponent<CustomTablePaginationDTO>;
-const TableFilter = dynamic(() => import("host/TableFilter"), {
-  ssr: false,
-}) as React.FunctionComponent<TableFilterDTO>;
-const IconSVG = dynamic(() => import("host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
-const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
-  ssr: false,
-}) as FunctionComponent<ConfirmationModalProps>;
+import BackdropLoader  from "@root/host/src/components/backdrop_loader/BackdropLoader";
+import Breadcrumb  from "@root/host/src/components/breadcrumb/Breadcrumb";
+import  PrimaryModal  from "@root/host/src/components/primary_modal/PrimaryModal";
+import  IconSVG  from "@root/host/src/components/iconsvg/IconSVG";
+import ConfirmationModal from "@root/host/src/components/confirmationModal/ConfirmationModal";
+import CustomTablePagination from "@root/host/src/components/customTablePagination/CustomTablePagination";
+import Image from "next/image";
 
 const MedicalForms = () => {
   const [canPublishForm, canCopyForm] = useAppSelector((state) =>

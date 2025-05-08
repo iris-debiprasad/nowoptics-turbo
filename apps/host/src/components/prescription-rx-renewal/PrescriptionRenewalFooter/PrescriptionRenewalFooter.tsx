@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import style from "./PrescriptionRenewalFooter.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { checkBrand } from "@/utils/common.utils";
-import { BRAND_NAME } from "@/constants/common.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
+import { BRAND_NAME } from "@root/host/src/constants/common.constants";
 import { useTranslation } from "react-i18next";
 import FooterLogo from "@root/assets/Images/icons/footerLogo.svg";
 

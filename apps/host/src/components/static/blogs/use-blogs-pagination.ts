@@ -1,4 +1,4 @@
-import { BLOGS, IBlogMeta } from "@/constants/blogConstants";
+import { BLOGS, IBlogMeta } from "@root/host/src/constants/blogConstants";
 import React from "react";
 
 interface PaginationState {

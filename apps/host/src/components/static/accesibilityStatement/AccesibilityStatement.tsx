@@ -1,7 +1,7 @@
-import { BRAND, BRAND_NAME, DEFAULT_STORE_SUPPORT_NUMBER } from "@/constants/common.constants";
+import { BRAND, BRAND_NAME, DEFAULT_STORE_SUPPORT_NUMBER } from "@root/host/src/constants/common.constants";
 import styles from "./AccesibilityStatement.module.scss";
 import useResponsive from "@/hooks/useResponsive";
-import { unformatPhoneNumber } from "@/utils/common.utils";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
 
 const ADAIcon = ({ brand }: { brand: string }) => (
   <svg

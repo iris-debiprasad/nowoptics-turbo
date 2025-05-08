@@ -1,8 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import style from "./NonBusinessHours.module.scss";
 import { useRouter } from "next/router";
-import { RX_RENEWAL_CONSTANT } from "@/constants/RxRenewal.constants";
-import { NonBusinessHrsDTO } from "@/types/nonBusinessHrsModal";
+import { RX_RENEWAL_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
+import { NonBusinessHrsDTO } from "@root/host/src/types/nonBusinessHrsModal";
 const NonBusinessHours = ({timingConfig, messages}:NonBusinessHrsDTO) => {
     const router = useRouter()
     const isCurrentDay = (day: string) => {

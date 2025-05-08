@@ -4,7 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import style from "./Success.module.scss";
-import { SuccessPropsDTO } from "@/types/auth.type";
+import { SuccessPropsDTO } from "@root/host/src/types/auth.type";
 import IconSVG from "../../iconsvg/IconSVG";
 import Link from "next/link";
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import { useSnackBar } from "@/context/SnackbarContext";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
@@ -57,7 +57,7 @@ import Select from "../common/select";
 import OTPModal from "../otpmodal";
 import styles from "./PatientIntakeInformation.module.scss";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
-import { RECAPTCHA_ACTION } from "@/constants/intake.constants";
+import { RECAPTCHA_ACTION } from "@root/intake/src/constants/intake.constants";
 import { Checkbox } from "@mui/material";
 import dynamic from "next/dynamic";
 import { PrimaryModalDTO } from "@root/host/src/types/PrimaryModal.types";
@@ -65,13 +65,16 @@ import i18n from "@root/host/src/language/i18n";
 import ConsentMessage from "@root/host/src/components/UserMarketingConsent/consentMessage";
 import Link from "next/link";
 
-const PrimaryModal = dynamic(() => import("host/PrimaryModal"), {
-  ssr: false,
-}) as FunctionComponent<PrimaryModalDTO>;
+// const PrimaryModal = dynamic(() => import("host/PrimaryModal"), {
+//   ssr: false,
+// }) as FunctionComponent<PrimaryModalDTO>;
+import PrimaryModal from "@root/host/src/components/primary_modal/PrimaryModal";
 
-const ConsentPrivacyPolicy = dynamic(() => import("host/ConsentPrivacyPolicy"), {
-  ssr: false,
-}) as FunctionComponent<any>;
+// const ConsentPrivacyPolicy = dynamic(() => import("host/ConsentPrivacyPolicy"), {
+//   ssr: false,
+// }) as FunctionComponent<any>;
+
+import ConsentPrivacyPolicy from "@root/host/src/components/ConsentPrivacyPolicy/ConsentPrivacyPolicy";
 
 const PatientIntakeInformation: FC<PatientInformationProps> = ({
   activeStep,

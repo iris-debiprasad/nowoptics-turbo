@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import style from "./imageWithButton.module.scss";
-import { PropsDTO } from "@/types/ImageWithButton.type";
+import { PropsDTO } from "@root/host/src/types/ImageWithButton.type";
 import { useRouter } from "next/router";
 
 const ImageWithButton = (props: PropsDTO) => {

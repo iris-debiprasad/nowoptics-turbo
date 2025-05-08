@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import Image from "next/image";
 import useResponsive from "@/hooks/useResponsive";
 import style from "./hero-banner.module.scss";
 import { useRouter } from "next/router";
-import { isActionAllowed } from "@/utils/rxRenewal";
+import { isActionAllowed } from "@root/host/src/utils/rxRenewal";
 import { useState } from "react";
 import NonBusinessHrsInfo from "@/components/nonBusinessHrsInfoModel/NonBusinessHrsInfo";
-import { RX_RENEWAL_CONSTANT } from "@/constants/RxRenewal.constants";
+import { RX_RENEWAL_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
 
 const HeroBannerRxRenewal = ({
   isBusinessHours,

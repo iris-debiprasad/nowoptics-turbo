@@ -1,5 +1,5 @@
 // IR-2328: Added mobile menu
-import { NavItem } from "@/types/Header.types";
+import { NavItem } from "@root/host/src/types/Header.types";
 import { NAV_ITEMS } from "./header.constants";
 
 export const MOBILE_NAV_ITEMS: NavItem[] = [

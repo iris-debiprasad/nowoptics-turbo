@@ -1,6 +1,6 @@
 import { Box, Button } from "@mui/material";
 import style from "./ppc.module.scss";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const PPC_TOP_HEADER_IMAGES = ImageUrlConstants.PPC_TOP_HEADER;
 

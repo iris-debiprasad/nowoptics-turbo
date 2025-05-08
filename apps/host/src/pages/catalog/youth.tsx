@@ -3,12 +3,12 @@ import React from "react";
 import Head from "next/head";
 import CatalogSkeleton from "@/components/skeleton_loader/catalog/CatalogSkeleton";
 import { commonUtilForGetAllFacets } from "@/service/common.service";
-import { facetKeyMappingWithPathName } from "@/constants/catalog.constants";
+import { facetKeyMappingWithPathName } from "@root/host/src/constants/catalog.constants";
 import { getToken } from "next-auth/jwt";
 import { useOnResize } from "@/hooks/use-on-resize";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
-import { getSmallScreenBreakpoint } from "@/utils/common.utils";
-import { BRAND_NAME, USER_TYPE } from "@/constants/common.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
+import { getSmallScreenBreakpoint } from "@root/host/src/utils/common.utils";
+import { BRAND_NAME, USER_TYPE } from "@root/host/src/constants/common.constants";
 import { useGetBrand } from "@/hooks/useGetBrand";
 import { useTranslation } from "react-i18next";
 

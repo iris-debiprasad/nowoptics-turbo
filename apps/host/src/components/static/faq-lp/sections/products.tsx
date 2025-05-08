@@ -3,7 +3,7 @@ import { SectionReference } from "../faq-sections.constants";
 import styles from "../faq.module.scss";
 import { LinkVideoModal } from "../link-video-modal";
 import { useTranslation } from "react-i18next";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 export const ProductsSection = (props: any): JSX.Element => {
   const { t } = useTranslation();

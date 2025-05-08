@@ -36,7 +36,7 @@ jest.mock("@/service/storeLocator.service", () => ({
     },
   }),
 }));
-jest.mock("@/utils/calculateDistance", () => ({
+jest.mock("@root/host/src/utils/calculateDistance", () => ({
   calculateDistance: jest.fn().mockReturnValue(5),
 }));
 

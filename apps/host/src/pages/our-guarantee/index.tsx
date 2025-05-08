@@ -1,5 +1,5 @@
 import OurGuarantee from "@/components/static/our-guarantee/OurGuarantee";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";

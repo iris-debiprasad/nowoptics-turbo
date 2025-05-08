@@ -4,7 +4,7 @@ import {
   GetPublicStoreLocatorGrid,
   getStoreWorkingHour,
 } from "../storeLocator.service";
-import { IrisUrlConstants } from "@/constants/iris.url.constants";
+import { IrisUrlConstants } from "@root/host/src/constants/iris.url.constants";
 import { HeaderConfig } from "@/config/headerConfig";
 
 jest.mock("axios");

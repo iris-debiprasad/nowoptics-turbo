@@ -1,5 +1,5 @@
-import { IntakePermission } from "@/constants/intake-permission.constant";
-import { useSnackBar } from "@/context/SnackbarContext";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   CheckValidPatientIntakeStep,
@@ -39,8 +39,8 @@ import { FC, memo, useMemo, useRef } from "react";
 import Patientintakequestion from "../patientintakequestion";
 import styles from "./PatientIntakeStep.module.scss";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
-import { RECAPTCHA_ACTION } from "@/constants/intake.constants";
-import { useAppointmentConfirmationIntegration } from "@/hooks/useAppointmentConfirmationIntegration";
+import { RECAPTCHA_ACTION } from "@root/intake/src/constants/intake.constants";
+import { useAppointmentConfirmationIntegration } from "@root/intake/src/hooks/useAppointmentConfirmationIntegration";
 
 const PatientIntakeStep: FC<PatientIntakeStepProps> = ({ activeStep }) => {
   const { onBookEyeExamFlowIntegration } = useAppointmentConfirmationIntegration();

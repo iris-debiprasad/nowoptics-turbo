@@ -12,7 +12,7 @@ import {
   ICON_IMAGE_CONSTANT,
   SLIDER_CONSTANT,
   INLINE_STYLE,
-} from "@/constants/ImageSlider.constants";
+} from "@root/host/src/constants/ImageSlider.constants";
 import IconSVG from "../iconsvg/IconSVG";
 import {
   Props,
@@ -24,17 +24,17 @@ import {
   CartSliderData,
   Product,
   Section,
-} from "@/types/ImageSlider.types";
+} from "@root/host/src/types/ImageSlider.types";
 import { Constants } from "../../constants/Constants";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Variant from "../variant/Variant";
-import { getVariantColor } from "@/utils/common.utils";
+import { getVariantColor } from "@root/host/src/utils/common.utils";
 import ContactLens from "../contactLens/ContactLens";
 import { useTranslation } from "react-i18next";
-import { ProductDTO } from "@/types/order-common.types";
+import { ProductDTO } from "@root/host/src/types/order-common.types";
 
 const ImageSlider = ({
   slideType,

@@ -1,4 +1,4 @@
-import Select from "@/components/common/select";
+import Select from "@root/intake/src/components/common/select";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   GetPatientIntakeChildQuestions,

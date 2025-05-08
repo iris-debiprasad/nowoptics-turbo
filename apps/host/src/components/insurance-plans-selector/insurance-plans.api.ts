@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { GET_STORES_ENDPOINT } from "./insurance-plans.constants";
 import { HeaderConfig } from "@/config/headerConfig";
-import { ApiResponse } from "@/types/api.types";
+import { ApiResponse } from "@root/host/src/types/api.types";
 import {
     AxiosGetStoresParams,
     AxiosGetStoresResponse,

@@ -6,10 +6,10 @@ import PrescriptionRenewalDescription from "@/components/prescription-rx-renewal
 import FourStepsBanner from "@/components/prescription-rx-renewal/four-steps-banner/FourStepsBanner";
 import GetStartedSection from "@/components/prescription-rx-renewal/getStartedSection/GetStartedSection";
 import { getRxRenewalTimingConfig } from "@/service/rxRenewal.service";
-import { isActionAllowed } from "@/utils/rxRenewal";
+import { isActionAllowed } from "@root/host/src/utils/rxRenewal";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
-import { SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
+import { SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import { AlertColor } from "@mui/material";
 import { useRouter } from "next/router";
 

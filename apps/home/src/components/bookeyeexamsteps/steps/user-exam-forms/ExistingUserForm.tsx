@@ -36,7 +36,7 @@ import { GetExistingAppointmentDetails } from "@root/home/src/service/storeLocat
 import { useSnackBar } from "@root/home/src/contexts/Snackbar/SnackbarContext";
 import { useMaskInput } from "@root/host/src/hooks/useMaskInput";
 import i18n from "@root/host/src/language/i18n";
-import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
+import IconSVG from "@shared/host/IconSVG";
 import UserMarketingConsent from "@root/host/src/components/UserMarketingConsent/index";
 
 

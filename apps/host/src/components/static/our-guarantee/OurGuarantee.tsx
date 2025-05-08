@@ -5,7 +5,7 @@ import IconSVG from "@/components/iconsvg/IconSVG";
 import { useTranslation } from "react-i18next";
 import { CTLBanner } from "@/components/banner";
 import { GuaranteePageProps } from "@/pages/our-guarantee";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const BANNERS = ImageUrlConstants.OUR_GUARANTEE;
 

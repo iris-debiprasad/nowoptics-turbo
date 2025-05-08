@@ -1,5 +1,5 @@
 import { UseTranslationResponse } from "react-i18next";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const STEP_IMAGES = ImageUrlConstants.PROCESS;
 

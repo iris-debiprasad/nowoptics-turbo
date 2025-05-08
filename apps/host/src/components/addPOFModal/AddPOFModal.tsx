@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import {
   ProductSelectionStep2TableDataResultHeader,
   addPofConstants,
-} from "@/constants/exchangeMenu.constants";
+} from "@root/host/src/constants/exchangeMenu.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import { getPatientOrderFrameApi } from "@/service/exchangeMenu.service";
 import {
@@ -14,9 +14,9 @@ import {
   SelectOption,
   addPOFFormDTO,
   remakeExchangeDTO,
-} from "@/types/exchangeMenu.types";
-import { PaperCaptureUploadModalProps } from "@/types/paperCapture.types";
-import { warrantyOrderDTO } from "@/types/warrantyOrder.types";
+} from "@root/host/src/types/exchangeMenu.types";
+import { PaperCaptureUploadModalProps } from "@root/host/src/types/paperCapture.types";
+import { warrantyOrderDTO } from "@root/host/src/types/warrantyOrder.types";
 import {
   AlertColor,
   Box,

@@ -4,7 +4,7 @@ import React from "react";
 import { Trans } from "react-i18next";
 import IconSVG from "../iconsvg/IconSVG";
 import style from "./ImageWithButton.module.scss";
-import { PropsDTO } from "@/types/ImageWithButton.type";
+import { PropsDTO } from "@root/host/src/types/ImageWithButton.type";
 import Link from "next/link";
 
 const ImageWithButton = (props: PropsDTO) => {

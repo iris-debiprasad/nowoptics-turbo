@@ -1,7 +1,7 @@
 import React from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import { NavItem } from "@/types/Header.types";
+import { NavItem } from "@root/host/src/types/Header.types";
 import sharedStyles from "../index.module.scss";
 import styles from "./index.module.scss";
 import type { Props as NavbarProps } from ".";

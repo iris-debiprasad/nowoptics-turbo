@@ -1,5 +1,5 @@
 import styles from "./CopyRightFooter.module.scss";
-import { BRAND_NAME } from "@/constants/common.constants";
+import { BRAND_NAME } from "@root/host/src/constants/common.constants";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";

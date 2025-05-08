@@ -3,9 +3,9 @@ import React from "react";
 import Head from "next/head";
 import CatalogSkeleton from "@/components/skeleton_loader/catalog/CatalogSkeleton";
 import { commonUtilForGetAllFacets } from "@/service/common.service";
-import { facetKeyMappingWithPathName } from "@/constants/catalog.constants";
+import { facetKeyMappingWithPathName } from "@root/host/src/constants/catalog.constants";
 import { getToken } from "next-auth/jwt";
-import { BRAND_NAME, USER_TYPE } from "@/constants/common.constants";
+import { BRAND_NAME, USER_TYPE } from "@root/host/src/constants/common.constants";
 import { useGetBrand } from "@/hooks/useGetBrand";
 
 const ProductComponent = dynamic<{ facets: any }>(

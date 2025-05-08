@@ -1,7 +1,7 @@
 import { HeaderConfig } from "@/config/headerConfig";
-import { BRAND, SO_DEFAULT_STORE_NUMBER } from "@/constants/common.constants";
-import { CommonUrlConstants } from "@/constants/common.url.constants";
-import { checkBrand } from "@/utils/common.utils";
+import { BRAND, SO_DEFAULT_STORE_NUMBER } from "@root/host/src/constants/common.constants";
+import { CommonUrlConstants } from "@root/host/src/constants/common.url.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
 import axios from "axios";
 
 export const addToCartGuest = (

@@ -1,8 +1,8 @@
 import { Box, Tooltip } from "@mui/material";
 import React from "react";
 import style from "./ProductColor.module.scss";
-import ProductColorProp from "@/types/productColor.types";
-import { ProductColorCode } from "@/constants/product-colors.constants";
+import ProductColorProp from "@root/host/src/types/productColor.types";
+import { ProductColorCode } from "@root/host/src/constants/product-colors.constants";
 
 function ProductColor(props: ProductColorProp) {
   const productColorCodes = ProductColorCode as any;

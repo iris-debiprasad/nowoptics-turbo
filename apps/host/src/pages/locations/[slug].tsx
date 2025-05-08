@@ -1,11 +1,11 @@
 import StoreDetailsSkeleton from "@/components/skeleton_loader/storeDetailsSkeleton/StoreDetailsSkeleton";
-import { BRAND, DATE_FORMAT } from "@/constants/common.constants";
-import { LocationSEO } from "@/constants/seo.constant";
+import { BRAND, DATE_FORMAT } from "@root/host/src/constants/common.constants";
+import { LocationSEO } from "@root/host/src/constants/seo.constant";
 import { GetUserStoreContent } from "@/service/common.service";
 import { GetLocationSEO } from "@/service/seo.service";
 import { GetUserStoreDetailsByName } from "@/service/storeLocator.service";
-import { StoreSEOData } from "@/types/seo.types";
-import { StoreContentDTO, StoreDetailsDTO, StoreDetailsPageDTO } from "@/types/store.type";
+import { StoreSEOData } from "@root/host/src/types/seo.types";
+import { StoreContentDTO, StoreDetailsDTO, StoreDetailsPageDTO } from "@root/host/src/types/store.type";
 import dayjs from "dayjs";
 import { GetServerSideProps } from "next";
 import dynamic from "next/dynamic";

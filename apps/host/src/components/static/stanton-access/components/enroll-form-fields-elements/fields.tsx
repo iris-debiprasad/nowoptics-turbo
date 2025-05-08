@@ -4,7 +4,7 @@ import { Dayjs } from "dayjs";
 import { FieldValues, Path, PathValue, UseFormReturn } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { RelationshipSelect } from "../relationship-select";
-import { isEmailValidRegex } from "@/constants/common.constants";
+import { isEmailValidRegex } from "@root/host/src/constants/common.constants";
 import { GenderSelect } from "../gender-select";
 
 type EnrollFormFieldKey =

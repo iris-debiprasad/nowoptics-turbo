@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import style from "./Inconvenience.module.scss";
 import { useRouter } from "next/router";
-import { RX_RENEWAL_CONSTANT } from "@/constants/RxRenewal.constants";
+import { RX_RENEWAL_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
 const Inconvenience = () => {
   const router = useRouter();
   return (

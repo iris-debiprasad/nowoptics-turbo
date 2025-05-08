@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionReference } from "./faq-sections.constants";
-import { throttle } from "@/utils/performance.utils";
+import { throttle } from "@root/host/src/utils/performance.utils";
 
 const SCROLL_THROTTLE_DELAY = 200;
 const SCROLL_SPY_OFFSET = 170;

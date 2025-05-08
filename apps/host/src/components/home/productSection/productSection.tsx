@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Box, ToggleButtonGroup, ToggleButton, styled, toggleButtonGroupClasses, Grid, Button } from "@mui/material";
 import style from "./productSection.module.scss";
-import { ProductDTO } from "@/types/order-common.types";
-import { getVariantColor } from "@/utils/common.utils";
+import { ProductDTO } from "@root/host/src/types/order-common.types";
+import { getVariantColor } from "@root/host/src/utils/common.utils";
 import Frames from "./frames/frames";
 import Contacts from "./contacts/contacts";
 import { useRouter } from "next/router";

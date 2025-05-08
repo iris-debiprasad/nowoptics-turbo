@@ -5,7 +5,7 @@ import {
   BRAND,
   MEL_DEFAULT_STORE_CONTACT_NUMBER,
   SO_DEFAULT_STORE_CONTACT_NUMBER,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { TelephoneNumber } from "@/components/telephone-number";
 
 import { useGetBrand } from "@/hooks/useGetBrand";

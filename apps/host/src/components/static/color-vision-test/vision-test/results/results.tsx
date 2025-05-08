@@ -2,7 +2,7 @@ import { TEST_RESULTS } from "./score-messages.constants";
 import styles from "./results.module.scss";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import { useGetBrand } from "@/hooks/useGetBrand";
 
 interface Props {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { HeaderConfig } from "@root/host/src/config/headerConfig";
-import { TableQueryParamsDTO } from "@/types/TableFilter.types";
-import { ExchangeMenuUrlConstants } from "@/constants/exchangeMenu.url.constants";
+import { TableQueryParamsDTO } from "@root/host/src/types/TableFilter.types";
+import { ExchangeMenuUrlConstants } from "@root/host/src/constants/exchangeMenu.url.constants";
 
 export const getPatientOrderFrameApi = (
   id: string,

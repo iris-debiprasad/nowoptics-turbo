@@ -1,6 +1,6 @@
 import { FieldValues, Path, PathValue, UseFormReturn } from "react-hook-form";
 import { Input, type Props as InputProps } from "./input";
-import { ONLY_NUMBERS_REGEX, phoneRegex } from "@/constants/common.constants";
+import { ONLY_NUMBERS_REGEX, phoneRegex } from "@root/host/src/constants/common.constants";
 import { useTranslation } from "react-i18next";
 
 interface Props<T extends FieldValues> extends InputProps<T> {

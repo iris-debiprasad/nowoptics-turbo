@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SectionReference } from "../faq-sections.constants";
 import styles from "../faq.module.scss";
 import { TelephoneNumber } from "@/components/telephone-number";
-import { BRAND, MEL_DEFAULT_STORE_CONTACT_NUMBER, SO_DEFAULT_STORE_CONTACT_NUMBER } from "@/constants/common.constants";
+import { BRAND, MEL_DEFAULT_STORE_CONTACT_NUMBER, SO_DEFAULT_STORE_CONTACT_NUMBER } from "@root/host/src/constants/common.constants";
 import { useTranslation } from "react-i18next";
 
 export const AppointmentSection = (props: any): JSX.Element => {

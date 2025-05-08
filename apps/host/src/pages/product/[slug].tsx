@@ -4,19 +4,19 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { GetProductSEO } from "@/service/seo.service";
-import { ProductSEOData } from "@/types/seo.types";
+import { ProductSEOData } from "@root/host/src/types/seo.types";
 import ProductDetailsSkeleton from "@/components/skeleton_loader/productDetails/ProductDetailsSkeleton";
 import { getProductDetail } from "@/service/product-searc.service";
 import {
   generateProductDescription,
   generateProductTitle,
   getProductSEOStructuredData,
-} from "@/utils/seo.util";
+} from "@root/host/src/utils/seo.util";
 import {
   SO_DEFAULT_STORE_NUMBER,
   USER_TYPE,
-} from "@/constants/common.constants";
-import { ProductViewProps } from "@/types/order-common.types";
+} from "@root/host/src/constants/common.constants";
+import { ProductViewProps } from "@root/host/src/types/order-common.types";
 import { getToken } from "next-auth/jwt";
 import PageNotFound404 from "../404";
 

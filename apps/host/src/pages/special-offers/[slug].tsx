@@ -1,8 +1,8 @@
-import { BRAND, BRAND_NAME } from "@/constants/common.constants";
+import { BRAND, BRAND_NAME } from "@root/host/src/constants/common.constants";
 import {
   ISpecial_Offer_Page,
   SO_SPECIAL_OFFERS_PAGES,
-} from "@/constants/specialOffersConstants";
+} from "@root/host/src/constants/specialOffersConstants";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";

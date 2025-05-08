@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 import styles from "./index.module.scss";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const IMAGES = ImageUrlConstants.STANTON_ACCESS.SIXTY_OFF_PROMO;
 

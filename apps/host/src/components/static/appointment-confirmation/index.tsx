@@ -3,8 +3,8 @@ import Cookies from "js-cookie";
 import {
   APPOINTMENT_CONFIRMATION_COOKIE_DATA,
   APPOINTMENT_CONFIRMATION_COOKIE_FLOW,
-} from "@/constants/book-eye-exam-flow.constants";
-import { AppointmentConfirmationData } from "@/types/appointmentConfirmation.types";
+} from "@root/host/src/constants/book-eye-exam-flow.constants";
+import { AppointmentConfirmationData } from "@root/host/src/types/appointmentConfirmation.types";
 import { AppointmentDetails } from "./appointment-details";
 import { BookingConfirmation } from "./booking-confirmation";
 import { GetReady } from "./get-ready";

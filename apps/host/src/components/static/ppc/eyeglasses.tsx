@@ -14,11 +14,11 @@ import PPCReview from "./ppc-review";
 import { GetMappedLocationCoordinates } from "@/service/ppc.service";
 import MELFooterPPC from "./MEL-ppc-footer";
 import MELHeaderPPC from "./MEL-ppc-header";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import MELPPCTopHeader from "./MEL-ppc-top-header";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
-import { COLOR_ROOT_NAMES, COLOR_KEYS, MEL_COLOR, SO_COLOR } from "@/constants/color.constants";
-import { checkBrand } from "@/utils/common.utils";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
+import { COLOR_ROOT_NAMES, COLOR_KEYS, MEL_COLOR, SO_COLOR } from "@root/host/src/constants/color.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
 
 const EyeglassesPPC = (props: any) => {
     const [modalOpen, setModalOpen] = useState(false);

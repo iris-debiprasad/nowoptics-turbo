@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import styles from "./FooterDesktop.module.scss";
-import { FOOTER_LINKS } from "@/constants/FooterConstants";
+import { FOOTER_LINKS } from "@root/host/src/constants/FooterConstants";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import SocialMediaFooter from "../social-media/SocialMediaFooter";

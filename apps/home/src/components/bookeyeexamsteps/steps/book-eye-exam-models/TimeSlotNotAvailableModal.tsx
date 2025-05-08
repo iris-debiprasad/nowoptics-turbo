@@ -11,7 +11,7 @@ import style from "../Steps.module.scss";
 // const IconSVG = dynamic(() => import("Host/IconSVG"), {
 //   ssr: false,
 // }) as FunctionComponent<IconDTO>;
-import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
+import IconSVG from "@shared/host/IconSVG";
 
 
 function TimeSlotNotAvailableModal(props: TimeSlotNotAvailableModalProps) {

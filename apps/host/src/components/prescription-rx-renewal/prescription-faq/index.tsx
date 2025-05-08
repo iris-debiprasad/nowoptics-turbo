@@ -1,4 +1,4 @@
-import { PRESCRIPTION_RX_RENEWAL_FAQ } from "@/constants/prescriptionRxRenewal.constants";
+import { PRESCRIPTION_RX_RENEWAL_FAQ } from "@root/host/src/constants/prescriptionRxRenewal.constants";
 import styles from "./prescriptionFAQ.module.scss";
 import { Typography } from "@mui/material";
 import FAQSection from "./prescription-faq-section/FAQSection";

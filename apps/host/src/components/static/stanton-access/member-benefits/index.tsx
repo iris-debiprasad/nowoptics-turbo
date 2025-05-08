@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import CheckIcon from "@mui/icons-material/Check";
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 // This value has to be coordinated with the translation one so that benefits
 // are displayed correctly, if in the translation file appear 8 benefits, this

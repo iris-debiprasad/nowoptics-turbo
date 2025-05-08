@@ -2,8 +2,8 @@ import * as React from "react";
 import { useRouter } from "next/router";
 import { Breadcrumbs, Typography } from "@mui/material";
 import style from "./Breadcrumb.module.scss";
-import { BreadcrumbProps } from "@/types/Breadcrumb.types";
 import Link from "next/link";
+import { BreadcrumbProps } from "@root/host/src/types/Breadcrumb.types";
 
 export default function Breadcrumb({ links }: BreadcrumbProps) {
   const router = useRouter();

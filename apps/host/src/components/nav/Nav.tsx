@@ -24,9 +24,9 @@ import {
   NavDataPatient,
   NavDataAssociate,
   SettingsData,
-} from "@/constants/menu.constants";
+} from "@root/host/src/constants/menu.constants";
 import GetNavBar from "./GetNavBar";
-import { NavItem, NavStoreDataDTO, EventJourney } from "@/types/Header.types";
+import { NavItem, NavStoreDataDTO, EventJourney } from "@root/host/src/types/Header.types";
 import SideBar from "../sidebar/SideBar";
 import { useSnackBar } from "../../contexts/Snackbar/SnackbarContext";
 import style from "./Nav.module.scss";
@@ -34,7 +34,7 @@ import CartIcon from "../../../../assets/Images/icons/CartNewIcon.svg";
 import LocationIcon from "../../../../assets/Images/icons/LocationIcon.svg";
 import FavoriteIcon from "../../../../assets/Images/icons/FavoriteIcon.svg";
 import settingsIcon from "../../../../assets/Images/icons/settingsIcon.svg";
-import { STORE_ERROR_MESSAGE } from "@/constants/store.constants";
+import { STORE_ERROR_MESSAGE } from "@root/host/src/constants/store.constants";
 import {
   AppEvents,
   BRAND,
@@ -48,7 +48,7 @@ import {
   USER_TYPE,
   SO_DEFAULT_STORE_ID,
   GUIDED_SALES_MESSAGES,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { GetAuthenticatedUserPermission } from "@/service/userPermission.service";
 import { useDispatch } from "react-redux";
 import {
@@ -61,16 +61,16 @@ import {
   getStoreWorkingHour,
   GetUserStoreDetails,
 } from "@/service/storeLocator.service";
-import { LocationDTO } from "@/types/SideBar.types";
+import { LocationDTO } from "@root/host/src/types/SideBar.types";
 import SettingsDrawer from "../settings/Settings";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import BackdropLoader from "../backdrop_loader/BackdropLoader";
 import dayjs from "dayjs";
-import { NavProps, StoreDetailsDTO } from "@/types/nav.types";
+import { NavProps, StoreDetailsDTO } from "@root/host/src/types/nav.types";
 import EyeExamFlow from "../eyeExamFlow/EyeExamFlow";
-import { getLatLong } from "@/utils/getLocation.utils";
-import { clearAllCookie } from "@/utils/cookie.utils";
+import { getLatLong } from "@root/host/src/utils/getLocation.utils";
+import { clearAllCookie } from "@root/host/src/utils/cookie.utils";
 import useNonInitialEffect from "@/hooks/useNonInitialEffect";
 import useMenuPermission from "@/hooks/useMenuPermission";
 import {
@@ -91,11 +91,11 @@ import {
   getSelectedPatientFromLocalStorage,
   getStoreIdForDefaultStore,
   unformatPhoneNumber,
-} from "@/utils/common.utils";
+} from "@root/host/src/utils/common.utils";
 import { getCartOrderCountForPatientAndGuest } from "@/service/common.service";
 import { updateCartId } from "@/store/reducer/cartIdReducer";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
-import { timezoneConverter } from "@/utils/timezone.utils";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
+import { timezoneConverter } from "@root/host/src/utils/timezone.utils";
 import useAppLogo from "@/hooks/useAppLogo";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
@@ -105,13 +105,13 @@ import {
   getGuestCartData,
   getPatientCartData,
   onSubmitScarabEvent,
-} from "@/utils/scarabController.utils";
+} from "@root/host/src/utils/scarabController.utils";
 import ConfirmationModal from "../confirmationModal/ConfirmationModal";
-import { getWeekday } from "@/utils/storeHourFormatter";
+import { getWeekday } from "@root/host/src/utils/storeHourFormatter";
 import { updateLangCode } from "@/store/reducer/languageCodeReducer";
 import Cookies from "js-cookie";
 import { GetPermissionConfig } from "@/config/permissionConfig";
-import CommonPermission from "@/constants/common-permission.constants";
+import CommonPermission from "@root/host/src/constants/common-permission.constants";
 import { MobileMenu } from "./mobile-menu";
 import {
   selectIsMobileMenuDisplayed,

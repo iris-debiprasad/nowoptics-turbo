@@ -18,7 +18,7 @@ import style from "./EyeExamHeader.module.scss";
 import { BreadcrumbProps } from "@root/host/src/types/Breadcrumb.types";
 
 import i18n from "@root/host/src/language/i18n";
-import Breadcrumb from "@root/host/src/components/breadcrumb/Breadcrumb";
+import Breadcrumb from "@shared/host/Breadcrumb";
 
 
 export const links = [

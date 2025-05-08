@@ -6,8 +6,8 @@ import { Hero } from "@/components/static/same-day-glasses/hero";
 import { OurLab } from "@/components/static/same-day-glasses/our-lab";
 import { GlassesSteps } from "@/components/static/same-day-glasses/glasses-steps";
 import { ReviewsSlider } from "@/components/static/same-day-glasses/reviews-slider";
-import { checkBrandBaseURL } from "@/utils/common.utils";
-import { BRAND } from "@/constants/common.constants";
+import { checkBrandBaseURL } from "@root/host/src/utils/common.utils";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const SameDayGlassesPage: NextPage = (): JSX.Element => {
   const { t } = useTranslation();

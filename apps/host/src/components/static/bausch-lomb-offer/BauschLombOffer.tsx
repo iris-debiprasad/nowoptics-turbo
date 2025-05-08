@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import style from "./BauschLombOffer.module.scss";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import { ResponsiveBanner } from "@/components/responsive-banner";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import Image from "next/image";
 
 const SPECIAL_OFFERS_IMAGES = ImageUrlConstants.SPECIAL_OFFERS;

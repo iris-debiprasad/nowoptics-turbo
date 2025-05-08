@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import styles from "./eye-exam-lp.module.scss";
 import Link from "next/link";
-import { SO_DEFAULT_STORE_SUPPORT_NUMBER } from "@/constants/common.constants";
-import { unformatPhoneNumber } from "@/utils/common.utils";
+import { SO_DEFAULT_STORE_SUPPORT_NUMBER } from "@root/host/src/constants/common.constants";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
 import { TelephoneNumber } from "@/components/telephone-number";
 import { useTranslation } from "react-i18next";
 

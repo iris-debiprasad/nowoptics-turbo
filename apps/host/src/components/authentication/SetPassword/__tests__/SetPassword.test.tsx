@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { SetPasswordPropsDTO } from "@/types/auth.type";
+import { SetPasswordPropsDTO } from "@root/host/src/types/auth.type";
 import "@testing-library/jest-dom";
 import axios from "axios";
 import SetPassword from "../SetPassword";

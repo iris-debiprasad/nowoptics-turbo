@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TableCell, TableRow } from "@mui/material";
-import { LoadingScreenPropsDTO } from "@/types/loadingScreen.types";
+import { LoadingScreenPropsDTO } from "@root/host/src/types/loadingScreen.types";
 
 import style from "./LoadingScreen.module.scss";
 

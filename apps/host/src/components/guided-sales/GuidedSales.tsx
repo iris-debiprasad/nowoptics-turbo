@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import PersonImage from "@root/assets/Images/icons/guided-person.svg";
-import { USER_TYPE } from "@/constants/common.constants";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import style from "./GuidedSales.module.scss";
 import BackdropLoader from "../backdrop_loader/BackdropLoader";
 import { useAppDispatch } from "@/store/useStore";

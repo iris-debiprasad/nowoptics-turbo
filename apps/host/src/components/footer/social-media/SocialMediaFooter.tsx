@@ -4,7 +4,7 @@ import Image from "next/image";
 import facebookIcon from "@root/assets/Images/icons/footer_facebook.svg";
 import instagramIcon from "@root/assets/Images/icons/footer_instagram.svg";
 import youtubeIcon from "@root/assets/Images/icons/footer_youtube.svg";
-import { SOCIAL_MEDIA_LINKS } from "@/constants/common.constants";
+import { SOCIAL_MEDIA_LINKS } from "@root/host/src/constants/common.constants";
 
 interface ISocialMediaFooter {
   iconSize?: number;

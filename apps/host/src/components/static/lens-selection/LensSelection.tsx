@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import { CTLBanner } from "@/components/banner";
-import { BRAND } from "@/constants/common.constants";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const LENS_SELECTION_IMAGES = ImageUrlConstants.LENS_SELECTION;
 

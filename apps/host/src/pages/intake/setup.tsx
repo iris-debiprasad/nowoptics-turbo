@@ -2,10 +2,11 @@ import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useTranslation } from 'react-i18next';
-const SetupPage = dynamic(() => import("intake/Setup"), {
-  ssr: false,
-  loading: () => <BackdropLoader openLoader={true} />,
-});
+// const SetupPage = dynamic(() => import("intake/Setup"), {
+//   ssr: false,
+//   loading: () => <BackdropLoader openLoader={true} />,
+// });
+import SetupPage from "intake/Setup";
 
 export default function Setup() {
   const { t } = useTranslation();

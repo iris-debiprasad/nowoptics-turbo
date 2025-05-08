@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Controller, FieldValues, Path } from "react-hook-form";
 import { Box, Checkbox, FormControlLabel, IconButton } from "@mui/material";
 import React from "react";
-import i18n from "@/language/i18n";
+import i18n from "@root/host/src/language/i18n";
 import style from "./index.module.scss";
 import CloseIcon from "@root/assets/Images/icons/crossIcon.svg";
-import { SO_DEFAULT_STORE_CONTACT_NUMBER } from "@/constants/common.constants";
-import { UserMarketingConsentProps } from "@/types/UserMarketingConsent.types";
+import { SO_DEFAULT_STORE_CONTACT_NUMBER } from "@root/host/src/constants/common.constants";
+import { UserMarketingConsentProps } from "@root/host/src/types/UserMarketingConsent.types";
 import ConsentMessage from "./consentMessage";
 import Link from "next/link";
 

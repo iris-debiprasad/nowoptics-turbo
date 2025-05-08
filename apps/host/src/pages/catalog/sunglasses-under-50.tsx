@@ -4,10 +4,10 @@ import Head from "next/head";
 import CatalogSkeleton from "@/components/skeleton_loader/catalog/CatalogSkeleton";
 import { commonUtilForGetAllFacets } from "@/service/common.service";
 import { getToken } from "next-auth/jwt";
-import { BRAND_NAME, USER_TYPE } from "@/constants/common.constants";
+import { BRAND_NAME, USER_TYPE } from "@root/host/src/constants/common.constants";
 import { useGetBrand } from "@/hooks/useGetBrand";
 import { useTranslation } from "react-i18next";
-import { facetKeyMappingWithPathName } from "@/constants/catalog.constants";
+import { facetKeyMappingWithPathName } from "@root/host/src/constants/catalog.constants";
 
 const ProductComponent = dynamic<{ facets: any, filters?:string[] }>(
   () => import("order/Products"),

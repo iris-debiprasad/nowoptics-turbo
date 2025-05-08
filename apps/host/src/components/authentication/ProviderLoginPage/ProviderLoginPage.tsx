@@ -3,7 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { signIn } from "next-auth/react";
 import { AuthPropsDTO } from "../../../types/auth.type";
 import style from "./ProviderLoginPage.module.scss";
-import { AUTH_CONSTATNT } from "@/constants/auth.constants";
+import { AUTH_CONSTATNT } from "@root/host/src/constants/auth.constants";
 
 function ProviderLoginPage(providers: AuthPropsDTO) {
   return (

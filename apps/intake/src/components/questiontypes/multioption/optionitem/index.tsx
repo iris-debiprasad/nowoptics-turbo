@@ -1,4 +1,4 @@
-import Input from "@/components/common/input";
+import Input from "@root/intake/src/components/common/input";
 import Recommend from "@/components/common/recommend";
 import Questionform from "@/components/questionform";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
@@ -24,7 +24,7 @@ import styles from "../MultiOption.module.scss";
 import {
   COMMON_INPUT_MAX_LENGTH,
   FREE_TEXT_MAX_LENGTH,
-} from "@/constants/intake.constants";
+} from "@root/intake/src/constants/intake.constants";
 import { useGetLanguageTypesQuery } from "@root/host/src/store/reducer/intakeApi.slice";
 
 const OptionItem: FunctionComponent<OptionItemProps> = ({

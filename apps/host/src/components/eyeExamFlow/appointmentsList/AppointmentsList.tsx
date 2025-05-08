@@ -2,7 +2,7 @@ import PrimaryModal from "@/components/primary_modal/PrimaryModal";
 import {
   AppointmentType,
   AppointmentsListPropsTypes,
-} from "@/types/eyeExamFlow.types";
+} from "@root/host/src/types/eyeExamFlow.types";
 import {
   Box,
   Button,
@@ -18,9 +18,9 @@ import {
 import React from "react";
 import IconSVG from "../../iconsvg/IconSVG";
 import style from "./AppointementsList.module.scss";
-import { appointmentsListHeader } from "@/constants/eyeExamFlow.constants";
+import { appointmentsListHeader } from "@root/host/src/constants/eyeExamFlow.constants";
 import dayjs from "dayjs";
-import { DATE_TIME_FORMAT } from "@/constants/common.constants";
+import { DATE_TIME_FORMAT } from "@root/host/src/constants/common.constants";
 
 const AppointmentsList = ({
   isVisible,

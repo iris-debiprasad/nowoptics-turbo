@@ -6,7 +6,7 @@ import { Box, Button, Grid, Typography, AlertColor } from "@mui/material";
 import style from "./StoreOffer.module.scss";
 
 import { IconDTO } from "../../../../../host/src/types/IconSVG.types";
-import { StoreContentDTO, StoreDetailsDTO } from "@/types/store.type";
+import { StoreContentDTO, StoreDetailsDTO } from "@root/host/src/types/store.type";
 import { PrimaryModalDTO } from "@root/host/src/types/PrimaryModal.types";
 import { StoreOfferSliderDTO } from "@root/host/src/types/ImageSlider.types";
 import { useRouter } from "next/router";

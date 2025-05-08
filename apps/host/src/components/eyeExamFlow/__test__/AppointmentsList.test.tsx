@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import AppointmentsList from "../appointmentsList/AppointmentsList";
-import { AppointmentType } from "@/types/eyeExamFlow.types";
+import { AppointmentType } from "@root/host/src/types/eyeExamFlow.types";
 
 describe("AppointmentsList Component", () => {
   const data: AppointmentType[] = [

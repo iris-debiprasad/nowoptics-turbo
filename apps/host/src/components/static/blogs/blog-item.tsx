@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
 
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { IBlogMeta } from "@/constants/blogConstants";
+import { IBlogMeta } from "@root/host/src/constants/blogConstants";
 import style from "./blogs.module.scss";
 import IconSVG from "@/components/iconsvg/IconSVG";
 

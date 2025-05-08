@@ -1,4 +1,4 @@
-import { UnbxdDTO } from "@/types/unbxd.type";
+import { UnbxdDTO } from "@root/host/src/types/unbxd.type";
 
 export const MyUnbxd: UnbxdDTO = {
   cookies: {

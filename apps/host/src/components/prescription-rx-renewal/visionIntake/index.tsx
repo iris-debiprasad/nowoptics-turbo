@@ -1,10 +1,10 @@
 import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
-import { USER_TYPE } from "@/constants/common.constants";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import useAxiosLoader from "@/hooks/useAxiosLoader";
 import { GetApiLoadingState } from "@/store/reducer/intake.selector";
 import { SET_VISION_INTAKE_PROPERTY } from "@/store/reducer/visionIntake.slice";
 import { useAppDispatch, useAppSelector } from "@/store/useStore";
-import { VisionIntakeRemoteTypes } from "@/types/visionIntake.types";
+import { VisionIntakeRemoteTypes } from "@root/host/src/types/visionIntake.types";
 import { useRouter } from "next/router";
 import { FC, ReactNode, useEffect, useMemo, useState } from "react";
 import styles from "./VisionIntake.module.scss";
@@ -14,8 +14,8 @@ import VisionIntakeModal from "./visionIntakeModal";
 import { useGetRxRenewalEventIdMutation } from "@/store/reducer/visionIntakeApi.slice";
 import { useRecaptchaToken } from "@/hooks/useGoogleRecaptcha";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { ErrorResponseType } from "@/types/intakeApi.types";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+import { ErrorResponseType } from "@root/host/src/types/intakeApi.types";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 
 const VisionIntake: FC<VisionIntakeRemoteTypes> = ({
   viewMode,

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import {
   PRIVACY_CONTACT_EMAIL,
   SO_DEFAULT_STORE_CONTACT_NUMBER,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 
 const PrivacyPolicy = () => {
   const { t } = useTranslation();

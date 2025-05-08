@@ -1,13 +1,13 @@
-import { SO_SPECIAL_OFFERS } from "@/constants/specialOffersConstants";
+import { SO_SPECIAL_OFFERS } from "@root/host/src/constants/specialOffersConstants";
 import style from "./specialOffers.module.scss";
 import { Grid } from "@mui/material";
 import Image from "next/image";
-import { getStateCodeForUser, isMobileDevice } from "@/utils/common.utils";
+import { getStateCodeForUser, isMobileDevice } from "@root/host/src/utils/common.utils";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import i18n from "@root/host/src/language/i18n";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import { GetCurrentLocation } from "@/service/common.service";
 
 const SPECIAL_OFFER_IMAGES = ImageUrlConstants.SPECIAL_OFFERS;

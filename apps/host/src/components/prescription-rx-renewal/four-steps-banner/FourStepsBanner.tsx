@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import useResponsive from "@/hooks/useResponsive";
 import style from "./FourStepsBanner.module.scss";
 import Image from "next/image";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import Button from '@mui/material/Button';
 import IconSVG from '@/components/iconsvg/IconSVG';
-import { RX_RENEWAL_CONSTANT } from '@/constants/RxRenewal.constants';
+import { RX_RENEWAL_CONSTANT } from '@root/host/src/constants/RxRenewal.constants';
 import { Box, Typography } from '@mui/material';
 
 const FourStepsBanner = () => {

@@ -1,7 +1,7 @@
 import { GetAllDma, GetPPCPageData, PPCResponseDataResult } from "@/service/ppc.service";
 import PageNotFound404 from "../404";
-import { getLatLongForUser } from "@/utils/common.utils";
-import { BRAND } from "@/constants/common.constants";
+import { getLatLongForUser } from "@root/host/src/utils/common.utils";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import dynamic from "next/dynamic";
 import { GetServerSideProps } from "next";
 

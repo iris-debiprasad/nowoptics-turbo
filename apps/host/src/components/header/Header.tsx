@@ -11,9 +11,9 @@ import {
   USER_TYPE,
   isSearchValidRegex,
   validLocationInputPattern,
-} from "@/constants/common.constants";
-import { SEARCH_TYPE } from "@/constants/header.constants";
-import { viewButtonData } from "@/constants/menu.constants";
+} from "@root/host/src/constants/common.constants";
+import { SEARCH_TYPE } from "@root/host/src/constants/header.constants";
+import { viewButtonData } from "@root/host/src/constants/menu.constants";
 import useTextDebounce from "@/hooks/useTextDebounce";
 import {
   GetOrderSearchData,
@@ -21,8 +21,8 @@ import {
   GetProductSearchData,
 } from "@/service/search.service";
 import { GetPublicStoreLocatorGrid } from "@/service/storeLocator.service";
-import { SearchProductsDataDTO, SearchType } from "@/types/Header.types";
-import { StoreAddressType } from "@/types/SideBar.types";
+import { SearchProductsDataDTO, SearchType } from "@root/host/src/types/Header.types";
+import { StoreAddressType } from "@root/host/src/types/SideBar.types";
 import {
   AlertColor,
   AppBar,
@@ -54,8 +54,8 @@ import IconSVG from "../iconsvg/IconSVG";
 import style from "./Header.module.scss";
 
 import { GetPermissionConfig } from "@/config/permissionConfig";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
-import CommonPermission from "@/constants/common-permission.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
+import CommonPermission from "@root/host/src/constants/common-permission.constants";
 import {
   ADD_HELP_TEXT_CONFIG_CODE,
   ADD_MAX_CONFIG_CODE,
@@ -75,14 +75,14 @@ import {
   SPHERE_HELP_TEXT_CONFIG_CODE,
   SPHERE_MAX_CONFIG_CODE,
   SPHERE_MIN_CONFIG_CODE,
-} from "@/constants/commonRx.constants";
-import { GA_TAG_EVENTS } from "@/constants/google-analytics.constants";
-import { Permission } from "@/constants/host-permission.constant";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+} from "@root/host/src/constants/commonRx.constants";
+import { GA_TAG_EVENTS } from "@root/host/src/constants/google-analytics.constants";
+import { Permission } from "@root/host/src/constants/host-permission.constant";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import {
   otcProductType,
   productTypeCode,
-} from "@/constants/order-common.constant";
+} from "@root/host/src/constants/order-common.constant";
 import { useDebounce } from "@/hooks/useDebounce";
 import {
   GetGeoLocationData,
@@ -98,19 +98,19 @@ import {
 } from "@/service/order-common.service";
 import { addPatientPrescription } from "@/service/rx.service";
 import { useAppDispatch, useAppSelector } from "@/store/useStore";
-import { AddPrescriptionDTO } from "@/types/MyAccount.types";
-import { AddNewRxPrescriptionModalPropsDTO } from "@/types/commonRx.types";
-import { LensType, ProductDetailType } from "@/types/order-common.types";
-import { selectPatientDataTypes } from "@/types/selectPatientAssociateModal.types";
+import { AddPrescriptionDTO } from "@root/host/src/types/MyAccount.types";
+import { AddNewRxPrescriptionModalPropsDTO } from "@root/host/src/types/commonRx.types";
+import { LensType, ProductDetailType } from "@root/host/src/types/order-common.types";
+import { selectPatientDataTypes } from "@root/host/src/types/selectPatientAssociateModal.types";
 import {
   generateProductLink,
   getGuestToLocalStorage,
   modifyAddToCartData,
   nameFieldValidator,
   stringToSlug,
-} from "@/utils/common.utils";
-import { getPatientEyeGlassHeaders } from "@/utils/getRxHeaders";
-import AddGTMEvent from "@/utils/gtmEvent";
+} from "@root/host/src/utils/common.utils";
+import { getPatientEyeGlassHeaders } from "@root/host/src/utils/getRxHeaders";
+import AddGTMEvent from "@root/host/src/utils/gtmEvent";
 import useAxiosLoader from "@root/host/src/hooks/useAxiosLoader";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 import { associateAddToCart } from "@root/host/src/service/common.service";

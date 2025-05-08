@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nowoptics-config
+  namespace: nowoptics
+data:
+  NEXT_PUBLIC_APP_HOME: "http://home.nowoptics.svc.cluster.local:3001"
+  NEXT_PUBLIC_APP_HOST: "http://host.nowoptics.svc.cluster.local:3000" 

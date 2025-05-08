@@ -15,7 +15,7 @@ import dayjs from "dayjs";
 import { DATE_FORMAT } from "@root/host/src/constants/common.constants";
 import React from "react";
 import IconSVG from "../iconsvg/IconSVG";
-import { generateProductLink } from "@/utils/common.utils";
+import { generateProductLink } from "@root/host/src/utils/common.utils";
 import { useRouter } from "next/router";
 import ConfirmationModal from "../confirmationModal/ConfirmationModal";
 import { useAppDispatch } from "@/store/useStore";

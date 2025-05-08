@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 import Success from "../Success"
-import { SuccessPropsDTO } from "@/types/auth.type"
+import { SuccessPropsDTO } from "@root/host/src/types/auth.type"
 
 describe("", () => {
     const props : SuccessPropsDTO ={

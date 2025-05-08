@@ -6,19 +6,22 @@ import { Box } from "@mui/system";
 import style from "./OurCustomerVoice.module.scss";
 
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
-
+import IconSVG from "@shared/host/IconSVG";
+import SingleImageSlider from "@root/host/src/components/image_slider/SingleImageSlider";
 type Props = {};
 
-const SingleImageSlider = dynamic(
-  () => import("Host/SingleImageSlider"),
-  {
-    ssr: false,
-  }
-);
+// const SingleImageSlider = dynamic(
+//   () => import("Host/SingleImageSlider"),
+//   {
+//     ssr: false,
+//   }
+// );
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
+
+
 
 function OurCustomerVoice({}: Props) {
   return (
@@ -26,7 +29,7 @@ function OurCustomerVoice({}: Props) {
       <div className={style.mainBox}>
         <Box className={style.heading}>{"Our Customer's Voice"}</Box>
 
-        <SingleImageSlider />
+        <SingleImageSlider reviews={[]} />
 
         <Box className={style.reviewStore}>
           <span className={style.reviewTxt}>Review this store: </span>

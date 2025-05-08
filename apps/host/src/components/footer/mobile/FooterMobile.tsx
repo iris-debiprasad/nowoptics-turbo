@@ -5,10 +5,10 @@ import IconSVG from "@/components/iconsvg/IconSVG";
 import {
   FOOTER_LINKS,
   FOOTER_LINKS_MOBILE_ORDER,
-} from "@/constants/FooterConstants";
+} from "@root/host/src/constants/FooterConstants";
 import SocialMediaFooter from "../social-media/SocialMediaFooter";
 import CopyRight from "../copyright/CopyRightFooter";
-import { FooterSubmenuItem } from "@/types/Footer.types";
+import { FooterSubmenuItem } from "@root/host/src/types/Footer.types";
 import { useTranslation } from "react-i18next";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
 

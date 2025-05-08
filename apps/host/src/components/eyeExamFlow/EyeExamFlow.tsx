@@ -4,7 +4,7 @@ import {
   EyeExamFlowPropsTypes,
   examType,
   eyeExamAddToCartPayloadType,
-} from "@/types/eyeExamFlow.types";
+} from "@root/host/src/types/eyeExamFlow.types";
 import { AlertColor, Box, Modal } from "@mui/material";
 import {
   GetExamTypes,
@@ -17,21 +17,21 @@ import SelectExam from "./selectExam/SelectExam";
 import SelectPatientComponent from "../selectPatientAssociateModal/SelectPatientAssociateModal";
 import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import {
   AppEvents,
   ORDER_CATEGORY_CODE,
   ORDER_CATEGORY_ID,
   ORDER_TYPE_CODE,
   SNACKBAR_COLOR_TYPE,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import {
   setSelectedPatientToLocalStorage,
-} from "@/utils/common.utils";
+} from "@root/host/src/utils/common.utils";
 import { associateAddToCart } from "@/service/common.service";
 import { useRouter } from "next/router";
 import useAxiosLoader from "@/hooks/useAxiosLoader";
-import { selectPatientDataTypes } from "@/types/selectPatientAssociateModal.types";
+import { selectPatientDataTypes } from "@root/host/src/types/selectPatientAssociateModal.types";
 import { updateCartId } from "../../store/reducer/cartIdReducer";
 import { useAppDispatch } from "../../store/useStore";
 

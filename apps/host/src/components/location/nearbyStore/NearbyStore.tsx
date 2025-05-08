@@ -5,7 +5,7 @@ import {
   PhoneNumber,
   StoreContentDTO,
   StoreDetailsDTO,
-} from "@/types/store.type";
+} from "@root/host/src/types/store.type";
 import { AlertColor, Box, Grid } from "@mui/material";
 import Link from "next/link";
 import { GetPublicStoreLocatorGridForLocation } from "@/service/storeLocator.service";

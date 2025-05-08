@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import PrimaryModal from "@/components/primary_modal/PrimaryModal";
-import { NotFoundViewPropsTypes } from "@/types/eyeExamFlow.types";
+import { NotFoundViewPropsTypes } from "@root/host/src/types/eyeExamFlow.types";
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import IconSVG from "../../iconsvg/IconSVG";

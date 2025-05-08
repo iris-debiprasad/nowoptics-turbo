@@ -7,7 +7,7 @@ import IconSVG from "@/components/iconsvg/IconSVG";
 import { ModalVideo } from "./modal-video";
 import styles from "./play-video-on-click.module.scss";
 import { useTranslation } from "react-i18next";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const PLAY_IMAGES = ImageUrlConstants.PLAY_VIDEO;
 

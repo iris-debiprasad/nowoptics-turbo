@@ -3,7 +3,7 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 import sharedStyles from "../index.module.scss";
 import styles from "./index.module.scss";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 import Image from "next/image";
 
 const IMAGES = ImageUrlConstants.APPOINTMENT_CONFIRMATION.NEXT_STEPS;

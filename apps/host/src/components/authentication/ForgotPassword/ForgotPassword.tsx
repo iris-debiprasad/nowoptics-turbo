@@ -8,17 +8,17 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import style from "./ForgotPassword.module.scss";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
-import { ForgotPasswordDTO, ForgotPasswordPropsDTO } from "@/types/auth.type";
+import { ForgotPasswordDTO, ForgotPasswordPropsDTO } from "@root/host/src/types/auth.type";
 import { ERROR_MESSAGE } from "../../../constants/auth.constants";
 import axios from "axios";
-import { IrisUrlConstants } from "@/constants/iris.url.constants";
+import { IrisUrlConstants } from "@root/host/src/constants/iris.url.constants";
 import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
 import { AlertColor } from "@mui/material";
 import {
   INPUT_MASK,
   ISD_CODE,
   SNACKBAR_COLOR_TYPE,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
 import { HeaderConfig } from "@/config/headerConfig";
 import { useTranslation } from "react-i18next";

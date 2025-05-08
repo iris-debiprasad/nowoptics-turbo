@@ -2,7 +2,7 @@ import {
   DEBOUNCE_TIME,
   KEYBOARD_KEYS,
   RECAPTCHA_ACTION,
-} from "@/constants/intake.constants";
+} from "@root/intake/src/constants/intake.constants";
 import { useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   GetOTPErrors,
@@ -45,7 +45,7 @@ import { FC, FormEvent, KeyboardEvent, useEffect } from "react";
 import { batch, useDispatch } from "react-redux";
 import style from "./OTPModal.module.scss";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
-import { useSnackBar } from "@/context/SnackbarContext";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import {
   ErrorResponseType,
   GenericErrorResponseType,

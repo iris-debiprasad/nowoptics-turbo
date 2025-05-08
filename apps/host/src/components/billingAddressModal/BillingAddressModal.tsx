@@ -14,15 +14,15 @@ import {
   billingAddressFormData,
   BillingAddressModalProps,
   ZipCodeDetailsDTO,
-} from "@/types/billingAddressModal.types";
+} from "@root/host/src/types/billingAddressModal.types";
 import {
   COUNTRY_LIST,
   isZipcodeValidRegex,
   SNACKBAR_COLOR_TYPE,
   STATE_LIST,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { savePatientAddress, ValidateZipCode } from "@/service/common.service";
 import IconSVG from "../iconsvg/IconSVG";
 

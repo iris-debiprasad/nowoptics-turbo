@@ -1,5 +1,5 @@
-import Checkbox from "@/components/common/checkbox";
-import Radio from "@/components/common/radio";
+import Checkbox from "@root/intake/src/components/common/checkbox";
+import Radio from "@root/intake/src/components/common/radio";
 import { useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   GetPatientIntakeChildQuestions,

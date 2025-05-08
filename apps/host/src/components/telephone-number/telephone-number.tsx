@@ -1,5 +1,5 @@
 import { useDetectMobileDevice } from "@/hooks/useDetectMobileDevice";
-import { unformatPhoneNumber } from "@/utils/common.utils";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
 
 /**
  * Component that will display a telephone number, it implements a hook that will detect if the user device

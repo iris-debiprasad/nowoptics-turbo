@@ -1,8 +1,8 @@
-import { ApiResponse } from "@/types/api.types";
+import { ApiResponse } from "@root/host/src/types/api.types";
 import axios, { AxiosResponse } from "axios";
 import { InsurancePlan } from "./insurance-plan.interfaces";
 import { HeaderConfig } from "@/config/headerConfig";
-import { BASE_URL_REST_API } from "@/constants/common.url.constants";
+import { BASE_URL_REST_API } from "@root/host/src/constants/common.url.constants";
 
 const INSURANCE_PLANS_BY_ID_ENDPOINT = (id: number): string =>
     `${BASE_URL_REST_API}managedcareSetup/insuranceCarrier/store/${id}`;

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import style from "./MainStart.module.scss";
 import { useSession } from "next-auth/react";
 import LoginRegisterForm from "../LoginRegisterForm/LoginRegisterForm";
-import { isActionAllowed } from "@/utils/rxRenewal";
+import { isActionAllowed } from "@root/host/src/utils/rxRenewal";
 import { useRouter } from "next/router";
 import CurrentPrescription from "@/components/prescription-rx-renewal/currentPrescription/CurrentPrescription";
 import {
@@ -21,17 +21,17 @@ import Inconvenience from "@/components/prescription-rx-renewal/inconvenience";
 import { useAppDispatch, useAppSelector } from "@/store/useStore";
 import { SET_VISION_INTAKE_PROPERTY } from "@/store/reducer/visionIntake.slice";
 import { getRxRenewalTimingConfig } from "@/service/rxRenewal.service";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
-import { SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
+import { SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import { AlertColor } from "@mui/material";
-import { ScheduleEntry } from "@/types/rxRenewal.types";
+import { ScheduleEntry } from "@root/host/src/types/rxRenewal.types";
 import {
   useGetRxIdForRenewalQuery,
   useGetRxRenewalEventIdMutation,
 } from "@/store/reducer/visionIntakeApi.slice";
 import RenewalModal from "./renewalmodal";
 import { useRecaptchaToken } from "@/hooks/useGoogleRecaptcha";
-import { ErrorResponseType } from "@/types/intakeApi.types";
+import { ErrorResponseType } from "@root/host/src/types/intakeApi.types";
 const MainStart = () => {
   const dispatch = useAppDispatch();
   const [renewModal, setRenewModal] = useState<boolean>(false);

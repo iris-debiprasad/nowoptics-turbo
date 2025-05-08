@@ -31,26 +31,29 @@ import {
   ALLOWED_HIPPA_FILE_TYPES,
   DEFAULT_EMPTY_TABLE_MESSAGE,
   HIPPA_FILE_ERRORS,
-} from "@/constants/intake.constants";
-import { useSnackBar } from "@/context/SnackbarContext";
+} from "@root/intake/src/constants/intake.constants";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { TableSortLabel, Tooltip } from "@mui/material";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { useAppSelector } from "@root/host/src/hooks/useStore";
 import { GetPermissionConfig } from "@root/host/src/config/permissionConfig";
-import { IntakePermission } from "@/constants/intake-permission.constant";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 import { TableFilterDTO } from "@root/host/src/types/TableFilter.types";
 import useTableFilter from "@root/host/src/hooks/useTableFilter";
-const CustomTablePagination = dynamic(
-  () => import("host/CustomTablePagination"),
-  { ssr: false }
-) as FunctionComponent<CustomTablePaginationDTO>;
-const IconSVG = dynamic(() => import("host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
-const TableFilter = dynamic(() => import("host/TableFilter"), {
-  ssr: false,
-}) as React.FunctionComponent<TableFilterDTO>;
+// const CustomTablePagination = dynamic(
+//   () => import("host/CustomTablePagination"),
+//   { ssr: false }
+// ) as FunctionComponent<CustomTablePaginationDTO>;
+// const IconSVG = dynamic(() => import("host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
+// const TableFilter = dynamic(() => import("host/TableFilter"), {
+//   ssr: false,
+// }) as React.FunctionComponent<TableFilterDTO>;
+import CustomTablePagination from "@root/host/src/components/customTablePagination/CustomTablePagination";
+import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
+import TableFilter from "@root/host/src/components/tablefilter/TableFilter";
 
 const StateTable: FunctionComponent<HippaFormTableProps> = ({
   handleDownloadHippaFile,

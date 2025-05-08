@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Box, Button, Popper, Typography } from "@mui/material";
 import i18n from "@root/host/src/language/i18n";
 import style from "./leftContentBanner.module.scss";
-import { pageDataPropsDTO } from "@/types/home.types";
-import { BRAND } from "@/constants/common.constants";
+import { pageDataPropsDTO } from "@root/host/src/types/home.types";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import { useRouter } from "next/router";
 
 const LeftContentBanner = (props: pageDataPropsDTO) => {

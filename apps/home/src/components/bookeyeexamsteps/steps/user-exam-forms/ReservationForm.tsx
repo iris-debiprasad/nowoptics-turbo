@@ -25,7 +25,7 @@ import dayjs from "dayjs";
 import AddGTMEvent from "@root/host/src/utils/gtmEvent";
 import { GA_TAG_EVENTS } from "@root/host/src/constants/google-analytics.constants";
 import { useMaskInput } from "@root/host/src/hooks/useMaskInput";
-import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
+import IconSVG from "@shared/host/IconSVG";
 
 interface Props {
   dob: string;

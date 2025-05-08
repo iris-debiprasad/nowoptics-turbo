@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 import { CTLBanner } from "@/components/banner";
 import style from "./AboutUs.module.scss";
 import { useGetBrand } from "@/hooks/useGetBrand";
-import { BRAND } from "@/constants/common.constants";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const AboutUs = () => {
   const { t } = useTranslation();

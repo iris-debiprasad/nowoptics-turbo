@@ -1,10 +1,10 @@
 import {
   APISubscribeUsersPayload,
   EnrollFormFields,
-} from "@/types/stantonAccess.types";
+} from "@root/host/src/types/stantonAccess.types";
 import { useRecaptchaToken } from "@/hooks/useGoogleRecaptcha";
-import { unformatPhoneNumber } from "@/utils/common.utils";
-import { ISD_CODE } from "@/constants/common.constants";
+import { unformatPhoneNumber } from "@root/host/src/utils/common.utils";
+import { ISD_CODE } from "@root/host/src/constants/common.constants";
 import { SubscribeToStantonAccess } from "@/service/stantonAccess.service";
 import {
   formatDOB,

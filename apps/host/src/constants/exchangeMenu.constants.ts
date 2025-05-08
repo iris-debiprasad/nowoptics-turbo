@@ -1,4 +1,4 @@
-import { TableHeaderOptions } from "@/types/Header.types";
+import { TableHeaderOptions } from "@root/host/src/types/Header.types";
 
 export const ProductSelectionStep2TableDataResultHeader: TableHeaderOptions[] =
   [

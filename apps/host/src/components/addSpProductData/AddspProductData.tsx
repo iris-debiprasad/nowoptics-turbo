@@ -1,19 +1,19 @@
 import { GetPatientSearchData } from "@/service/search.service";
-import { selectPatientDataTypes } from "@/types/selectPatientAssociateModal.types";
+import { selectPatientDataTypes } from "@root/host/src/types/selectPatientAssociateModal.types";
 import React, { useEffect, useRef, useState } from "react";
 import SelectPatientComponent from "../selectPatientAssociateModal/SelectPatientAssociateModal";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
-import { AppEvents, SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
+import { AppEvents, SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 import { AlertColor, Modal } from "@mui/material";
 import BackdropLoader from "../backdrop_loader/BackdropLoader";
 import useAxiosLoader from "@/hooks/useAxiosLoader";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { SearchProductsDataDTO } from "@/types/Header.types";
+import { SearchProductsDataDTO } from "@root/host/src/types/Header.types";
 import { associateAddToCart } from "@/service/common.service";
 import { useAppDispatch } from "@/store/useStore";
 import { updateCartId } from "@/store/reducer/cartIdReducer";
 import { useRouter } from "next/navigation";
-import { setSelectedPatientToLocalStorage } from "@/utils/common.utils";
+import { setSelectedPatientToLocalStorage } from "@root/host/src/utils/common.utils";
 
 interface Props {
   isVisible: boolean;

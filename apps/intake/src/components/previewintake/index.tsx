@@ -1,4 +1,4 @@
-import { useSnackBar } from "@/context/SnackbarContext";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import { GetPatientIntakeStepper } from "@root/host/src/store/reducer/intake.selector";
 import { PreviewIntakeProps } from "@root/host/src/types/Intake.types";
@@ -23,12 +23,15 @@ import {
   CHANGE_FORM_LANGUAGE,
   UPDATE_PATIENT_INTAKE_META_DATA,
 } from "@root/host/src/store/reducer/intake.slice";
-const PrimaryModal = dynamic(() => import("host/PrimaryModal"), {
-  ssr: false,
-}) as FC<PrimaryModalDTO>;
-const IconSVG = dynamic(() => import("host/IconSVG"), {
-  ssr: false,
-}) as FC<IconDTO>;
+// const PrimaryModal = dynamic(() => import("host/PrimaryModal"), {
+//   ssr: false,
+// }) as FC<PrimaryModalDTO>;
+import PrimaryModal from "@root/host/src/components/primary_modal/PrimaryModal";
+// const IconSVG = dynamic(() => import("host/IconSVG"), {
+//   ssr: false,
+// }) as FC<IconDTO>;
+import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
+
 
 const PreviewIntake: FC<PreviewIntakeProps> = ({
   templateId,

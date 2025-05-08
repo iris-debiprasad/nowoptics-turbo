@@ -3,7 +3,7 @@ import style from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import useResponsive from "@/hooks/useResponsive";
-import { parseStringWithMarkup } from "@/utils/common.utils";
+import { parseStringWithMarkup } from "@root/host/src/utils/common.utils";
 
 function StaticMessage() {
   const { t } = useTranslation();

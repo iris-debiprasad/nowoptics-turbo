@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { SectionReference } from "../faq-sections.constants";
 import styles from "../faq.module.scss";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 export const PricingAndPromotionsSection = (props: any): JSX.Element => {
   const { t } = useTranslation();

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { PageNotFound } from "@/components/static/page-not-found";
 import { useGetBrand } from "@/hooks/useGetBrand";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const PageNotFound404: NextPage = (): JSX.Element => {
   const { t } = useTranslation();

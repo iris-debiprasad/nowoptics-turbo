@@ -11,10 +11,10 @@ import React, { useEffect, useState } from "react";
 import NextNProgress from "nextjs-progressbar";
 import { useRouter } from "next/router";
 import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
-import { StoreAddressType } from "@/types/SideBar.types";
-import { getLatLong } from "@/utils/getLocation.utils";
+import { StoreAddressType } from "@root/host/src/types/SideBar.types";
+import { getLatLong } from "@root/host/src/utils/getLocation.utils";
 import Head from "next/head";
-import { checkBrand, checkGuidedSalesEnableForState, getLatLongForUser, getStateCodeForUser, setBrand, guidedSalesPilotOnlyCheck, getPublicEnv } from "@/utils/common.utils";
+import { checkBrand, checkGuidedSalesEnableForState, getLatLongForUser, getStateCodeForUser, setBrand, guidedSalesPilotOnlyCheck, getPublicEnv } from "@root/host/src/utils/common.utils";
 import PPCPage from "./ppc/[[...slug]]";
 import useRefetchSession from "@/hooks/useRefetchSession";
 import SocialPage from "./social/[[...slug]]";
@@ -24,8 +24,8 @@ import {
   COLOR_ROOT_NAMES,
   MEL_COLOR,
   SO_COLOR,
-} from "@/constants/color.constants";
-import { BRAND, USER_TYPE } from "@/constants/common.constants";
+} from "@root/host/src/constants/color.constants";
+import { BRAND, USER_TYPE } from "@root/host/src/constants/common.constants";
 import StartPage from "./prescription-renewal/start";
 import { HasInHousePxsContextProvider } from "@/contexts/ HasInHousePxs/ HasInHousePxsContext";
 import GuidedSales from "@/components/guided-sales/GuidedSales";

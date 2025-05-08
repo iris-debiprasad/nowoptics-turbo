@@ -31,7 +31,7 @@ import { UserMarketingConsentProps } from "@root/host/src/types/UserMarketingCon
 
 import { forwardRef } from "react";
 import { IMaskInput } from "react-imask";
-import IconSVG from "@root/host/src/components/iconsvg/IconSVG";
+import IconSVG from "@shared/host/IconSVG";
 import UserMarketingConsent from "@root/host/src/components/UserMarketingConsent/index";
 
 //TODO: Will Refactor latter IR24-4905

@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import styles from "./SelectExam.module.scss";
-import { SelectExamPropsTypes, examType } from "@/types/eyeExamFlow.types";
+import { SelectExamPropsTypes, examType } from "@root/host/src/types/eyeExamFlow.types";
 import {
   Box,
   Button,
@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import PrimaryModal from "@/components/primary_modal/PrimaryModal";
-import { eyeExamsListHeader } from "@/constants/eyeExamFlow.constants";
+import { eyeExamsListHeader } from "@root/host/src/constants/eyeExamFlow.constants";
 import useAxiosLoader from "@/hooks/useAxiosLoader";
 import BackdropLoader from "@/components/backdrop_loader/BackdropLoader";
 

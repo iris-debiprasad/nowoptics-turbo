@@ -6,12 +6,11 @@ import { Box } from "@mui/system";
 import style from "./AddressDescription.module.scss";
 
 import { IconDTO } from "../../../../../host/src/types/IconSVG.types";
+import IconSVG from "@shared/host/IconSVG";
 
 type Props = {};
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+
 
 function AddressDescription({}: Props) {
   return (

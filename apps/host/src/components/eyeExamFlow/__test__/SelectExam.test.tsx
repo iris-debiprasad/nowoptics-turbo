@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, getByTestId } from "@testing-library/react";
 import SelectExam from "../selectExam/SelectExam";
-import { examType } from "@/types/eyeExamFlow.types";
+import { examType } from "@root/host/src/types/eyeExamFlow.types";
 
 describe("SelectExam Component", () => {
   const data: examType[] = [

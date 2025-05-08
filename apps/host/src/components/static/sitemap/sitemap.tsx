@@ -1,4 +1,4 @@
-import { SITEMAPS } from "@/constants/sitemap.constants";
+import { SITEMAPS } from "@root/host/src/constants/sitemap.constants";
 import { Grid, List, ListItem } from "@mui/material";
 import Link from "next/link";
 import style from "./sitemap.module.scss";

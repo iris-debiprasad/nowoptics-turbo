@@ -1,4 +1,4 @@
-import { Section } from "@/types/home.types";
+import { Section } from "@root/host/src/types/home.types";
 import styles from "./insuranceSection.module.scss";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";

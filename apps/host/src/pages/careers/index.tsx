@@ -1,10 +1,10 @@
 import React from "react";
 import Careers from "@/components/static/careers/Careers";
-import { checkBrand } from "@/utils/common.utils";
+import { checkBrand } from "@root/host/src/utils/common.utils";
 import { NextPage } from "next";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const Index: NextPage = () => {
     const { t } = useTranslation();

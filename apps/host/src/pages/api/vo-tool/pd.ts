@@ -1,4 +1,4 @@
-// import { displayIrisPosition } from "@/utils/pd";
+// import { displayIrisPosition } from "@root/host/src/utils/pd";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function api(req: NextApiRequest, res: NextApiResponse) {

@@ -4,18 +4,18 @@ import {
   generateProductLink,
   getProductImage,
   isDefaultImage,
-} from "@/utils/common.utils";
+} from "@root/host/src/utils/common.utils";
 import style from "./Variant.module.scss";
 import IconSVG from "../iconsvg/IconSVG";
 import Link from "next/link";
 import ProductColor from "../productColor/ProductColor";
 import FrameLoaderImage from "@root/assets/Images/icons/frame-loader.svg";
-import { VariantDTO, VariantProps } from "@/types/order-common.types";
+import { VariantDTO, VariantProps } from "@root/host/src/types/order-common.types";
 import Image from "next/image";
-import { IUnbxd } from "@/types/unbxd.type";
-import { getUnbxd } from "@/utils/unbxdController.utils";
-import { getDetails } from "@/utils/getSessionData";
-import { USER_TYPE } from "@/constants/common.constants";
+import { IUnbxd } from "@root/host/src/types/unbxd.type";
+import { getUnbxd } from "@root/host/src/utils/unbxdController.utils";
+import { getDetails } from "@root/host/src/utils/getSessionData";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 
 function Variant(props: VariantProps) {
   const [userRole, setUserRole] = useState();

@@ -1,4 +1,4 @@
-import { Section } from "@/types/home.types";
+import { Section } from "@root/host/src/types/home.types";
 import style from "./meetStanSection.module.scss";
 import { Button, Grid } from "@mui/material";
 import { useRouter } from "next/router";

@@ -3,7 +3,7 @@ import style from "../specialOffers.module.scss";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { ISpecial_Offer_Page } from "@/constants/specialOffersConstants";
+import { ISpecial_Offer_Page } from "@root/host/src/constants/specialOffersConstants";
 import useResponsive from "@/hooks/useResponsive";
 import { useEffect, useState } from "react";
 import i18n from "@root/host/src/language/i18n";

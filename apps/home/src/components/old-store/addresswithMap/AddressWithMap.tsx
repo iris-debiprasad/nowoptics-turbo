@@ -21,18 +21,20 @@ import { IconDTO } from "@root/host/src/types/IconSVG.types";
 import { Props as MapDTO } from "@root/host/src/types/Map.type";
 import { BreadcrumbProps } from "@root/host/src/types/Breadcrumb.types";
 import { PhoneNumber } from "@root/host/src/types/SideBar.types";
+import Breadcrumb from "@shared/host/Breadcrumb";
+import IconSVG from "@shared/host/IconSVG";
+import CustomMap from "@root/host/src/components/custommap/CustomMap";
+// const IconSVG = dynamic(() => import("Host/IconSVG"), {
+//   ssr: false,
+// }) as FunctionComponent<IconDTO>;
 
-const IconSVG = dynamic(() => import("Host/IconSVG"), {
-  ssr: false,
-}) as FunctionComponent<IconDTO>;
+// const CustomMap = dynamic(() => import("Host/Custommap"), {
+//   ssr: false,
+// }) as FunctionComponent<MapDTO>;
 
-const CustomMap = dynamic(() => import("Host/Custommap"), {
-  ssr: false,
-}) as FunctionComponent<MapDTO>;
-
-const Breadcrumb = dynamic(() => import("Host/Breadcrumb"), {
-  ssr: false,
-}) as FunctionComponent<BreadcrumbProps>;
+// const Breadcrumb = dynamic(() => import("Host/Breadcrumb"), {
+//   ssr: false,
+// }) as FunctionComponent<BreadcrumbProps>;
 
 export const links = [
   { label: "Home", href: "/" },

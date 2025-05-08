@@ -1,8 +1,8 @@
 import axios from "axios";
 
 import { HeaderConfig } from "@root/host/src/config/headerConfig";
-import { GetQueryParamsType } from "@/types/order-common.types";
-import { CommonUrlConstants } from "@/constants/common.url.constants";
+import { GetQueryParamsType } from "@root/host/src/types/order-common.types";
+import { CommonUrlConstants } from "@root/host/src/constants/common.url.constants";
 
 export const getPaperCapture = async (
   patientId: number,

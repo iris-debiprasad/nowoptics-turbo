@@ -1,4 +1,4 @@
-import { Section } from "@/types/home.types";
+import { Section } from "@root/host/src/types/home.types";
 import style from "./shopByShapeSection.module.scss";
 import { Chip, Grid } from "@mui/material";
 import Image from "next/image";

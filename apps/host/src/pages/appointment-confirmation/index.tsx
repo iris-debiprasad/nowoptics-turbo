@@ -1,11 +1,11 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import { AppointmentConfirmation } from "@/components/static/appointment-confirmation";
 import Head from "next/head";
-import { AppointmentConfirmationData } from "@/types/appointmentConfirmation.types";
+import { AppointmentConfirmationData } from "@root/host/src/types/appointmentConfirmation.types";
 import {
   APPOINTMENT_CONFIRMATION_COOKIE_DATA,
   APPOINTMENT_CONFIRMATION_COOKIE_FLOW,
-} from "@/constants/book-eye-exam-flow.constants";
+} from "@root/host/src/constants/book-eye-exam-flow.constants";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

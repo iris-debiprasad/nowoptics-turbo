@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Options from "../options/Options";
-import { selectPatientDataTypes } from "@/types/selectPatientAssociateModal.types";
+import { selectPatientDataTypes } from "@root/host/src/types/selectPatientAssociateModal.types";
 
 describe("Options Component", () => {
   const data = null;

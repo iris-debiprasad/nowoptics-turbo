@@ -8,7 +8,7 @@ import { FAQs, HOW_IT_WORKS_ITEMS } from "./bopis.constants";
 import { InternalLinkPrimary } from "@/components/internal-link";
 import { FramesCarousel, FramesCarouselProps } from "./frames-carousel";
 import styles from "./bopis.module.scss";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const BOPIS_IMAGES = ImageUrlConstants.BOPIS;
 

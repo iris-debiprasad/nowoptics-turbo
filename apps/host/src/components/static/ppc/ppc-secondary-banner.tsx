@@ -3,8 +3,8 @@ import { Box, Button } from "@mui/material";
 import style from "./ppc.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BRAND } from "@/constants/common.constants";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const BASE_IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_BASE_URL;
 export const SO_IMAGE =

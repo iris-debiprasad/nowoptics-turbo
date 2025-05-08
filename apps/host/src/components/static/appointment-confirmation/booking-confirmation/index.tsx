@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 import sharedStyles from "../index.module.scss";
 import styles from "./index.module.scss";
 import { SaveTimeInStore } from "./save-time-in-store";
 import { MedicalFormCompleted } from "./medical-form-completed";
-import { AppointmentConfirmationUser } from "@/types/appointmentConfirmation.types";
+import { AppointmentConfirmationUser } from "@root/host/src/types/appointmentConfirmation.types";
 
 const IMAGES = ImageUrlConstants.APPOINTMENT_CONFIRMATION.BOOKING_CONFIRMATION;
 

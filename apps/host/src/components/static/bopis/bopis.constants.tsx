@@ -1,6 +1,6 @@
 import { FAQItem } from "@/components/faq";
 import { UseTranslationResponse } from "react-i18next";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const BOPIS_IMAGES = ImageUrlConstants.BOPIS;
 

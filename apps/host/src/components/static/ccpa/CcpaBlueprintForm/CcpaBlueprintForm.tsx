@@ -1,4 +1,4 @@
-import { phoneRegex, isEmailValidRegex, SNACKBAR_COLOR_TYPE } from '@/constants/common.constants';
+import { phoneRegex, isEmailValidRegex, SNACKBAR_COLOR_TYPE } from '@root/host/src/constants/common.constants';
 import {
   TextField,
   Checkbox,
@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { useRecaptchaToken } from '@/hooks/useGoogleRecaptcha';
 import { CcpaRequest, saveCcpaData } from '@/service/ccpa.service';
 import { useSnackBar } from '@/contexts/Snackbar/SnackbarContext';
-import { STORE_ERROR_MESSAGE } from '@/constants/store.constants';
+import { STORE_ERROR_MESSAGE } from '@root/host/src/constants/store.constants';
 
 export const CcpaBlueprintForm = (props: any) => {
   const { fetchRecaptchaToken } = useRecaptchaToken();

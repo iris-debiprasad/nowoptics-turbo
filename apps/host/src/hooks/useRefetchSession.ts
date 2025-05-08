@@ -1,5 +1,5 @@
-import { USER_TYPE } from "@/constants/common.constants";
-import { getDetails } from "@/utils/getSessionData";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
+import { getDetails } from "@root/host/src/utils/getSessionData";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 

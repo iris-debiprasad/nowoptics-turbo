@@ -6,10 +6,10 @@ import Button from "@mui/material/Button";
 import { ResponsiveBanner } from "@/components/responsive-banner";
 import { CircularProgress, MenuItem } from "@mui/material";
 import { PDFDocument, StandardFonts } from "pdf-lib";
-import { BRAND } from "@/constants/common.constants";
-import { checkBrand, isMobileDevice } from "@/utils/common.utils";
+import { BRAND } from "@root/host/src/constants/common.constants";
+import { checkBrand, isMobileDevice } from "@root/host/src/utils/common.utils";
 import i18n from "@root/host/src/language/i18n";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 export interface IOption {
   value: string;

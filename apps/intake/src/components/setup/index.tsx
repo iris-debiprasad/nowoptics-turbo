@@ -39,7 +39,7 @@ import SelectInput from "../common/select";
 import PatientInformation from "../patientinformation";
 import QuestionStep from "../questionstep";
 import styles from "./Setup.module.scss";
-import { SnackBarProvider, useSnackBar } from "@/context/SnackbarContext";
+import { SnackBarProvider, useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import { Provider } from "react-redux";
 import { store } from "@root/host/src/store/store";
@@ -53,11 +53,11 @@ import { ErrorResponseType } from "@root/host/src/types/intakeApi.types";
 import {
   COMMON_INPUT_MAX_LENGTH,
   INTAKE_LANGUAGE_TYPES,
-} from "@/constants/intake.constants";
+} from "@root/intake/src/constants/intake.constants";
 import Previewintake from "../previewintake";
 import { ConfirmationModalProps } from "@root/host/src/types/confirmationModal.types";
 import usePermission from "@root/host/src/hooks/usePermission";
-import { IntakePermission } from "@/constants/intake-permission.constant";
+import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 import { GetPermissionConfig } from "@root/host/src/config/permissionConfig";
 const Breadcrumb = dynamic(() => import("host/Breadcrumb"), {
   ssr: false,
@@ -65,9 +65,10 @@ const Breadcrumb = dynamic(() => import("host/Breadcrumb"), {
 const BackdropLoader = dynamic(() => import("host/BackdropLoader"), {
   ssr: false,
 }) as FunctionComponent<{ openLoader: boolean }>;
-const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
-  ssr: false,
-}) as FunctionComponent<ConfirmationModalProps>;
+// const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
+//   ssr: false,
+// }) as FunctionComponent<ConfirmationModalProps>;
+import ConfirmationModal from "@root/host/src/components/confirmationModal/ConfirmationModal";
 import dayjs from "dayjs";
 import { DATE_TIME_24H_FORMAT } from "@root/host/src/constants/common.constants";
 

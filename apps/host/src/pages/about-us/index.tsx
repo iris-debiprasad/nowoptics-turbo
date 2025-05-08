@@ -1,5 +1,5 @@
 import AboutUs from "@/components/static/about_us/AboutUs";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 import { useGetBrand } from "@/hooks/useGetBrand";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";

@@ -1,7 +1,7 @@
 import HomeSkeleton from "@/components/skeleton_loader/HomeSkeleton";
-import { USER_TYPE } from "@/constants/common.constants";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import { getProducts, GetSOHomePageData } from "@/service/common.service";
-import { HomePageDTO } from "@/types/home.types";
+import { HomePageDTO } from "@root/host/src/types/home.types";
 import { GetServerSideProps } from "next";
 import { getToken } from "next-auth/jwt";
 import dynamic from "next/dynamic";

@@ -1,9 +1,9 @@
-import { USER_TYPE } from "@/constants/common.constants";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import {
   formatToTwoDecimalPlaces,
   getContactLensImage,
-} from "@/utils/common.utils";
-import { getDetails } from "@/utils/getSessionData";
+} from "@root/host/src/utils/common.utils";
+import { getDetails } from "@root/host/src/utils/getSessionData";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { generateProductLink } from "@root/host/src/utils/common.utils";
@@ -11,11 +11,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import style from "../variant/Variant.module.scss";
 import ClLoader from "@root/assets/Images/icons/cl-loader.svg";
-import i18n from "@/language/i18n";
-import { ContactLensProps } from "@/types/order-common.types";
+import i18n from "@root/host/src/language/i18n";
+import { ContactLensProps } from "@root/host/src/types/order-common.types";
 import Image from "next/image";
-import { IUnbxd } from "@/types/unbxd.type";
-import { getUnbxd } from "@/utils/unbxdController.utils";
+import { IUnbxd } from "@root/host/src/types/unbxd.type";
+import { getUnbxd } from "@root/host/src/utils/unbxdController.utils";
 
 function ContactLens(props: ContactLensProps) {
   const [userRole, setUserRole] = useState();

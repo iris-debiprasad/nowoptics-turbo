@@ -14,16 +14,16 @@ import {
   Radio,
 } from "@mui/material";
 import style from "./TableFilter.module.scss";
-import { TableFilterDTO } from "@/types/TableFilter.types";
+import { TableFilterDTO } from "@root/host/src/types/TableFilter.types";
 import Image from "next/image";
 import ErrorIcon from "@root/assets/Images/icons/error.svg";
-import { ERROR_MESSAGE } from "@/constants/auth.constants";
+import { ERROR_MESSAGE } from "@root/host/src/constants/auth.constants";
 import {
   BLOCKED_FILTER_CHARACTERS_FLOAT,
   BLOCKED_FILTER_CHARACTERS_NUMBER,
   BLOCKED_FILTER_CHARACTERS_STRING,
   VARIABLE_TYPES,
-} from "@/constants/common.constants";
+} from "@root/host/src/constants/common.constants";
 
 const INITIAL_STATE = {
   filterOperator: {

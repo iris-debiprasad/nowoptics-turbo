@@ -1,5 +1,5 @@
 import { HeaderConfig } from "@/config/headerConfig";
-import { IrisUrlConstants } from "@/constants/iris.url.constants";
+import { IrisUrlConstants } from "@root/host/src/constants/iris.url.constants";
 import axios from "axios";
 
 export const GetAuthenticatedUserPermission = () => {

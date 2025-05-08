@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import css from "./ppc.module.scss";
 import IconSVG from "@/components/iconsvg/IconSVG";
 import { Box } from "@mui/material";
-import { StoreHoursDTO } from "@/types/SideBar.types";
-import { getWeekday } from "@/utils/storeHourFormatter";
+import { StoreHoursDTO } from "@root/host/src/types/SideBar.types";
+import { getWeekday } from "@root/host/src/utils/storeHourFormatter";
 
 export const statesList = {
   al: "alabama",

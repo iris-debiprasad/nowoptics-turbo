@@ -21,7 +21,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@module-federation/nextjs-mf": "8.8.20",
     "@mui/material": "^5.16.7",
     "@mui/x-date-pickers": "^6.1.0",
     "@progress/kendo-drawing": "^1.17.6",

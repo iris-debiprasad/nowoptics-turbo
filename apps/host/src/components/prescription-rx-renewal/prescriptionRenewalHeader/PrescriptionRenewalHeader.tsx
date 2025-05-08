@@ -3,7 +3,7 @@ import { Box, Skeleton, Typography } from "@mui/material";
 import style from "./PrescriptionRenewalHeader.module.scss";
 import React from "react";
 import useAppLogo from "@/hooks/useAppLogo";
-import { RX_RENEWAL_CONSTANT } from "@/constants/RxRenewal.constants";
+import { RX_RENEWAL_CONSTANT } from "@root/host/src/constants/RxRenewal.constants";
 import { useRouter } from "next/router";
 
 const PrescriptionRenewalHeader = () => {

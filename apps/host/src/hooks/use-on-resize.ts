@@ -1,5 +1,5 @@
 import React from "react";
-import { throttle } from "@/utils/performance.utils";
+import { throttle } from "@root/host/src/utils/performance.utils";
 
 export interface Params {
     /** Corresponds to a breakpoint value where when matched, will trigger a toggle value change */

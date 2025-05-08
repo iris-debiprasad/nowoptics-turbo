@@ -1,4 +1,4 @@
-import { CurrentPrescriptionrDTO } from "@/types/rxRenewal.types";
+import { CurrentPrescriptionrDTO } from "@root/host/src/types/rxRenewal.types";
 
 export const RX_RENEWAL_CONSTANT = {
   FOUR_STEP_BANNER_HEADING: "FOUR EASY STEPS:",

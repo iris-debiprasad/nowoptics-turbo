@@ -1,6 +1,6 @@
 import React from "react";
 
-import { debounce } from "@/utils/performance.utils";
+import { debounce } from "@root/host/src/utils/performance.utils";
 import { SAME_DAY_GLASSES_REVIEWS } from "./reviews.constants";
 import { useTranslation } from "react-i18next";
 

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import styles from "./index.module.scss";
 import { LoggedOut } from "./logged-out";
 import type { Props as MobileMenuProps } from "..";
-import { USER_TYPE } from "@/constants/common.constants";
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
 import { LoggedIn } from "./logged-in";
 
 export interface Props

@@ -4,7 +4,7 @@ import IconSVG from "@/components/iconsvg/IconSVG";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import i18n from "@root/host/src/language/i18n";
-import { ImageUrlConstants } from "@/constants/image.url.constants";
+import { ImageUrlConstants } from "@root/host/src/constants/image.url.constants";
 
 const BLOG_IMAGES = ImageUrlConstants.BLOG;
 

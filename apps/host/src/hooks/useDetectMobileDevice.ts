@@ -1,4 +1,4 @@
-import { isMobileDevice } from "@/utils/common.utils";
+import { isMobileDevice } from "@root/host/src/utils/common.utils";
 import React from "react";
 
 /**

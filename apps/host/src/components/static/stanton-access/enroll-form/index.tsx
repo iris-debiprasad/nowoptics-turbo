@@ -13,9 +13,9 @@ import { useRelationshipTypes } from "./use-relationship-types";
 import { SelectRelationshipModal } from "../components/select-relationship-modal";
 import { useRelatedPatients } from "./use-related-patients";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { EnrollFormFields } from "@/types/stantonAccess.types";
+import { EnrollFormFields } from "@root/host/src/types/stantonAccess.types";
 import { useSnackBar } from "@/contexts/Snackbar/SnackbarContext";
-import { SNACKBAR_COLOR_TYPE } from "@/constants/common.constants";
+import { SNACKBAR_COLOR_TYPE } from "@root/host/src/constants/common.constants";
 
 const MAX_DISPLAYED_FORMS = 3;
 const PHONE_IN_USE_ERROR_CODE = "Patient_Account_PhoneExists";

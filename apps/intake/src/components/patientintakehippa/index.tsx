@@ -1,4 +1,4 @@
-import { useSnackBar } from "@/context/SnackbarContext";
+import { useSnackBar } from "@root/intake/src/context/SnackbarContext";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 
 import {
@@ -57,9 +57,9 @@ import SignatureCanvas from "react-signature-canvas";
 import styles from "./PatientIntakeHippa.module.scss";
 import { useRouter } from "next/router";
 import { Box, Button, Modal, TextField } from "@mui/material";
-import { RECAPTCHA_ACTION } from "@/constants/intake.constants";
+import { RECAPTCHA_ACTION } from "@root/intake/src/constants/intake.constants";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
-import { useAppointmentConfirmationIntegration } from "@/hooks/useAppointmentConfirmationIntegration";
+import { useAppointmentConfirmationIntegration } from "@root/intake/src/hooks/useAppointmentConfirmationIntegration";
 
 const PatientIntakeHippa: FC<PatientIntakeHippaProps> = ({ activeStep }) => {
   const { onBookEyeExamFlowIntegration } = useAppointmentConfirmationIntegration();

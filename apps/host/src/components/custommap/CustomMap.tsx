@@ -5,7 +5,7 @@ import {
   Marker,
   OverlayView,
 } from "@react-google-maps/api";
-import { Props } from "@/types/Map.type";
+import { Props } from "@root/host/src/types/Map.type";
 import homeIcon from "@root/assets/Images/icons/home.svg";
 
 const MAP_API_KEY = process.env.NEXT_PUBLIC_MAP_SECRET;

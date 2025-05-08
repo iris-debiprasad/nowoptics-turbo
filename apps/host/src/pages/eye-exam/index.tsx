@@ -4,7 +4,7 @@ import FooterPPC from "@/components/static/ppc/ppc-footer";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import { useGetBrand } from "@/hooks/useGetBrand";
-import { BRAND } from "@/constants/common.constants";
+import { BRAND } from "@root/host/src/constants/common.constants";
 
 const EyeExamPage = (): JSX.Element => {
   const { t } = useTranslation();

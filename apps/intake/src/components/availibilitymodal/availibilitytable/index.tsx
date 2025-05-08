@@ -2,7 +2,7 @@ import {
   COMPANY_COLUMNS,
   STATE_COLUMNS,
   STORE_COLUMNS,
-} from "@/constants/intakeTable.constants";
+} from "@root/intake/src/constants/intakeTable.constants";
 import { useAppDispatch } from "@root/host/src/hooks/useStore";
 import { TOGGLE_AVAILIBILITY_MODAL_ACCORDION } from "@root/host/src/store/reducer/intake.slice";
 import {
@@ -40,11 +40,8 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { FunctionComponent, memo, useCallback, useMemo, useState } from "react";
 import styles from "../AvailibilityModal.module.scss";
-import { DEFAULT_EMPTY_TABLE_MESSAGE } from "@/constants/intake.constants";
-const CustomTablePagination = dynamic(
-  () => import("host/CustomTablePagination"),
-  { ssr: false }
-) as FunctionComponent<CustomTablePaginationDTO>;
+import { DEFAULT_EMPTY_TABLE_MESSAGE } from "@root/intake/src/constants/intake.constants";
+import CustomTablePagination from "@root/host/src/components/customTablePagination/CustomTablePagination";
 
 const AvailibilityTable: FunctionComponent<AvailibilityTableProps> = ({
   type,

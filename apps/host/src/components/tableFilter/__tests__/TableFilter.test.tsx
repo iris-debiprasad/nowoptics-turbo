@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import TableFilter from "../TableFilter";
-import { TableFilterDTO } from "@/types/TableFilter.types";
+import { TableFilterDTO } from "@root/host/src/types/TableFilter.types";
 import "@testing-library/jest-dom";
 
 describe("Filter component", () => {

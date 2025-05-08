@@ -8,8 +8,8 @@ import useAppLogo from "@/hooks/useAppLogo";
 import {
   BRAND,
   SOCIAL_LINKS,
-} from "@/constants/common.constants";
-import { checkBrand } from "@/utils/common.utils";
+} from "@root/host/src/constants/common.constants";
+import { checkBrand } from "@root/host/src/utils/common.utils";
 
 const MELFooterPPC = (props: any) => {
   const appLogo = useAppLogo();
