@@ -16,5 +16,8 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "i18next": "^23.10.0"
   }
 }

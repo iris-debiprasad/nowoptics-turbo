@@ -1,7 +1,6 @@
 {
   /* @ts-nocheck */
 }
-import { ImageUrlConstants } from "@/constants/image.url.constants";
 import { Head, Html, Main, NextScript } from "next/document";
 export default function Document() {
   return (
@@ -14,12 +13,7 @@ export default function Document() {
         <link rel="preload" href="https://dam.nowoptics.net/m/fa378efdeaa4704/original/Latinotype-Recoleta_Regular.woff" type="font/woff" crossOrigin="anonymous" />
         <link rel="preload" href="https://dam.nowoptics.net/m/75f75f70bafd0c77/original/Latinotype-Recoleta_SemiBold.woff" type="font/woff" crossOrigin="anonymous" />
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
-        <link
-          rel="icon"
-          href={ImageUrlConstants.FAV_ICON.SO}
-          type="image/png"
-          sizes="32x32"
-        />
+
         <script
           type="text/javascript"
           async

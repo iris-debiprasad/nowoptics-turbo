@@ -10,10 +10,12 @@ import { useRouter } from "next/router";
 import { FunctionComponent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const BookEyeComponent = dynamic(() => import("home/BookEyeExam"), {
-  ssr: false,
-  loading: () => <BookEyeExamSkeleton />,
-}) as FunctionComponent<{ userType: any; brand: string }>;
+// const BookEyeComponent = dynamic(() => import("home/BookEyeExam"), {
+//   ssr: false,
+//   loading: () => <BookEyeExamSkeleton />,
+// }) as FunctionComponent<{ userType: any; brand: string }>;
+
+import BookEyeComponent from "home/BookEyeExam";
 
 export default function Patient() {
   const router = useRouter();

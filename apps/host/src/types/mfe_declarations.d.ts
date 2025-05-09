@@ -321,3 +321,5 @@ declare module "guidedSales/GuidedSalesTemplateHistory";
 declare module "guidedSales/GuidedSalesTemplatePreferences";
 declare module "guidedSales/GuidedSalesTemplateSettings";
 declare module "guidedSales/GuidedSalesTemplateNotification";
+declare module "intake/Patient";
+declare module "home/BookEyeExam";

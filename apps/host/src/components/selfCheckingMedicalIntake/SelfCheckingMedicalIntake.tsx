@@ -9,11 +9,11 @@ import {AlertColor} from "@mui/material";
 import {useSnackBar} from "@/contexts/Snackbar/SnackbarContext";
 import styles from "./SelfCheckingMedicalIntake.module.scss";
 
-const SetupPage = dynamic(() => import("intake/Patient"), {
-  ssr: false,
-  loading: () => <BackdropLoader openLoader={true} />,
-}) as FunctionComponent<{ patientId: number }>;
-
+// const SetupPage = dynamic(() => import("intake/Patient"), {
+//   ssr: false,
+//   loading: () => <BackdropLoader openLoader={true} />,
+// }) as FunctionComponent<{ patientId: number }>;
+import SetupPage from "intake/Patient";
 function SelfCheckingMedicalIntake() {
   const [patientId, setPatientId] = useState<number | null>(null);
   const { showSnackBar } = useSnackBar();
