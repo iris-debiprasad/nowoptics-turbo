@@ -4,6 +4,7 @@ const withImages = require("next-images");
 module.exports = withImages({
   staticPageGenerationTimeout: 1000,
   output: "standalone",
+  transpilePackages: ['home', 'intake', '@shared/host'],
   images: {
     unoptimized: true,
   },

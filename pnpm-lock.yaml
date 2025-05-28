@@ -101,7 +101,7 @@ importers:
         version: 14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0)
       next-auth:
         specifier: 4.24.11
-        version: 4.24.11(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.24.11(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-images:
         specifier: ^1.8.5
         version: 1.8.5(webpack@5.99.7)
@@ -110,7 +110,7 @@ importers:
         version: 9.1.0
       nextjs-progressbar:
         specifier: ^0.0.16
-        version: 0.0.16(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1)
+        version: 0.0.16(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1)
       pdf-lib:
         specifier: ^1.17.1
         version: 1.17.1
@@ -303,7 +303,7 @@ importers:
         version: 14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0)
       next-auth:
         specifier: 4.24.11
-        version: 4.24.11(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.24.11(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-images:
         specifier: ^1.8.5
         version: 1.8.5(webpack@5.99.7)
@@ -312,7 +312,7 @@ importers:
         version: 9.1.0
       nextjs-progressbar:
         specifier: ^0.0.16
-        version: 0.0.16(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1)
+        version: 0.0.16(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1)
       pdf-lib:
         specifier: ^1.17.1
         version: 1.17.1
@@ -428,6 +428,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^2.3.0
         version: 2.7.0(react-redux@9.2.0(@types/react@18.3.20)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      '@shared/host':
+        specifier: workspace:*
+        version: link:../../packages/shared-host
       '@testing-library/react':
         specifier: ^14.0.0
         version: 14.3.1(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -644,7 +647,7 @@ importers:
         version: 14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0)
       next-auth:
         specifier: 4.24.11
-        version: 4.24.11(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.24.11(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-images:
         specifier: ^1.8.5
         version: 1.8.5(webpack@5.99.7)
@@ -653,7 +656,7 @@ importers:
         version: 9.1.0
       nextjs-progressbar:
         specifier: ^0.0.16
-        version: 0.0.16(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1)
+        version: 0.0.16(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1)
       pdf-lib:
         specifier: ^1.17.1
         version: 1.17.1
@@ -10457,7 +10460,7 @@ snapshots:
 
   netmask@2.0.2: {}
 
-  next-auth@4.24.11(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next-auth@4.24.11(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.27.1
       '@panva/hkdf': 1.2.1
@@ -10509,7 +10512,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextjs-progressbar@0.0.16(next@14.2.26(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1):
+  nextjs-progressbar@0.0.16(next@14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0))(react@18.3.1):
     dependencies:
       '@types/nprogress': 0.2.3
       next: 14.2.26(@babel/core@7.27.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.87.0)

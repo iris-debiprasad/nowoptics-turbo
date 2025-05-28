@@ -47,11 +47,11 @@ module.exports = {
       "^.+\\.svg$": "<rootDir>/src/mocks/svgTransform.mock.ts",
   
       // Handle module aliases
-      "^@/components/(.*)$": "<rootDir>/src/components/$1",
+      "^@root/intake/src/components/(.*)$": "<rootDir>/src/components/$1",
       "^@/context/(.*)$": "<rootDir>/src/context/$1",
       "^@/mocks/(.*)$": "<rootDir>/src/mocks/$1",
       "^@/hooks/(.*)$": "<rootDir>/src/hooks/$1",
-      "^@/constants/(.*)$": "<rootDir>/src/constants/$1",
+      "^@root/intake/src/constants/(.*)$": "<rootDir>/src/constants/$1",
       "^@/utils/(.*)$": "<rootDir>/src/utils/$1",
       "^@/slices/(.*)$": "<rootDir>/src/slices/$1",
       "^@/types/(.*)$" : "<rootDir>/src/types/$1",

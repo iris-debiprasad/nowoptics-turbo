@@ -2,11 +2,11 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
 import React from 'react'
-import { five9DTO } from "../../../../customer-doctor-support/src/types/five9.type";
+// import { five9DTO } from "../../../../customer-doctor-support/src/types/five9.type";
 /* TODO: getting the query params from the url  http://localhost:3000/support?storeId=0001&custph=9911489970# */
 const SupportPage = dynamic(() => import("support/Support"), {
   ssr: false,
-}) as React.FunctionComponent<five9DTO>;
+}) as React.FunctionComponent<any>;
 
 const Support = () => {
   const router = useRouter();

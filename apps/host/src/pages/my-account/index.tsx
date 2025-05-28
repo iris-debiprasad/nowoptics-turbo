@@ -8,7 +8,7 @@ import {
 } from "@root/host/src/constants/common.constants";
 import { useHasInHousePxsContext } from "@/contexts/ HasInHousePxs/ HasInHousePxsContext";
 import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
-import { MyAccountDTO } from "@root/patient/src/types/MyAccount.types";
+// import { MyAccountDTO } from "@root/patient/src/types/MyAccount.types";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -17,7 +17,7 @@ import { useContext, useEffect, useState } from "react";
 const MyAccount = dynamic(() => import("patient/MyAccount"), {
   ssr: false,
   loading: () => <BackdropLoader openLoader={true} />,
-}) as React.FunctionComponent<MyAccountDTO>;
+}) as React.FunctionComponent<any>;
 
 export default function MyAccountProfile() {
   const env = useContext(RuntimeVarContext);

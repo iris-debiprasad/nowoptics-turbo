@@ -36,7 +36,8 @@
     "react-i18next": "^15.4.0",
     "react-redux": "^9.1.2",
     "react-signature-canvas": "^1.0.6",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "@shared/host": "workspace:*"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,4 +1,4 @@
-import { HIPPA_STATE_FORM_COLUMNS } from "@/constants/intakeTable.constants";
+import { HIPPA_STATE_FORM_COLUMNS } from "@root/intake/src/constants/intakeTable.constants";
 import {
   useGetAllHippaFormsQuery,
   useUploadStateHippaFileMutation,

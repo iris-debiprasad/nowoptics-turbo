@@ -16,10 +16,10 @@ import { useAppSelector } from "@root/host/src/hooks/useStore";
 import { GetApiLoadingState } from "@root/host/src/store/reducer/intake.selector";
 import usePermission from "@root/host/src/hooks/usePermission";
 import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
-const Breadcrumb = dynamic(() => import("host/Breadcrumb"), {
+const Breadcrumb = dynamic(() => import("@shared/host/Breadcrumb"), {
   ssr: false,
 }) as FunctionComponent<BreadcrumbProps>;
-const BackdropLoader = dynamic(() => import("host/BackdropLoader"), {
+const BackdropLoader = dynamic(() => import("@shared/host/BackdropLoader"), {
   ssr: false,
 }) as FunctionComponent<{ openLoader: boolean }>;
 

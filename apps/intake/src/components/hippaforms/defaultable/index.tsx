@@ -3,7 +3,7 @@ import {
   DEFAULT_EMPTY_TABLE_MESSAGE,
   HIPPA_FILE_ERRORS,
 } from "@root/intake/src/constants/intake.constants";
-import { HIPPA_LANGUAGE_FORM_COLUMNS } from "@/constants/intakeTable.constants";
+import { HIPPA_LANGUAGE_FORM_COLUMNS } from "@root/intake/src/constants/intakeTable.constants";
 import {
   useGetDefaultHippaFormsQuery,
   useUploadDefaultHippaFileMutation,

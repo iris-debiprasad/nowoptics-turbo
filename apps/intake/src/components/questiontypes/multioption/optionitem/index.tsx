@@ -1,6 +1,6 @@
 import Input from "@root/intake/src/components/common/input";
-import Recommend from "@/components/common/recommend";
-import Questionform from "@/components/questionform";
+import Recommend from "@root/intake/src/components/common/recommend";
+import Questionform from "@root/intake/src/components/questionform";
 import { useAppDispatch, useAppSelector } from "@root/host/src/hooks/useStore";
 import {
   GetFormErrorByType,

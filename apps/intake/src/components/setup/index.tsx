@@ -59,10 +59,10 @@ import { ConfirmationModalProps } from "@root/host/src/types/confirmationModal.t
 import usePermission from "@root/host/src/hooks/usePermission";
 import { IntakePermission } from "@root/intake/src/constants/intake-permission.constant";
 import { GetPermissionConfig } from "@root/host/src/config/permissionConfig";
-const Breadcrumb = dynamic(() => import("host/Breadcrumb"), {
+const Breadcrumb = dynamic(() => import("@shared/host/Breadcrumb"), {
   ssr: false,
 }) as FunctionComponent<BreadcrumbProps>;
-const BackdropLoader = dynamic(() => import("host/BackdropLoader"), {
+const BackdropLoader = dynamic(() => import("@shared/host/BackdropLoader"), {
   ssr: false,
 }) as FunctionComponent<{ openLoader: boolean }>;
 // const ConfirmationModal = dynamic(() => import("host/ConfirmationModal"), {
