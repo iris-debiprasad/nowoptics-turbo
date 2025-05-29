@@ -23,11 +23,13 @@
     "@microsoft/applicationinsights-web": "^3.0.6",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
+    "@mui/system": "^7.1.0",
     "@mui/x-date-pickers": "^6.5.0",
     "@progress/kendo-drawing": "^1.19.1",
     "@progress/kendo-theme-default": "^10.0.1",
     "@react-google-maps/api": "^2.19.2",
     "@reduxjs/toolkit": "^2.3.0",
+    "@shared/host": "workspace:*",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "18.15.11",
@@ -60,8 +62,7 @@
     "slick-carousel": "^1.8.1",
     "typescript": "^5.7.3",
     "uuid": "^11.1.0",
-    "webpack": "^5.95.0",
-    "@shared/host": "workspace:*"
+    "webpack": "^5.95.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
