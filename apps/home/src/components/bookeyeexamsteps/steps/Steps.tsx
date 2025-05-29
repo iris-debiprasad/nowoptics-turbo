@@ -41,7 +41,7 @@ import ModifyAppointmentConfirmation from "./ModifyAppointmentConfirmation";
 import { Constants } from "@root/home/src/constants/Constants";
 import { useRecaptchaToken } from "@root/host/src/hooks/useGoogleRecaptcha";
 import useAppointmentScheduler from "../../../hooks/useEmailAppointmentScheduler";
-import SideBar from "@root/host/src/components/sideBar/SideBar";
+import SideBar from "../../../../../host/src/components/sideBar/SideBar";
 
 const FirstStep: FC<{
   stepCount: number;
