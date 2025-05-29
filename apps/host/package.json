@@ -7,7 +7,7 @@
     "build:local": "env-cmd -f .env.local next build",
     "build:dev": "env-cmd -f .env.dev next build",
     "build": "next build",
-    "start": "next start -p 3000",
+    "start": "node server.js",
     "deploy": "node server.js",
     "lint": "next lint",
     "test": "jest --coverage"
