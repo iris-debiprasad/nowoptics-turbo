@@ -1,5 +1,6 @@
 const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 const withImages = require("next-images");
+const path = require("path");
 
 module.exports = withImages({
   staticPageGenerationTimeout: 1000,
@@ -7,6 +8,9 @@ module.exports = withImages({
   transpilePackages: ['home', 'intake', '@shared/host'],
   images: {
     unoptimized: true,
+  },
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, '../../'),
   },
   trailingSlash: true,
   webpack(config, options) {
