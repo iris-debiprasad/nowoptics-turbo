@@ -1,24 +1,26 @@
 {
-  "name": "nowoptics-turbo",
+  "name": "itis_turbo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types",
-     "start": "node apps/host/server.js"
+    "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "babel-loader": "^10.0.0",
     "prettier": "^3.5.3",
-    "turbo": "^2.5.2",
+    "ts-loader": "^9.5.2",
+    "turbo": "^2.5.4",
     "typescript": "5.8.2"
   },
-  "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
   },
-  "dependencies": {
-    "i18next": "^23.10.0"
-  }
+  "packageManager": "npm@10.8.3",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
