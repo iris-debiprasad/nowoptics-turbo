@@ -1,0 +1,33 @@
+@import "../../../../assets/styles/_variables.scss";
+@import "../../../../assets/styles/_mixin.scss";
+
+.modalWrapper {
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      min-width: 30px;
+      margin-bottom: 5px;
+
+      @media (max-width: $extra-large) {
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .modalHeading {
+      @include fontFSWH($primary-font, 18px, 400, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 15px, 400, 20px);
+      }
+    }
+  }
+
+  .modalBody {
+    padding-top: 3px;
+  }
+}

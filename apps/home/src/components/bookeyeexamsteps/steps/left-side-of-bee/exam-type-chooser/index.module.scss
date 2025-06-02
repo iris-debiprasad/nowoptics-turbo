@@ -1,0 +1,77 @@
+@use "../../../../../../../assets/styles/mixin" as mi;
+@use "../../../../../../../assets/styles/variables" as vars;
+
+.typeOfExams {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  grid-gap: 1rem;
+  width: 100%;
+
+  .bookEyeExamActionBtnTitle {
+    @include mi.secondary_button;
+    border-radius: 5px;
+    min-width: 30%;
+    width: max-content;
+    margin: 10px 0 10px 0;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    text-transform: none !important;
+    @include mi.fontFSWH(vars.$primary-font, 18px, 400, 20px);
+
+    @media (max-width: vars.$small) {
+      width: 100%;
+    }
+
+    .bookEyeExamActionBtnTitleText {
+      @include mi.fontFSWH(vars.$primary-font, 18px, 400, 22px);
+
+      @media (max-width: vars.$extra-large) {
+        @include mi.fontFSWH(vars.$primary-font, 15px, 400, 19px);
+      }
+    }
+
+    .bookEyeExamActionBtnSubTitle {
+      @include mi.fontFSWH(vars.$primary-font, 14px, 400, 18px);
+
+      @media (max-width: vars.$extra-large) {
+        @include mi.fontFSWH(vars.$primary-font, 12px, 400, 16px);
+      }
+    }
+  }
+
+  .bookEyeExamActionBtnTitleSelected {
+    @include mi.secondary_button;
+    color: vars.$primary-color;
+    background-color: vars.$primary-font-color;
+    border-radius: 5px;
+    min-width: 30%;
+    width: max-content;
+    margin: 10px 0 10px 0;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    text-transform: none !important;
+
+    @media (max-width: vars.$small) {
+      width: 100%;
+    }
+
+    .bookEyeExamActionBtnTitleText {
+      @include mi.fontFSWH(vars.$primary-font, 18px, 400, 22px);
+
+      @media (max-width: vars.$extra-large) {
+        @include mi.fontFSWH(vars.$primary-font, 15px, 400, 19px);
+      }
+    }
+
+    .bookEyeExamActionBtnSubTitle {
+      @include mi.fontFSWH(vars.$primary-font, 14px, 400, 18px);
+
+      @media (max-width: vars.$extra-large) {
+        @include mi.fontFSWH(vars.$primary-font, 12px, 400, 16px);
+      }
+    }
+  }
+}

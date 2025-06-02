@@ -1,0 +1,152 @@
+@import "../../../../assets/styles/mixin";
+@import "../../../../assets/styles/fonts";
+@import "../../../../assets/styles/variables";
+
+html body {
+  .modalContainer {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-direction: column;
+
+    & > .modalHeader > .modalTitle {
+      margin: 0;
+      @include fontFSWH($primary-font, 20px, 400, 24px);
+      color: $black;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+  }
+
+  .modalHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 24px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $primary-light-color;
+    }
+
+    & > button > img {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .modalContent {
+    width: 100%;
+    max-height: 75vh;
+    overflow: auto;
+  }
+
+  .modalBody {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: repeat(2, 48%);
+    column-gap: 24px;
+    justify-content: flex-start;
+
+    & > div {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    @media (max-width: $medium) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .inputLabel {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .modalFooter {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    justify-content: flex-start;
+
+    & > button {
+      @include primary_button;
+      cursor: pointer;
+      padding: 12px 48px;
+    }
+  }
+
+  .accordionRoot {
+    margin-bottom: 12px;
+    width: 98%;
+    border: 1px solid $primary-light-color;
+    box-shadow: none;
+    border-radius: 5px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .accordionSummary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    margin: 15px 0;
+
+    & > div {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      @include fontFSWH($primary-font, 20px, 400, 24px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+
+    & > button {
+      margin-right: 16px;
+    }
+
+    @media (max-width: $extra-large) {
+      padding: 0;
+
+      & > div {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+  }
+
+  .disabledBtn {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+  }
+
+  .optionLabel {
+    margin-left: 8px;
+  }
+
+  .emptyTableMessage {
+    display: flex;
+    @include fontFSWH($primary-font, 16px, 400, 24px);
+    margin-top: 10px;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+}

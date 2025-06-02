@@ -1,0 +1,114 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+.boxContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  @media (max-width: $medium) {
+    width: 84%;
+    margin-top: 10px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem auto;
+    padding: 3rem 8rem;
+    border-radius: 10px;
+    background: linear-gradient(180deg, $bg-header, $white 100%, $white 0);
+    box-shadow: 0 2px 11px 4px $shadow-color;
+    @media (max-width: $small) {
+      padding: 2rem;
+    }
+    .modalContent{
+      text-align: center;
+    .scheduleContainer {
+      position: relative;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 220px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+      @media screen and (min-width: $extra-large) {
+        width: 300px;
+        height: 230px;
+      }
+
+      .storeHoursTimingItem {
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-start;
+
+        .day {
+          width: 60px;
+
+          .highlightedDay {
+            @include fontFSWH($primary-font, 14px, 500, 17px);
+
+            @media screen and (max-width: $extra-large) {
+              @include fontFSWH($primary-font, 12px, 500, 14px);
+            }
+          }
+
+          .normalDay {
+            @include fontFSWH($primary-font, 14px, 400, 17px);
+
+            @media screen and (max-width: $extra-large) {
+              @include fontFSWH($primary-font, 12px, 400, 14px);
+            }
+          }
+        }
+
+        .status {
+          .normalStatus {
+            @include fontFSWH($primary-font, 15px, 400, 19px);
+
+            @media screen and (max-width: $extra-large) {
+              @include fontFSWH($primary-font, 12px, 400, 16px);
+            }
+          }
+          .highlightedStatus {
+            @include fontFSWH($primary-font, 15px, 500, 19px);
+
+            @media screen and (max-width: $extra-large) {
+              @include fontFSWH($primary-font, 12px, 500, 16px);
+            }
+          }
+        }
+      }
+
+      .storeHoursVerticalBar {
+        position: absolute;
+        border: 1px solid $primary-light-color;
+        height: 185px;
+        width: 0;
+        right: 160px;
+        @media screen and (min-width: $extra-large) {
+          right: 215px;
+        }
+      }
+    }
+  }
+
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      .visionBtn {
+        @include secondary_button;
+        margin-right: 20px;
+        margin-bottom: 0px;
+      }
+      .inStoreExamBtn {
+        @include primary_button;
+        height: min-content;
+        padding: 12px;
+      }
+    }
+  }
+}

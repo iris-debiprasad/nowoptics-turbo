@@ -1,0 +1,42 @@
+@import "../../../../../assets/styles/variables";
+
+.radioContainer {
+
+  display: flex;
+  align-items: center;
+
+  & > input {
+    display: none;
+  }
+
+  & > label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    border: 1px solid $secondary-font-color;
+    cursor: pointer;
+  }
+
+  .radioLabel {
+    margin-left: 5px;
+  }
+
+  & img {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+.checked {
+  position: relative;
+  & > div {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: $primary-font-color;
+  }
+}

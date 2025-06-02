@@ -1,0 +1,40 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/mixin";
+@import "../../../../../assets/styles/fonts";
+
+html body {
+  .inputRoot {
+    & fieldset {
+      border: 1px solid $secondary-font-color;
+      border-radius: 10px;
+    }
+    border-radius: 10px;
+    background-color: $white;
+    font-family: $primary-font;
+    & > input::placeholder {
+      color: $primary-light-color;
+      @include fontFSWH($primary-font, 14px, 400, 17px);
+    }
+    color: $primary-font-color;
+    & > div {
+      height: 45px;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 16px);
+        height: 36px;
+      }
+
+      @media (max-width: $small) {
+        font-size: 16px !important;
+      }
+
+    }
+  }
+
+  .disabledInput {
+    & > div {
+      background-color: $primary-light-color;
+      border-radius: 10px;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+import { USER_TYPE } from "@root/host/src/constants/common.constants";
+import { RuntimeVarContext } from "@/contexts/RuntimeVarContext";
+import { useAppSelector } from "@/store/useStore";
+import { getDetails } from "@root/host/src/utils/getSessionData";
+import { useContext, useEffect, useRef, useState } from "react";
+
+interface Props {
+  onPrompt: () => void;
+}
+
+const useAppIdleTimerPatient = (props: Props) => {
+  const env = useContext(RuntimeVarContext);
+  const [authStatus, setAuthStatus] = useState("");
+  const [userRole, setUserRole] = useState();
+  const [showPrompt, setShowPrompt] = useState(false);
+  const timerRef = useRef<any>();
+  const [workerRegister, setWorkerRegister] = useState(false);
+  const startTimer = () => {
+    const threshold =
+      Number(env?.NEXT_PUBLIC_PATIENT_IDLE_TIMEOUT_IN_MS as string) -
+      Number(env?.NEXT_PUBLIC_PATIENT_IDLE_TIMEOUT_PROMPT_MS as string);
+    if (timerRef.current) {
+      timerRef.current.postMessage({ command: "start", interval: threshold });
+    }
+  };
+
+  const handleResetTimer = (reset: boolean) => {
+    if (timerRef.current) {
+      timerRef.current.postMessage({ command: "stop" });
+    }
+    if (reset) {
+      startTimer();
+    }
+  };
+
+  useEffect(() => {
+    if (timerRef.current) {
+      if (
+        userRole === USER_TYPE.PATIENT &&
+        env?.NEXT_PUBLIC_PATIENT_IDLE_TIMEOUT_IN_MS &&
+        env?.NEXT_PUBLIC_PATIENT_IDLE_TIMEOUT_PROMPT_MS &&
+        env?.NEXT_PUBLIC_PATIENT_AUTO_LOGOUT_ENABLE === "true"
+      ) {
+        startTimer();
+      } else {
+        handleResetTimer(false);
+      }
+    }
+  }, [workerRegister, timerRef]);
+
+  useEffect(() => {
+    getDetails().then((user) => {
+      setUserRole(user?.authData?.userType ? user?.authData?.userType : null);
+    });
+    if (
+      typeof window !== undefined &&
+      userRole === USER_TYPE.PATIENT &&
+      env?.NEXT_PUBLIC_PATIENT_AUTO_LOGOUT_ENABLE === "true"
+    ) {
+      timerRef.current = new Worker("/worker/ideleTimerWorker.js");
+      setWorkerRegister(true);
+      timerRef.current.onmessage = function (e: any) {
+        if (e.data === "tick") {
+          props.onPrompt();
+          setShowPrompt(true);
+        }
+      };
+    }
+    return () => {
+      timerRef.current?.terminate();
+    };
+  }, [authStatus, userRole]);
+
+  return {
+    handleResetTimer,
+    setAuthStatus,
+    showPrompt,
+    setShowPrompt,
+  };
+};
+
+export default useAppIdleTimerPatient;

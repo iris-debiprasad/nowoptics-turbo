@@ -1,0 +1,9 @@
+@use "../../../../../assets/styles/mixin" as mi;
+
+.banner-title {
+  width: clamp(8ch, 40vw, 20ch);
+}
+
+.container {
+  @include mi.article-container;
+}

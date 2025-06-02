@@ -1,0 +1,70 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.ft {
+  display: none;
+  background-color: $white;
+
+  @include responsive("medium") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .ft_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    max-width: 1200px;
+    padding: 4rem 0 3rem 0;
+
+    .ft_column {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+
+      &:last-child {
+        grid-template-rows: 0.12fr 0.78fr 1fr;
+        
+        .ft_item:first-of-type {
+          margin-top: -3px;
+        }
+      }
+
+      align-items: flex-start;
+      gap: 20px;
+
+      .ft_item {
+        font-family: $primary-font;
+        color: $footer-gray;
+
+        .ft_item_title {
+          font-size: 11px;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+
+        .ft_sitem_container {
+          font-size: 10px;
+          list-style: none;
+
+          li {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .ft_copyright {
+    font-family: $primary-font;
+    color: $footer-secondary-gray;
+    font-size: 10px;
+    margin-bottom: 12rem;
+
+    a {
+      text-decoration: underline;
+      font-weight: 400;
+    }
+  }
+}

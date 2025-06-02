@@ -1,0 +1,24 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/fonts";
+@import "../../../../../assets/styles/mixin";
+
+html body {
+  .textContainer {
+    margin-top: 16px;
+    position: relative;
+    padding: 20px 8px;
+  }
+
+  .textInput {
+    border-bottom: 1px solid $secondary-font-color;
+    color: $black;
+
+    & input {
+      @include fontFSWH($primary-font, 16px, 400, 19px);
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 16px);
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+.mainBox {
+ padding-bottom: 100px;
+  & .telephone {
+    margin-top: 30px;
+    margin-bottom: 52px;
+  }
+  & .storeHoursContainer {
+    margin-top: 15px;
+    margin-left: 45px;
+    min-width: 200px;
+    max-width: fit-content;
+    background-color: $white;
+    border: 1px solid $primary-light-color;
+    padding: 18px;
+    border-radius: 10px;
+    position: relative;
+    & .storeHoursVerticalBar {
+      position: absolute;
+      border: 1px solid $primary-light-color;
+      height: 290px;
+      width: 0;
+      top: 60px;
+      margin-left: 60px;
+    }
+  }
+  .storeHoursHeading {
+    display: flex;
+    align-items: center;
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 20px;
+    & span {
+      margin-left: 5px;
+    }
+  }
+  .storeHoursTimingItem {
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 10px;
+    @include fontFSWH($primary-font, 14px, 400, 17px);
+    display: flex;
+    justify-content: flex-start;
+    color:$secondary-font-color;
+    & .day {
+      width: 60px;
+      padding: 8px;
+    }
+    & .status {
+      padding: 8px;
+    }
+  }
+  & .btnAppointments {
+    @include primary_button
+  }
+  .addressMapWrapper{
+    display: flex;
+    width: 100%;
+    margin-top: 60px;
+  }
+  .leftSideAddressWrapper{
+    display:flex;
+    align-items: center;
+    width: 40%;
+
+    .defaultAddressContainer {
+      display: flex;
+      justify-content: flex-start;
+      & .defaultAddressOrder {
+        letter-spacing: 0em;
+        text-align: left;
+        margin-right: 10px;
+        @include fontFSWH($primary-font, 16px, 400, 19px);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        background-color: $secondary-font-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      & .defaultAddressHeading {
+        margin-top: 3px;
+        text-align: left;
+        @include fontFSWH($secondary-font, 24px, 400, 30px);
+      }
+      .defaultAddressTiming {
+        letter-spacing: 0em;
+        text-align: left;
+        @include fontFSWH($primary-font, 16px, 400, 19px);
+        color:$primary-font-color;
+        margin-top: 16px;
+        margin-bottom: 25px;
+      }
+      .defaultAddressDetails {
+        width: 130px;
+        @include fontFSWH($primary-font, 18px, 400, 24px);
+        color: $primary-font-color;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 7px;
+      }
+      .directionBox {
+        margin: 30px 0px;
+      }
+      .directionBtn {
+        @include secondary_button;
+        margin:0;
+      }
+      .defaultAddressSameDay {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+      }
+    }
+  }
+  .rightSideMapWrapper{
+    width: 60%;
+    height: 400px;
+  }
+}

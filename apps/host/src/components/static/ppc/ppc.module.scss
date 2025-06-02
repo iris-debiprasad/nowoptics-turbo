@@ -1,0 +1,1930 @@
+@import "../../../../../assets/styles/mixin";
+@import "../../../../../assets/styles/variables";
+
+.headerWrapper {
+  display: flex;
+  margin-top: 100px;
+  font-family: $primary-font !important;
+
+  @media (max-width: $extra-large) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 90px;
+  }
+
+  .header {
+    z-index: 900;
+
+    .melMobileHeader {
+      display: none;
+      width: calc(100% - 2rem);
+      justify-content: space-between;
+
+      .melSupportNumber {
+        color: $secondary-color;
+      }
+
+      .appointmentBtn {
+        @include primary_button;
+      }
+
+      @media (max-width: 768px) {
+        display: flex;
+        margin: 0 1rem 0.5rem;
+        align-items: center;
+      }
+    }
+
+    .mobileHeader {
+      display: none;
+      width: 100%;
+      justify-content: space-between;
+      background: $primary-color;
+
+      .appointmentBtn {
+        @include primary_button;
+      }
+
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+
+    .headerContainer {
+      @include iris_container;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      @media (max-width: 768px) {
+        padding: 0;
+        height: 88px;
+        margin-left: 4.5%;
+      }
+    }
+
+    display: flex;
+    background: $white;
+    height: 100px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 8px 6px -6px rgb(0 0 0 / 4%);
+
+    @media (max-width: $extra-large) {
+      height: 80px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0;
+      height: 88px;
+      flex-direction: column-reverse;
+    }
+
+    .logoSection {
+      display: flex;
+
+      img {
+        height: auto;
+
+        @media (max-width: 768px) {
+          width: 75px !important;
+        }
+
+        @media (max-width: $extra-large) {
+          width: 115px;
+        }
+      }
+
+      .viewDetails {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--secondary-text-color);
+        margin-left: 9px;
+        margin-top: auto;
+      }
+    }
+
+    .melFlexContainer {
+      display: flex;
+      align-items: center;
+    }
+
+    .appointmentSection {
+      .appointmentBtn {
+        @include primary_button;
+        padding: 11px 28px;
+        margin-bottom: 8px;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      .melSupportNumber {
+        margin-right: 1rem;
+        @include fontFSWH($primary-font, 14px, 400, 17px);
+        text-align: left;
+        color: $secondary-color;
+
+        @media (max-width: $extra-large) {
+          @include fontFSWH($primary-font, 12px, 400, 15px);
+        }
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        &:first-child {
+          font-weight: 400;
+
+          @media (max-width: 768px) {
+          }
+        }
+
+        &:last-child {
+          font-weight: 300;
+        }
+      }
+
+      > div {
+        > button {
+          display: none;
+
+          @media (max-width: 768px) {
+            display: flex;
+            font-family: $primary-font;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: $tertiary-font-color;
+          }
+        }
+
+        .supportNumber {
+          @include fontFSWH($primary-font, 14px, 400, 17px);
+          text-align: left;
+          color: $tertiary-font-color;
+
+          @media (max-width: $extra-large) {
+            @include fontFSWH($primary-font, 12px, 400, 15px);
+          }
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+
+          &:first-child {
+            font-weight: 400;
+
+            @media (max-width: 768px) {
+            }
+          }
+
+          &:last-child {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
+
+.melMinifiedFooter {
+  .footerInfo {
+    justify-content: space-between !important;
+  }
+
+  .mediaIcons {
+    img {
+      width: 115px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 60px 7.5% 20px 7.5% !important;
+
+    .mediaIcons {
+      text-align: end !important;
+
+      img {
+        max-width: max-content !important;
+      }
+    }
+
+    .social {
+      text-align: start !important;
+      position: relative !important;
+      top: -55px !important;
+    }
+  }
+
+  .social {
+    text-align: end;
+  }
+}
+
+.minifiedFooter {
+  .columnLeft {
+    width: 100%;
+  }
+
+  .appointmentSection {
+    .appointmentBtn {
+      @include primary_button;
+      padding: 11px 28px;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+  }
+
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 7.5% 80px 7.5%;
+
+  @media (max-width: 767px) {
+    padding: 60px 0 20px 7.5%;
+  }
+
+  .footerInfo {
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-end;
+
+    @media (max-width: 767px) {
+      display: block;
+
+      .copyright {
+        width: 100%;
+        padding-left: 0;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .columnRIght {
+    position: relative;
+
+    .footerCTA {
+      position: absolute;
+      right: 7.5%;
+      top: -80px;
+
+      @media (max-width: 767px) {
+        right: 0;
+        top: -220px;
+
+        img {
+          max-width: 180px;
+          position: relative;
+          top: 4px;
+          height: auto;
+        }
+      }
+
+      img {
+        height: auto;
+        width: auto;
+      }
+    }
+  }
+
+  .fasd {
+    display: flex;
+    max-height: min-content;
+  }
+
+  .copyright {
+    font-size: 12px;
+    padding-left: 10px;
+    margin-top: 2rem;
+    color: $primary-font-color;
+    font-family: $primary-font;
+  }
+
+  .aLink {
+    text-decoration: underline;
+    color: $primary-font-color;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .minifiedFooter {
+    flex-direction: column;
+
+    .mediaIcons {
+      position: relative;
+      padding-bottom: 10px;
+
+      img {
+        max-width: 100px;
+      }
+    }
+  }
+}
+
+.secondaryHeader {
+  border-top: solid 1px $primary-color;
+  border-bottom: solid 1px $primary-color;
+  @include fontFSWH($secondary-font, 2rem, 600, 1.3);
+  max-width: 60% !important;
+  font-size: 30px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 60px auto !important;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    max-width: 80% !important;
+  }
+}
+
+.melSecondaryHeader {
+  border-top: solid 1px $primary-color;
+  border-bottom: solid 1px $primary-color;
+  @include fontFSWH($primary-font, 2rem, normal, 1.3);
+  max-width: 60% !important;
+  font-size: 30px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 60px auto !important;
+  text-align: center;
+
+  span {
+    color: $primary-color;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 80% !important;
+  }
+}
+
+.bookMainBox {
+  background: radial-gradient(ellipse at center, #fff 0, #f2f2f2 97%);
+  padding-top: 35px;
+
+  & .bookContainer {
+    position: relative;
+    display: grid;
+
+    .bookRight {
+      justify-self: flex-end;
+      align-self: flex-end;
+      width: 60%;
+      max-width: 450px;
+      min-height: 300px;
+      max-height: 350px;
+      overflow: hidden;
+
+      @media screen and (max-width: 500px) {
+        width: 70%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: -80px;
+        left: -80px;
+
+        @media screen and (max-width: 992px) {
+          left: 40px;
+        }
+
+        @media screen and (max-width: 768px) {
+          top: -55px;
+        }
+
+        @media screen and (max-width: 600px) {
+          top: 0px;
+        }
+
+        @media screen and (max-width: 500px) {
+          left: 45px;
+          top: -15px;
+        }
+
+        @media screen and (max-width: 400px) {
+          left: 45px;
+          top: 15px;
+        }
+
+        @media screen and (max-width: 280px) {
+          left: 80px;
+          top: -10px;
+        }
+      }
+    }
+
+    .bookLeft {
+      position: absolute;
+      top: 15%;
+      padding-left: 8%;
+
+      @media (max-width: 500px) {
+        top: 0;
+      }
+    }
+  }
+}
+
+.bookImagebox {
+  margin: auto;
+  @include marginTBLR(auto, auto, 100px, auto);
+
+  @media screen and (max-width: $large) {
+    margin: auto;
+  }
+}
+
+.bookLeft {
+  text-align: left;
+  letter-spacing: 0em;
+
+  & .bestCombo {
+    @include fontFSWH($secondary-font, 28px, 700, 34px);
+    color: $primary-font-color;
+
+    @media (max-width: 768px) {
+      font-size: 26px;
+      text-align: left;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 730px) {
+      width: 50%;
+      font-size: 20px;
+    }
+
+    @media (max-width: 280px) {
+      width: 70%;
+    }
+
+    @media only screen and (min-width: $large) {
+      font-size: 45px;
+    }
+  }
+
+  & .plusEye {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    @include fontFSWH($secondary-font, 16px, 500, 2rem);
+    color: $primary-font-color;
+
+    span {
+      @include fontFSWH($secondary-font, 25px, 500, 2rem);
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      @media (max-width: 730px) {
+        width: 60%;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1100px) {
+        font-size: 1rem;
+      }
+
+      b {
+        @media (max-width: 768px) {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 730px) {
+      margin-bottom: 30px;
+      @include fontFSWH($secondary-font, 16px, 500, 2rem);
+      width: 54%;
+      text-align: left;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    > div > div {
+      font-size: 12px;
+    }
+  }
+
+  & .btnBookEyeExam {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .btnBook {
+      @include primary_button;
+      font-size: 18px !important;
+
+      @media screen and (min-width: $small) and (max-width: $large) {
+        font-family: $primary-font;
+      }
+
+      @media screen and (max-width: $small) {
+        @include fontFSWH($primary-font, 14px, 400, 17px);
+        margin-bottom: 0;
+      }
+
+      & span {
+        text-transform: uppercase;
+      }
+    }
+
+    .disclaimerBtn {
+      @include primary_link;
+      margin-bottom: 15px;
+      margin-top: 0px;
+      text-transform: none;
+    }
+  }
+
+  & .astigmatism {
+    @include fontFSWH($primary-font, 11px, 400, 13px);
+    color: $primary-font-color;
+
+    @media screen and (min-width: $small) and (max-width: $large) {
+      font-family: $primary-font;
+    }
+
+    @media screen and (max-width: $small) {
+      font-family: $primary-font;
+      margin-bottom: 33px;
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    text-align: center;
+  }
+}
+
+.melRightSideMapWrapper {
+  margin: 0 2rem;
+}
+
+.rightSideMapWrapper {
+  width: 55%;
+  height: 320px;
+  margin-left: 2rem;
+
+  @media (max-width: 767px) {
+    width: calc(100% - 4rem);
+    margin: 2rem;
+  }
+}
+
+.melStoreSelectorContainer {
+  width: 45%;
+  min-height: 320px;
+  max-height: 420px;
+  margin-right: 2rem;
+  background: $grey;
+  padding: 1rem;
+
+  .scrollBox {
+    overflow-y: scroll;
+    padding: 0 1rem 1rem 0;
+    height: calc(100% - 70px);
+
+    @media (max-width: 768px) {
+      height: 400px !important;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.6em;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px $grey;
+      background-color: $banner;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary-color;
+      border-radius: 10px;
+    }
+  }
+
+  .StoreDetailContainer {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    .storeName {
+      color: #000;
+      font-family: $secondary-font;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 40px;
+
+      @media (max-width: 768px) {
+        margin: 0 30px;
+      }
+    }
+
+    .storeAddress {
+      font-size: 1rem;
+      margin: 13px 0;
+      color: $primary-font-color;
+      font-family: $secondary-font;
+
+      b {
+        font-family: $secondary-font;
+        color: $tertiary-font-color;
+      }
+
+      a {
+        font-family: $secondary-font;
+      }
+    }
+  }
+
+  .bookBtn {
+    @include primary_button;
+  }
+
+  .directionBtn {
+    @media (max-width: 768px) {
+      margin: auto;
+    }
+
+    background: transparent;
+    border: 1px solid $primary-color;
+    padding: 5px 14px;
+    border-radius: 16px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    max-width: 130px;
+    color: $tertiary-font-color;
+  }
+
+  .backIconStyle {
+    cursor: pointer;
+    background-color: $secondary-light-color;
+    border-radius: 50%;
+    height: 30px;
+    padding: 0 5px 5px;
+    margin-right: 2rem;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      left: 32px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    padding: 0;
+    height: max-content;
+  }
+
+  .storeSelectorHeader {
+    font-family: $secondary-font;
+    color: $secondary-color;
+    font-weight: 800;
+    font-size: 1.5rem;
+
+    .smallText {
+      font-size: 11px;
+      font-weight: normal;
+      margin-left: 5px;
+      font-family: $primary-font !important;
+    }
+  }
+
+  .melStoreSelectorHeader {
+    color: $black !important;
+    font-family: $primary-font !important;
+  }
+
+  .storeOption {
+    font-size: 1rem;
+    line-height: 1;
+    font-family: $primary-font;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    .milesContaniner {
+      font-weight: 600;
+    }
+  }
+
+  .storeOption:hover {
+    cursor: pointer;
+
+    .storeOptionName {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .milesContaniner {
+      color: $primary-color;
+    }
+  }
+}
+
+.storeSelectorContainer {
+  width: 45%;
+  min-height: 320px;
+  max-height: 420px;
+  padding: 0 2rem;
+
+  .scrollBox {
+    overflow-y: scroll;
+    padding: 0 1rem 1rem 0;
+    height: calc(100% - 70px);
+
+    @media (max-width: 768px) {
+      height: 400px !important;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.6em;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px $grey;
+      background-color: $banner;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary-color;
+      border-radius: 10px;
+    }
+  }
+
+  .StoreDetailContainer {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    .storeName {
+      color: #000;
+      font-family: $secondary-font;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 40px;
+
+      @media (max-width: 768px) {
+        margin: 0 30px;
+      }
+    }
+
+    .storeAddress {
+      font-size: 1rem;
+      margin: 13px 0;
+      color: $primary-font-color;
+      font-family: $secondary-font;
+
+      b {
+        font-family: $secondary-font;
+        color: $tertiary-font-color;
+      }
+
+      a {
+        font-family: $secondary-font;
+      }
+    }
+  }
+
+  .bookBtn {
+    @include primary_button;
+  }
+
+  .directionBtn {
+    @media (max-width: 768px) {
+      margin: auto;
+    }
+
+    background: transparent;
+    border: 1px solid $primary-color;
+    padding: 5px 14px;
+    border-radius: 16px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    max-width: 130px;
+    color: $tertiary-font-color;
+  }
+
+  .backIconStyle {
+    cursor: pointer;
+    background-color: $secondary-light-color;
+    border-radius: 50%;
+    height: 30px;
+    padding: 0 5px 5px;
+    margin-right: 2rem;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      left: 32px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    padding: 0;
+    height: max-content;
+  }
+
+  .storeSelectorHeader {
+    font-family: $secondary-font;
+    color: $secondary-color;
+    font-weight: 800;
+    font-size: 1.5rem;
+
+    .smallText {
+      font-size: 11px;
+      font-weight: normal;
+      margin-left: 5px;
+      font-family: $secondary-font;
+    }
+  }
+
+  .melStoreSelectorHeader {
+    color: $black !important;
+    font-family: $primary-font !important;
+  }
+
+  .storeOption {
+    font-size: 1rem;
+    line-height: 1;
+    font-family: $primary-font;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .storeOption:hover {
+    cursor: pointer;
+
+    .storeOptionName {
+      font-weight: 600;
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.storeSelectorRow {
+  display: flex;
+  max-width: 1340px;
+  margin: auto;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+
+.bookBtn {
+  @include primary_button;
+}
+
+.buyNowMainBox {
+  background-color: $primary-font-color;
+  color: $white;
+
+  & .buyNowMainContainer {
+    @include iris_container;
+    padding: 1rem;
+    @include displayFlex;
+    justify-content: center;
+    @include flexWrap;
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+
+    & .buyNowbox1 {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      @include flexWrap;
+
+      @media (max-width: 768px) {
+        grid-template-rows: none;
+      }
+
+      & .buyNowImage {
+        margin: auto;
+
+        @media (max-width: 768px) {
+          margin-bottom: 13px;
+        }
+      }
+    }
+  }
+}
+
+.melBuyNowMainBox {
+  background-color: $grey !important;
+  color: $black !important;
+
+  & .buyNowMainContainer {
+    & .buyNowbox1 {
+      grid-template-rows: none !important;
+      margin: 2rem 0;
+
+      .buyNowHeading {
+        font-family: $primary-font !important;
+      }
+    }
+  }
+}
+
+.buyNowHeading {
+  @include fontFSWH($secondary-font, 32px, 700, 40px);
+  letter-spacing: 0em;
+  text-align: center;
+
+  @media (max-width: $extra-large) {
+    @include fontFSWH($secondary-font, 28px, 700, 36px);
+  }
+
+  @media screen and (max-width: 768px) {
+    @include fontFSWH($secondary-font, 20px, 700, 24px);
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 13px;
+  }
+}
+
+.buyNowSubHeading {
+  font-style: normal;
+  @include fontFSWH($primary-font, 16px, 500, 20px);
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    @include fontFSWH($primary-font, 14px, 500, 18px);
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
+
+.melInsuranceMainBox {
+  background-color: $secondary-color !important;
+
+  h2,
+  .insuranceSubHead,
+  .insuraceFoot {
+    color: $white !important;
+    font-family: $primary-font !important;
+  }
+}
+
+.insuranceMainBox {
+  background-color: $primary-light-color;
+
+  & .insuranceMainContainer {
+    @include iris_container;
+    padding: 30px;
+    @include displayFlex;
+    justify-content: center;
+    @include flexWrap;
+  }
+}
+
+.insuranceBox1 {
+  .andMoreContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .andMore {
+      color: $white;
+      font-size: 11px;
+    }
+  }
+
+  .insuranceImage {
+    height: auto;
+    width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  & .insuraceHead {
+    text-align: center;
+    margin-top: auto;
+    @include fontFSWH($secondary-font, 38px, 700, 42px);
+    color: $secondary-color;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($secondary-font, 36px, 700, 40px);
+    }
+
+    @media screen and (max-width: $small) {
+      @include fontFSWH($secondary-font, 20px, 700, 24px);
+    }
+  }
+
+  & .insuranceSubHead {
+    @include fontFSWH($primary-font, 16px, 300, 19px);
+    color: $primary-font-color;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 13px;
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+      @include fontFSWH($primary-font, 12px, 400, normal);
+    }
+  }
+
+  & .insuranceThumbImg {
+    @include displayFlex;
+    @include flexWrap;
+    justify-content: center;
+
+    .image {
+      display: block;
+
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+
+    .mobileImage {
+      display: none;
+      width: 100%;
+      height: auto;
+
+      @media (max-width: 1200px) {
+        display: block;
+      }
+    }
+  }
+
+  & .insuraceFoot {
+    @include fontFSWH($secondary-font, 20px, 700, 24px);
+    color: $secondary-color;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: auto;
+    padding-top: 30px;
+
+    @media (max-width: 768px) {
+      padding-top: 40px;
+      @include fontFSWH($secondary-font, 14px, 400, normal);
+    }
+  }
+
+  & .insuranceSubFoot {
+    @include fontFSWH($primary-font, 20px, 400, 24px);
+    color: $secondary-color;
+    text-align: center;
+    margin-top: 18px;
+
+    @media (max-width: 768px) {
+      margin-top: 28px;
+      @include fontFSWH($primary-font, 11px, 400, normal);
+    }
+  }
+}
+
+.melSecondaryBannerContainer {
+  .contentBox {
+    font-family: $primary-font !important;
+
+    h2 {
+      strong {
+        color: $secondary-color;
+        font-family: $primary-font !important;
+      }
+    }
+
+    p {
+      font-family: $primary-font !important;
+    }
+  }
+}
+
+.secondaryBannerContainer {
+  display: flex;
+  padding: 2rem 1rem;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .secondaryBannerButton {
+    @include primary_button;
+    margin-top: 2rem;
+  }
+
+  .imageBox {
+    width: 50%;
+    padding: 1rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .contentBox {
+    width: 50%;
+    padding: 1rem 2rem;
+    font-family: $secondary-font !important;
+
+    .moreButton {
+      color: $primary-color;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .desktopView {
+      display: block;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .mobileView {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      width: calc(100% - 4rem);
+      padding: 2rem;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+
+      strong {
+        @include fontFSWH($secondary-font, 2rem, 600, 1.3);
+      }
+    }
+
+    p {
+      font-family: $secondary-font;
+      margin-bottom: 1rem;
+      font-weight: normal !important;
+      font-size: 1rem;
+    }
+  }
+}
+
+.promotionBannerContainer {
+  display: flex;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .melPromotionBannerBoxContainer {
+    height: 275px !important;
+
+    @media only screen and (min-width: 1200px) {
+      height: 275px !important;
+    }
+  }
+
+  .promotionBannerBoxContainer {
+    padding: 2rem 1rem;
+    height: 212px;
+    width: 33.33%;
+    border: 2px dashed $primary-color;
+    text-align: center;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr 0.75fr 0.5fr;
+    align-items: flex-start;
+    margin: 1rem;
+
+    @media only screen and (max-width: 768px) {
+      width: calc(100% - 3rem);
+      padding: 20px;
+      margin: 1rem 0;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      height: 232px;
+    }
+
+    h2 {
+      @include fontFSWH($primary-font, 40px, 400, 1.3);
+      max-width: 100%;
+      margin-bottom: 1rem;
+      height: min-content;
+      align-self: flex-end;
+      color: $primary-font-color;
+
+      @media only screen and (min-width: 768px) {
+        @include fontFSWH($primary-font, 35px, 400, 1.3);
+      }
+
+      @media only screen and (min-width: 992px) {
+        @include fontFSWH($primary-font, 45px, 400, 1.3);
+      }
+    }
+
+    .thirdElement {
+      span {
+        b {
+          line-height: 1.5rem;
+        }
+      }
+    }
+
+    .firstParagragh {
+      margin-bottom: 20px;
+    }
+
+    p {
+      @media only screen and (min-width: 768px) {
+        font-size: 12px;
+      }
+
+      @media only screen and (min-width: 992px) {
+        font-size: 14px;
+      }
+
+      @media only screen and (min-width: 1200px) {
+        font-size: 20px;
+        font-weight: 300;
+      }
+
+      font-size: 12px;
+      color: $tertiary-font-color;
+      align-self: center;
+
+      span {
+        font-weight: 500;
+
+        b {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 24px;
+
+          @media only screen and (min-width: 768px) {
+            font-size: 12px;
+          }
+
+          @media only screen and (min-width: 992px) {
+            font-size: 14px;
+          }
+
+          @media only screen and (min-width: 1200px) {
+            font-size: 20px;
+          }
+        }
+      }
+
+      small {
+        font-family: $secondary-font;
+      }
+    }
+
+    .promoPrice {
+      align-self: flex-end;
+    }
+
+    .thirdElementHeader {
+      @include fontFSWH($secondary-font, 25px, 600, 1.3);
+
+      @media only screen and (min-width: 768px) {
+        @include fontFSWH($secondary-font, 20px, 600, 1.3);
+      }
+
+      @media only screen and (min-width: 992px) {
+        @include fontFSWH($secondary-font, 25px, 600, 1.3);
+      }
+    }
+
+    .contactsHeader {
+      @include fontFSWH($primary-font, 30px, 400, 1.3);
+    }
+
+    .disclaimerBtn {
+      @include primary_link;
+      margin: 0 auto;
+      margin-top: 5px;
+      color: $primary-font-color;
+      text-transform: none;
+      font-size: 12px;
+      font-family: $secondary-font;
+      font-weight: 300;
+    }
+  }
+}
+
+.seeOfferDetail {
+  margin-top: 1rem;
+  font-size: 12px;
+  color: $secondary-font-color;
+}
+
+.orange {
+  color: $primary-color;
+}
+
+.reviewContainer {
+  display: flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  padding: 0 10px;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+  padding: 0 3rem 4rem;
+
+  .avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    max-width: 10%;
+    min-width: 75px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    span {
+      color: #fff;
+      font-size: 2rem;
+      font-family: $primary-font;
+    }
+  }
+
+  .userDetail {
+    font-family: $secondary-font;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    max-width: 20%;
+    flex: 0 0 20%;
+
+    div {
+      width: max-content;
+    }
+  }
+
+  .userReview {
+    font-family: $secondary-font;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: $primary-font-color;
+    max-width: 62%;
+    flex: 0 0 62%;
+    font-weight: 300;
+  }
+}
+
+.stockupMainBox {
+  @include iris_container;
+  background-color: $bg-color;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  & .stockupContainer {
+    @include displayFlex;
+    justify-content: center;
+    @include flexWrap;
+
+    & .stockupImageSlider {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.stockupTextbox {
+  letter-spacing: 0em;
+  text-align: center;
+
+  & .melStockupHeading {
+    color: $secondary-color !important;
+    font-family: $primary-font !important;
+  }
+
+  .melBtnStockup {
+    @include primary_button;
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+
+  & .stockupHeading {
+    @include fontFSWH($secondary-font, 28px, 700, 34px);
+    color: $primary-font-color;
+    margin-bottom: 2rem;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($secondary-font, 36px, 700, 28px);
+    }
+
+    @media (max-width: 768px) {
+      @include fontFSWH($secondary-font, 16px, 700, normal);
+    }
+  }
+
+  & .stockupSubHeading {
+    @include fontFSWH($primary-font, 14px, 300, 17px);
+    color: $primary-font-color;
+
+    @media (max-width: 768px) {
+      @include fontFSWH($primary-font, 12px, 400, normal);
+    }
+  }
+
+  .btnStockup {
+    @include secondary_button;
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+}
+
+.btnBookEyeExam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 370px) {
+    margin-top: 12% !important;
+  }
+
+  @media screen and (max-width: 500px) {
+    margin-top: 18%;
+  }
+
+  @media screen and (max-width: $small) {
+    width: 100%;
+  }
+
+  & .btnBook {
+    @include primary_button;
+    font-size: 18px !important;
+
+    @media screen and (min-width: $small) and (max-width: $large) {
+      font-family: $primary-font;
+    }
+
+    @media screen and (max-width: $small) {
+      @include fontFSWH($primary-font, 14px, 400, 17px);
+      margin-bottom: 20px;
+    }
+
+    & span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.framesMainBox {
+  @include iris_container;
+  background-color: $white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  & .framesContainer {
+    @include displayFlex;
+    justify-content: center;
+    @include flexWrap;
+
+    & .frameImageSlider {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.framesTextbox {
+  letter-spacing: 0em;
+  text-align: center;
+
+  & .melFrameHeading {
+    color: $secondary-color !important;
+    font-family: $primary-font !important;
+  }
+
+  & .frameHeading {
+    @include fontFSWH($secondary-font, 28px, 700, 34px);
+    color: $primary-font-color;
+    margin-bottom: 2rem;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($secondary-font, 36px, 700, 28px);
+    }
+
+    @media (max-width: 768px) {
+      @include fontFSWH($secondary-font, 16px, 700, normal);
+    }
+  }
+
+  & .frameSubHeading {
+    @include fontFSWH($primary-font, 14px, 300, 17px);
+    color: $primary-font-color;
+
+    @media (max-width: 768px) {
+      @include fontFSWH($primary-font, 12px, 400, normal);
+    }
+  }
+
+  .btnFrame {
+    @include secondary_button;
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+
+  .melBtnFrame {
+    @include primary_button;
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+}
+
+.textCenter {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.blue {
+  color: $secondary-color;
+  margin-top: 5px;
+  cursor: pointer;
+
+  i {
+    font-size: 0.75rem;
+    margin-left: 3px;
+  }
+}
+
+.hoursText {
+  white-space: nowrap;
+  font-size: 1rem;
+  font-family: $secondary-font;
+  color: $primary-font-color;
+}
+
+.grandOpeningContanier {
+  margin-top: 18px;
+  display: flex;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.grandOpening {
+  color: $secondary-color;
+  font-family: $secondary-font;
+}
+
+.speakSpanish {
+  color: $secondary-color;
+  margin-top: 5px;
+  font-size: 1rem;
+  font-family: $secondary-font;
+
+  i {
+    margin-right: 5px;
+  }
+
+  span {
+    color: rgba(77, 77, 77, 1);
+  }
+}
+
+.nonClickable {
+  pointer-events: none;
+  cursor: default;
+}
+
+.bopisLabel {
+  white-space: nowrap;
+  margin-top: 5px;
+  cursor: pointer;
+
+  a,
+  i {
+    color: $primary-dark-color;
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  i {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+
+.hoursIcon {
+  color: $secondary-color;
+  font-size: 1rem !important;
+  margin-left: 5px;
+}
+
+.openLabel {
+  color: $green;
+}
+
+.openingSoonLabel {
+  color: $primary-color;
+}
+
+.closedLabel {
+  color: $red;
+  font-size: 1rem;
+  font-family: $secondary-font;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.marginTopSmall {
+  margin-top: 5px;
+}
+
+.mt13 {
+  margin-top: 13px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.hoursListConteiner {
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  cursor: default;
+  white-space: nowrap;
+
+  @media (max-width: 767px) {
+    max-width: 200px;
+  }
+
+  .closeIcon {
+    cursor: pointer;
+    color: $secondary-color;
+    font-size: 1rem;
+  }
+
+  .hoursContainer {
+    flex: 1;
+
+    .hourItem {
+      margin-bottom: 5px;
+      width: 100%;
+      display: flex;
+
+      .daysColumn {
+        width: 10%;
+        text-align: left;
+        font-size: 0.9rem;
+        font-family: $secondary-font;
+        p {
+          font-size: 0.9rem;
+          font-family: $secondary-font;
+          color: $primary-font-color;
+        }
+        .highlightedDay {
+          font-weight: bold;
+        }
+      }
+
+      .hoursColumn {
+        width: 90%;
+        text-align: right;
+        margin-right: 10px;
+        font-size: 0.9rem;
+        font-family: $secondary-font;
+        color: $primary-font-color;
+        p {
+          font-size: 0.9rem;
+          font-family: $secondary-font;
+          color: $primary-font-color;
+        }
+        .highlightedStatus {
+          font-weight: bold;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .daysColumn {
+          width: 25%;
+        }
+
+        .hoursColumn {
+          width: 75%;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hoursIcon {
+    font-size: 1.4rem !important;
+  }
+
+  .hoursListConteiner {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+
+    .closeIcon {
+      font-size: 1.4rem;
+      position: absolute;
+      top: 4px;
+      right: -20px;
+    }
+  }
+}
+
+.melBookMainBox {
+  background-color: $primary-light-color;
+  padding: 35px 0;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  min-height: 300px;
+  display: flex;
+
+  @media (max-width: 768px) {
+    padding-top: 5%;
+    background-position: top;
+    background-color: $bg-color;
+    height: 100vw;
+  }
+
+  & .bookContainer {
+    @include iris_container;
+    @include displayFlex;
+    @include flexWrap;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+      margin: 0;
+      align-items: flex-start;
+    }
+  }
+}
+
+.melBookLeft {
+  text-align: left;
+  letter-spacing: 0em;
+  max-width: 60%;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+
+  & .bestCombo {
+    @include fontFSWH($primary-font, 34px, 500, 38px);
+    color: $white;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 768px) {
+      @include fontFSWH($primary-font, 30px, 500, 32px);
+      text-align: left;
+    }
+  }
+
+  & .plusEye {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    @include fontFSWH($primary-font, 16px, 400, 2rem);
+    color: $white;
+
+    span {
+      @include fontFSWH($primary-font, 16px, 400, 2rem);
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 300;
+      }
+
+      @media (max-width: 730px) {
+        width: 60%;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1100px) {
+        font-size: 1rem;
+      }
+
+      b {
+        @media (max-width: 768px) {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 730px) {
+      margin-bottom: 30px;
+      @include fontFSWH($primary-font, 16px, 400, 2rem);
+      width: 56%;
+      text-align: left;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    > div > div {
+      font-size: 12px;
+    }
+  }
+
+  & .btnBookEyeExam {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: $small) {
+      width: max-content;
+      margin-top: 0 !important;
+    }
+
+    & .btnBook {
+      @include primary_button;
+      margin-bottom: 0 !important;
+
+      @media screen and (min-width: $small) and (max-width: $large) {
+        font-family: $primary-font;
+      }
+
+      @media screen and (max-width: $small) {
+        @include fontFSWH($primary-font, 14px, 400, 17px);
+      }
+
+      & span {
+        text-transform: uppercase;
+      }
+    }
+
+    .disclaimerBtn {
+      @include primary_link;
+      margin-bottom: 15px;
+      margin-top: 0px;
+      color: $white;
+    }
+  }
+}

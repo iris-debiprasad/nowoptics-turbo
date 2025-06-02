@@ -1,0 +1,21 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.beginVisionTestWrapper {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: auto !important;
+    .beginVisionTestHeader{
+        display: flex;
+        justify-content: center;
+        color: $primary-font-color;
+        @include marginTBLR(10px,20px,0,0);
+        @include fontFSWH($primary-font, 28px, 700, 35px);
+        @media (max-width: $extra-large) {
+            width: 80%;
+            margin: 20px auto;
+        }
+    }
+}
+
+

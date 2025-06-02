@@ -1,0 +1,131 @@
+@use "../../../../../../../assets/styles/mixin" as mi;
+
+// === PlayVideoOnClick Component Styles
+
+.thumbnail {
+  position: relative;
+
+  &__play-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__play-button {
+    width: 140px;
+
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+    border-radius: 16px;
+    border: 1px solid #ff7900;
+    color: #13111a;
+    cursor: default;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.9;
+    text-transform: uppercase;
+
+    &:is(:hover, :focus) {
+      background-color: #ff7900;
+
+      &,
+      &::after {
+        color: #fff;
+      }
+    }
+  }
+
+  @include mi.responsive("small") {
+    &__play-button {
+      width: unset;
+      padding: 0.7rem 1rem;
+    }
+  }
+}
+
+// === ModalVideo Component Styles
+
+.modal {
+  position: fixed;
+  margin: auto;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2001; // Current z-index of header is 2000, 2001 placed so that this modal is the only thing in view
+
+  opacity: 0;
+  scale: 0;
+  visibility: hidden;
+
+  transition: all 0.2s ease;
+
+  &.open {
+    opacity: 1;
+    scale: 1;
+    visibility: visible;
+  }
+
+  &__wrapper {
+    width: calc(100% - 3rem);
+    max-width: 1230px;
+  }
+
+  .player {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.3rem;
+
+    & > section > video {
+      max-height: 80vh;
+      max-height: 80dvh;
+    }
+
+    &.fullscreen {
+      & > section > video {
+        max-height: 100vh;
+        max-height: 100dvh;
+      }
+    }
+
+    &__close {
+      display: inline-block;
+      width: fit-content;
+      height: max-content;
+
+      margin-left: auto;
+
+      background-color: transparent;
+      border: none;
+      color: #ccc;
+      font-size: clamp(1rem, 2.5vw, 2.5rem);
+      outline-color: transparent;
+
+      &:is(:hover, :focus) {
+        color: #000;
+      }
+    }
+  }
+}

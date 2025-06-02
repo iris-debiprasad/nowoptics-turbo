@@ -1,0 +1,52 @@
+@use "../../../../../../assets/styles/variables" as vars;
+@use "../../../../../../assets/styles/mixin" as mi;
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mi.responsive("medium") {
+    gap: 1rem;
+  }
+
+  &__main {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+
+    @include mi.responsive("medium") {
+      gap: 1rem;
+    }
+  }
+
+  &__timelapse {
+    color: vars.$white;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__fullscreen {
+    border: none;
+    background-color: transparent;
+    outline-color: transparent;
+    height: 33px;
+
+    &:is(:hover, :focus) {
+      & > svg path {
+        fill: vars.$primary-color;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      path {
+        fill: vars.$white;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}

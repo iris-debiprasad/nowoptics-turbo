@@ -1,0 +1,129 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.registrationContainer {
+  width: 65%;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+  .regnBox {
+    margin: 34px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid var(--tertiary-border-color);
+    border-radius: 8px;
+    min-height: 500px;
+    background-color: var(--primary-bg-color);
+    .regnHead {
+      @include fontFSWH($secondary-font, 24px, 400, 33px);
+      letter-spacing: 0em;
+      text-align: left;
+      color: var(--primary-text-color);
+    }
+    .formFields {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 49% 49%;
+      column-gap: 20px;
+      @media (max-width: 768px) {
+        grid-template-columns: 100%;
+        column-gap: 0px;
+      }
+
+      .mobileInput {
+        display: flex;
+        justify-content: space-between;
+        .countryCode {
+          width: 20%;
+        }
+        .mobileNumber {
+          width: 78%;
+        }
+      }
+      .genderInput {
+        margin-top: 15px;
+        label > span {
+          @include fontFSWH($primary-font, 13px, 400, 16px);
+          letter-spacing: 0em;
+          text-align: left;
+          color: var(--primary-input-text);
+          @media (max-width: $small) {
+            @include fontFSWH($primary-font, 16px, 400, 20px);
+          }
+        }
+      }
+      .dobPicker {
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+      .createAccBtn {
+        margin: 16px 0;
+        background-color: $secondary-color;
+      }
+      .genderErrorText {
+        color: #d32f2f;
+        margin-top: 10px;
+        margin-left: 16px;
+      }
+    }
+    .rxRenewalCreate {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .createButton {
+        width: 350px;
+        margin: 16px 0;
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  .textInput {
+    input {
+      @include fontFSWH($primary-font, 15px, 400, 18px);
+      letter-spacing: 0em;
+      text-align: left;
+      height: auto;
+      @media (max-width: $small) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+    label {
+      @include fontFSWH($primary-font, 15px, 400, 18px);
+      letter-spacing: 0em;
+      text-align: left;
+      @media (max-width: $small) {
+        @include fontFSWH($primary-font, 16px, 400, 20px);
+      }
+    }
+    fieldset {
+      border-radius: 10px;
+      border: 1px solid var(--secondary-border-color);
+    }
+  }
+}
+.belowContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  .alreadyAccountText {
+    color: $primary-font-color;
+    @include fontFSWH($primary-font, 24px, 500, 26px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 22px, 500, 24px);
+    }
+  }
+  .loginFormLink {
+    cursor: pointer;
+    margin-top: 10px;
+    color: $secondary-color;
+  }
+}
+.textInput {
+  label {
+    color: var(--secondary-text-color);
+  }
+}

@@ -1,0 +1,46 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.shopByShapeSectionContainer {
+    @include iris_container;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .image {
+        height: 100%;
+    }
+
+    h1 {
+        margin: 1rem 0 2rem 0;
+        text-align: center;
+    }
+
+    .imageRow {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .chip {
+        padding: 10px 0;
+        height: max-content;
+        width: 180px;
+        font-size: 1.25rem;
+        font-weight: 500;
+        border-radius: 2rem;
+        background: #efefefb0;
+        box-shadow: 0 2px 4px 2px $shadow-color;
+
+        @media (max-width: 768px) {
+            width: 220px;
+        }
+    }
+}
+
+.chipContainer {
+    text-align: center;
+}

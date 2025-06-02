@@ -1,0 +1,70 @@
+@use "../../../../../../../assets/styles/mixin" as mi;
+@use "../../../../../../../assets/styles/variables" as vars;
+
+.bookEyeExamDOB {
+  margin-top: 52px;
+
+  .bookEyeExamDOBTitle {
+    margin-bottom: 18px;
+    color: vars.$primary-font-color;
+    @include mi.fontFSWH(vars.$secondary-font, 28px, 400, 38px);
+
+    @media (max-width: vars.$extra-large) {
+      @include mi.fontFSWH(vars.$secondary-font, 22px, 400, 30px);
+    }
+
+    @media (max-width: vars.$small) {
+      @include mi.fontFSWH(vars.$secondary-font, 16px, 400, 38px);
+      text-align: center;
+    }
+  }
+
+  .bookEyeExamDOBInput {
+    border-radius: 10px;
+    border: 1px solid vars.$secondary-font-color;
+
+    input {
+      @include mi.fontFSWH(vars.$primary-font, 16px, 400, 20px);
+      text-align: left;
+      height: auto;
+
+      @media (max-width: vars.$extra-large) {
+        @include mi.fontFSWH(vars.$primary-font, 13px, 400, 17px);
+      }
+
+      @media (max-width: vars.$small) {
+        @include mi.fontFSWH(vars.$primary-font, 16px, 400, 20px);
+      }
+    }
+
+    label {
+      @include mi.fontFSWH(vars.$primary-font, 16px, 400, 20px);
+      text-align: left;
+
+      @media (max-width: vars.$extra-large) {
+        @include mi.fontFSWH(vars.$primary-font, 13px, 400, 17px);
+      }
+
+      @media (max-width: vars.$small) {
+        @include mi.fontFSWH(vars.$primary-font, 16px, 400, 20px);
+      }
+    }
+
+    fieldset {
+      border-radius: 10px;
+      border: 1px solid vars.$grey;
+    }
+
+    @media (max-width: vars.$small) {
+      width: 100%;
+    }
+
+    &.invalid {
+      border-color: vars.$red;
+    }
+
+    &.valid {
+      border-color: vars.$secondary-font-color;
+    }
+  }
+}

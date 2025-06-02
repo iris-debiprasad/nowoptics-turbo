@@ -1,0 +1,55 @@
+@use "../../../../../assets/styles/variables" as vars;
+@use "../../../../../assets/styles/mixin" as mi;
+
+.banner {
+  &-title {
+    width: clamp(6ch, 40vw, 20ch);
+
+    &.mel {
+      width: clamp(16ch, 55vw, 23ch);
+
+      color: vars.$white;
+      font-family: vars.$primary-font;
+      font-size: clamp(20px, 3.5vw, 30px);
+      text-transform: uppercase;
+
+      @include mi.responsive("small") {
+        font-size: clamp(28px, 3.5vw, 48px);
+      }
+    }
+  }
+
+  &-subtitle {
+    margin-top: 0.5rem;
+    width: clamp(10ch, 100%, 20ch);
+
+    @include mi.responsive("large") {
+      margin-top: unset;
+    }
+  }
+}
+
+.container {
+  @include mi.article-container;
+
+  .insurance-faq-img {
+    width: 100%;
+  }
+
+  .insurance-plans-headline {
+    margin-bottom: 1rem;
+  }
+
+  .posts {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .section-limiter-spacing {
+    margin-block: 1.5rem;
+
+    @include mi.responsive("medium") {
+      margin-block: 2rem;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixin";
+
+.advancedSearchContainer {
+  padding-top: 20px;
+  border: 1px solid $grey;
+  border-top: none;
+  border-radius: 4px;
+
+  .formFields {
+    padding: 0px 20px;
+
+    .mobileNumber {
+      width: 100%;
+    }
+
+    .countryCode {
+      color: $secondary-font-color;
+      @include fontFSWH($primary-font, 15px, 400, normal);
+      font-style: normal;
+      align-items: center;
+      padding-top: 25px;
+      border-radius: 10px;
+      height: 45px;
+
+      > div {
+        margin: 0px;
+      }
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, normal);
+        padding-top: 23px;
+        height: 40px;
+        align-items: center;
+      }
+    }
+
+    .helperText {
+      font-size: 11px;
+    }
+  }
+
+  .buttonContainer {
+    margin-top: 20px;
+
+    .btnSection {
+      display: flex;
+
+      .submitBtn {
+        color: $secondary-font-color;
+        box-shadow: none;
+        border: none;
+        background-color: $white;
+        border-right: 1px solid $secondary-font-color;
+
+        @media (max-width: $extra-large) {
+          @include fontFSWH($primary-font, 13px, 400, normal);
+        }
+      }
+      .disabledBtn {
+        cursor: not-allowed;
+        pointer-events: unset;
+      }
+    }
+  }
+
+  .textInput {
+    margin: 0px;
+
+    > div {
+      height: 45px;
+      @media (max-width: $extra-large) {
+        height: 40px;
+      }
+    }
+    input {
+      @include fontFSWH($primary-font, 15px, 400, 20px);
+      text-align: left;
+      height: auto;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    label {
+      top: -4px;
+      color: $secondary-font-color;
+      @include fontFSWH($primary-font, 15px, 400, 20px);
+      text-align: left;
+
+      @media (max-width: $extra-large) {
+        @include fontFSWH($primary-font, 13px, 400, 17px);
+      }
+    }
+
+    fieldset {
+      border-radius: 10px;
+      border: 1px solid $secondary-font-color;
+    }
+  }
+  .mergeErrorMessage {
+    @include fontFSWH($primary-font, 12px, 400, 16px);
+    color: $error;
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+}

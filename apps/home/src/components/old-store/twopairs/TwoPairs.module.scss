@@ -1,0 +1,32 @@
+@import "../../../../../assets//styles/variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+.mainBox {
+  background-color: $primary-light-color;
+  padding: 36px 60px;
+
+  & .heading {
+    text-align: center;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+    @include fontFSWH($primary-font, 144px, 400, 172px);
+  }
+  & .subHeading {
+    text-transform: uppercase;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 30px;
+    @include fontFSWH($primary-font, 37px, 400, 44px);
+  }
+  & .note {
+    letter-spacing: 0em;
+    text-align: left;
+    @include fontFSWH($secondary-font, 24px, 400, 32px);
+  }
+  & .imgBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+  }
+}

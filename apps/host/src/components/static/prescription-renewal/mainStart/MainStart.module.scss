@@ -1,0 +1,10 @@
+@import "../../../../../../assets/styles/_mixin.scss";
+@import "../../../../../../assets/styles/variables.scss";
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background: linear-gradient(180deg, $bg-header 0.08%, $white) !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+}

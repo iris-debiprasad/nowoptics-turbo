@@ -1,0 +1,34 @@
+.paperCaptureSkeleton {
+  .modalContent {
+    .topHead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .mainSectionContainer {
+      .topSection {
+        border-radius: 10px;
+        height: 200px;
+      }
+      .middleSection {
+        border-radius: 10px;
+        height: 40px;
+      }
+      .bottomSection {
+        border-radius: 10px;
+        height: 200px;
+      }
+    }
+    .bottomButton {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      .buttonSkeleton {
+        border-radius: 10px;
+        height: 33px;
+      }
+    }
+  }
+}

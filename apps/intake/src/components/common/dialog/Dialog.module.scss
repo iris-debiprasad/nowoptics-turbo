@@ -1,0 +1,56 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/fonts";
+@import "../../../../../assets/styles/mixin";
+
+.dialogButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 8px;
+  margin: 24px auto;
+  & > button {
+    cursor: pointer;
+  }
+
+  & > .confirmButton {
+    @include primary_button;
+  }
+
+  & > .cancelButton {
+    @include tertiary_button;
+    margin-right: 25px;
+  }
+}
+
+.dialogHeading {
+  text-align: left;
+  width: 100%;
+  @include fontFSWH($primary-font, 20px, 400, 24px);
+  @media (max-width: $extra-large) {
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+  }
+}
+
+.dialogTitle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      background-color: $primary-light-color;
+    }
+}
+
+
+.closeIcon {
+    height: 14px;
+    width: 14px;
+}

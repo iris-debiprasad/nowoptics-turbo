@@ -1,0 +1,40 @@
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/fonts";
+@import "../../../../../assets/styles/mixin";
+
+.dateValidationContainer {
+  @include flex(flex-start, flex-start, column);
+
+  &>div {
+    @include flex(center, flex-start, row);
+    margin-bottom: 12px;
+  }
+
+  &>div:last-child {
+    @include flex(center, flex-start, row);
+
+    &>p {
+      width: 80px;
+      margin-right: 12px;
+    }
+  }
+
+}
+
+.checkboxInput {
+  @include flex(center, space-between, row);
+  margin-left: 12px;
+
+  & span {
+    margin-left: 5px;
+    color: $secondary-font-color;
+  }
+}
+
+.backdaysInputContainer {
+  @include flex(flex-start, flex-start, column);
+
+  &>span {
+    margin-top: 5px;
+  }
+}

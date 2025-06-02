@@ -1,0 +1,24 @@
+@use "../../../../assets/styles/mixin" as mi;
+@use "../../../../assets/styles/variables" as vars;
+
+a.link {
+  @include mi.base_button;
+
+  display: block;
+  width: fit-content;
+
+  font: 400 1rem/19px vars.$primary-font;
+  user-select: none;
+
+  &--primary {
+    @include mi.primary_button;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: vars.$extra-large) {
+    font: 400 1rem/16px vars.$primary-font;
+  }
+}

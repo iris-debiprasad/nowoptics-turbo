@@ -1,0 +1,47 @@
+@import "../../../../../assets/styles/mixin";
+@import "../../../../../assets/styles/variables";
+@import "../../../../../assets/styles/fonts";
+
+.stepLabel {
+  @include fontFSWH($primary_font, 13px, 400, 17px);
+  color: $secondary-font-color;
+  cursor: pointer;
+}
+
+.disabledLabel {
+  cursor: not-allowed !important;
+}
+
+.enabledLabel {
+  cursor: pointer !important;
+}
+
+.completedLabel {
+  color: $secondary-font-color !important;
+}
+
+.activeLabel {
+  color: $primary-font-color !important;
+}
+
+.iconContainer {
+  transform: translateY(3px);
+}
+
+.stepperContainer {
+  margin: 24px 0;
+  overflow: auto;
+
+  & > div {
+    align-self: stretch;
+  }
+
+  span {
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+      padding: 5px 0px;
+    }
+  }
+}

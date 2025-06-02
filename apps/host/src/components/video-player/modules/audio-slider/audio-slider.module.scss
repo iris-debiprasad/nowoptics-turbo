@@ -1,0 +1,97 @@
+@use "../../../../../../assets/styles/variables" as vars;
+@use "../../../../../../assets/styles/mixin" as mi;
+
+@mixin input-range-track() {
+  background-color: vars.$white;
+  border-radius: 5px;
+  height: 6px;
+}
+
+@mixin input-range-thumb() {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 1rem;
+  height: 1rem;
+  margin-top: -5px;
+
+  background-color: vars.$primary-color;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+}
+
+.sound {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:is(:hover, :focus) {
+    .sound__bar {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  &__bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4.5rem;
+
+    position: absolute;
+    top: -50px;
+    left: -20px;
+    transform: rotate(-90deg);
+
+    background: transparent;
+    cursor: default;
+    opacity: 0;
+    scale: 0;
+    transition: all 0.2s ease;
+
+    @include mi.responsive("medium") {
+      position: unset;
+      top: unset;
+      left: unset;
+      transform: unset;
+      scale: unset;
+      opacity: unset;
+
+      width: 6rem;
+    }
+
+    &:focus {
+      outline-color: none;
+    }
+
+    // Slider track (Chrome, Opera and Edge Chromium)
+    &::-webkit-slider-runnable-track {
+      @include input-range-track();
+    }
+
+    // Slider track (Firefox)
+    &::-moz-range-track {
+      @include input-range-track();
+    }
+
+    // Slider thumb (Chrome, Opera and Edge Chromium)
+    &::-webkit-slider-thumb {
+      @include input-range-thumb();
+    }
+
+    &:is(:focus, :hover)::-webkit-slider-thumb {
+      border: 1px solid #202754;
+    }
+
+    // Slider thumb (Firefox)
+    &::-moz-range-thumb {
+      @include input-range-thumb();
+      border: none; // Removes extra border that FF applies
+    }
+
+    &:is(:focus, :hover)::-moz-range-thumb {
+      border: 1px solid #202754;
+    }
+  }
+}

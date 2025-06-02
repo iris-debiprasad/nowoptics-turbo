@@ -1,0 +1,50 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.scheduleExamSkeleton {
+  margin-bottom: 50px;
+  .container {
+    @include iris_container;
+    padding-top: 20px;
+
+    .title {
+      margin-top: 30px;
+    }
+
+    .details {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+
+      @media (max-width: $medium) {
+        flex-direction: column-reverse;
+      }
+
+      .left {
+        width: 44%;
+        @media (max-width: $medium) {
+          width: 100%;
+        }
+        .searchBar {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .storeDetails {
+          margin-top: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+      .right {
+        width: 56%;
+        @media (max-width: $medium) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

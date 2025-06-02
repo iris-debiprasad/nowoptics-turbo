@@ -1,0 +1,54 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+body {
+  .inputContainer {
+    @include flex(flex-start, center, column);
+  }
+
+  .root {
+    border-radius: 10px !important;
+    border: 1px solid $secondary-font-color;
+    background-color: $white;
+    height: 45px;
+    font-family: $primary-font;
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+      height: 36px;
+    }
+
+    @media (max-width: $small) {
+      font-size: 16px;
+    }
+
+    &>input::placeholder {
+      color: $secondary-font-color;
+    }
+
+    color:$black;
+
+    &>fieldset {
+      border-color: transparent !important;
+    }
+
+    &>div {
+      padding-top: 2px !important;
+      padding-bottom: 2px !important;
+    }
+  }
+
+  .label {
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+    color: $black;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 16px);
+    }
+  }
+
+  .disabledInput {
+    background-color: $primary-light-color;
+  }
+}

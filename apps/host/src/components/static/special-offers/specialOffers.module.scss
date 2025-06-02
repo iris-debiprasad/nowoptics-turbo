@@ -1,0 +1,78 @@
+@import "../../../../../assets/styles/_variables.scss";
+@import "../../../../../assets/styles/_mixin.scss";
+
+.specialOffersContainer {
+  .banner {
+    border: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .offerBanner {
+    border: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .gridContainer {
+    @include iris_container;
+
+    p {
+      margin: 2.5rem 0;
+    }
+
+    .flexContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tile {
+      height: 260px;
+      width: auto;
+      background-size: contain;
+      background-position: center center;
+      margin: 0px;
+      background-repeat: no-repeat;
+
+      @media (max-width: 768px) {
+        height: 165px;
+      }
+    }
+
+    .contentContainer {
+      padding: 3rem 0;
+      text-align: center;
+
+      .content {
+        max-width: 1032px;
+        margin: auto;
+
+        h2 {
+          @include fontFSWH($secondary-font, 2rem, 600, 1.3);
+        }
+
+        p {
+          margin: 1.5rem 0;
+        }
+      }
+    }
+
+    .appointmentBtn {
+      @include primary_button;
+    }
+  }
+
+  .disclaimer_wrapper {
+    border-top: 1px solid #333;
+    margin-bottom: 4rem;
+    padding: 3rem 1rem 0;
+  }
+
+  p.disclaimer {
+    text-align: center;
+    font-size: 12px;
+    margin-inline: auto;
+    max-width: 1000px;
+  }
+}

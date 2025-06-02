@@ -1,0 +1,23 @@
+@use "../../../../../../assets/styles/mixin" as mi;
+@use "../../../../../../assets/styles/variables" as vars;
+
+.container {
+  margin-top: 2rem;
+
+  .start-button {
+    @include mi.primary_button;
+
+    display: block;
+    padding-block: 0.7rem;
+    margin-inline: auto;
+  }
+
+  .test-container {
+    width: min(100%, 600px);
+    margin-inline: auto;
+
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgba(vars.$primary-font-color, 0.3);
+  }
+}

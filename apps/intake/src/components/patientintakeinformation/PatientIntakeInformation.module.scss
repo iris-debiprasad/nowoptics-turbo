@@ -1,0 +1,268 @@
+@import "../../../../assets/styles/mixin";
+@import "../../../../assets/styles/fonts";
+@import "../../../../assets/styles/variables";
+
+.informationContainer {
+  width: 100%;
+  @include flex(flex-start, center, column);
+
+  & > div {
+    width: 100%;
+  }
+
+  & > div > .formInputs {
+    width: 100%;
+    @include flex(flex-start, space-between, row);
+  }
+}
+
+.formInputs {
+  @media (max-width: $medium) {
+    flex-direction: column !important;
+  }
+}
+
+.stateHiddenElement {
+  @media (max-width: $medium) {
+    display: none;
+  }
+}
+.stepActions {
+  width: 91% !important;
+  margin: 24px auto 24px auto;
+  @media (max-width: $medium) {
+    width: 100% !important;
+  }
+  @include flex(center, flex-end, row);
+
+  & > button {
+    cursor: pointer;
+    @include primary_button;
+  }
+}
+
+.patientInformationInputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  & > div {
+    min-height: 50px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+.patientAddressInputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  & > div {
+    min-height: 50px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+.patientInformationInputs {
+  margin-right: 0px;
+  margin-left: 40px;
+  @media (max-width: $medium) {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+.formHeader {
+  @include fontFSWH($secondary-font, 28px, 500, 34px);
+  color: $secondary-color;
+
+  @media (max-width: $extra-large) {
+    @include fontFSWH($secondary-font, 22px, 500, 25px);
+  }
+  margin: 20px 0px 20px 40px;
+  @media (max-width: $medium) {
+    margin: 15px 0px;
+  }
+}
+
+.genderInput {
+  @include flex(flex-start, flex-start, column);
+}
+
+.genderRadioBtns {
+  margin-top: 8px;
+  @include flex(flex-start, flex-start, row);
+
+  & > div {
+    @include flex(flex-start, flex-start, row);
+
+    & > span {
+      margin-left: 8px;
+    }
+
+    &:first-child {
+      margin-right: 18px;
+    }
+  }
+}
+
+.dobInput {
+  width: 100%;
+  @include flex(center, flex-start, row);
+  & > div {
+    width: 100%;
+  }
+  & > div:first-child > div {
+    width: 100%;
+  }
+  & > div > div > div {
+    width: 100%;
+  }
+  & > div:last-child {
+    margin-left: 14px;
+  }
+}
+
+.textField {
+  margin: auto;
+  width: 90%;
+  @media (max-width: $medium) {
+    width: 100%;
+  }
+
+
+  input {
+    padding: 10px 15px;
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+
+    @media (max-width: $small) {
+      font-size: 16px !important;
+    }
+  }
+  textArea {
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+
+    @media (max-width: $small) {
+      font-size: 16px !important;
+    }
+  }
+  label {
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+  fieldset {
+    border-radius: 10px;
+  }
+}
+.greyInput {
+  background-color: $primary-light-color;
+  border-radius: 10px;
+}
+.selectInput {
+  width: 90%;
+  @include fontFSWH($primary-font, 16px, 400, 20px);
+  color: $black;
+  margin: auto;
+  @media (max-width: $medium) {
+    width: 100%;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+    color: $black;
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+  .menuItem {
+    @include fontFSWH($primary-font, 16px, 400, 20px);
+    color: $black;
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 13px, 400, 17px);
+    }
+  }
+
+  fieldset {
+    border-radius: 10px;
+  }
+}
+
+.disabledButton {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.errorSpan {
+  display: block;
+  margin-top: 5px;
+}
+
+.ageDiv1 {
+  width: 60%;
+  & > div {
+    width: 80%;
+    @media (max-width: $medium) {
+      width: 100%;
+    }
+  }
+  @media (max-width: $medium) {
+    width: 100%;
+  }
+}
+
+.inputLabel {
+  margin-bottom: 5px;
+}
+
+.concentContainerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;;
+  .concentContainer {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 10px;
+    margin-top: 20px;
+
+    .concentChekcBox {
+      padding: 0;
+      color: $secondary-light-color;
+    }
+  }
+  .privacyText{
+    margin-left: 5px;
+  }
+  .concentDescription {
+    @include fontFSWH($primary-font, 13px, 300, 17px);
+    color: $tertiary-font-color;
+
+    @media (max-width: $extra-large) {
+      @include fontFSWH($primary-font, 11px, 300, 15px);
+    }
+  }
+}
+
+.privacyModalLink {
+  cursor: pointer;
+  color: $secondary-color;
+  font-weight: 500;
+  text-decoration: underline;
+}

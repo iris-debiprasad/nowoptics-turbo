@@ -1,0 +1,44 @@
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+.mainBox {
+  background-color: $primary-light-color;
+  padding: 60px 100px;
+  margin-top: 100px;
+
+  & .heading {
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    @include fontFSWH($primary-font, 24px, 400, 29px);
+    margin-bottom: 40px;
+  }
+  & .ulCls {
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 40px;
+    @include fontFSWH($primary-font, 16px, 400, 30px);
+  }
+  & .terms {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: $black;
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  & .linkFaq {
+    color: $black;
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+    letter-spacing: 0em;
+    margin-left: 3px;
+  }
+  & .paraCls {
+    @include fontFSWH($primary-font, 16px, 400, 30px);
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 72px;
+  }
+}

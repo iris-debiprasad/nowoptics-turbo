@@ -1,0 +1,59 @@
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/mixin.scss";
+
+.mainBox {
+  padding: 60px 0px;
+  & .imgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    background-color: $primary-light-color;
+  }
+}
+
+.rightBox {
+  & .heading1 {
+    margin-bottom: 30px;
+    @include fontFSWH($primary-font, 24px, 400, 29px);
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  & p {
+    @include fontFSWH($primary-font, 16px, 400, 30px);
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  & .heading2 {
+    @include fontFSWH($secondary-font, 28px, 400, 38px);
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  & .ulCls {
+    @include fontFSWH($primary-font, 16px, 400, 30px);
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+  & .liCls {
+    @include fontFSWH($primary-font, 16px, 400, 19px);
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 60px;
+  }
+  & .subHeading {
+    margin-top: 25px;
+  }
+  & .btnBookEye {
+    display: flex;
+    justify-content: center;
+    & .btnColor {
+      background-color: #a9afbb;
+      border-radius: 14px;
+      color: #000000;
+    }
+  }
+}

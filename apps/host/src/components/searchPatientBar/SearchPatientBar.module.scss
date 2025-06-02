@@ -1,0 +1,198 @@
+@import "../../../../assets/styles/_variables.scss";
+@import "../../../../assets/styles/_mixin.scss";
+
+.serachPatientWrapper {
+  .searchSectionBar {
+    padding: 0px;
+    @media (max-width: $extra-large) {
+      font-size: 12px;
+      > div {
+        padding: 0px 0px 0px 5px;
+        padding-right: 0px !important;
+      }
+    }
+
+    input {
+      font-family: $primary-font;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0em;
+      text-align: left;
+      padding: 0px 14px;
+
+      @media (max-width: $extra-large) {
+        font-size: 12px;
+      }
+    }
+
+    fieldset {
+      border: 1px solid #d8d8da !important;
+      border-radius: 10px;
+    }
+
+    .searchWithSelect {
+      > div > div {
+        padding: 0px;
+        padding-right: 39px;
+      }
+      @media (max-width: $extra-large) {
+        padding-right: 0px;
+
+        > div {
+          padding: 0;
+        }
+
+        > div > div {
+          padding: 0px;
+          padding-right: 39px;
+        }
+      }
+
+      .searchWithSelectContainer {
+        > div {
+          padding-right: 0px;
+        }
+        @media (max-width: $extra-large) {
+          > div {
+            padding-right: 0px;
+          }
+        }
+        position: relative;
+        .searchSelect {
+          position: absolute;
+          cursor: pointer;
+          z-index: 9;
+          @include fontFSWH($primary-font, 14px, 400, normal);
+          text-transform: capitalize;
+          padding-right: 10px;
+          padding: 9px;
+          width: 100px;
+
+          > div {
+            padding: 0;
+            display: flex;
+            align-items: center;
+          }
+
+          fieldset {
+            border-top-right-radius: initial;
+            border-bottom-right-radius: initial;
+          }
+
+          @media (max-width: $extra-large) {
+            font-size: 12px;
+            padding: 9px;
+          }
+        }
+
+        input {
+          padding-left: 100px;
+        }
+      }
+
+      .searchSelectPatient {
+        @include fontFSWH($primary-font, 14px, 400, normal);
+        border-top-right-radius: initial;
+        border-bottom-right-radius: initial;
+        padding: 6.5px 6.5px;
+        padding-right: 10px;
+        margin-top: 0px;
+
+        @media (max-width: $extra-large) {
+          font-size: 12px;
+          padding: 6.5px 6.5px;
+        }
+      }
+    }
+  }
+}
+
+.searchMenuItem {
+  @include fontFSWH($primary-font, 14px, 400, normal);
+  text-transform: capitalize;
+
+  @media (max-width: $extra-large) {
+    font-size: 12px;
+  }
+}
+
+.searchOption {
+  padding: 15px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background: $bg-color;
+  }
+
+  .optionText {
+    @include fontFSWH($primary-font, 14px, 400, normal);
+    color: $primary-font-color;
+    text-transform: capitalize;
+
+    @media (max-width: $extra-large) {
+      font-size: 12px;
+    }
+
+    .nameSection {
+      display: flex;
+      flex-direction: column;
+
+      .namePart {
+        color: $primary-font-color;
+        @include fontFSWH($primary-font, 14px, 400, normal);
+        font-style: normal;
+        margin-bottom: 5px;
+
+        @media (max-width: $extra-large) {
+          font-size: 12px;
+        }
+      }
+
+      .emailPart {
+        color: $secondary-font-color;
+        @include fontFSWH($primary-font, 14px, 400, normal);
+        font-style: normal;
+        text-transform: none;
+
+        @media (max-width: $extra-large) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.autoCompleteSearchPatientBar {
+  background-color: white;
+
+  @media (max-width: $extra-large) {
+    > div > div {
+      font-size: 12px;
+    }
+  }
+
+  > div > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .buttonContentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .buttonContent {
+      @include fontFSWH($primary-font, 14px, 400, normal);
+      color: $secondary-font-color;
+      font-style: normal;
+      padding: 10px;
+      text-transform: capitalize;
+
+      @media (max-width: $extra-large) {
+        font-size: 12px;
+      }
+    }
+  }
+}

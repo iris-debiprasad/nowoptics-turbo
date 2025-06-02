@@ -1,0 +1,19 @@
+@import "./variables";
+// * Note: [IR-1836] we have moved fonts in head with preconnect and preload  */
+@font-face {
+  font-family: $secondary-font;
+  src: url("https://dam.nowoptics.net/m/fa378efdeaa4704/original/Latinotype-Recoleta_Regular.woff")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $secondary-font;
+  src: url("https://dam.nowoptics.net/m/75f75f70bafd0c77/original/Latinotype-Recoleta_SemiBold.woff")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

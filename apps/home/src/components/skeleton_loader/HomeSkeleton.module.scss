@@ -1,0 +1,83 @@
+@import "../../../../assets/styles/_variables.scss";
+@import "../../../../assets/styles/_mixin.scss";
+
+.homeSkeleton {
+  width: 100%;
+  .checkEyeExamDiv {
+    width: 100%;
+    height: 250px;
+  }
+  .actionIcon {
+    @include iris_container;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    .circularSkeleton {
+      .circularSkeletonIcon {
+        width: 80px;
+        height: 80px;
+      }
+      .iconDescription {
+        font-size: 16px;
+        margin: 20px;
+      }
+    }
+
+    @media (max-width: $small) {
+      display: none;
+    }
+  }
+  .grid1 {
+    width: 100%;
+    display: flex;
+    .gridItem {
+      margin: 2px;
+      width: 33.33%;
+      .boxSkeletion {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: $small) {
+      display: none;
+    }
+  }
+  .grid1Mobile {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    .gridItem {
+      margin: 2px;
+      width: 80%;
+      .boxSkeletion {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: $small) {
+      display: flex;
+    }
+  }
+  .grid2 {
+    @include iris_container;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    .gridItem {
+      width: 33.33%;
+      margin: 10px;
+      .boxSkeletion {
+        height: 100px;
+      }
+    }
+  }
+
+  .mobile {
+    display: none;
+    @media (max-width: $small) {
+      display: flex;
+    }
+  }
+}
